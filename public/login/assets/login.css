@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#page {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+#navbar {
+    width: 200px;
+    background-color: #d6c2a8;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 1px solid #b5a38a;
+    padding: 0;
+}
+
+#icon {
+    width: auto;
+    height: 1em; 
+    vertical-align: middle; 
+}
+
+#homeButton {
+    position: relative;
+}
+
+#backworkButton {
+    position: relative;
+}
+
+#profButton {
+    position: relative;
+}
+
+#classesButton {
+    position: relative;
+}
+
+#moreButton {
+    margin-top: auto;
+    border-top: none;
+    text-align: center;
+    padding: 10% 0;
+    background-color: #e6d5c0;
+    position: relative;
+}
+
+#homeButton::after, #backworkButton::after,
+#profButton::after, #classesButton::after,
+#moreButton:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom-left-radius: 10px;
+}
+
+#homeButton::after {
+    background-color: rgba(225, 0, 0, 0.5);
+}
+
+#backworkButton::after {
+    background-color: rgb(0, 0, 225, 0.5);
+}
+
+#profButton::after {
+    background-color: rgb(225, 225, 0, 0.5);
+}
+
+#classesButton::after {
+    background-color: rgb(0, 225, 0, 0.5);
+}
+
+#moreButton:after{
+    background-color: rgba(225, 0, 225, 0.5);
+}
+
+.nav-tab {
+    padding: 10% 5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #e6d5c0;
+    border-right: 1px solid #d4c3ae;
+    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.nav-tab:not(:last-child) {
+    margin: 0;
+}
+
+.nav-tab:hover {
+    background-color: #f2e6d5;
+}
+
+.nav-tab.active {
+    background-color: #ac9f90;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.nav-tab::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.nav-tab:hover::before {
+    background-color: #8b7355;
+}
+
+#dropdownMenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #f2e6d5;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d4c3ae;
+    overflow: hidden;
+    z-index: 1000;
+    width: auto;
+    align-items: stretch; 
+    height: 100%; 
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    font-size: 0.9em;
+    color: #5a4a3f;
+    border-top: 1px solid #d4c3ae; 
+    background-color: #f2e6d5;
+}
+
+.dropdown-item:first-child {
+    border-left: none;
+}
+
+.dropdown-item:hover {
+    background-color: #e6d5c0;
+}
+
+#content {
+    flex-grow: 1;
+    background-color: #f2e6d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+#LoginForm {
+    text-align: center;
+    color: #5a4a3f;
+    font-size: 2em;
+}
+
+#CenterForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    width: clamp(280px, 25vw, 400px); 
+    aspect-ratio: 8.5 / 11;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.2), 
+        0 0 60px rgba(0, 0, 0, 0.05) inset;
+    position: relative;
+}
+
+.loginFormContent {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+    font-weight: 500;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: .1em solid #3d3d3d;
+    background-color: transparent;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-bottom-color: #666666;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4A4A4A;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #333333;
+}
