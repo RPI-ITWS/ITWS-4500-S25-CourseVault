@@ -5,10 +5,15 @@
     font-family: Arial, sans-serif;
 }
 
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
 #page {
     display: flex;
     flex-wrap: wrap;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #f5f5f5;
 }
 
@@ -20,7 +25,69 @@
     justify-content: flex-start;
     border-right: 1px solid #b5a38a;
     padding: 0;
+}
+
+#icon {
+    width: auto;
+    height: 1em; 
+    vertical-align: middle; 
+}
+
+#homeButton {
     position: relative;
+}
+
+#backworkButton {
+    position: relative;
+}
+
+#profButton {
+    position: relative;
+}
+
+#classesButton {
+    position: relative;
+}
+
+#moreButton {
+    margin-top: auto;
+    border-top: none;
+    text-align: center;
+    padding: 10% 0;
+    background-color: #e6d5c0;
+    position: relative;
+}
+
+#homeButton::after, #backworkButton::after,
+#profButton::after, #classesButton::after,
+#moreButton:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom-left-radius: 10px;
+}
+
+#homeButton::after {
+    background-color: rgba(225, 0, 0, 0.5);
+}
+
+#backworkButton::after {
+    background-color: rgb(0, 0, 225, 0.5);
+}
+
+#profButton::after {
+    background-color: rgb(225, 225, 0, 0.5);
+}
+
+#classesButton::after {
+    background-color: rgb(0, 225, 0, 0.5);
+}
+
+#moreButton:after{
+    background-color: rgba(225, 0, 225, 0.5);
 }
 
 .nav-tab {
@@ -64,15 +131,6 @@
 
 .nav-tab:hover::before {
     background-color: #8b7355;
-}
-
-#moreButton {
-    margin-top: auto;
-    border-top: none;
-    text-align: center;
-    padding: 10% 0;
-    background-color: #e6d5c0;
-    position: relative;
 }
 
 #dropdownMenu {
@@ -127,14 +185,17 @@
 }
 
 #CenterForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 2px;
+    width: clamp(280px, 25vw, 400px); 
+    aspect-ratio: 8.5 / 11;
+    padding: 40px;
+    border-radius: 8px;
     box-shadow: 
-        0 4px 16px rgba(0, 0, 0, 0.1),
-        0 0 80px rgba(0, 0, 0, 0.03) inset;
-    margin-top: 50px;
-    max-width: 400px;
+        0 8px 16px rgba(0, 0, 0, 0.2), 
+        0 0 60px rgba(0, 0, 0, 0.05) inset;
     position: relative;
 }
 
