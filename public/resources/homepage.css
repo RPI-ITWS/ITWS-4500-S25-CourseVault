@@ -7,6 +7,10 @@
     align-items: flex-start;
 }
 
+#headerDiv {
+    margin: auto;
+}
+
 h1 {
     max-width: 400px;
     font-size: 25px;
