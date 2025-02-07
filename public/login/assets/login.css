@@ -72,3 +72,9 @@ button {
 button:hover {
     background-color: #333333;
 }
+
+#icon {
+    width: auto;
+    height: 1em; 
+    vertical-align: middle; 
+}
