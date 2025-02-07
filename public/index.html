@@ -4,8 +4,49 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Course Vault</title>
+        <link rel="stylesheet" href="./resources/style.css">
+        <script defer src="./resources/script.js"></script>
     </head>
     <body>
-        Test.
+        <div id="page">
+            <div id="navbar">
+                <div id="homeButton" class="nav-tab">
+                    <h3>Home</h3>
+                </div>
+                <div id="backworkButton" class="nav-tab">
+                    <h3>Backwork</h3>
+                </div>
+                <div id="profButton" class="nav-tab">
+                    <h3>Professors</h3>
+                </div>
+                <div id="classesButton" class="nav-tab">
+                    <h3>Classes</h3>
+                </div>
+                <div id="moreButton" class="nav-tab">
+                    <h3>...</h3>
+                    <div id="dropdownMenu">
+                        <div class="dropdown-item">
+                            <h3>Profile</h3>
+                        </div>
+                        <div class="dropdown-item" onclick="window.location.href='./index.html'">
+                            <h3>Login</h3>
+                        </div>
+                        <div class="dropdown-item">
+                            <h3>Signup</h3>
+                        </div>
+                        <div class="dropdown-item">
+                            <h3>Settings</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <h1>COURSE VAULT</h1>
+
+                <div id="help-block">
+                    <h2>How Can We Help Today?</h2>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
