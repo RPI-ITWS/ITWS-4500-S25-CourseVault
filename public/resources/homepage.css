@@ -1,0 +1,93 @@
+#content {
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: #f2e6d5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#headerDiv {
+    margin: auto;
+}
+
+h1 {
+    max-width: 400px;
+    font-size: 25px;
+    margin: auto;
+}
+
+#help-block {
+    margin: auto;
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: #f2e6d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    min-width: 400px;
+    width: 100%;
+}
+
+#sub-title {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#left-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#right-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.homepage-button {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f2e6d5;
+    border-radius: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 50%;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.homepage-button:hover {
+    background-color: #e6d5c0;
+}
+
+#findBackworkButton {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+#uploadBackworkButton {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+#findProfessorButton {
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+#rateProfessorButton {
+    margin-right: auto;
+    margin-left: 20px;
+}
