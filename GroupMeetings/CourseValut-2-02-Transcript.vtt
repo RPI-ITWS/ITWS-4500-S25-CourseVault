@@ -1,0 +1,201 @@
+WEBVTT
+
+1 "Collins, Joshua" (826891264)
+00:00:00.000 --> 00:00:12.855
+And we're off, so were any of you guys able to do anything this week? I I've been a little busy, so it was kind of hard for me to do anything.
+
+2 "Adam" (249584896)
+00:00:12.855 --> 00:00:28.743
+Yeah, I in my current like before this I was working on this page, so I should have something done by the end of the day hopefully, definitely helpful because I also need to like work on lab too.
+
+3 "Collins, Joshua" (826891264)
+00:00:28.743 --> 00:00:32.960
+So, yeah, I I.
+
+4 "Marinkovich, Christian" (4085712128)
+00:00:32.960 --> 00:00:38.778
+For this whole weekend, had piece offt and piece off took like 10 h.
+
+5 "Collins, Joshua" (826891264)
+00:00:38.778 --> 00:00:42.499
+Is that the one where there's a bunch of like precondition.
+
+6 "Marinkovich, Christian" (4085712128)
+00:00:42.499 --> 00:00:51.677
+Yeah, yeah, that homework. It's, it's like the homework one and it takes it took me like 10 h and like 09:10 hours, something like that just to.
+
+7 "Collins, Joshua" (826891264)
+00:00:51.677 --> 00:00:58.520
+Do it all. Yeah, all the other ones aren't as bad as like the the alligible stuff or.
+
+8 "Marinkovich, Christian" (4085712128)
+00:00:58.520 --> 00:01:08.095
+Is is this like the only homework that's like Algebra? Is there are the rest of them programming cause, like, bro, the programming homeworks are pretty cool.
+
+9 "Collins, Joshua" (826891264)
+00:01:08.095 --> 00:01:15.238
+Yeah, I think you have maybe like one more eligible one or actually NO. Yeah I think you have coding ones from now on.
+
+10 "Marinkovich, Christian" (4085712128)
+00:01:15.238 --> 00:01:17.860
+Really? Yeah I love them.
+
+11 "Thomas, Mius" (4222163456)
+00:01:17.860 --> 00:01:23.676
+I feel like there's like one more that's, like, what's it.
+
+12 "Collins, Joshua" (826891264)
+00:01:23.676 --> 00:01:24.637
+Call.
+
+13 "Thomas, Mius" (4222163456)
+00:01:24.637 --> 00:01:31.957
+Like writing, yeah. I feel like there's maybe one more, but I don't think there's a lot more at like maybe one or two.
+
+14 "Collins, Joshua" (826891264)
+00:01:31.957 --> 00:01:39.874
+Okay. Yeah, because I know three is a coding one and then four through eight are all like coding in building off of each other.
+
+15 "Marinkovich, Christian" (4085712128)
+00:01:39.874 --> 00:01:41.537
+Oh ****.
+
+16 "Collins, Joshua" (826891264)
+00:01:41.537 --> 00:01:45.637
+Yeah, it's not that. Yeah.
+
+17 "Marinkovich, Christian" (4085712128)
+00:01:45.637 --> 00:02:01.723
+Sure. I don't know this one took forever, but I really hope they're not as bad as this one but yeah I wasn't able to get much done because I've been doing piece off literally the entire day yesterday, and then I just started doing lab two like this morning.
+
+18 "Collins, Joshua" (826891264)
+00:02:01.723 --> 00:02:04.579
+Morning. Yeah, you're gonna be pretty busy with that.
+
+19 "Marinkovich, Christian" (4085712128)
+00:02:04.579 --> 00:02:15.357
+So yeah, I'm trying to kinda get that done. How did you, how did you ok so you're like, ah, I think I got it.
+
+20 "Collins, Joshua" (826891264)
+00:02:15.357 --> 00:02:19.078
+Yeah, I I basically just have two like get requests.
+
+21 "Marinkovich, Christian" (4085712128)
+00:02:19.078 --> 00:02:38.718
+I mean, I just, I just take like, I make get calls where like I take some JSON objects from my actual JSON file on the lab and then I have some, where I take from like the APIs, external APIs. Is that good? Like, I think that's.
+
+22 "Collins, Joshua" (826891264)
+00:02:38.718 --> 00:02:47.518
+Right? You need your get requests to, each request has to have at least two sources, whether that's from an API and another API or an.
+
+23 "Marinkovich, Christian" (4085712128)
+00:02:47.518 --> 00:02:49.816
+API an API. Yeah, it has two source.
+
+24 "Adam" (249584896)
+00:02:49.816 --> 00:02:53.314
+Because it's just it's from like I think some of them have even three sources.
+
+25 "Marinkovich, Christian" (4085712128)
+00:02:53.314 --> 00:02:56.997
+But, you know, it's just based on that that's where the Json objects are coming.
+
+26 "Collins, Joshua" (826891264)
+00:02:56.997 --> 00:03:07.353
+Yeah, I think I only had like three like important get requests and then the other three were just like random information because I didn't really need six get requests.
+
+27 "Marinkovich, Christian" (4085712128)
+00:03:07.353 --> 00:03:13.494
+Did you combine data from different APIs in a single JSON object or did you just like.
+
+28 "Collins, Joshua" (826891264)
+00:03:13.494 --> 00:03:20.975
+Well, I I took my entire JSON file and I basically just had, like, you know how I had all those times under like.
+
+29 "Marinkovich, Christian" (4085712128)
+00:03:20.975 --> 00:03:22.073
+Boys.
+
+30 "Collins, Joshua" (826891264)
+00:03:22.073 --> 00:03:49.615
+Yeah, yeah. Under boys, I had like time-put and time-post and I had the put request put times into the put request one, and I had the post one put times in the post request one. Okay. And depending on which method I use determines like what how like how the time looks and where I get the time from, whether that's from the API or from the URL.
+
+31 "Marinkovich, Christian" (4085712128)
+00:03:49.615 --> 00:03:52.013
+Okay.
+
+32 "Collins, Joshua" (826891264)
+00:03:52.013 --> 00:04:01.075
+Yeah, and I mean I didn't really display a lot more than most of my get I only displayed my get get stuff. I didn't display the post or put.
+
+33 "Marinkovich, Christian" (4085712128)
+00:04:01.075 --> 00:04:09.233
+Yeah, I mean I'll probably have I'll probably add some more forms or something just to display that. I'll see.
+
+34 "Collins, Joshua" (826891264)
+00:04:09.233 --> 00:04:15.093
+Yeah, I mean, it's straightforward, it's just tedious, but you'll.
+
+35 "Marinkovich, Christian" (4085712128)
+00:04:15.093 --> 00:04:34.560
+It'll be fine. Yeah, but I am planning after I finish this lab, hopefully by today, I will probably start starting tonight, maybe tomorrow. I'll start working on the homepage and I'll try to incorporate some react.
+
+36 "Collins, Joshua" (826891264)
+00:04:34.560 --> 00:04:54.978
+Into it. Nice. I'll also start picking up the I'm gonna start like the either the backward word or the rate my professor one. I'm gonna, right now I'll use it, I'll use a JSON file in our note in the same directory as our server.js 1st and stuff like professor ratings.
+
+37 "Collins, Joshua" (826891264)
+00:04:54.978 --> 00:05:01.959
+But then once we actually get to like the NO SQL databases, I might be able to swap it.
+
+38 "Marinkovich, Christian" (4085712128)
+00:05:01.959 --> 00:05:04.516
+Alright.
+
+39 "Collins, Joshua" (826891264)
+00:05:04.516 --> 00:05:09.218
+Yeah, but, yeah, we should be good.
+
+40 "Thomas, Mius" (4222163456)
+00:05:09.218 --> 00:05:37.717
+I'm probably I'm gonna do the same with like a fake like back end for user login because I started working with a package to handle that from more of a server side than reacts than like react context, so it seems a lot easier and a lot more manageable, they use cookies instead, Sounds good. Yeah I'm gonna throw on a JSON file in this like the root directory.
+
+41 "Collins, Joshua" (826891264)
+00:05:37.717 --> 00:05:52.556
+Yeah, if, yeah, call yours like users.json. I'll call mine like ratings.json. And then if we have the other two, we can do like classes.JSON and, backward.json or whatever.
+
+42 "Thomas, Mius" (4222163456)
+00:05:52.556 --> 00:05:53.994
+Okay.
+
+43 "Collins, Joshua" (826891264)
+00:05:53.994 --> 00:06:09.919
+Cool. Or to be honest, we could probably emerge, yeah. Nevermind. We're, we're all good. Yeah. I I also think we're in a really good spot because to be honest, we're doing a good job planning everything out and to be honest, like.
+
+44 "Collins, Joshua" (826891264)
+00:06:09.919 --> 00:06:31.449
+What the 4th week into school we already have like ideas on the ground and we're already working towards it. I think we're miles ahead of like the next group because as far as I know I don't think any other group has actually physically started coding.
+
+45 "Thomas, Mius" (4222163456)
+00:06:31.449 --> 00:06:33.272
+Yeah, I'm not.
+
+46 "Collins, Joshua" (826891264)
+00:06:33.272 --> 00:06:50.879
+Good. Yeah, but yeah we'll all just get our personal stuff done and then we'll meet up on well, we'll keep working on it. We'll, check in on Wednesday and see where we're at. It's just I I know it's rough for all of us because between the labs and other classes you were busy.
+
+47 "Collins, Joshua" (826891264)
+00:06:50.879 --> 00:07:06.452
+And for myself I have to finish up the offices lecture exercise and study for a test. So I'll probably be busy but I'll try to get a start on some of the lab stuff if I have free time before Wednesday.
+
+48 "Collins, Joshua" (826891264)
+00:07:09.049 --> 00:07:14.572
+And, any other notes?
+
+49 "Thomas, Mius" (4222163456)
+00:07:14.572 --> 00:07:16.651
+Nope.
+
+50 "Collins, Joshua" (826891264)
+00:07:16.651 --> 00:07:21.792
+Okay, I'll stop recording.

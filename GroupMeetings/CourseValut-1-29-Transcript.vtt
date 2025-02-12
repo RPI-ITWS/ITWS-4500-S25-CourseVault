@@ -1,0 +1,193 @@
+WEBVTT
+
+1 "" (0)
+00:00:00.000 --> 00:00:05.000
+Okay.
+
+2 "Collins, Joshua" (770573056)
+00:00:06.663 --> 00:00:09.580
+How are you doing on your your work Christian?
+
+3 "Christian" (1202649856)
+00:00:09.580 --> 00:00:14.061
+If you. I have not made much progress. I mean I set up the VM.
+
+4 "Collins, Joshua" (770573056)
+00:00:14.061 --> 00:00:14.960
+Obviously.
+
+5 "Christian" (1202649856)
+00:00:14.960 --> 00:00:34.282
+I guess last time, right? Cause I got the VM set up and we have to we might have to I still have to do the config file config like the edit the config files, but I could do that and then I'll get started on the homepage sounds.
+
+6 "Collins, Joshua" (770573056)
+00:00:34.282 --> 00:00:46.805
+Good and I'm gonna share my screen at least to show what I have and I I do plan on implementing that small little, like the colors at the bottom of the tabs to differentiate differentiate them. Yeah.
+
+7 "Christian" (1202649856)
+00:00:46.805 --> 00:00:51.664
+But currently this is what I have for our login page.
+
+8 "Collins, Joshua" (770573056)
+00:00:51.664 --> 00:00:54.276
+So it kind of looks like a manila folder where you have home.
+
+9 "Christian" (1202649856)
+00:00:54.276 --> 00:00:56.782
+Backward wait, soon, though?
+
+10 "Collins, Joshua" (770573056)
+00:00:56.782 --> 00:01:11.524
+Right now they don't go anywhere because of us not having those pages yet, but if we come down here to the more tab and click login, it'll send us back here again. Okay.
+
+11 "Christian" (1202649856)
+00:01:11.524 --> 00:01:16.404
+Oh, did you change the colors to Maron for the birds?
+
+12 "Collins, Joshua" (770573056)
+00:01:16.404 --> 00:01:20.583
+I will. I'm also gonna make this box a little bigger.
+
+13 "Christian" (1202649856)
+00:01:20.583 --> 00:01:25.685
+Honestly I think the login like button should also be.
+
+14 "Collins, Joshua" (770573056)
+00:01:25.685 --> 00:01:32.489
+Yeah, I will. Yeah, I'll add that as well. I was just trying to I was trying to get it to look like a piece of paper in the Manila folder.
+
+15 "Christian" (1202649856)
+00:01:32.489 --> 00:01:37.189
+Oh, ok. Yeah, that looks good.
+
+16 "Collins, Joshua" (770573056)
+00:01:37.189 --> 00:01:41.408
+Yeah, I'll just make it a little bit bigger. Yeah, make that make.
+
+17 "Christian" (1202649856)
+00:01:41.408 --> 00:01:46.990
+That like form login form a little bigger, and then that looks good. Yeah.
+
+18 "Collins, Joshua" (770573056)
+00:01:46.990 --> 00:01:56.610
+And I plan on doing that tonight. I, I just got back from the eye dr. right now. I see. Yeah, your man's got pink.
+
+19 "Christian" (1202649856)
+00:01:56.610 --> 00:02:02.150
+Yeah. Oh shoot, if y'all, I haven't had that in like years, like probably 15 years.
+
+20 "Collins, Joshua" (770573056)
+00:02:02.150 --> 00:02:08.686
+That's crazy. Yeah, NO. Yeah, it's kind it's kind of common with swimmers, so I'm not.
+
+21 "Christian" (1202649856)
+00:02:08.686 --> 00:02:11.110
+Not really? That's what.
+
+22 "Collins, Joshua" (770573056)
+00:02:11.110 --> 00:02:18.661
+Yeah, but, I'll make those changes and push it that ways and Adam both have stuff to go off of.
+
+23 "Christian" (1202649856)
+00:02:18.661 --> 00:02:19.983
+And then.
+
+24 "Collins, Joshua" (770573056)
+00:02:19.983 --> 00:02:27.271
+You learn react, we can always go back and change that template, and also that's just a draft, if anybody doesn't like it, just let me know. Yeah.
+
+25 "Christian" (1202649856)
+00:02:27.271 --> 00:02:33.983
+By the time I get started with mine, we might have we might already have them.
+
+26 "Collins, Joshua" (770573056)
+00:02:33.983 --> 00:02:35.210
+Yeah, NO.
+
+27 "Christian" (1202649856)
+00:02:35.210 --> 00:02:38.627
+Worries. I'll probably just go off a minute.
+
+28 "Collins, Joshua" (770573056)
+00:02:38.627 --> 00:02:44.848
+Yeah, and I know we're all busy between the new lab that just got assigned and other classes.
+
+29 "Christian" (1202649856)
+00:02:44.848 --> 00:02:51.528
+Yeah. Today is like a cook day I got like 13 h without even going back to the door.
+
+30 "Collins, Joshua" (770573056)
+00:02:51.528 --> 00:03:03.482
+Yeah, NO worries. And good news is based off of everybody else's reaction to me even starting the HTML, we are ahead of schedule.
+
+31 "Christian" (1202649856)
+00:03:03.482 --> 00:03:14.409
+Yeah oh yeah that that was hilarious option. I was like, you guys already started coding and then he just looked at us in this for a week. I was funny. That's good though.
+
+32 "Collins, Joshua" (770573056)
+00:03:14.409 --> 00:03:29.161
+Yeah, it's definitely a good start but yeah is there anything else we need to Oh, considering that's the only thing done right now, I don't think we need to reassign any new tasks.
+
+33 "Christian" (1202649856)
+00:03:29.161 --> 00:03:30.771
+Yeah, we're we're.
+
+34 "Collins, Joshua" (770573056)
+00:03:30.771 --> 00:03:48.969
+Good for now. Yeah, because we're still working on yeah and I'm gonna make a few tweaks to that today. I should have a pull request out by like 03:00 today and when you guys approves it then we can make changes from there.
+
+35 "Christian" (1202649856)
+00:03:48.969 --> 00:03:52.168
+Okay. Yeah.
+
+36 "Collins, Joshua" (770573056)
+00:03:52.168 --> 00:04:03.729
+And but yeah, most of the functionality on that page is pretty bare because I didn't want to add too many things in, that get in the way of Mayas or Adam going forward.
+
+37 "Collins, Joshua" (770573056)
+00:04:07.688 --> 00:04:13.552
+Yeah, so, I mean that's about it for me. Is there anything you guys wanna say?
+
+38 "Christian" (1202649856)
+00:04:13.552 --> 00:04:23.111
+I got really, really nothing. I mean, I didn't really get, I didn't have enough time to really get anything done kind of helping with other classes.
+
+39 "Collins, Joshua" (770573056)
+00:04:23.111 --> 00:04:34.664
+Yeah, yeah. I haven't done anything yet. That that's fine. It I mean to be fair, we're busy and also there was only a two day gap between our last sprint meeting.
+
+40 "Christian" (1202649856)
+00:04:34.664 --> 00:04:41.047
+Yeah, yeah. I'm middle of the week I usually don't get much done like weekend this week.
+
+41 "Collins, Joshua" (770573056)
+00:04:41.047 --> 00:04:50.289
+Absolutely. So, yeah, I guess that's about it to be honest, I mean, I don't think these videos have to be particularly long.
+
+42 "Adam" (136661760)
+00:04:50.289 --> 00:05:00.693
+Yeah I'll text you about like whatever, just like questions and like what we actually want to get done with the login.
+
+43 "Collins, Joshua" (770573056)
+00:05:00.693 --> 00:05:02.711
+Yeah.
+
+44 "Adam" (136661760)
+00:05:02.711 --> 00:05:14.706
+But I don't know I'll probably low key cook on like Friday Saturday because I have to like I I just have a like part of my project due on Friday so.
+
+45 "Collins, Joshua" (770573056)
+00:05:14.706 --> 00:05:18.030
+Cooking. Yeah.
+
+46 "Adam" (136661760)
+00:05:18.030 --> 00:05:23.350
+So, you know, just time management.
+
+47 "Collins, Joshua" (770573056)
+00:05:23.350 --> 00:05:31.177
+Yep, well, I guess with that we're pretty good to just disembark I mean.
+
+48 "Christian" (1202649856)
+00:05:31.177 --> 00:05:34.332
+Yeah, we're good.

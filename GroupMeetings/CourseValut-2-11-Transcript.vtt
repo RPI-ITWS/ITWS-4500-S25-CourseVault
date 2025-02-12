@@ -1,0 +1,417 @@
+WEBVTT
+
+1 "" (0)
+00:00:00.000 --> 00:00:04.853
+Quickly. Yeah, let's.
+
+2 "Collins, Joshua" (532221696)
+00:00:04.853 --> 00:00:05.389
+Bits but like.
+
+3 "Marinkovich, Christian" (1244098560)
+00:00:05.389 --> 00:00:09.532
+So let's do this. So, do you wanna start recording.
+
+4 "Collins, Joshua" (532221696)
+00:00:09.532 --> 00:00:11.831
+Yeah, I recorded I started recording.
+
+5 "Marinkovich, Christian" (1244098560)
+00:00:11.831 --> 00:00:36.151
+Alright, great. So what i've done is I have, what have I done? I've done something. Oh, it's because I'm not running website ****. I don't know what I made, that's what I'm trying to kinda like get to the website to make it like work. Hold on maybe give me 1 s, let me.
+
+6 "Collins, Joshua" (532221696)
+00:00:36.151 --> 00:00:40.891
+Yeah. Yeah, NO dude, I I spent so much time working on that whole.
+
+7 "Marinkovich, Christian" (1244098560)
+00:00:40.891 --> 00:01:12.949
+Mark is so annoying. All right. Okay, so I've made the user like homepage like kind of thing. So like a logged in homepage, with like the the same, it looks the exact like I made the styling for it. I could share my screen looks, it looks like this.
+
+8 "Collins, Joshua" (532221696)
+00:01:12.949 --> 00:01:14.672
+Hello.
+
+9 "Marinkovich, Christian" (1244098560)
+00:01:14.672 --> 00:01:26.010
+Yeah, it's the exact thing that we needed now do ok so I did not make the homepage yet for when the user is not logged in.
+
+10 "Collins, Joshua" (532221696)
+00:01:26.010 --> 00:01:28.372
+Yeah quite yet.
+
+11 "Marinkovich, Christian" (1244098560)
+00:01:28.372 --> 00:01:43.500
+I mean, I probably should. We should probably get started on at least making this the the markup for it. So I think I think that's what I'm gonna do next. I'm gonna try to make the markup for that just, just, you know, so that we have it.
+
+12 "Marinkovich, Christian" (1244098560)
+00:01:43.500 --> 00:01:59.760
+I'm probably just gonna make two different HTML files, so I might actually put this one under user and then I'm gonna have, I think what we should have is have the other one be like under.
+
+13 "Marinkovich, Christian" (1244098560)
+00:01:59.760 --> 00:02:20.480
+Like just the the like the root like HTML. And then, are we, ok, I think this is good. You guys see this. Are we doing, what's it called? Are we doing like two different user types like user and admin? Because I was really thinking we should probably do.
+
+14 "Adam" (1235278848)
+00:02:20.480 --> 00:02:23.040
+Yeah. Yeah, that's what I was going.
+
+15 "Collins, Joshua" (532221696)
+00:02:23.040 --> 00:02:28.904
+Yeah about how he's implementing that.
+
+16 "Marinkovich, Christian" (1244098560)
+00:02:28.904 --> 00:02:49.440
+Alright, I don't know how he's implementing that, but we gotta figure it kind of like how how it's gonna work. We don't necessarily need Mayas I mean we do need Mias obviously but like we don't need to know how backend is gonna work for this. We, we 1st need to figure out like what is the difference between the two? So I think we should have like a discussion about that.
+
+17 "Collins, Joshua" (532221696)
+00:02:49.440 --> 00:02:51.899
+I mean I thought it's just like the admin.
+
+18 "Adam" (1235278848)
+00:02:51.899 --> 00:03:07.511
+I'm trying to think what we did last I shouldn't remember what we did last semester, but it was like essentially like the admin user like can like basically delete or I guess in this case would be like reviews, just go. So so we're gonna have a thing of back.
+
+19 "Marinkovich, Christian" (1244098560)
+00:03:07.511 --> 00:03:10.239
+Work. So and we're also gonna have professor review.
+
+20 "Adam" (1235278848)
+00:03:10.239 --> 00:03:14.336
+Use, right? Yeah, so yeah.
+
+21 "Marinkovich, Christian" (1244098560)
+00:03:14.336 --> 00:03:26.237
+They're gonna be able to add prof, Yeah, they'll be able to add professors on there or I guess like they'll be able to add like entities on.
+
+22 "Adam" (1235278848)
+00:03:26.237 --> 00:03:41.877
+I guess you could say like well do we want it where it's like if you took Opsys with Goldshmid and you were reviewing the class, is that now sent to the admin and the admin has to be like, ok, this works or do you just post it like instagram? And then if it's, if there's something.
+
+23 "Marinkovich, Christian" (1244098560)
+00:03:41.877 --> 00:03:46.298
+That it would get deleted. So the ladder, the ladder is a lot simpler.
+
+24 "Adam" (1235278848)
+00:03:46.298 --> 00:03:53.216
+How to implement and we can just like basically just have the admin be able to delete posts and then that's really it. We don't have to do that.
+
+25 "Marinkovich, Christian" (1244098560)
+00:03:53.216 --> 00:04:21.278
+Ahead of time. Okay, so 1st of all, right? We're gonna have a scheduling thing. So when you make a schedule, you have all these courses. I'm wondering because you know this is how Quax does it. Maybe we don't need an admin for that part. Maybe we could just have like somehow like pull ****, like kind of like how Quax does from like SIS. I think for that stuff we can probably just hard.
+
+26 "Collins, Joshua" (532221696)
+00:04:21.278 --> 00:04:40.299
+Code in that that data in. I don't think that would be the biggest end of the world. Yeah yeah, I was gonna say for at least starting out now, we should probably do like CS back work and then maybe like.
+
+27 "Marinkovich, Christian" (1244098560)
+00:04:40.299 --> 00:04:47.341
+Okay, and then for the backward, do we want students like regular users to be able to upload their own backward?
+
+28 "Adam" (1235278848)
+00:04:47.341 --> 00:04:50.000
+Oh yeah. Okay. Okay.
+
+29 "Marinkovich, Christian" (1244098560)
+00:04:50.000 --> 00:04:51.880
+Great? Yeah, I agree. I.
+
+30 "Adam" (1235278848)
+00:04:51.880 --> 00:04:54.578
+Okay so.
+
+31 "Marinkovich, Christian" (1244098560)
+00:04:54.578 --> 00:04:57.160
+Now, admins are gonna be able to delete.
+
+32 "Adam" (1235278848)
+00:04:57.160 --> 00:05:00.020
+Back work because, you know, in case.
+
+33 "Marinkovich, Christian" (1244098560)
+00:05:00.020 --> 00:05:14.219
+Someone just put some BS on there can also have like a professor. Admins can also add categories. So like let's say like there's a specific class, like.
+
+34 "Adam" (1235278848)
+00:05:14.219 --> 00:05:16.298
+What do we need categories.
+
+35 "Marinkovich, Christian" (1244098560)
+00:05:16.298 --> 00:05:22.694
+Like, ok, for backward, right? Like you're gonna have like backwards separated by like class, right?
+
+36 "Collins, Joshua" (532221696)
+00:05:22.694 --> 00:05:24.580
+Or something.
+
+37 "Marinkovich, Christian" (1244098560)
+00:05:24.580 --> 00:05:41.592
+So like I guess like admins will be able to like edit that like kind of larger scale stuff. Like like users can add backward, maybe admins will be able to edit like the larger scale, like, oh, like I can add a course like for like back, you know, like.
+
+38 "Collins, Joshua" (532221696)
+00:05:41.592 --> 00:05:42.512
+You know what I mean?
+
+39 "Adam" (1235278848)
+00:05:42.512 --> 00:05:45.880
+Yeah. So like if there's like a new course or something.
+
+40 "Collins, Joshua" (532221696)
+00:05:45.880 --> 00:05:57.977
+We focus mostly on the back work aspect cause once we get the back work aspect done, we could then basically copy and paste over the functionality when we get there.
+
+41 "Adam" (1235278848)
+00:05:57.977 --> 00:06:11.518
+Yeah, I also don't think like we I really don't think we have to worry about what Admins do right now I mean like we like last semester, we did that like at the end, and it was completely fine. Like, I mean last semester I spent the entire like.
+
+42 "Marinkovich, Christian" (1244098560)
+00:06:11.518 --> 00:06:25.634
+I spent like more like half the semester just coding the admin part. Like I spent a huge majority of my time just working on the admin like stuff because nobody else wanted to do it. So it takes a while, I don't know.
+
+43 "Collins, Joshua" (532221696)
+00:06:25.634 --> 00:06:27.798
+But it depends, right?
+
+44 "Adam" (1235278848)
+00:06:27.798 --> 00:06:32.833
+I mean I can I can try to look to see how we did it if we did something.
+
+45 "Adam" (1235278848)
+00:06:33.374 --> 00:06:36.513
+Yeah.
+
+46 "Collins, Joshua" (532221696)
+00:06:36.513 --> 00:06:53.914
+Yeah, and here, here's my idea of basically for the, the backward if you if you look at the whiteboard, so this would be like our users Brian might don't mind my.
+
+47 "Marinkovich, Christian" (1244098560)
+00:06:53.914 --> 00:07:09.695
+Bad spelling. Also bro, just send this in like the discord too. Or you know what? Just add this to like the VM bro, add this to the VM. I'm like convinced that we're never gonna get our freaking group chats. I mean, I don't know how I ended up in the capstone group.
+
+48 "Adam" (1235278848)
+00:07:09.695 --> 00:07:14.974
+Group chat before I ended. I don't know how he hasn't ******* made it yet, like whether be in the caps.
+
+49 "Marinkovich, Christian" (1244098560)
+00:07:14.974 --> 00:07:19.174
+And I'm like, ok bro that that wasn't the team that I was supposed to be on. I understand how he.
+
+50 "Adam" (1235278848)
+00:07:19.174 --> 00:07:26.592
+Can't go manually through cause everyone is assigned, right? The role, the role? Am I wrong? Like, I'm pretty sure we have like team whatever the **** role.
+
+51 "Marinkovich, Christian" (1244098560)
+00:07:26.592 --> 00:07:29.211
+I don't know I guess I'm a capstone now. He.
+
+52 "Adam" (1235278848)
+00:07:29.211 --> 00:07:40.033
+Like here. Okay I guess I'm not, but he can literally go through the web science like manually and just make group chats at this point. Like it's been a month and a half.
+
+53 "Marinkovich, Christian" (1244098560)
+00:07:40.033 --> 00:07:44.955
+Yeah, but like I could do that **** if I had admin like in 3 s, it's not that hard.
+
+54 "Collins, Joshua" (532221696)
+00:07:44.955 --> 00:08:04.445
+Yeah, so maybe we users can click, like, click here, click here, click here, click here to get access to the document itself, to get access to the document. Admins can do the same, but they also are given this little button right here.
+
+55 "Marinkovich, Christian" (1244098560)
+00:08:04.445 --> 00:08:06.972
+At the corner of each one basically.
+
+56 "Collins, Joshua" (532221696)
+00:08:06.972 --> 00:08:12.734
+I mean so if they click it, that'll get, that will get scrubbed from the database.
+
+57 "Adam" (1235278848)
+00:08:12.734 --> 00:08:14.115
+Yeah.
+
+58 "Collins, Joshua" (532221696)
+00:08:14.115 --> 00:08:21.654
+That's fine. And, at 1st we just gotta make sure it works and then afterwards for now.
+
+59 "Marinkovich, Christian" (1244098560)
+00:08:21.654 --> 00:08:41.889
+I think when we start building, we're gonna realize more and more things that the admins need to do. So I think for now we should focus on the user but like once we get like to March I'm probably gonna like I could probably start like writing stuff for admins. Yeah. Like we can start figuring that out more.
+
+60 "Adam" (1235278848)
+00:08:41.889 --> 00:08:43.615
+We can start getting.
+
+61 "Collins, Joshua" (532221696)
+00:08:43.615 --> 00:09:03.224
+Because here's here's the issue right now we don't have a database, so we're gonna be basically storing everything in JSON. The downside about that is, well, I'm guessing the way this will work, I also I can also see us doing something like this where it's like blessed.
+
+62 "Adam" (1235278848)
+00:09:03.224 --> 00:09:13.644
+At the very least we can just have like dummy, like you said, like a dummy JSON for the midterm break cause that's in what two and a half weeks?
+
+63 "Marinkovich, Christian" (1244098560)
+00:09:13.644 --> 00:09:30.992
+Last week it said ok that actually looks really good. I actually like what you're going with. I think it's good. I know exactly what you're going for and I like it. Send that in the thing cause I I know what I could do with that. We could have like a back arrow on the other side that like you could go back to see the list of classes.
+
+64 "Collins, Joshua" (532221696)
+00:09:30.992 --> 00:09:40.432
+And all that. Yeah yeah yeah good ****. That's good ****. All right. Yeah, basically these will just send you to the adding version of.
+
+65 "Marinkovich, Christian" (1244098560)
+00:09:40.432 --> 00:09:44.178
+To this page. Yeah, and you could, you could add stuff and then there'll be like a category.
+
+66 "Collins, Joshua" (532221696)
+00:09:44.178 --> 00:10:01.991
+Yeah yeah like class category and then like insert PDF or whatever and then you go down. Then you submit it and it goes and then it should appear like right here.
+
+67 "Marinkovich, Christian" (1244098560)
+00:10:01.991 --> 00:10:03.750
+Yeah, good stuff.
+
+68 "Adam" (1235278848)
+00:10:03.750 --> 00:10:20.553
+I agree. So what you said about the back arrow, do we want it to list out like in how like it's a list, like you can ITWS management, math, whatever or do we not want to do that and or do you guys like know catalog the thing that like you can see like.
+
+69 "Marinkovich, Christian" (1244098560)
+00:10:20.553 --> 00:10:22.670
+History of it never used quite a lot.
+
+70 "Adam" (1235278848)
+00:10:22.670 --> 00:10:28.871
+Look, but ******* Jean showed it to me doing like an advisory meeting, but it doesn't have that. It's literally just a search bar.
+
+71 "Marinkovich, Christian" (1244098560)
+00:10:28.871 --> 00:10:32.150
+And like, oh, I gotta meet with her, I think.
+
+72 "Collins, Joshua" (532221696)
+00:10:32.150 --> 00:11:02.005
+Yeah, we should probably focus, that should probably be what our schedule is, is like a mix of catalog and what's it called and quacks. So it shows you the schedule and it also says click here to go to backwark or click here to go to professors. Basically, once we get this page done, we can then work on schedule and then professors because ultimately what we're gonna have is scheduling is gonna lead you to professors into backwards.
+
+73 "Adam" (1235278848)
+00:11:02.005 --> 00:11:12.912
+Work. So essentially right now we're just we're just focusing on making the pages, getting them least like I'm not gonna call them operational, but you know like at the backward page we'll have like four, like, which is.
+
+74 "Collins, Joshua" (532221696)
+00:11:12.912 --> 00:11:14.395
+Hard coded like yeah.
+
+75 "Adam" (1235278848)
+00:11:14.395 --> 00:11:18.168
+Whatever and then do that for the midstrim presentation and then actually do the.
+
+76 "Collins, Joshua" (532221696)
+00:11:18.168 --> 00:11:22.833
+Yeah, and probably we don't have to do right now is yeah.
+
+77 "Adam" (1235278848)
+00:11:22.833 --> 00:11:26.069
+They just work. Okay, my guess is, yeah.
+
+78 "Collins, Joshua" (532221696)
+00:11:26.069 --> 00:11:34.255
+So, good news is this is on the whiteboard, so when I put this video in, we'll be good. Let me get a new whiteboard real quick.
+
+79 "Adam" (1235278848)
+00:11:34.255 --> 00:11:38.673
+Yeah, I think we have.
+
+80 "Collins, Joshua" (532221696)
+00:11:38.673 --> 00:11:56.095
+Potentially? Yeah, so when **** I was gonna I just yeah but whoa, on the recording? I'm sorry Sorry.
+
+81 "Adam" (1235278848)
+00:11:56.095 --> 00:11:59.215
+But you said that in the, right?
+
+82 "Collins, Joshua" (532221696)
+00:11:59.215 --> 00:12:04.155
+No? Don't worry, I'll I'll I'll do a nicer one.
+
+83 "Marinkovich, Christian" (1244098560)
+00:12:04.155 --> 00:12:11.415
+Tomorrow. All right bro. Just make sure to know that was really good. I don't care how ugly that looked. I actually, you gave me an idea and I'm happy with the idea.
+
+84 "Collins, Joshua" (532221696)
+00:12:11.415 --> 00:12:33.101
+Yeah, so right now what we'll probably have to do at least in terms of storage until we get MongoDB taught to us, is we'll probably have some kind of a Json like this. You'll, you'll have like the, the clar whatever let me let me come in here.
+
+85 "Collins, Joshua" (532221696)
+00:12:33.795 --> 00:12:43.840
+So you'll have like class or sorry, you have, you have like department.
+
+86 "Collins, Joshua" (532221696)
+00:12:45.597 --> 00:12:48.869
+Class.
+
+87 "Collins, Joshua" (532221696)
+00:12:48.869 --> 00:13:07.049
+And then it would be like tests, homework, and what these are is they'll send you a, absolute link to the.
+
+88 "Collins, Joshua" (532221696)
+00:13:07.049 --> 00:13:22.409
+Yeah basic, basically we'll give you like an absolute link to the to the back work where you can download it as a PDF, I guess for right now. We'll find some way to do that that way basically.
+
+89 "Collins, Joshua" (532221696)
+00:13:22.409 --> 00:13:46.016
+But that way basically when we, when you click on that button, we can have some kind of a get request that fetches that, that link for you and sends it to you and then you can pull it up and get it and then or whatever. We'll we'll try to find some way to to actually like physically give the user the, the document.
+
+90 "Adam" (1235278848)
+00:13:46.016 --> 00:13:49.319
+Huh.
+
+91 "Collins, Joshua" (532221696)
+00:13:49.319 --> 00:13:52.038
+If that makes any sense.
+
+92 "Adam" (1235278848)
+00:13:52.038 --> 00:13:54.077
+That sounds fun.
+
+93 "Collins, Joshua" (532221696)
+00:13:54.077 --> 00:14:07.198
+Yeah, at least until we get MongoDB, so, I mean I think we're in a good spot. I think we're ahead of a lot of other teams in terms of what we have done.
+
+94 "Adam" (1235278848)
+00:14:07.198 --> 00:14:09.040
+We have three guys.
+
+95 "Collins, Joshua" (532221696)
+00:14:09.040 --> 00:14:27.935
+Yeah, I mean, we just need yeah so next when we get into class tomorrow let's talk with Mayas, let's try and get him on a timeline so that when we do have to basically right here's the thing I don't know how reliable Mayas is right now.
+
+96 "Marinkovich, Christian" (1244098560)
+00:14:27.935 --> 00:14:31.791
+So I don't know where is he, is he our like he's kinda.
+
+97 "Collins, Joshua" (532221696)
+00:14:31.791 --> 00:14:48.589
+Like yeah also just remember this is gonna go on the website so he can see this as well. But I'm just gonna say if he continues to miss, we're gonna have to set him up for like, ok, you're doing tasks X Y, and z, we need them done by a certain day.
+
+98 "Collins, Joshua" (532221696)
+00:14:48.589 --> 00:14:55.477
+If they're not done by a certain date, we're gonna either have to talk to them or faster or pick up the work on our own.
+
+99 "Marinkovich, Christian" (1244098560)
+00:14:55.477 --> 00:15:03.537
+Yeah, I'm not really looking forward to like picking up the work cause we already got like four people, so we're gonna need everyone to be on board, like even missing one.
+
+100 "Adam" (1235278848)
+00:15:03.537 --> 00:15:07.159
+One meeting is like, I mean, that would be fun, I mean.
+
+101 "Collins, Joshua" (532221696)
+00:15:07.159 --> 00:15:11.853
+Yeah and have like bigger.
+
+102 "Marinkovich, Christian" (1244098560)
+00:15:11.853 --> 00:15:16.597
+Issues probably NO I, I believe it. I don't think we'll have any issues. I just don't.
+
+103 "Collins, Joshua" (532221696)
+00:15:16.597 --> 00:15:36.694
+Yeah, NO, I mean he seems sincere about why he's not here. So, I mean unless it, here's the thing, if it continues to be a problem, we'll find a solution. Yeah. And with that said I'll let you guys go it's getting late I need to.
+
+104 "Marinkovich, Christian" (1244098560)
+00:15:36.694 --> 00:15:39.989
+Get to take off, but.
