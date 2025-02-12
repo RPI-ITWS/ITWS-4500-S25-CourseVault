@@ -1,0 +1,537 @@
+WEBVTT
+
+1 "Collins, Joshua" (205225984)
+00:00:00.000 --> 00:00:04.279
+Now everybody's here. Is, are, is everybody at their computer?
+
+2 "Marinkovich, Christian" (2876923136)
+00:00:04.279 --> 00:00:07.884
+Yeah. Okay.
+
+3 "Collins, Joshua" (205225984)
+00:00:07.884 --> 00:00:24.920
+So, with this is the 1st official scrum or meeting we have and do we do we know if we if we can use PHP or do we wanna stick mainly to H HTML?
+
+4 "Marinkovich, Christian" (2876923136)
+00:00:24.920 --> 00:00:35.800
+I mean, aren't we sticking to like the new stack, like the mergen stack? So like, wouldn't back end just be like in like node?
+
+5 "Thomas, Mius" (2222648832)
+00:00:35.800 --> 00:00:40.560
+Yeah, if we're using express, we don't need PHP.
+
+6 "Marinkovich, Christian" (2876923136)
+00:00:40.560 --> 00:00:42.960
+Yeah, that's what I'm saying.
+
+7 "Collins, Joshua" (205225984)
+00:00:42.960 --> 00:00:50.523
+Okay, cause I was just curious about how we're gonna like start like sessions to remember who the person is.
+
+8 "Marinkovich, Christian" (2876923136)
+00:00:50.523 --> 00:00:57.843
+We'll figure that out in like node hopefully. We can we can probably node.
+
+9 "Thomas, Mius" (2222648832)
+00:00:57.843 --> 00:01:23.502
+There's a react thing called like context, like basically you can like keep variables like client wide, and like I pretty much over the summer I built something like doing like a login system using context, you can just check pretty much from any like component. So it should be true, yeah. Don't worry.
+
+10 "Collins, Joshua" (205225984)
+00:01:23.502 --> 00:01:37.722
+Got it. So will we basically be setting up like, what's it called? A, so in our public folder we'll have our main page, then do we basically treat that as the route and then start making all of our folders in there?
+
+11 "Marinkovich, Christian" (2876923136)
+00:01:37.722 --> 00:01:41.938
+Well, our homepage will be the route, right?
+
+12 "Collins, Joshua" (205225984)
+00:01:41.938 --> 00:01:49.199
+Yeah, but what I'm saying is like, in the public, is the public folder like where we start as like our topmost like.
+
+13 "Marinkovich, Christian" (2876923136)
+00:01:49.199 --> 00:01:51.605
+Double and then we can Yes yes, that is our top most low.
+
+14 "Collins, Joshua" (205225984)
+00:01:51.605 --> 00:01:53.262
+Well, I mean it has to be.
+
+15 "Marinkovich, Christian" (2876923136)
+00:01:53.262 --> 00:01:57.301
+Yeah, NO choice, so.
+
+16 "Collins, Joshua" (205225984)
+00:01:57.301 --> 00:02:03.919
+Yeah, I just wanted to clarify cause I have not used Express outside of the past lab, so.
+
+17 "Marinkovich, Christian" (2876923136)
+00:02:03.919 --> 00:02:09.582
+Yeah well that has to cause the way Express works, we have to use that public fold.
+
+18 "Collins, Joshua" (205225984)
+00:02:09.582 --> 00:02:23.282
+Yeah that'll be and from our link that public folder will be admitted, so I'd say with this week let's start with the login and the main page.
+
+19 "Marinkovich, Christian" (2876923136)
+00:02:23.282 --> 00:02:28.083
+Okay. So.
+
+20 "Collins, Joshua" (205225984)
+00:02:28.083 --> 00:02:32.343
+People the sign up page is gonna be just as just as much.
+
+21 "Marinkovich, Christian" (2876923136)
+00:02:32.343 --> 00:02:39.443
+I know we have to utilize like the GitHub projects, right? Do we want to set up like a thing for that?
+
+22 "Collins, Joshua" (205225984)
+00:02:39.443 --> 00:02:46.359
+Yeah, we can set let's set that up right now. How do you want to split up the work, by the way?
+
+23 "Marinkovich, Christian" (2876923136)
+00:02:46.359 --> 00:02:55.799
+Like the, the tasks, I guess, because there's four of us.
+
+24 "Collins, Joshua" (205225984)
+00:02:55.799 --> 00:02:59.896
+Make it a.
+
+25 "Adam" (8041984)
+00:02:59.896 --> 00:03:13.658
+Or can someone like write out and chat what we're doing this week and then like we can visualize it?
+
+26 "Collins, Joshua" (205225984)
+00:03:16.854 --> 00:03:24.055
+Okay, let me I just I'm creating the project right now in GitHub, ok? So it's called course vault agenda.
+
+27 "Marinkovich, Christian" (2876923136)
+00:03:24.055 --> 00:03:48.637
+Okay, where in the world is ours? Oh NO there it is. Okay.
+
+28 "Collins, Joshua" (205225984)
+00:03:48.637 --> 00:03:55.616
+Okay, so, let's start off with.
+
+29 "Marinkovich, Christian" (2876923136)
+00:03:55.616 --> 00:04:03.820
+Also we need to take meeting notes, right? So do you want to put that in like, do we need to take meeting notes?
+
+30 "Collins, Joshua" (205225984)
+00:04:03.820 --> 00:04:23.601
+No, we can we can use the transcript from this. So every week I'll basically take these videos and the transcripts and put them into our repo folder into our repo. There's a folder called I think it's called like meetings or something.
+
+31 "Marinkovich, Christian" (2876923136)
+00:04:23.601 --> 00:04:33.844
+Okay, like scrum logs or whatever. Yes. Okay, I'll do that then.
+
+32 "Collins, Joshua" (205225984)
+00:04:33.844 --> 00:04:45.119
+Yeah.
+
+33 "Collins, Joshua" (205225984)
+00:04:45.119 --> 00:05:05.119
+Let's say sign up HTML and CSS, and then we we can say like.
+
+34 "Collins, Joshua" (205225984)
+00:05:05.119 --> 00:05:20.041
+And then so for the front end, we're gonna take homepage login and sign up. Mayas, do you want to take the, do you want to do the login through the the back end for right now.
+
+35 "Marinkovich, Christian" (2876923136)
+00:05:20.041 --> 00:05:22.604
+Now, I could do the homepage.
+
+36 "Collins, Joshua" (205225984)
+00:05:22.604 --> 00:05:26.981
+Okay and then I'll help with the login and sign up and then Adam can also help me with that.
+
+37 "Adam" (8041984)
+00:05:26.981 --> 00:05:28.843
+Okay.
+
+38 "Marinkovich, Christian" (2876923136)
+00:05:28.843 --> 00:05:40.680
+So how are we, are we doing this in react right now? Cause I know react is like a front end tool, so are we gonna use it right away or are we just gonna do this in HTML for now and then kind of put it into React later on?
+
+39 "Collins, Joshua" (205225984)
+00:05:40.680 --> 00:05:43.123
+I mean it's a 1st draft to send.
+
+40 "Adam" (8041984)
+00:05:43.123 --> 00:05:46.762
+Sure, I mean I'm not very familiar with reactive you guys are.
+
+41 "Marinkovich, Christian" (2876923136)
+00:05:46.762 --> 00:05:49.698
+So how do we wanna, how do we wanna go about this?
+
+42 "Collins, Joshua" (205225984)
+00:05:49.698 --> 00:06:11.079
+I mean if we can find a react template that aligns with what we want, like especially with that vertical bar on the side, I say we can go ahead and and we can do some looking into seeing what works well with what we need. Have you used React at all? I've used it a bit.
+
+43 "Marinkovich, Christian" (2876923136)
+00:06:11.079 --> 00:06:19.463
+For like our PI, but that's about it. So I don't know I don't know how we want to start this like cause I know like for right now we're just doing the front end, right?
+
+44 "Collins, Joshua" (205225984)
+00:06:19.463 --> 00:06:27.666
+Yeah, I mean, for right now, let's say let's come up with a decent front end draft and then if we want to then explore React in the.
+
+45 "Marinkovich, Christian" (2876923136)
+00:06:27.666 --> 00:06:37.799
+Last semester he wanted us to have our front end done, like by the or like have like a front end to display by the midterm presentation.
+
+46 "Marinkovich, Christian" (2876923136)
+00:06:38.343 --> 00:06:55.039
+Yeah, so we need to focus on front end. We don't really have to worry about functionality like specific functionality and backend. We just need to have all the pages done and have them all be linked and have them like be able to display something meaningful on each page.
+
+47 "Collins, Joshua" (205225984)
+00:06:55.039 --> 00:07:29.715
+Yeah, and so yeah yeah I think that's a good 1st step. So I mean if you want to use react, you can. I mean probably for like our it'll probably be main mainly used for like that the bar, the or whatever the the navigation bar on the far left just to keep everything the same since you're making the homepage, whatever you decide the bar is, is gonna be what the bar is, so that you can go ahead.
+
+48 "Marinkovich, Christian" (2876923136)
+00:07:29.715 --> 00:07:33.616
+Alright. Yeah, that's just like a react component.
+
+49 "Collins, Joshua" (205225984)
+00:07:33.616 --> 00:07:40.436
+Yeah, whatever you do copy it to the other pages to make it the same.
+
+50 "Marinkovich, Christian" (2876923136)
+00:07:40.436 --> 00:07:55.536
+Yeah, cause you could, with reacts, from what I remember, you could make components so we could have the nav bar be one component and then you guys can just use that component like an HTML component in all the other pages and it's simple like.
+
+51 "Collins, Joshua" (205225984)
+00:07:55.536 --> 00:08:10.094
+Yeah, cause I will say my group last semester, they had one P they had a folder called like template for the for the navigation bar at the top, and then we just copied that over into our PHP every time.
+
+52 "Marinkovich, Christian" (2876923136)
+00:08:10.094 --> 00:08:13.422
+Yeah, you don't have to do that with react. You can just use a component.
+
+53 "Collins, Joshua" (205225984)
+00:08:13.422 --> 00:08:16.116
+Yeah, pretty sure, so.
+
+54 "Marinkovich, Christian" (2876923136)
+00:08:16.116 --> 00:08:27.859
+It's just I don't know how to really get that all set up. That's, that's the only issue with react. Cause he hasn't really showed us React and I don't know when he is gonna show us react.
+
+55 "Collins, Joshua" (205225984)
+00:08:27.859 --> 00:08:32.176
+Let me check the LMS real quick to see if he has a schedule.
+
+56 "Marinkovich, Christian" (2876923136)
+00:08:32.176 --> 00:08:35.753
+Cause that could be a thing.
+
+57 "Collins, Joshua" (205225984)
+00:08:35.753 --> 00:08:45.674
+Yeah, I would say if it comes up this week or next week, we can definitely start focusing on it now. But if it's something where we're not gonna touch it until halfway through this.
+
+58 "Marinkovich, Christian" (2876923136)
+00:08:45.674 --> 00:09:02.956
+I don't know why he would do that, though. That would be a stupid thing considering like we all said we were gonna use react. Okay, so he kind of, he is actually what I can see, but we're also behind schedules, so I don't know.
+
+59 "Collins, Joshua" (205225984)
+00:09:02.956 --> 00:09:05.412
+Yeah, it's supposed to start.
+
+60 "Marinkovich, Christian" (2876923136)
+00:09:05.412 --> 00:09:09.732
+It's supposed to start around live floor, which is kinda not good.
+
+61 "Collins, Joshua" (205225984)
+00:09:09.732 --> 00:09:10.916
+So, yeah.
+
+62 "Marinkovich, Christian" (2876923136)
+00:09:10.916 --> 00:09:15.077
+I don't I don't know. I don't know man, the schedule is hard to read.
+
+63 "Collins, Joshua" (205225984)
+00:09:15.077 --> 00:09:24.174
+Yeah, let's see, so we did our introductions. We did lab one, we did not do lab two.
+
+64 "Adam" (8041984)
+00:09:24.174 --> 00:09:27.174
+Yeah, we'll have twos on Tuesday. Yeah.
+
+65 "Marinkovich, Christian" (2876923136)
+00:09:27.174 --> 00:09:32.836
+So I don't know. I, I hope he covers it this upcoming week.
+
+66 "Collins, Joshua" (205225984)
+00:09:32.836 --> 00:09:43.496
+Mobile development. I thought Is it mobile development basically just if your screen size is under a certain size, go with this layout. Yeah, something like that.
+
+67 "Marinkovich, Christian" (2876923136)
+00:09:43.496 --> 00:09:45.253
+We could figure that. That's, like a later issue.
+
+68 "Collins, Joshua" (205225984)
+00:09:45.253 --> 00:09:53.637
+Yeah, and that that's that's where a react could smooth it out because if we could find a template that does already automatically do that, that will.
+
+69 "Marinkovich, Christian" (2876923136)
+00:09:53.637 --> 00:09:59.117
+Give us a little bit of time. How do we set up React for like our project? That's what I don't.
+
+70 "Collins, Joshua" (205225984)
+00:09:59.117 --> 00:10:00.812
+Let me.
+
+71 "Marinkovich, Christian" (2876923136)
+00:10:00.812 --> 00:10:30.574
+That's what I don't know and that's like what like he should kind of be helping us with. That's why I wish we just covered React now.
+
+72 "Collins, Joshua" (205225984)
+00:10:51.790 --> 00:11:06.166
+Okay, I see. Yeah, it's gonna be a little funky in Node.js, at least compared to what I've seen, but I can send you the this web.
+
+73 "Marinkovich, Christian" (2876923136)
+00:11:06.166 --> 00:11:15.385
+I mean, I don't know me personally, I'm kind of down to just do it in like raw HTML for now and then like wait till these like shows us react and then we'll.
+
+74 "Collins, Joshua" (205225984)
+00:11:15.385 --> 00:11:18.906
+Yeah, we could do that. Hopefully be able to easily convert it to.
+
+75 "Marinkovich, Christian" (2876923136)
+00:11:18.906 --> 00:11:31.550
+React later cause most of it is just like I'm pretty sure I I don't know exactly how it works, but I mean a lot of it's just like returning HTML and it's not like too complicated, so.
+
+76 "Collins, Joshua" (205225984)
+00:11:31.550 --> 00:11:40.450
+Yeah, and you know how to, you know what we're, we're gonna follow Minus's wire frames if you remember what they.
+
+77 "Marinkovich, Christian" (2876923136)
+00:11:40.450 --> 00:11:46.048
+They look like. Yeah, I remember what they looked like. But I think for now we should just do like the standard HTML.
+
+78 "Collins, Joshua" (205225984)
+00:11:46.048 --> 00:11:47.804
+And CSS.
+
+79 "Marinkovich, Christian" (2876923136)
+00:11:47.804 --> 00:11:56.085
+And then we could, we could, incorporate react into it later.
+
+80 "Collins, Joshua" (205225984)
+00:11:56.085 --> 00:11:57.246
+When.
+
+81 "Marinkovich, Christian" (2876923136)
+00:11:57.246 --> 00:12:00.565
+When we when he actually shows us how to use it.
+
+82 "Collins, Joshua" (205225984)
+00:12:00.565 --> 00:12:02.327
+Yeah.
+
+83 "Marinkovich, Christian" (2876923136)
+00:12:02.327 --> 00:12:08.826
+So that we are consistent, but for now I think we should just do standard HTML and CSS.
+
+84 "Collins, Joshua" (205225984)
+00:12:08.826 --> 00:12:15.448
+So that's that's what I'm gonna do for the front end for now because I don't know when he'll.
+
+85 "Marinkovich, Christian" (2876923136)
+00:12:15.448 --> 00:12:18.426
+Yeah, I think that's a good thing to do.
+
+86 "Collins, Joshua" (205225984)
+00:12:18.426 --> 00:12:26.207
+So, for right now, you'll handle the front end. Adam and I will handle the at least you'll handle the front end for the.
+
+87 "Marinkovich, Christian" (2876923136)
+00:12:26.207 --> 00:12:27.929
+The homepage.
+
+88 "Collins, Joshua" (205225984)
+00:12:27.929 --> 00:12:35.390
+Like Adam and I will do login and startup end for that should be pretty simple. All you really have to do is make a form, so. Yeah.
+
+89 "Marinkovich, Christian" (2876923136)
+00:12:35.390 --> 00:12:40.728
+That one, that one is just a form, I mean the nav bar you'll just copy from what I make.
+
+90 "Collins, Joshua" (205225984)
+00:12:40.728 --> 00:12:41.747
+Yeah.
+
+91 "Marinkovich, Christian" (2876923136)
+00:12:41.747 --> 00:12:49.573
+When do we like when is do we want to have this done by like next week kind of stuff? Like, like we got a week, like maybe by next Sunday?
+
+92 "Collins, Joshua" (205225984)
+00:12:49.573 --> 00:13:10.587
+So, you'll, you'll come up with your idea. Adam and I will kind of come up with our, own idea. We'll then compare about which front and we like more. If we like your front and more, we'll then just copy our, like the core content that we have on our pages over to your template and just go from there.
+
+93 "Marinkovich, Christian" (2876923136)
+00:13:10.587 --> 00:13:11.968
+Okay.
+
+94 "Collins, Joshua" (205225984)
+00:13:11.968 --> 00:13:15.484
+I mean like in terms of like CSS and layout.
+
+95 "Marinkovich, Christian" (2876923136)
+00:13:15.484 --> 00:13:19.808
+So Wednesday is more of like a progress and like.
+
+96 "Adam" (8041984)
+00:13:19.808 --> 00:13:42.233
+Yeah, about doing that. And that's pretty much it. Yeah cause I was gonna say like, well, I mean I can probably work on it a little bit with you Josh this week but like I'm usually very busy until Wednesday. It's like, I'd like to do more work after that. But I'm a little light this week, so. All right.
+
+97 "Marinkovich, Christian" (2876923136)
+00:13:42.233 --> 00:13:55.285
+So, I mean, yeah, we'll just like talk about progress. I mean the Wednesday meeting should be really short because Iloki have like it should be like under 30 min kind of stuff.
+
+98 "Adam" (8041984)
+00:13:55.285 --> 00:14:03.230
+Aren't these not allowed to be more than like 30 min or something? He said there's a timeline on these. I wasn't making that up.
+
+99 "Collins, Joshua" (205225984)
+00:14:03.230 --> 00:14:08.928
+I, I thought it was around a 20 min, like 15 to 20 min was.
+
+100 "Marinkovich, Christian" (2876923136)
+00:14:08.928 --> 00:14:13.828
+Like the sweet spot. Yeah, whatever, like 15 to 20 min it really should be like in that timeframe.
+
+101 "Collins, Joshua" (205225984)
+00:14:13.828 --> 00:14:27.371
+Yeah, so I'll, yeah, let me finish adding the last, and then yeah once we get those pages then Mayas can do his login features.
+
+102 "Marinkovich, Christian" (2876923136)
+00:14:27.371 --> 00:14:31.808
+Alright.
+
+103 "Adam" (8041984)
+00:14:31.808 --> 00:14:33.290
+Then we're good.
+
+104 "Marinkovich, Christian" (2876923136)
+00:14:33.290 --> 00:14:37.388
+Do we wanna assign tasks? Hold on.
+
+105 "Collins, Joshua" (205225984)
+00:14:37.388 --> 00:14:40.547
+There's a, there's a way to assign tasks.
+
+106 "Marinkovich, Christian" (2876923136)
+00:14:40.547 --> 00:14:50.992
+Like that and then I guess it's high priority and it's like pretty big, like that.
+
+107 "Collins, Joshua" (205225984)
+00:14:50.992 --> 00:14:52.812
+Oh, oh yeah, how did you.
+
+108 "Marinkovich, Christian" (2876923136)
+00:14:52.812 --> 00:14:58.028
+Do that. You click on it and then you see on the side there's a bunch of options.
+
+109 "Collins, Joshua" (205225984)
+00:14:58.028 --> 00:15:01.632
+Options. Okay, let me.
+
+110 "Marinkovich, Christian" (2876923136)
+00:15:01.632 --> 00:15:26.910
+Start date today, end date, whatever. There we go.
+
+111 "Collins, Joshua" (205225984)
+00:15:26.910 --> 00:15:46.310
+Okay, let's get this done by, let's say that then Adam, add yourself to the the two that that the sign up and login on the project page.
+
+112 "Adam" (8041984)
+00:15:46.310 --> 00:15:49.546
+Okay, I'll I'll do that. No NO I get to.
+
+113 "Collins, Joshua" (205225984)
+00:15:49.546 --> 00:15:54.088
+Yeah, NO worries. I I just don't have your, your GitHub username.
+
+114 "Adam" (8041984)
+00:15:54.088 --> 00:15:59.689
+Yeah, I think my laptop's slow downstairs, I feel like retrieved them.
+
+115 "Collins, Joshua" (205225984)
+00:15:59.689 --> 00:16:03.913
+No, NO worries.
+
+116 "Marinkovich, Christian" (2876923136)
+00:16:03.913 --> 00:16:21.832
+Do you guys also want me to just get like the general, like, nodes stuff set up? I could probably try doing that today like you know how we had for lab one the git ignore and the server.JS and all that stuff, like have node be kind of like installed? I could probably figure that out maybe.
+
+117 "Collins, Joshua" (205225984)
+00:16:21.832 --> 00:16:32.868
+Yeah try and get that figured out, that way we can as fast as possible kind of get off onto the, get off on the right foot.
+
+118 "Marinkovich, Christian" (2876923136)
+00:16:32.868 --> 00:16:35.471
+Alright, I'll do that today then.
+
+119 "Collins, Joshua" (205225984)
+00:16:35.471 --> 00:16:52.706
+Yeah, and then once we get that all set up, I'll, I'll go back and look at my previous group to see how they implemented a workflow. That way any push we make to the main branch will automatically update the VM.
+
+120 "Marinkovich, Christian" (2876923136)
+00:16:52.706 --> 00:16:54.249
+Alright.
+
+121 "Collins, Joshua" (205225984)
+00:16:54.249 --> 00:17:07.157
+Oh, also, Christian, I tried to log in and it's telling me I was not the right user. Could you try and change my, username, the, the name of the user to.
+
+122 "Marinkovich, Christian" (2876923136)
+00:17:07.157 --> 00:17:08.634
+I could try.
+
+123 "Collins, Joshua" (205225984)
+00:17:08.634 --> 00:17:10.075
+Yeah, I.
+
+124 "Marinkovich, Christian" (2876923136)
+00:17:10.075 --> 00:17:12.897
+Send me a message, send, send me a message.
+
+125 "Collins, Joshua" (205225984)
+00:17:12.897 --> 00:17:13.821
+Yeah.
+
+126 "Marinkovich, Christian" (2876923136)
+00:17:13.821 --> 00:17:15.575
+Yeah. Oh, is that why.
+
+127 "Collins, Joshua" (205225984)
+00:17:15.575 --> 00:17:21.494
+Yeah, that's why. Oh ****. No worries. Okay.
+
+128 "Marinkovich, Christian" (2876923136)
+00:17:21.494 --> 00:17:23.737
+Yeah, I will do that.
+
+129 "Collins, Joshua" (205225984)
+00:17:23.737 --> 00:17:26.017
+Thank you Bra.
+
+130 "Marinkovich, Christian" (2876923136)
+00:17:26.017 --> 00:17:31.896
+I'll do that. I'll do that like in like a few next few hours should be done by like then.
+
+131 "Marinkovich, Christian" (2876923136)
+00:17:31.896 --> 00:17:36.579
+And then I'll have all that set up. Alright, we're good for this meeting then, right?
+
+132 "Collins, Joshua" (205225984)
+00:17:36.579 --> 00:17:41.338
+Yes. Any questions from anybody else?
+
+133 "Thomas, Mius" (2222648832)
+00:17:41.338 --> 00:17:43.458
+Nope, all good. Nope.
+
+134 "Collins, Joshua" (205225984)
+00:17:43.458 --> 00:17:45.348
+All good. All good.
