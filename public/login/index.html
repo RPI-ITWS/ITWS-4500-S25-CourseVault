@@ -1,65 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Vault - Login</title>
-    <link rel="stylesheet" href="../resources/style.css">
-    <script defer src="../resources/script.js"></script>
-    <link rel="stylesheet" href="./assets/login.css">
-    <script defer src="./assets/login.js"></script>
-</head>
-<body>
-    <div id="page">
-        <div id="navbar">
-            <div id="homeButton" class="nav-tab">
-                <h3>Home</h3>
-            </div>
-            <div id="backworkButton" class="nav-tab">
-                <h3>Backwork</h3>
-            </div>
-            <div id="profButton" class="nav-tab">
-                <h3>Professors</h3>
-            </div>
-            <div id="classesButton" class="nav-tab">
-                <h3>Classes</h3>
-            </div>
-            <div id="moreButton" class="nav-tab">
-                <img src="./assets/photos/menu.png" alt="ClickForMore" id = "icon">
-                <div id="dropdownMenu">
-                    <div class="dropdown-item">
-                        <h3>Profile</h3>
-                    </div>
-                    <div class="dropdown-item" onclick="window.location.href='./index.html'">
-                        <h3>Login</h3>
-                    </div>
-                    <div class="dropdown-item">
-                        <h3>Signup</h3>
-                    </div>
-                    <div class="dropdown-item">
-                        <h3>Settings</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="content">
-            <div id="CenterForm">
-                <form action="login" method="post">
-                    <div class="loginFormContent">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    <div class="loginFormContent">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="loginFormContent">
-                        <button type="submit">Login</button>
-                    </div>
-                </form>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Course Vault</title>
+        <link rel="stylesheet" href="./../resources/style.css">
+        <link rel="stylesheet" href="./../resources/login.css">
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin defer></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin defer></script>
+        <script src="./../components/navbar.js" defer></script>
+
+
+    </head>
+    <body>
+        <div id="page">
+            <div id="navbar"></div>
             
+            <div id="content">
+                <div id="CenterForm">
+                    <form action="login" method="post">
+                        <div class="loginFormContent">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="loginFormContent">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="loginFormContent">
+                            <button type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
         </div>
-    </div>
-</body>
+
+
+    </body>
 </html>
