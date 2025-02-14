@@ -2,7 +2,7 @@
     background-color: #f2e6d5;
 }
 
-#signin-container {
+#signup-container {
     background: #d4c3ae; 
     padding: 2rem; 
     border-radius: 10px; 
@@ -17,8 +17,8 @@
     width: 100%;
 }
 
-#submit {
-    background: #d6c2a8; 
+#submit-button {
+    background: #f2e6d5; 
     padding: 0.5rem 1rem; 
     order: none; 
     border-radius: 5px; 
