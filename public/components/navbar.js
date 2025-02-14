@@ -81,7 +81,13 @@ function Navbar() {
                    backgroundColor: activeTab === 'moreButton' ? '#ac9f90' : '#e6d5c0'
                }
            },
-           React.createElement('h3', null, '...'),
+           React.createElement('img', {
+               src: '/public/resources/photos/menu.png',
+               alt: 'More',
+               style: {
+                   width: '12%'
+               }
+           }),
            React.createElement('div',
                {
                    id: 'dropdownMenu',
