@@ -62,7 +62,8 @@ function Navbar() {
        }),
        React.createElement(NavButton, { 
            id: 'backworkButton', 
-           text: 'Backwork' 
+           text: 'Backwork',
+           onClick: () => window.location.href = '/public/backwork/index.html'  
        }),
        React.createElement(NavButton, { 
            id: 'profButton', 
