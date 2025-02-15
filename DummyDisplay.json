@@ -5,7 +5,7 @@
                 {
                     "document_name": "Homework 1",
                     "assignment_type": "Homework",
-                    "professor": "Dr. Smith",
+                    "professor": "Dr. Plum",
                     "date_assigned": "Spring 2025"
                 }
             ]
@@ -15,7 +15,7 @@
                 {
                     "document_name": "Lab 1",
                     "assignment_type": "Lab",
-                    "professor": "Dr. Johnson",
+                    "professor": "Dr. Plotka",
                     "date_assigned": "Spring 2025"
                 }
             ]
