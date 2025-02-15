@@ -67,11 +67,13 @@ function Navbar() {
        }),
        React.createElement(NavButton, { 
            id: 'profButton', 
-           text: 'Professors' 
+           text: 'Professors',
+           onClick: () => window.location.href = '/public/professors/index.html'
        }),
        React.createElement(NavButton, { 
            id: 'classesButton', 
-           text: 'Classes' 
+           text: 'Class Schedular',
+           onClick: () => window.location.href = '/public/schedule/index.html'
        }),
        React.createElement('div',
            {
