@@ -3,6 +3,7 @@
 function Navbar() {
    const [activeTab, setActiveTab] = React.useState(null);
    const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
+   const [hoveredTab, setHoveredTab] = React.useState(null);
 
    React.useEffect(() => {
        const handleClickOutside = (e) => {
@@ -21,6 +22,12 @@ function Navbar() {
        return () => document.removeEventListener('click', handleClickOutside);
    }, []);
 
+   function getBackgroundColor(id) {
+       if (activeTab === id) return '#ac9f90';
+       if (hoveredTab === id) return '#ac9f90';
+       return '#e6d5c0';
+   }
+
    function NavButton({ id, text, onClick }) {
        return React.createElement('div',
            {
@@ -30,8 +37,11 @@ function Navbar() {
                    setActiveTab(prev => prev === id ? null : id);
                    if (onClick) onClick(e);
                },
+               onMouseEnter: () => setHoveredTab(id),
+               onMouseLeave: () => setHoveredTab(null),
                style: {
-                   backgroundColor: activeTab === id ? '#ff8c00' : '#e6d5c0'
+                   backgroundColor: getBackgroundColor(id),
+                   transition: 'background-color 0.2s ease'
                }
            },
            React.createElement('h3', null, text)
@@ -39,10 +49,17 @@ function Navbar() {
    }
 
    function DropdownItem({ text, onClick }) {
+       const [isHovered, setIsHovered] = React.useState(false);
        return React.createElement('div',
            {
                className: 'dropdown-item',
-               onClick: onClick || null
+               onClick: onClick || null,
+               onMouseEnter: () => setIsHovered(true),
+               onMouseLeave: () => setIsHovered(false),
+               style: {
+                   backgroundColor: isHovered ? '#ac9f90' : '#e6d5c0',
+                   transition: 'background-color 0.2s ease'
+               }
            },
            React.createElement('h3', null, text)
        );
@@ -58,12 +75,12 @@ function Navbar() {
        React.createElement(NavButton, { 
            id: 'homeButton', 
            text: 'Home', 
-           onClick: () => window.location.href = '/public/index.html' 
+           onClick: () => window.location.href = '/index.html' 
        }),
        React.createElement(NavButton, { 
            id: 'backworkButton', 
            text: 'Backwork',
-           onClick: () => window.location.href = '/public/backwork/index.html'  
+           onClick: () => window.location.href = '/backwork/index.html'  
        }),
        React.createElement(NavButton, { 
            id: 'profButton', 
@@ -78,12 +95,15 @@ function Navbar() {
                id: 'moreButton',
                className: `nav-tab ${activeTab === 'moreButton' ? 'active' : ''}`,
                onClick: handleMoreClick,
+               onMouseEnter: () => setHoveredTab('moreButton'),
+               onMouseLeave: () => setHoveredTab(null),
                style: {
-                   backgroundColor: activeTab === 'moreButton' ? '#ac9f90' : '#e6d5c0'
+                   backgroundColor: getBackgroundColor('moreButton'),
+                   transition: 'background-color 0.2s ease'
                }
            },
            React.createElement('img', {
-               src: '/public/resources/photos/menu.png',
+               src: '/resources/photos/menu.png',
                alt: 'More',
                style: {
                    width: '12%'
@@ -101,11 +121,11 @@ function Navbar() {
                }),
                React.createElement(DropdownItem, {
                    text: 'Login',
-                   onClick: () => window.location.href = '/public/login/index.html'
+                   onClick: () => window.location.href = '/login/index.html'
                }),
                React.createElement(DropdownItem, { 
                    text: 'Signup',
-                   onClick: () => window.location.href = '/public/signup/index.html' 
+                   onClick: () => window.location.href = '/signup/index.html' 
                }),
                React.createElement(DropdownItem, { 
                    text: 'Settings' 

@@ -103,7 +103,7 @@ body {
 }
 
 .nav-tab:hover {
-    background-color: #f2e6d5;
+    background-color: #e3d4c0;
 }
 
 .nav-tab.active {
@@ -133,7 +133,7 @@ body {
     position: absolute;
     left: 100%;
     top: 0;
-    background-color: #f2e6d5;
+    background-color: #e3d4c0;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
     border: 1px solid #d4c3ae;
     overflow: hidden;
@@ -153,7 +153,7 @@ body {
     font-size: 0.9em;
     color: #5a4a3f;
     border-top: 1px solid #d4c3ae; 
-    background-color: #f2e6d5;
+    background-color: #e3d4c0;
 }
 
 .dropdown-item:first-child {

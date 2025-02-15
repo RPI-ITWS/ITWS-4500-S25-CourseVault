@@ -1,0 +1,24 @@
+{
+    "courses": {
+        "CSCI-1100": {
+            "documents": [
+                {
+                    "document_name": "Homework 1",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Smith",
+                    "date_assigned": "Spring 2025"
+                }
+            ]
+        },
+        "ITWS-1100": {
+            "documents": [
+                {
+                    "document_name": "Lab 1",
+                    "assignment_type": "Lab",
+                    "professor": "Dr. Johnson",
+                    "date_assigned": "Spring 2025"
+                }
+            ]
+        }
+    }
+}

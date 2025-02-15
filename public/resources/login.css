@@ -8,15 +8,15 @@
 }
 
 #LoginForm {
-    text-align: center;
-    color: #5a4a3f;
-    font-size: 2em;
+    text-align: center; 
+    font-size: 1.6em; 
+    color: #333333;
 }
 
 #CenterForm {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #ffffff;
     width: clamp(280px, 25vw, 400px); 
     aspect-ratio: 8.5 / 11;
