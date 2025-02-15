@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function fetchAndPopulateTable() {
-    fetch('/AssignmentsStored')
+    fetch(`${window.location.origin}/AssignmentsStored`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
