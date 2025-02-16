@@ -1,34 +1,98 @@
 #content {
-    flex-grow: 1;
+    width: 100%;
     background-color: #e3d4c0;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5%;
+    min-height: 100vh;
 }
 
+.table-container {
+    background: #ffffff;
+    width: 70vh; 
+    height: 50vh; /* Fixed percentage height of the viewport */
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enables scrolling if content overflows */
+    position: relative;
+    padding: 20px 15px; 
+}
 
 #assignmentsTable {
-    width: 100%;
-    margin: 20px auto;
+    width: 100%; /* Ensure it takes up the full width of the container */
     border-collapse: collapse;
+    background: #ffffff;
+    position: relative;
 }
 
-#assignmentsTable th,
+.table-container table {
+    display: block;
+    overflow-y: auto;
+    max-height: 100%; /* Ensures table respects the container height */
+}
+
+
+
+.table-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(to right, 
+            transparent 30px,
+            #ff000020 30px,
+            #ff000020 31px,
+            transparent 31px
+        ),
+        linear-gradient(#0000ff20 1px, transparent 1px);
+    background-size: 100% 25px;
+    background-position: 0 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#assignmentsTable th, 
 #assignmentsTable td {
-    padding: 12px;
+    padding: 8px 6px; 
     text-align: left;
+    border: none;
+    position: relative;
+    line-height: 18px; 
+    background: transparent;
+    z-index: 2;
 }
 
 #assignmentsTable th {
-    background-color: #e6d5c0;
+    background: transparent;
     font-weight: bold;
+    border-bottom: 2px solid #0000ff40;
+}
+
+#assignmentsTable tbody tr {
+    background: transparent;
 }
 
 #assignmentsTable tbody tr:hover {
-    background-color: #a09486;
+    background-color: rgba(160, 148, 134, 0.2);
 }
 
-table, th, td {
-    border: 1px solid black;
+#assignmentsTable button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 4px 8px; 
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+    z-index: 2;
+    font-size: 0.9em;
+}
+
+#assignmentsTable button:hover {
+    background-color: #357ABD;
 }

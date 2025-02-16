@@ -16,24 +16,37 @@ function fetchAndPopulateTable() {
         .catch(error => {
             console.error('Error:', error);
             const tableBody = document.querySelector('#assignmentsTable tbody');
-            tableBody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: red;">Error</td></tr>';
+            tableBody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: red;">Error</td></tr>';
         });
 }
 
 function populateTable(data) {
     const tableBody = document.querySelector('#assignmentsTable tbody');
     tableBody.innerHTML = '';
-
+    
     for (let courseName in data.courses) {
         const course = data.courses[courseName];
-
-        course.documents.forEach(document => {
+        
+        course.documents.forEach(doc => {  // Changed 'document' to 'doc'
             const row = tableBody.insertRow();
-            row.insertCell().textContent = document.document_name;
+            
+            // Add regular cells
+            row.insertCell().textContent = doc.file_name;
             row.insertCell().textContent = courseName;
-            row.insertCell().textContent = document.assignment_type;
-            row.insertCell().textContent = document.professor;
-            row.insertCell().textContent = document.date_assigned;
+            row.insertCell().textContent = doc.assignment_type;
+            row.insertCell().textContent = doc.professor;
+            row.insertCell().textContent = doc.date_assigned;
+            
+            // Add download button cell
+            const downloadCell = row.insertCell();
+            const downloadButton = document.createElement('button');
+            downloadButton.textContent = 'Download';
+            downloadButton.style.padding = '5px 10px';
+            downloadButton.style.cursor = 'pointer';
+            downloadButton.addEventListener('click', () => {
+                window.location.href = `/download/${doc.file_name}`;
+            });
+            downloadCell.appendChild(downloadButton);
         });
     }
 }
