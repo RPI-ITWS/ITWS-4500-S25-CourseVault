@@ -27,17 +27,15 @@ function populateTable(data) {
     for (let courseName in data.courses) {
         const course = data.courses[courseName];
         
-        course.documents.forEach(doc => {  // Changed 'document' to 'doc'
+        course.documents.forEach(doc => {  
             const row = tableBody.insertRow();
             
-            // Add regular cells
             row.insertCell().textContent = doc.file_name;
             row.insertCell().textContent = courseName;
             row.insertCell().textContent = doc.assignment_type;
             row.insertCell().textContent = doc.professor;
             row.insertCell().textContent = doc.date_assigned;
             
-            // Add download button cell
             const downloadCell = row.insertCell();
             const downloadButton = document.createElement('button');
             downloadButton.textContent = 'Download';
