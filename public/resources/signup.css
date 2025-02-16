@@ -1,5 +1,11 @@
+#header-title {
+    margin-left: 200px;
+}
+
 #content {
     background-color: #f2e6d5;
+    height: 100vh;
+    margin-left: 200px;
 }
 
 #signup-container {
