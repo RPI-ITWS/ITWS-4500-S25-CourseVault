@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     padding: 5%;
+    height: 100vh;
+    margin-left: 200px;
 }
 
 #LoginForm {

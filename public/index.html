@@ -1,30 +1,77 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Course Vault</title>
+        <link rel="stylesheet" href="./resources/public.css">
         <link rel="stylesheet" href="./resources/style.css">
-        <link rel="stylesheet" href="./resources/homepage.css">
-    </head>
-    <body>
-        <div id="page">
-            <div id="navbar"></div>
-            
-            <div id="content">
-                <div id="headerDiv"></div>
-
-                <div id="help-block"></div>
-            </div>
-        </div>
 
         <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-        <script src="components/navbar.js"></script>
-        <script src="components/header.js"></script>
-        <script src="components/helper.js"></script>
+        <script defer src="./components/navbar.js"></script>
+        <script defer src="./components/header.js"></script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="navbar"></div>
 
-        <script defer src="./resources/script.js"></script>
+            <div id="content">
+                <div id="shadow">
+                    <div id="headerDiv"></div>
+
+                    <div id="content-block">
+                        <section id="hero">
+                            <h1 id="slogan">Unlock Your Academic Potential</h1>
+                            <p id="slogan-description">Access course schedules, backwork archives, and professor insights to excel in your studies.</p>
+                        </section>
+                    
+                        <section id="about">
+                            <h2 class="about-item" id="about-title">About Course Vault</h2>
+                            <p class="about-item" id="about-text">Course Vault is a free platform designed for students at Rensselaer Polytechnic Institute (RPI). 
+                                Our mission is to centralize tools that enhance your academic experience, including course navigation, a comprehensive 
+                                backwork archive, and professor insights. Inspired by resources like QuACS and RateMyProfessor, we empower you to learn 
+                                through real examples and historical backwork, helping you tackle challenging assignments and master advanced concepts 
+                                on your own.
+                            </p>
+                        </section>
+                    
+                        <section id="features">
+                            <h2 id="features-title">Our Features</h2>
+                            <div class="features">
+                                <div class="feature">
+                                    <h3 class="feature-subtitle">Course Navigation</h3>
+                                    <p class="featuresText">Easily browse and navigate the wide range of courses offered at RPI to plan your academic journey effectively.</p>
+                                    <img class="featureImage" alt="" src="./resources/photos/Placeholder2.png"/>
+                                </div>
+                                <div class="feature">
+                                    <h3 class="feature-subtitle">Backwork Archive</h3>
+                                    <p class="featuresText">Access past assignments and exams to understand problem-solving techniques and reinforce your learning.</p>
+                                    <img class="featureImage" alt="" src="./resources/photos/Placeholder2.png"/>
+                                </div>
+                                <div class="feature">
+                                    <h3 class="feature-subtitle">Professor Insights</h3>
+                                    <p class="featuresText">Review teaching histories and ratings to choose courses and professors that best fit your learning style.</p>
+                                    <img class="featureImage" alt="" src="./resources/photos/Placeholder2.png"/>
+                                </div>
+                                <div class="feature">
+                                    <h3 class="feature-subtitle">User Verification</h3>
+                                    <p class="featuresText">Sign up using your school-issued email and RCSID to ensure a secure environment and contribute to our growing knowledge base.</p>
+                                    <img class="featureImage" alt="" src="./resources/photos/Placeholder2.png"/>
+                                </div>
+                            </div>
+                        </section>
+                    
+                        <section id="signup">
+                            <h2 id="signup-title">Join Course Vault Today!</h2>
+                            <p id="footer-text">Create your account with your school-issued email and start exploring the tools designed to help you succeed academically.</p>
+                            <button id="signUpButtonBottom" onClick="window.location.href='/public/signup/index.html';">Sing Up Now</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

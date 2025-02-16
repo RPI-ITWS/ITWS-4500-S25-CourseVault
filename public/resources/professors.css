@@ -1,0 +1,33 @@
+#headerDiv {
+    margin: auto;
+}
+
+h1 {
+    max-width: 400px;
+    font-size: 25px;
+    margin: auto;
+}
+
+#content {
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: #f2e6d5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin-left: 200px;
+}
+
+#content-block {
+    margin: auto;
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: #f2e6d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    min-width: 400px;
+    width: 100%;
+}

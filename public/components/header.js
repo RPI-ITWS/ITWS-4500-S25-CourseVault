@@ -3,7 +3,7 @@
 function createHeader() {
     return React.createElement(
         'h1',
-        null,
+        { id: "header-title" },
         `COURSE VAULT`
     );
 }
