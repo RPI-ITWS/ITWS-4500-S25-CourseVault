@@ -10,13 +10,26 @@
         <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin defer></script>
         <script src="./../components/navbar.js" defer></script>
         <script src="./../resources/backwork.js" defer></script>
-
-
     </head>
     <body>
         <div id="page">
             <div id="navbar"></div>
             <div id="content">
+                <div class="search-controls">
+                    <div class="search-container">
+                        <input type="text" id="courseSearch" placeholder="Search for a class...">
+                        <div id="courseDropdown" class="dropdown-content"></div>
+                    </div>
+                    <div class="type-filter-container">
+                        <select id="assignmentTypeFilter">
+                            <option value="">All Assignment Types</option>
+                            <option value="Exam">Exam</option>
+                            <option value="Homework">Homework</option>
+                            <option value="Lab">Lab</option>
+                            <option value="Recitation">Recitation</option>
+                        </select>
+                    </div>
+                </div>
                 <table id="assignmentsTable">
                     <thead>
                         <tr>
