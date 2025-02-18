@@ -4,6 +4,7 @@ function Navbar() {
     const [activeTab, setActiveTab] = React.useState(null);
     const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
     const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+    const [hoveredElement, setHoveredElement] = React.useState(null);
 
     React.useEffect(() => {
         const handleClickOutside = (e) => {
@@ -31,19 +32,28 @@ function Navbar() {
                     setActiveTab(prev => prev === id ? null : id);
                     if (onClick) onClick(e);
                 },
+                onMouseEnter: () => setHoveredElement(id),
+                onMouseLeave: () => setHoveredElement(null),
                 style: {
-                    backgroundColor: activeTab === id ? '#ff8c00' : '#e6d5c0'
+                    backgroundColor: (activeTab === id || hoveredElement === id) ? '#ac9f90' : '#e6d5c0',
+                    transition: 'background-color 0.2s ease'
                 }
             },
             React.createElement('h3', null, text)
         );
     }
 
-    function DropdownItem({ text, onClick }) {
+    function DropdownItem({ id, text, onClick }) {
         return React.createElement('div',
             {
                 className: 'dropdown-item',
-                onClick: onClick || null
+                onClick: onClick || null,
+                onMouseEnter: () => setHoveredElement(id),
+                onMouseLeave: () => setHoveredElement(null),
+                style: {
+                    backgroundColor: hoveredElement === id ? '#ac9f90' : '#e6d5c0',
+                    transition: 'background-color 0.2s ease'
+                }
             },
             React.createElement('h3', null, text)
         );
@@ -55,68 +65,83 @@ function Navbar() {
         setActiveTab(prev => prev === 'moreButton' ? null : 'moreButton');
     };
 
+    const MoreButton = () => {
+        return React.createElement('div',
+            {
+                id: 'moreButton',
+                className: `nav-tab ${activeTab === 'moreButton' ? 'active' : ''}`,
+                onClick: handleMoreClick,
+                onMouseEnter: () => setHoveredElement('moreButton'),
+                onMouseLeave: () => setHoveredElement(null),
+                style: {
+                    backgroundColor: (activeTab === 'moreButton' || hoveredElement === 'moreButton') ? '#ac9f90' : '#e6d5c0',
+                    transition: 'background-color 0.2s ease'
+                }
+            },
+            React.createElement('img', {
+                src: '/public/resources/photos/menu.png',
+                alt: 'More',
+                style: {
+                    width: '12%'
+                }
+            }),
+            React.createElement('div',
+                {
+                    id: 'dropdownMenu',
+                    style: {
+                        display: isDropdownVisible ? 'flex' : 'none'
+                    }
+                },
+                React.createElement(DropdownItem, { 
+                    id: 'profile',
+                    text: 'Profile' 
+                }),
+                React.createElement(DropdownItem, {
+                    id: 'login',
+                    text: 'Login',
+                    onClick: () => window.location.href = `${window.origin}/login/index.html`
+                }),
+                React.createElement(DropdownItem, {
+                    id: 'signup',
+                    text: 'Signup',
+                    onClick: () => window.location.href = `${window.origin}/signup/index.html`
+                }),
+                React.createElement(DropdownItem, { 
+                    id: 'settings',
+                    text: 'Settings' 
+                })
+            )
+        );
+    };
+
     return React.createElement(React.Fragment, null,
         React.createElement(NavButton, { 
             id: 'homeButton', 
             text: 'Home', 
-            onClick: () => window.location.href = '/public/index.html'
+            onClick: () => window.location.href = `${window.origin}/index.html`
         }),
         React.createElement(NavButton, { 
             id: 'backworkButton',
             text: isLoggedIn ? 'Backwork' : 'Login', 
-            onClick: () => window.location.href = isLoggedIn ? '/public/backwork/index.html' : '/public/login/index.html'
+            onClick: () => window.location.href = isLoggedIn ? 
+                `${window.origin}/backwork/index.html` : 
+                `${window.origin}/login/index.html`
         }),
         React.createElement(NavButton, { 
             id: 'profButton', 
             text: isLoggedIn ? 'Professors' : 'Sign Up',
-            onClick: () => window.location.href = isLoggedIn ? '/public/professors/index.html' : '/public/signup/index.html'
+            onClick: () => window.location.href = isLoggedIn ? 
+                `${window.origin}/professors/index.html` : 
+                `${window.origin}/signup/index.html`
         }),
         isLoggedIn
         ? [
             React.createElement(NavButton, { 
                 id: 'classesButton', 
                 text: 'Class Schedular',
-                onClick: () => window.location.href = '/public/schedule/index.html'
+                onClick: () => window.location.href = `${window.origin}/schedule/index.html`
             }),
-            React.createElement('div',
-                {
-                        id: 'moreButton',
-                        className: `nav-tab ${activeTab === 'moreButton' ? 'active' : ''}`,
-                        onClick: handleMoreClick,
-                        style: {
-                            backgroundColor: activeTab === 'moreButton' ? '#ac9f90' : '#e6d5c0'
-                        }
-                },
-                React.createElement('img', {
-                        src: '/public/resources/photos/menu.png',
-                        alt: 'More',
-                        style: {
-                            width: '12%'
-                        }
-                }),
-                React.createElement('div',
-                    {
-                        id: 'dropdownMenu',
-                        style: {
-                            display: isDropdownVisible ? 'flex' : 'none'
-                        }
-                    },
-                    React.createElement(DropdownItem, { 
-                        text: 'Profile' 
-                    }),
-                    React.createElement(DropdownItem, {
-                        text: 'Login',
-                        onClick: () => window.location.href = '/public/login/index.html'
-                    }),
-                    React.createElement(DropdownItem, { 
-                        text: 'Signup',
-                        onClick: () => window.location.href = '/public/signup/index.html' 
-                    }),
-                    React.createElement(DropdownItem, { 
-                        text: 'Settings' 
-                    })
-                )
-            )
+            React.createElement(MoreButton)
         ]
         : []
     );
