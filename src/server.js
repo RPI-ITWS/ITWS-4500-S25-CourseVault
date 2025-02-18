@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
 
 app.post("/login", loginRoute)
 app.post("/register", registerRoute)
+app.get("/logout", (req, res) => {
+	res.clearCookie("token")
+	return res.redirect("/")
+})
 
 app.use(cookieAuth)
 

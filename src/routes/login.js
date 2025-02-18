@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
     }
 
     let jwtSecretKey = process.env.JWT_SECRET_KEY
-    const token = jwt.sign(validUser, jwtSecretKey, {expiresIn: "1s"})
+    const token = jwt.sign(validUser, jwtSecretKey, {expiresIn: "12h"})
     // add token to cookies
 
     res.cookie("token", token, {
