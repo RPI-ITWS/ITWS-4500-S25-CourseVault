@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "username": "MIUST",
+    "pass_hash": "$2b$10$5tuqj0kVru.6bupSCblJr.HwBEPKy7jVxQDTFXkeedkvKDJDkyJ8a",
+    "first_name": "Mius",
+    "last_name": "Thomas"
+  },
+  {
+    "id": 2,
+    "username": "ThomasM",
+    "pass_hash": "$2b$10$QbSAJxQn.Q/KynquPkY6F.STDgFleYAPQaHKfz6Vi27.Cp1dE.ShW",
+    "first_name": "Thomas",
+    "last_name": "Miles"
+  }
+]
