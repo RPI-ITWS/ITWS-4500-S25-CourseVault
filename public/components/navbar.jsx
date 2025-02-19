@@ -61,7 +61,7 @@ function Navbar() {
             <NavButton
                 id="homeButton"
                 text="Home"
-                onClick={() => (window.location.href = '/public/index.html')}
+                onClick={() => (window.location.href = '/')}
             />
             <NavButton
                 id="backworkButton"
@@ -91,13 +91,13 @@ function Navbar() {
                     <DropdownItem
                         text="Login"
                         onClick={() =>
-                            (window.location.href = '/public/login/index.html')
+                            (window.location.href = '/login')
                         }
                     />
                     <DropdownItem
                         text="Signup"
                         onClick={() =>
-                            (window.location.href = '/public/signup/index.html')
+                            (window.location.href = '/signup')
                         }
                     />
                     <DropdownItem text="Settings" />
