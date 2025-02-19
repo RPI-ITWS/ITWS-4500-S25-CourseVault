@@ -31,15 +31,22 @@
     border-collapse: collapse;
     background: #ffffff;
     position: relative;
+    table-layout: fixed;
+}
+
+#assignmentsTable thead {
+    display: table;
+    width: calc(100% - 17px);
+    table-layout: fixed;
 }
 
 #assignmentsTable tbody {
     display: block;
-    max-height: calc(9 * 38.5px);
+    max-height: 350px;
     overflow-y: auto;
+    width: 100%;
 }
 
-#assignmentsTable thead, 
 #assignmentsTable tbody tr {
     display: table;
     width: 100%;
@@ -47,35 +54,17 @@
 }
 
 #assignmentsTable th:nth-child(1),
-#assignmentsTable td:nth-child(1) { 
-    width: 20%;
-    padding-left: calc(1% + 6px); 
-}
+#assignmentsTable td:nth-child(1) { width: 20%; }
 #assignmentsTable th:nth-child(2),
-#assignmentsTable td:nth-child(2) { 
-    width: 15%;
-    padding-left: calc(2% + 6px);  
-}
+#assignmentsTable td:nth-child(2) { width: 15%; }
 #assignmentsTable th:nth-child(3),
-#assignmentsTable td:nth-child(3) { 
-    width: 20%;
-    padding-left: calc(3% + 6px);  
-}
+#assignmentsTable td:nth-child(3) { width: 20%; }
 #assignmentsTable th:nth-child(4),
-#assignmentsTable td:nth-child(4) { 
-    width: 15%;
-    padding-left: calc(4% + 6px);  
-}
+#assignmentsTable td:nth-child(4) { width: 15%; }
 #assignmentsTable th:nth-child(5),
-#assignmentsTable td:nth-child(5) { 
-    width: 15%;
-    padding-left: calc(5% + 6px);  
-}
+#assignmentsTable td:nth-child(5) { width: 15%; }
 #assignmentsTable th:nth-child(6),
-#assignmentsTable td:nth-child(6) { 
-    width: 15%;
-    padding-left: calc(6% + 6px);  
-}
+#assignmentsTable td:nth-child(6) { width: 15%; }
 
 .table-container::before {
     content: '';
@@ -99,13 +88,18 @@
     line-height: 18px;
     background: transparent;
     z-index: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #assignmentsTable th {
     background: transparent;
     font-weight: bold;
     border-bottom: 2px solid #0000ff40;
-    padding-left: calc(1% + 6px); 
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 #assignmentsTable tbody tr {
@@ -132,8 +126,6 @@
 #assignmentsTable button:hover {
     background-color: #357ABD;
 }
-
-/**************************************/
 
 .search-controls {
     display: flex;
@@ -201,4 +193,3 @@
 .dropdown-item:hover {
     background-color: #f5f5f5;
 }
-
