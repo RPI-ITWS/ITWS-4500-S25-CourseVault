@@ -1,50 +1,153 @@
-document.addEventListener('DOMContentLoaded', function () {
-    fetchAndPopulateTable();
+document.addEventListener('DOMContentLoaded', () => {
+    initializeTable();
+    initializeFilters();
 });
 
-function fetchAndPopulateTable() {
-    fetch(`${window.location.origin}/AssignmentsStored`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            populateTable(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            const tableBody = document.querySelector('#assignmentsTable tbody');
-            tableBody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: red;">Error</td></tr>';
-        });
+let availableCourses = new Set();
+
+function initializeFilters() {
+    const search = document.getElementById('courseSearch');
+    const dropdown = document.getElementById('courseDropdown');
+    const typeSelect = document.getElementById('assignmentTypeFilter');
+
+    // Search input events
+    search.addEventListener('input', e => {
+        const query = e.target.value.toLowerCase();
+        if (query) {
+            populateDropdown(query);
+            dropdown.classList.add('show');
+        } else {
+            dropdown.classList.remove('show');
+        }
+        filterTable();
+    });
+
+    // Filter type change
+    typeSelect.addEventListener('change', filterTable);
+
+    document.addEventListener('click', key => {
+        if (!search.contains(e.target) && !dropdown.contains(key.target)) {
+            dropdown.classList.remove('show');
+        }
+    });
+
+    search.addEventListener('keypress', key => {
+        if (key.key === 'Enter') {
+            filterTable();
+            dropdown.classList.remove('show');
+        }
+    });
+
+    document.getElementById('searchButton')?.addEventListener('click', () => {
+        filterTable();
+        dropdown.classList.remove('show');
+    });
 }
 
-function populateTable(data) {
-    const tableBody = document.querySelector('#assignmentsTable tbody');
-    tableBody.innerHTML = '';
+function populateDropdown(query) {
+    const dropdown = document.getElementById('courseDropdown');
+    dropdown.innerHTML = '';
     
-    for (let courseName in data.courses) {
-        const course = data.courses[courseName];
-        
-        course.documents.forEach(doc => {  
-            const row = tableBody.insertRow();
+    const matches = Array.from(availableCourses)
+        .filter(course => course.toLowerCase().includes(query));
+
+    if (matches.length) {
+        matches.forEach(course => {
+            const item = document.createElement('div');
+            item.className = 'dropdown-item';
             
-            row.insertCell().textContent = doc.file_name;
-            row.insertCell().textContent = courseName;
-            row.insertCell().textContent = doc.assignment_type;
-            row.insertCell().textContent = doc.professor;
-            row.insertCell().textContent = doc.date_assigned;
-            
-            const downloadCell = row.insertCell();
-            const downloadButton = document.createElement('button');
-            downloadButton.textContent = 'Download';
-            downloadButton.style.padding = '5px 10px';
-            downloadButton.style.cursor = 'pointer';
-            downloadButton.addEventListener('click', () => {
-                window.location.href = `/download/${doc.file_name}`;
+            const start = course.toLowerCase().indexOf(query);
+            if (start >= 0) {
+                item.innerHTML = `${course.slice(0, start)}<strong>${course.slice(start, start + query.length)}</strong>${course.slice(start + query.length)}`;
+            } else {
+                item.textContent = course;
+            }
+
+            item.addEventListener('click', () => {
+                document.getElementById('courseSearch').value = course;
+                dropdown.classList.remove('show');
+                filterTable();
             });
-            downloadCell.appendChild(downloadButton);
+            dropdown.appendChild(item);
         });
+    } else {
+        dropdown.innerHTML = `<div class="dropdown-item" style="font-style: italic; color: #666">No matching courses found</div>`;
     }
+}
+
+function filterTable() {
+    const query = document.getElementById('courseSearch').value.toLowerCase().trim();
+    const selectedType = document.getElementById('assignmentTypeFilter').value;
+    
+    const rows = document.querySelectorAll('#assignmentsTable tbody tr:not(.no-results-message)');
+    let visible = false;
+
+    rows.forEach(row => {
+        const courseCell = row.querySelector('td:nth-child(2)');
+        const typeCell = row.querySelector('td:nth-child(3)');
+        
+        const courseText = courseCell.textContent.toLowerCase().trim();
+        const typeText = typeCell.textContent.trim();
+        
+        const matchesCourse = !query || courseText.includes(query);
+        const matchesType = !selectedType || typeText === selectedType;
+        
+        row.style.display = (matchesCourse && matchesType) ? '' : 'none';
+        
+        if (matchesCourse && matchesType) {
+            visible = true;
+        }
+    });
+
+    updateNoResults(visible);
+}
+
+function updateNoResults(hasResults) {
+    const existing = document.querySelector('.no-results-message');
+    existing?.remove();
+
+    if (!hasResults) {
+        const tableBody = document.querySelector('#assignmentsTable tbody');
+        tableBody.insertAdjacentHTML('beforeend', `
+            <tr class="no-results-message">
+                <td colspan="6" style="text-align: center; font-style: italic; padding: 20px">
+                    No matching assignments found
+                </td>
+            </tr>
+        `);
+    }
+}
+
+function initializeTable() {
+    fetch(`${window.location.origin}/AssignmentsStored`)
+        .then(response => response.ok ? response.json() : Promise.reject('Network error'))
+        .then(data => {
+            availableCourses = new Set(Object.keys(data.courses));
+            const tableBody = document.querySelector('#assignmentsTable tbody');
+            tableBody.innerHTML = '';
+            
+            Object.entries(data.courses).forEach(([courseName, course]) => {
+                course.documents.forEach(doc => {
+                    tableBody.insertAdjacentHTML('beforeend', `
+                        <tr>
+                            <td>${doc.file_name}</td>
+                            <td>${courseName}</td>
+                            <td>${doc.assignment_type}</td>
+                            <td>${doc.professor}</td>
+                            <td>${doc.date_assigned}</td>
+                            <td>
+                                <button onclick="window.location.href='/download/${doc.file_name}'" 
+                                        style="padding: 5px 10px; cursor: pointer">
+                                    Download
+                                </button>
+                            </td>
+                        </tr>
+                    `);
+                });
+            });
+        })
+        .catch(error => {
+            document.querySelector('#assignmentsTable tbody').innerHTML = 
+                '<tr><td colspan="6" style="text-align: center; color: red">Error loading assignments</td></tr>';
+        });
 }
