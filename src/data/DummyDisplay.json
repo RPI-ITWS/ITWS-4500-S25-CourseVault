@@ -74,6 +74,73 @@
                 }
             ]
         },
+        "CSCI-2600": {
+            "documents": [
+                {
+                    "document_name": "Homework 0",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-0.pdf"
+                },
+                {
+                    "document_name": "Homework 1",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-1.pdf"
+                },
+                {
+                    "document_name": "Homework 2",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-2.pdf"
+                },
+                {
+                    "document_name": "Homework 3",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-3.pdf"
+                },
+                {
+                    "document_name": "Homework 4",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-4.pdf"
+                },
+                {
+                    "document_name": "Homework 5",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-5.pdf"
+                },
+                {
+                    "document_name": "Homework 6",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-6.pdf"
+                },
+                {
+                    "document_name": "Homework 7",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-7.pdf"
+                },
+                {
+                    "document_name": "Homework 8",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Kuzmin",
+                    "date_assigned": "Spring 2024",
+                    "file_name": "Psoft-HW-8.pdf"
+                }
+            ]
+        },
         "CSCI-4210": {
             "documents": [
                 {
