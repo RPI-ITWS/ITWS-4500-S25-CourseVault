@@ -81,7 +81,7 @@ function Navbar() {
                 }
             },
             React.createElement('img', {
-                src: '/public/resources/photos/menu.png',
+                src: '/resources/photos/menu.png',
                 alt: 'More',
                 style: {
                     width: '12%'
