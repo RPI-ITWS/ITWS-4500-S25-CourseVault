@@ -1,0 +1,181 @@
+WEBVTT
+
+1 "Christian" (4262759680)
+00:00:02.265 --> 00:00:06.123
+Okay.
+
+2 "Thomas, Mius" (597244928)
+00:00:06.123 --> 00:00:10.705
+Cool is.
+
+3 "Christian" (4262759680)
+00:00:10.705 --> 00:00:20.444
+Adam coming in? Do you know? I don't know, but like it's already one oh five, so I'm assuming not. So we'll just we'll it'll just be us.
+
+4 "Thomas, Mius" (597244928)
+00:00:20.444 --> 00:00:23.161
+He comes, he comes, he can start out.
+
+5 "Christian" (4262759680)
+00:00:23.161 --> 00:00:24.821
+Okay.
+
+6 "Thomas, Mius" (597244928)
+00:00:24.821 --> 00:00:33.661
+Right. I want to start or I'll start. I can start. Okay. I did the login.
+
+7 "Christian" (4262759680)
+00:00:33.661 --> 00:00:35.124
+Register in the.
+
+8 "Thomas, Mius" (597244928)
+00:00:35.124 --> 00:00:40.342
+I think someone already merged it.
+
+9 "Christian" (4262759680)
+00:00:40.342 --> 00:00:44.828
+Yeah I see it. Yeah. Good stuff. I haven't I haven't like.
+
+10 "Thomas, Mius" (597244928)
+00:00:44.828 --> 00:00:52.765
+Tested it out yet or anything, but I'll get to that. Yeah. Oh, also when you when you do go to test it, make sure you download the the file.
+
+11 "Christian" (4262759680)
+00:00:52.765 --> 00:00:55.983
+And also, re MPM install. Yeah.
+
+12 "Thomas, Mius" (597244928)
+00:00:55.983 --> 00:01:00.564
+Do you have the database stuff? No, I can.
+
+13 "Christian" (4262759680)
+00:01:00.564 --> 00:01:02.681
+Do that probably on thursday.
+
+14 "Thomas, Mius" (597244928)
+00:01:02.681 --> 00:01:05.242
+Day tomorrow. Oh, this is just a dummy.
+
+15 "Christian" (4262759680)
+00:01:05.242 --> 00:01:10.499
+Yes, yeah. Yeah, that's fine. It's.
+
+16 "Thomas, Mius" (597244928)
+00:01:10.499 --> 00:01:17.202
+Okay, but I can figure that out within the next few days, but I just figured I'd.
+
+17 "Christian" (4262759680)
+00:01:17.202 --> 00:01:29.744
+Let's go with the JSON file and just write to it and we don't we don't need to do like we can just have a JSON file up for now. I'm I'd want to focus more on the front end cause we gotta have something to show on the on the 20.
+
+18 "Thomas, Mius" (597244928)
+00:01:29.744 --> 00:01:38.748
+But yeah, that that looks good. Good stuff. Cool. Wait, Adam is here. Cool.
+
+19 "Christian" (4262759680)
+00:01:38.748 --> 00:02:06.468
+Yeah, for me, I haven't really done much. I've been kind of like busy with other stuff and I plan on this weekend hopefully getting the professor meeting. So that's kind of like what I'm trying to get the front end done for that. I don't know if I'll have time to convert it all to like react or not, but if.
+
+20 "Thomas, Mius" (597244928)
+00:02:06.468 --> 00:02:08.284
+Now it doesn't matter as long as we have something.
+
+21 "Christian" (4262759680)
+00:02:08.284 --> 00:02:12.789
+And then we gotta start.
+
+22 "Thomas, Mius" (597244928)
+00:02:12.789 --> 00:02:23.922
+Working on the slice. Yeah, are we I forget what, are we presenting on Tuesday or Friday.
+
+23 "Christian" (4262759680)
+00:02:23.922 --> 00:02:24.550
+Okay.
+
+24 "Adam" (448950784)
+00:02:24.550 --> 00:02:27.126
+Next week.
+
+25 "Christian" (4262759680)
+00:02:27.126 --> 00:02:28.181
+I don't know Tuesday.
+
+26 "Adam" (448950784)
+00:02:28.181 --> 00:02:33.213
+There's NO class on Friday. Yeah. Anyways. Well, that's what he said.
+
+27 "Christian" (4262759680)
+00:02:33.213 --> 00:02:36.156
+And and if we're presenting on Friday I'm not gonna be in the.
+
+28 "Adam" (448950784)
+00:02:36.156 --> 00:02:38.776
+It's just whatever day the 25th is, which I think is tuesday.
+
+29 "Thomas, Mius" (597244928)
+00:02:38.776 --> 00:02:57.358
+Yeah. Yeah. Okay, should probably start on that in like the next two days and we can practice over the weekend. Yep. Actually wait, is this, how long is this? I didn't look at the.
+
+30 "Christian" (4262759680)
+00:02:57.358 --> 00:03:02.078
+Are we even guidelines for it on LMS or like did he? He didn't post anything.
+
+31 "Christian" (4262759680)
+00:03:03.464 --> 00:03:07.414
+Awesome. I gotta log.
+
+32 "Thomas, Mius" (597244928)
+00:03:07.414 --> 00:03:09.124
+No, NO.
+
+33 "Christian" (4262759680)
+00:03:09.124 --> 00:03:10.622
+Yeah.
+
+34 "Thomas, Mius" (597244928)
+00:03:10.622 --> 00:03:17.661
+I guess I can. You know what? Come on.
+
+35 "Christian" (4262759680)
+00:03:17.661 --> 00:03:23.524
+Tomorrow or not tomorrow Friday? We didn't need to use like.
+
+36 "Thomas, Mius" (597244928)
+00:03:23.524 --> 00:03:25.175
+Do that, yeah.
+
+37 "Christian" (4262759680)
+00:03:25.175 --> 00:03:35.275
+Anything to report for today? Can I whip it up.
+
+38 "Adam" (448950784)
+00:03:35.275 --> 00:03:59.858
+Yeah, can you mute yourself real quick? Yeah, I didn't hear the hell so I just did some prelim stuff for the classes page, nothing to like actually show off because yeah moving to see other stuff so I'll pull that together hopefully by Sunday, at least like something.
+
+39 "Thomas, Mius" (597244928)
+00:03:59.858 --> 00:04:03.270
+Thing to show a little bit.
+
+40 "Thomas, Mius" (597244928)
+00:04:03.270 --> 00:04:20.400
+Thank you. Cool. That sounds good. I was just saying to Christian earlier that I did all the, the login and register stuff in the authentication and I think that's already merged so I merged that last night.
+
+41 "Thomas, Mius" (597244928)
+00:04:20.400 --> 00:04:42.264
+Okay cool, thank you but yeah besides that, that's pretty much it. When you're testing with like login, and register, make sure you download the.env file or also won't function correctly. But that's pretty much it.
+
+42 "Christian" (4262759680)
+00:04:42.264 --> 00:04:46.634
+Do you guys have anything else?
+
+43 "Thomas, Mius" (597244928)
+00:04:46.634 --> 00:04:49.480
+Oh, you two got it right for two.
+
+44 "Adam" (448950784)
+00:04:49.480 --> 00:04:51.124
+I think we're good to go then.
+
+45 "Christian" (4262759680)
+00:04:51.124 --> 00:05:06.180
+Right, see you guys. I see you guys in. I got neither. Can you look at my.
