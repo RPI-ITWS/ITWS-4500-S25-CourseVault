@@ -151,3 +151,7 @@ function initializeTable() {
                 '<tr><td colspan="6" style="text-align: center; color: red">Error loading assignments</td></tr>';
         });
 }
+
+document.getElementById("addDocumentButton").addEventListener("click", function() {
+    window.location.href = "./../UploadWork/index.html";
+});
