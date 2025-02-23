@@ -138,7 +138,7 @@ body {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
     border: 1px solid #d4c3ae;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 2000;
     width: auto;
     align-items: stretch; 
     height: 100%; 

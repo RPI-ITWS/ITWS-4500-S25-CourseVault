@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+#page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+#content {
+    flex: 1;
+    background-color: #e3d4c0;
+    padding: 5%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    position: relative;
+    z-index: -1;
+}
+
+#pageTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 20px 15px;
+    background: white;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.upload-form label {
+    font-weight: bold;
+}
+
+.upload-form input, .upload-form select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.upload-form button {
+    padding: 12px 20px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    width: auto;
+    align-self: flex-start;
+}
+
+.upload-form button:hover {
+    background-color: #357ABD;
+}
+
+.upload-form input[type="file"] {
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+#assignmentsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    position: relative;
+    table-layout: fixed;
+    z-index: 1;
+}
+
+#assignmentsTable th, #assignmentsTable td {
+    padding: 10px 12px;
+    text-align: left;
+    border: none;
+    line-height: 18px;
+    background: transparent;
+}
+
+#assignmentsTable th {
+    background: transparent;
+    font-weight: bold;
+    border-bottom: 2px solid #0000ff40;
+    position: sticky;
+    top: 0;
+}
+
+#assignmentsTable tbody tr:hover {
+    background-color: rgba(160, 148, 134, 0.2);
+}
+
+#assignmentsTable button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+#assignmentsTable button:hover {
+    background-color: #357ABD;
+}
+
+.search-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    z-index: -1;
+}

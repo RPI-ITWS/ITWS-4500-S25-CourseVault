@@ -141,11 +141,12 @@ function Navbar() {
         isLoggedIn
         ? [
             React.createElement(NavButton, { 
+                key: 'classesButton',
                 id: 'classesButton', 
                 text: 'Class Schedular',
                 onClick: () => window.location.href = `${window.origin}/schedule`
             }),
-            React.createElement(MoreButton)
+            React.createElement(MoreButton, { key: 'moreButton' })
         ]
         : []
     );
