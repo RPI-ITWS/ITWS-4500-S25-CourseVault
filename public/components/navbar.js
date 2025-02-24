@@ -4,8 +4,7 @@ function Navbar() {
     const [activeTab, setActiveTab] = React.useState(null);
     const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
     const nonAuthPaths = ['', '/', '/login', '/login/', '/signup', '/signup/']
-    const [isLoggedIn, setIsLoggedIn] = 
-    React.useState(nonAuthPaths.includes(window.location.pathname) ? false : true);
+    const [isLoggedIn, setIsLoggedIn] = React.useState(nonAuthPaths.includes(window.location.pathname) ? false : true);
     const [hoveredElement, setHoveredElement] = React.useState(null);
 
     React.useEffect(() => {
@@ -94,24 +93,31 @@ function Navbar() {
                         display: isDropdownVisible ? 'flex' : 'none'
                     }
                 },
-                React.createElement(DropdownItem, { 
-                    id: 'profile',
-                    text: 'Profile' 
-                }),
-                React.createElement(DropdownItem, {
-                    id: 'login',
-                    text: 'Login',
-                    onClick: () => window.location.href = `${window.origin}/login`
-                }),
-                React.createElement(DropdownItem, {
-                    id: 'signup',
-                    text: 'Signup',
-                    onClick: () => window.location.href = `${window.origin}/signup`
-                }),
-                React.createElement(DropdownItem, { 
-                    id: 'settings',
-                    text: 'Settings' 
-                })
+                isLoggedIn
+                ? [
+                    React.createElement(DropdownItem, { 
+                        id: 'profile',
+                        text: 'Profile',
+                        onClick: () => window.location.href = `${window.origin}/profile`
+                    }),
+                    React.createElement(DropdownItem, { 
+                        id: 'settings',
+                        text: 'Settings',
+                        onClick: () => window.location.href = `${window.origin}`
+                    })
+                ]
+                : [
+                    React.createElement(DropdownItem, {
+                        id: 'login',
+                        text: 'Login',
+                        onClick: () => window.location.href = `${window.origin}/login`
+                    }),
+                    React.createElement(DropdownItem, {
+                        id: 'signup',
+                        text: 'Signup',
+                        onClick: () => window.location.href = `${window.origin}/signup`
+                    }),
+                ]
             )
         );
     };
@@ -133,7 +139,7 @@ function Navbar() {
         }),
         React.createElement(NavButton, { 
             id: 'profButton', 
-            text: isLoggedIn ? 'Professors' : 'Sign Up',
+            text: isLoggedIn ? 'Courses' : 'Sign Up',
             onClick: () => window.location.href = isLoggedIn ? 
                 `${window.origin}/professors` : 
                 `${window.origin}/signup`
@@ -143,7 +149,7 @@ function Navbar() {
             React.createElement(NavButton, { 
                 key: 'classesButton',
                 id: 'classesButton', 
-                text: 'Class Schedular',
+                text: 'Schedule',
                 onClick: () => window.location.href = `${window.origin}/schedule`
             }),
             React.createElement(MoreButton, { key: 'moreButton' })

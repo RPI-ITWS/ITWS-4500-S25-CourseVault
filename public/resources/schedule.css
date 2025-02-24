@@ -15,6 +15,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin-left: 200px;
 }
 
 #content-block {
@@ -26,6 +27,17 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 5%;
+    padding-top: 2.5%;
     min-width: 400px;
     width: 100%;
+}
+
+#subtitle {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#scheduleTable {
+    border: 2px solid #5a4a3f;
+    border-radius: 20px;
 }

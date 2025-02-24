@@ -19,5 +19,12 @@
     "pass_hash": "$2b$10$dDutcoD7R35syLT/MBE2JutyKixbj5N3RzOgr318/U.SIU67p89CW",
     "first_name": "Joshua",
     "last_name": "Collins"
+  },
+  {
+    "id": 4,
+    "username": "Christian2147",
+    "pass_hash": "$2b$10$uiPEPgDTOphWYn7C1WJMqO2wpFqBSjhvbh8pkQDL156shukkUx93a",
+    "first_name": "C",
+    "last_name": "M"
   }
 ]
