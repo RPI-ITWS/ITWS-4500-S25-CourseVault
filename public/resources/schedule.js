@@ -54,7 +54,7 @@ function createScheduleGrid() {
     });
 
     const contentDiv = document.getElementById('content-block');
-    contentDiv.innerHTML = '';
+    //contentDiv.innerHTML = '';
     contentDiv.appendChild(table);
 }
 
