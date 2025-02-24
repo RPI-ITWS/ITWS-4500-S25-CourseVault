@@ -27,6 +27,7 @@ body {
     border-right: 2px solid #5a4a3f;
     padding: 0;
     position: fixed;
+    z-index: 3000;
 }
 
 #homeButton {
@@ -138,7 +139,7 @@ body {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
     border: 1px solid #d4c3ae;
     overflow: hidden;
-    z-index: 2000;
+    z-index: 4000;
     width: auto;
     align-items: stretch; 
     height: 100%; 
