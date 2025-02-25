@@ -19,7 +19,7 @@ function createHelper() {
                 createHomepageButton({ 
                     id: 'uploadBackworkButton', 
                     text: 'Upload Backwork',
-                    onClick: () => window.location.href = `${window.origin}/backwork`
+                    onClick: () => window.location.href = `${window.origin}/UploadWork`
                 })
             ),
             React.createElement(
