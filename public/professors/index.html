@@ -13,16 +13,79 @@
 
         <script defer src="../components/navbar.js"></script>
         <script defer src="../components/header.js"></script>
+        <script src="/components/helper.js"></script>
+        <script defer src="../resources/professors.js"></script>
+        
     </head>
     <body>
         <div id="page">
             <div id="navbar"></div>
-
+            
             <div id="content">
                 <div id="headerDiv"></div>
-
-                <div id="content-block"></div>
+                <div id="help-block"></div>
+                <div id="class-container">
+                    <div class="class-box">
+                        <h1>ITWS 4500</h1>
+                        <h2>Web Science Systems Development</h2>
+                        <h3>Class Description</h3>
+                        <h4>Class Details</h4>
+                    </div>
+                    <div class="class-box" data-class="CompOrg" data-data-link="hhhs">
+                        <h1>CSCI 2500</h1>
+                        <h2>Computer Organization</h2>
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                    <div class="class-box">
+                        <h1>Class 3 Title</h1>
+                        <h2>Class 3 Subtitle</h2>
+                        <h3>Class Description</h3>
+                        <h4>Class Details</h4>
+                    </div>
+                    <div class="class-box">
+                        <h1>Class 4 Title</h1>
+                        <h2>Class 4 Subtitle</h2>
+                        <h3>Class Description</h3>
+                        <h4>Class Details</h4>
+                    </div>
+                    <div class="class-box">
+                        <h1>Class 5 Title</h1>
+                        <h2>Class 5 Subtitle</h2>
+                        <h3>Class Description</h3>
+                        <h4>Class Details</h4>
+                    </div>
+                    <div class="class-box">
+                        <h1>Class 6 Title</h1>
+                        <h2>Class 6 Subtitle</h2>
+                        <h3>Class Description</h3>
+                        <h4>Class Details</h4>
+                    </div>
+                    <div class="class-box">
+                        <h1>Class 7 Title</h1>
+                        <h2>Class 7 Subtitle</h2>
+                        <h3>Class Description</h3>
+                        <h4>Class Details</h4>
+                    </div>
+                    <div class="class-box">
+                        <h1>Class 8 Title</h1>
+                        <h2>Class 8 Subtitle</h2>
+                        <h3>Class Description</h3>
+                        <h4>Class Details</h4>
+                    </div>
+                </div>
             </div>
         </div>
+    
+        <div id="classModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h1 id="modalClassName"></h1>
+                <h2 id="modalClassDescription"></h2>
+                <h3 id="modalClassDetails"></h3>
+            </div>
+        </div>
+    
+
     </body>
 </html>
