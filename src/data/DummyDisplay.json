@@ -156,6 +156,13 @@
                     "professor": "Dr. Goldschmidt",
                     "date_assigned": "Spring 2025",
                     "file_name": "OpSys-HW-2.pdf"
+                },
+                {
+                    "document_name": "Exam 1 Solutions",
+                    "assignment_type": "Exam",
+                    "professor": "Dr. Goldschmidt",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "exam1-solns.pdf"
                 }
             ]
         }
