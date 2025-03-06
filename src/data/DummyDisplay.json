@@ -72,7 +72,27 @@
                     "date_assigned": "Spring 2023",
                     "file_name": "DS-HW-10.pdf"
                 }
-            ]
+            ],
+            "history": {
+                "courseName": "Data Structures",
+                "semestersOffered":["Fall","Spring"],
+                "semestersAvailable":{"Spring 2025":"Jidong Xiao",
+                                      "Fall 2024": "Jidong Xiao",
+                                      "Spring 2024": "Jidong Xiao",
+                                      "Fall 2023": "Jidong Xiao",
+                                      "Spring 2023": "Jidong Xiao",
+                                      "Fall 2022": "Barbara Cutler",
+                                      "Spring 2022": "Jasmine A. Plum",
+                                      "Fall 2021": "Barbara Cutler",
+                                      "Spring 2021": "Jasmine A. Plum",
+                                      "Fall 2020": "Barbara Cutler",
+                                      "Spring 2020": "Jasmine A. Plum",
+                                      "Fall 2019": "Barbara Cutler",
+                                      "Spring 2019": "Jasmine A. Plum",
+                                      "Fall 2018": "Barbara Cutler",
+                                      "Spring 2018": "Jasmine A. Plum"
+                }
+            } 
         },
         "CSCI-2600": {
             "documents": [
@@ -139,7 +159,28 @@
                     "date_assigned": "Spring 2024",
                     "file_name": "Psoft-HW-8.pdf"
                 }
-            ]
+            ],
+            "history": {
+                "courseName": "Principles of Software",
+                "semestersOffered":["Fall","Summer"],
+                "semestersAvailable":{"Spring 2025":"Konstantin Kuzmin",
+                                      "Summer 2024":"Konstantin Kuzmin",
+                                      "Spring 2024": "Konstantin Kuzmin",
+                                      "Summer 2023": "Konstantin Kuzmin",
+                                      "Spring 2023": "Konstantin Kuzmin",
+                                      "Summer 2022": "Konstantin Kuzmin",
+                                      "Spring 2022": "Konstantin Kuzmin",
+                                      "Summer 2021": "Konstantin Kuzmin",
+                                      "Spring 2021": "Konstantin Kuzmin",
+                                      "Summer 2020": "Konstantin Kuzmin",
+                                      "Spring 2020": "Konstantin Kuzmin",
+                                      "Fall 2019": "William Albert Thompson",
+                                      "Summer 2019": "Konstantin Kuzmin ",
+                                      "Spring 2019": "William Albert Thompson",
+                                      "Fall 2018": "William Albert Thompson",
+                                      "Spring 2018": "Konstantin Kuzmin"
+                }
+            } 
         },
         "CSCI-4210": {
             "documents": [
@@ -164,7 +205,26 @@
                     "date_assigned": "Spring 2025",
                     "file_name": "exam1-solns.pdf"
                 }
-            ]
+            ],
+            "history": {
+                "courseName": "Operating Systems",
+                "semestersOffered":["Summer","Spring"],
+                "semestersAvailable":{"Spring 2025":"David Eric Goldschmidt",
+                                      "Summer 2024":"David Eric Goldschmidt",
+                                      "Spring 2024": "Wesley D Turner",
+                                      "Summer 2023": "David Eric Goldschmidt",
+                                      "Spring 2023": "David Eric Goldschmidt",
+                                      "Summer 2022": "David Eric Goldschmidt",
+                                      "Spring 2022": "David Eric Goldschmidt",
+                                      "Summer 2021": "David Eric Goldschmidt",
+                                      "Spring 2021": "David Eric Goldschmidt",
+                                      "Summer 2020": "David Eric Goldschmidt",
+                                      "Spring 2020": "Wesley D Turner",
+                                      "Summer 2019": "David Eric Goldschmidt",
+                                      "Spring 2019": "David Eric Goldschmidt",
+                                      "Spring 2018": "David Eric Goldschmidt"
+                }
+            } 
         },
         "CSCI-1100": {
             "documents": [
@@ -245,7 +305,34 @@
                     "date_assigned": "Spring 2025",
                     "file_name": "CS-1100-HW-4.pdf"
                 }
-            ]
+            ],
+            "history": {
+                "courseName": "Introduction to Computer Science",
+                "semestersOffered":["Fall","Summer","Spring"],
+                "semestersAvailable":{"Spring 2025":"Mark Richard Gilder",
+                                      "Fall 2024": "Uzma Mushtaque",
+                                      "Summer 2024":"Uzma Mushtaque",
+                                      "Spring 2024": "Uzma Mushtaque",
+                                      "Fall 2023": "Uzma Mushtaque",
+                                      "Summer 2023": "Uzma Mushtaque",
+                                      "Spring 2023": "Uzma Mushtaque",
+                                      "Fall 2022": "Uzma Mushtaque",
+                                      "Summer 2022": "Uzma Mushtaque",
+                                      "Spring 2022": "Uzma Mushtaque",
+                                      "Fall 2021": "Uzma Mushtaque",
+                                      "Summer 2021": "Uzma Mushtaque",
+                                      "Spring 2021": "Uzma Mushtaque",
+                                      "Fall 2020": "Uzma Mushtaque",
+                                      "Summer 2020": "Uzma Mushtaque",
+                                      "Spring 2020": "Uzma Mushtaque",
+                                      "Fall 2019": "Uzma Mushtaque",
+                                      "Summer 2019": "Uzma Mushtaque",
+                                      "Spring 2019": "Uzma Mushtaque",
+                                      "Fall 2018": "Konstantin Kuzmin",
+                                      "Summer 2018": "Konstantin Kuzmin",
+                                      "Spring 2018": "Konstantin Kuzmin"
+                }
+            } 
         }
     }
 }

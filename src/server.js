@@ -180,9 +180,16 @@ app.post('/upload', async (req, res) => {
             file_name: fileName
         };
 
+		const history = {
+			courseName: courseCode,
+			semestersOffered:[],
+			semestersAvailable:{}
+		};
+
         if (!coursesData.courses[courseCode]) {
             coursesData.courses[courseCode] = {
-                documents: [newDocument]
+                documents: [newDocument],
+				history: history
             };
         } else {
             const isDuplicate = coursesData.courses[courseCode].documents.some(doc => 
