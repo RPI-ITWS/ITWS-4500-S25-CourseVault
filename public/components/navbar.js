@@ -1,7 +1,6 @@
 'use strict';
 
 function Navbar() {
-    const [activeTab, setActiveTab] = React.useState(null);
     const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
     const nonAuthPaths = ['', '/', '/login', '/login/', '/signup', '/signup/']
     const [isLoggedIn, setIsLoggedIn] = React.useState(nonAuthPaths.includes(window.location.pathname) ? false : true);
@@ -16,7 +15,6 @@ function Navbar() {
                 !moreButton.contains(e.target) && 
                 !dropdownMenu.contains(e.target)) {
                 setIsDropdownVisible(false);
-                setActiveTab(null);
             }
         };
 
@@ -28,15 +26,12 @@ function Navbar() {
         return React.createElement('div',
             {
                 id: id,
-                className: `nav-tab ${activeTab === id ? 'active' : ''}`,
-                onClick: (e) => {
-                    setActiveTab(prev => prev === id ? null : id);
-                    if (onClick) onClick(e);
-                },
+                className: 'nav-tab',
+                onClick: onClick,
                 onMouseEnter: () => setHoveredElement(id),
                 onMouseLeave: () => setHoveredElement(null),
                 style: {
-                    backgroundColor: (activeTab === id || hoveredElement === id) ? '#ac9f90' : '#e6d5c0',
+                    backgroundColor: hoveredElement === id ? '#ac9f90' : '#e6d5c0',
                     transition: 'background-color 0.2s ease'
                 }
             },
@@ -63,19 +58,24 @@ function Navbar() {
     const handleMoreClick = (e) => {
         e.stopPropagation();
         setIsDropdownVisible(prev => !prev);
-        setActiveTab(prev => prev === 'moreButton' ? null : 'moreButton');
+    };
+
+    // add functionality later
+    const handleLogout = () => {
+        // setIsLoggedIn(false);
+        window.location.href = `${window.origin}/login`;
     };
 
     const MoreButton = () => {
         return React.createElement('div',
             {
                 id: 'moreButton',
-                className: `nav-tab ${activeTab === 'moreButton' ? 'active' : ''}`,
+                className: `nav-tab ${isDropdownVisible ? 'active' : ''}`,
                 onClick: handleMoreClick,
                 onMouseEnter: () => setHoveredElement('moreButton'),
                 onMouseLeave: () => setHoveredElement(null),
                 style: {
-                    backgroundColor: (activeTab === 'moreButton' || hoveredElement === 'moreButton') ? '#ac9f90' : '#e6d5c0',
+                    backgroundColor: (isDropdownVisible || hoveredElement === 'moreButton') ? '#ac9f90' : '#e6d5c0',
                     transition: 'background-color 0.2s ease'
                 }
             },
@@ -104,6 +104,11 @@ function Navbar() {
                         id: 'settings',
                         text: 'Settings',
                         onClick: () => window.location.href = `${window.origin}`
+                    }),
+                    React.createElement(DropdownItem, { 
+                        id: 'logout',
+                        text: 'Logout',
+                        onClick: handleLogout
                     })
                 ]
                 : [

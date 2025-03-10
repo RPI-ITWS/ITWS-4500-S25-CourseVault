@@ -1,0 +1,91 @@
+.profile-name {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info-table {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info-table td {
+  padding: 8px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.profile-info-table td:first-child {
+  font-weight: bold;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 20px 15px;
+  background-color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.table-container h2 {
+  margin-bottom: 15px;
+}
+
+#assignmentsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#assignmentsTable th,
+#assignmentsTable td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+#assignmentsTable th {
+  font-weight: bold;
+}
+
+.professor-cell {
+  width: 30%;
+}
+
+.rating-cell {
+  width: 20%;
+}
+
+.comment-cell {
+  width: 50%;
+}
+
+.add-controls {
+  width: 100%;
+  text-align: right;
+  padding-bottom: 2%;
+}
+
+.add-controls button {
+  margin-top: 8px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9em;
+}
