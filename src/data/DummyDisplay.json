@@ -76,6 +76,9 @@
             "history": {
                 "courseName": "Data Structures",
                 "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ "Tuesday":"2:00-3:50PM",
+                                     "Friday":"2:00-3:50PM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Jidong Xiao",
                                       "Fall 2024": "Jidong Xiao",
                                       "Spring 2024": "Jidong Xiao",
@@ -163,6 +166,9 @@
             "history": {
                 "courseName": "Principles of Software",
                 "semestersOffered":["Fall","Summer"],
+                "currentTimeSlots":{ "Monday":"4:00-5:50PM",
+                                     "Thursday":"4:00-5:50PM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Konstantin Kuzmin",
                                       "Summer 2024":"Konstantin Kuzmin",
                                       "Spring 2024": "Konstantin Kuzmin",
@@ -209,6 +215,9 @@
             "history": {
                 "courseName": "Operating Systems",
                 "semestersOffered":["Summer","Spring"],
+                "currentTimeSlots":{ "Monday":"10:00-12:50PM",
+                                     "Thursday":"10:00-12:50PM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"David Eric Goldschmidt",
                                       "Summer 2024":"David Eric Goldschmidt",
                                       "Spring 2024": "Wesley D Turner",
@@ -309,6 +318,9 @@
             "history": {
                 "courseName": "Introduction to Computer Science",
                 "semestersOffered":["Fall","Summer","Spring"],
+                "currentTimeSlots":{ "Monday":"2:00-3:20PM",
+                                     "Thursday":"2:00-3:20PM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Mark Richard Gilder",
                                       "Fall 2024": "Uzma Mushtaque",
                                       "Summer 2024":"Uzma Mushtaque",

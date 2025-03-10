@@ -183,6 +183,7 @@ app.post('/upload', async (req, res) => {
 		const history = {
 			courseName: courseCode,
 			semestersOffered:[],
+            currentTimeSlots:{},
 			semestersAvailable:{}
 		};
 
