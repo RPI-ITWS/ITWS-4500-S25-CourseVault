@@ -35,7 +35,9 @@ module.exports = async (req, res) => {
             "username": user.username,
             "pass_hash": await hashPassword(user.password),
             "first_name": user.first_name,
-            "last_name": user.last_name
+            "last_name": user.last_name,
+            "courses": {},
+            "professor_ratings": {}
         }
 
         userData.push(newUser)
