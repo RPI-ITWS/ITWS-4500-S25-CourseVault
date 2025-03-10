@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Uploading...';
             submitButton.disabled = true;
             
-            const response = await fetch('/upload', {
+            const response = await fetch(`${window.location.origin}/upload`, {
                 method: 'POST',
                 body: formData,
                 credentials: 'include'
