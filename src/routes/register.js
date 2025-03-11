@@ -18,24 +18,30 @@ async function hashPassword(password) {
     return await bcrypt.hash(password, saltRounds)
 }
 
-
 module.exports = async (req, res) => {
     try {
         const user = req.body
         console.log(user.username + " " + user.password)
-
+        
         let newUserId
         let userData = JSON.parse(fs.readFileSync(path.join(__dirname, './../data/users.json')))
         if ((newUserId = dupUsername(user.username, userData)) < 0) {
             return res.send("username already in use")
         }
 
+        const currentDate = new Date()
+        const options = { month: 'long', day: 'numeric', year: 'numeric' }
+        const formattedDate = currentDate.toLocaleDateString('en-US', options)
+        
         const newUser = {
             "id": newUserId,
             "username": user.username,
             "pass_hash": await hashPassword(user.password),
             "first_name": user.first_name,
-            "last_name": user.last_name
+            "last_name": user.last_name,
+            "date_joined": formattedDate,
+            "courses": {},
+            "professor_ratings": {}
         }
 
         userData.push(newUser)
@@ -56,4 +62,3 @@ module.exports = async (req, res) => {
         return res.status(500).send("Internal Server Error: " + err)
     }
 }
-

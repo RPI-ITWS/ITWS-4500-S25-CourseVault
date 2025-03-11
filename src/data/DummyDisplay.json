@@ -346,5 +346,43 @@
                 }
             } 
         }
+    },
+    "professors":{
+        "Barbara Cutler":{
+            "score": 0,
+            "optimal": 0,
+            "reviewCount": 0,
+            "reviews":{}
+        },
+        "David Eric Goldschmidt":{
+            "score": 0,
+            "optimal": 0,
+            "reviewCount": 0,
+            "reviews":{}
+        },
+        "Konstantin Kuzmin":{
+            "score": 0,
+            "optimal": 0,
+            "reviewCount": 0,
+            "reviews":{}
+        },
+        "Uzma Mushtaque":{
+            "score": 0,
+            "optimal": 0,
+            "reviewCount": 0,
+            "reviews":{}
+        },
+        "Jasmine A. Plum":{
+            "score": 0,
+            "optimal": 0,
+            "reviewCount": 0,
+            "reviews":{}
+        },
+        "Wesley D Turner":{
+            "score": 0,
+            "optimal": 0,
+            "reviewCount": 0,
+            "reviews":{}
+        }
     }
 }
