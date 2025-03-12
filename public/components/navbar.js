@@ -60,10 +60,21 @@ function Navbar() {
         setIsDropdownVisible(prev => !prev);
     };
 
-    // add functionality later
     const handleLogout = () => {
-        // setIsLoggedIn(false);
-        window.location.href = `${window.origin}/login`;
+        fetch(`${window.origin}/logout`, {
+            method: 'GET',
+            credentials: 'same-origin'
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = `${window.origin}/`;
+            } else {
+                console.error('Logout failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error during logout:', error);
+        });
     };
 
     const MoreButton = () => {
@@ -96,16 +107,19 @@ function Navbar() {
                 isLoggedIn
                 ? [
                     React.createElement(DropdownItem, { 
+                        key: 'profile',
                         id: 'profile',
                         text: 'Profile',
                         onClick: () => window.location.href = `${window.origin}/profile`
                     }),
                     React.createElement(DropdownItem, { 
+                        key: 'settings',
                         id: 'settings',
                         text: 'Settings',
                         onClick: () => window.location.href = `${window.origin}`
                     }),
                     React.createElement(DropdownItem, { 
+                        key: 'logout',
                         id: 'logout',
                         text: 'Logout',
                         onClick: handleLogout
@@ -113,11 +127,13 @@ function Navbar() {
                 ]
                 : [
                     React.createElement(DropdownItem, {
+                        key: 'login',
                         id: 'login',
                         text: 'Login',
                         onClick: () => window.location.href = `${window.origin}/login`
                     }),
                     React.createElement(DropdownItem, {
+                        key: 'signup',
                         id: 'signup',
                         text: 'Signup',
                         onClick: () => window.location.href = `${window.origin}/signup`

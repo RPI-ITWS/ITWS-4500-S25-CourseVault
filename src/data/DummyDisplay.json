@@ -95,6 +95,12 @@
                                       "Fall 2018": "Barbara Cutler",
                                       "Spring 2018": "Jasmine A. Plum"
                 }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
             } 
         },
         "CSCI-2600": {
@@ -186,7 +192,13 @@
                                       "Fall 2018": "William Albert Thompson",
                                       "Spring 2018": "Konstantin Kuzmin"
                 }
-            } 
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            }  
         },
         "CSCI-4210": {
             "documents": [
@@ -233,7 +245,13 @@
                                       "Spring 2019": "David Eric Goldschmidt",
                                       "Spring 2018": "David Eric Goldschmidt"
                 }
-            } 
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            }  
         },
         "CSCI-1100": {
             "documents": [
@@ -344,45 +362,13 @@
                                       "Summer 2018": "Konstantin Kuzmin",
                                       "Spring 2018": "Konstantin Kuzmin"
                 }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
             } 
-        }
-    },
-    "professors":{
-        "Barbara Cutler":{
-            "score": 0,
-            "optimal": 0,
-            "reviewCount": 0,
-            "reviews":{}
-        },
-        "David Eric Goldschmidt":{
-            "score": 0,
-            "optimal": 0,
-            "reviewCount": 0,
-            "reviews":{}
-        },
-        "Konstantin Kuzmin":{
-            "score": 0,
-            "optimal": 0,
-            "reviewCount": 0,
-            "reviews":{}
-        },
-        "Uzma Mushtaque":{
-            "score": 0,
-            "optimal": 0,
-            "reviewCount": 0,
-            "reviews":{}
-        },
-        "Jasmine A. Plum":{
-            "score": 0,
-            "optimal": 0,
-            "reviewCount": 0,
-            "reviews":{}
-        },
-        "Wesley D Turner":{
-            "score": 0,
-            "optimal": 0,
-            "reviewCount": 0,
-            "reviews":{}
         }
     }
 }
