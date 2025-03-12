@@ -18,6 +18,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieParser())
 
+// =======================================================
+//  Unauthenticated Routes
+// =======================================================
+
 app.get('/', (req, res) => {
 	console.log("root route")
 	res.sendFile(path.join(__dirname, '../public/index.html'))
@@ -25,12 +29,11 @@ app.get('/', (req, res) => {
 
 app.post("/login", loginRoute)
 app.post("/register", registerRoute)
-app.get("/logout", (req, res) => {
-	res.clearCookie("token")
-	return res.redirect("/")
-})
 
+// =======================================================
 app.use(cookieAuth)
+//  Authenticated Routes (everything below)
+// =======================================================
 
 app.get('/login', (req, res) => {
 	console.log("login route")
@@ -76,6 +79,13 @@ app.get('/userData', (req, res) => {
 	res.status(200).send(req.user)
 })
 
+app.delete("/logout", (req, res) => {
+	if (!req.user) {
+		res.status(401).send("No user present to logout.")
+	}
+	res.clearCookie("token")
+	res.status(200).send("User successfully logged out.")
+})
 
 // =======================================================
 //  Downloading Functionality for Backwork Page
