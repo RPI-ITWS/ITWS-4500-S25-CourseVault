@@ -61,20 +61,25 @@ function Navbar() {
     };
 
     const handleLogout = () => {
+        // setIsLoggedIn(false);
         fetch(`${window.origin}/logout`, {
-            method: 'GET',
-            credentials: 'same-origin'
-        })
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'}
+          })
         .then(response => {
-            if (response.ok) {
-                window.location.href = `${window.origin}/`;
-            } else {
-                console.error('Logout failed');
+            if (!response.ok) {
+              throw new Error(`Error: HTTP request of status ${response.status}`);
             }
-        })
-        .catch(error => {
-            console.error('Error during logout:', error);
-        });
+            return response.text()
+          })
+          .then(data => {
+            // since response.ok is true, logout was successful, dont need to check data (can use for an alert or something to tell user tho)
+            alert(data)
+            window.location.href = `${window.origin}/`
+          })
+          .catch(error => {
+            console.error('There was a problem with the Logout fetch operation:', error)
+          })
     };
 
     const MoreButton = () => {
