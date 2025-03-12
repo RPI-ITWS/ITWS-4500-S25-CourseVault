@@ -66,10 +66,16 @@ app.get('/resources', (req, res) => {
 	console.log("resources route")
 	res.sendFile(path.join(__dirname, '../public/resources/index.html'))
 })
+
 app.get('/schedule', (req, res) => {
 	console.log("schedule route")
 	res.sendFile(path.join(__dirname, '../public/schedule/index.html'))
 })
+
+app.get('/userData', (req, res) => {
+	res.status(200).send(req.user)
+})
+
 
 // =======================================================
 //  Downloading Functionality for Backwork Page

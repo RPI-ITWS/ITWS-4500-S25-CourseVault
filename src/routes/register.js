@@ -48,9 +48,7 @@ module.exports = async (req, res) => {
         fs.writeFileSync(path.join(__dirname, './../data/users.json'), JSON.stringify(userData, null, 2))
 
         let jwtSecretKey = process.env.JWT_SECRET_KEY
-        console.log(jwtSecretKey)
         const token = jwt.sign(newUser, jwtSecretKey, {expiresIn: "12h"})
-        // add token to cookies
 
         res.cookie("token", token, {
             httpOnly: true,
