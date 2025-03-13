@@ -7,7 +7,8 @@ const UserProfile = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const defaultUserData = {
+
+  const exampleUserData = {
     fullName: "Cam Thomas",
     email: "thomac23@university.edu",
     joined: "August 24, 2023",
@@ -20,9 +21,43 @@ const UserProfile = () => {
     ]
   };
 
+  const formatData = (data) => {
+    console.log(data.professor_ratings);
+    console.log(data.courses);
+    return {
+      fullName: `${data.first_name} ${data.last_name}`,
+      email: data.username,
+      joined: data.date_joined,
+      classes: data.courses && data.courses.length > 0 ? data.courses : ["Not Enrolled In Any Classes"],
+      ratings: data.professor_ratings && data.professor_ratings.length > 0 ? 
+               data.professor_ratings : [{ professor: "N/a", rating: 0, comment: "No Comments Submitted" }]
+    };
+  };
+
   useEffect(() => {
-    setUserData(defaultUserData);
-    setLoading(false);
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(`${window.origin}/userData`);
+        
+        if (!response.ok) {
+          throw new Error(`Error Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const formattedData = formatData(data);
+        setUserData(formattedData);
+
+      } catch (error) {
+
+        console.error("Failed to fetch user data:", error);
+        setUserData(exampleUserData);
+        setError("Failed to load user profile from server. Using default data.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserData();
   }, []);
 
   if (loading) {

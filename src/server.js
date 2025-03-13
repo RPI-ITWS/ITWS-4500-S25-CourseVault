@@ -202,11 +202,19 @@ app.post('/upload', async (req, res) => {
             currentTimeSlots:{},
 			semestersAvailable:{}
 		};
+     
+        const thoughts ={
+            "score": 0,
+            "optimal": 0,
+            "reviewCount": 0,
+            "reviews":{}
+        }; 
 
         if (!coursesData.courses[courseCode]) {
             coursesData.courses[courseCode] = {
-                documents: [newDocument],
-				history: history
+            documents: [newDocument],
+            history: history,
+            thoughts: thoughts
             };
         } else {
             const isDuplicate = coursesData.courses[courseCode].documents.some(doc => 
