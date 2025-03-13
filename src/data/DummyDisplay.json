@@ -76,8 +76,8 @@
             "history": {
                 "courseName": "Data Structures",
                 "semestersOffered":["Fall","Spring"],
-                "currentTimeSlots":{ "Tuesday":"2:00-3:50PM",
-                                     "Friday":"2:00-3:50PM"
+                "currentTimeSlots":{ "Tuesday":"2:00-3:50 PM",
+                                     "Friday":"2:00-3:50 PM"
                                     },
                 "semestersAvailable":{"Spring 2025":"Jidong Xiao",
                                       "Fall 2024": "Jidong Xiao",
@@ -172,8 +172,8 @@
             "history": {
                 "courseName": "Principles of Software",
                 "semestersOffered":["Fall","Summer"],
-                "currentTimeSlots":{ "Monday":"4:00-5:50PM",
-                                     "Thursday":"4:00-5:50PM"
+                "currentTimeSlots":{ "Monday":"4:00-5:50 PM",
+                                     "Thursday":"4:00-5:50 PM"
                                     },
                 "semestersAvailable":{"Spring 2025":"Konstantin Kuzmin",
                                       "Summer 2024":"Konstantin Kuzmin",
@@ -227,8 +227,8 @@
             "history": {
                 "courseName": "Operating Systems",
                 "semestersOffered":["Summer","Spring"],
-                "currentTimeSlots":{ "Monday":"10:00-12:50PM",
-                                     "Thursday":"10:00-12:50PM"
+                "currentTimeSlots":{ "Monday":"10:00-12:50 PM",
+                                     "Thursday":"10:00-12:50 PM"
                                     },
                 "semestersAvailable":{"Spring 2025":"David Eric Goldschmidt",
                                       "Summer 2024":"David Eric Goldschmidt",
@@ -336,8 +336,8 @@
             "history": {
                 "courseName": "Introduction to Computer Science",
                 "semestersOffered":["Fall","Summer","Spring"],
-                "currentTimeSlots":{ "Monday":"2:00-3:20PM",
-                                     "Thursday":"2:00-3:20PM"
+                "currentTimeSlots":{ "Monday":"2:00-3:20 PM",
+                                     "Thursday":"2:00-3:20 PM"
                                     },
                 "semestersAvailable":{"Spring 2025":"Mark Richard Gilder",
                                       "Fall 2024": "Uzma Mushtaque",
@@ -375,7 +375,9 @@
             "history": {
                 "courseName": "Introduction to Information Techology & Web Sciences",
                 "semestersOffered":["Fall","Spring"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Monday":"12:00-1:50 PM",
+                                     "Thursday":"12:00-1:50 PM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Richard M. Plotka",
                                       "Fall 2024": "Richard M. Plotka",
                                       "Spring 2024": "Richard M. Plotka",
@@ -405,7 +407,9 @@
             "history": {
                 "courseName": "IT & Society",
                 "semestersOffered":["Summer","Spring"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Tuesday":"8:00-9:50 AM",
+                                     "Friday":"8:00-9:50 AM"
+                                    },
                 "semestersAvailable":{"Spring 2025": "Christopher James Tozzi",
                                       "Summer 2024": "Katherine Anne Tyrol",
                                       "Spring 2024": "Katherine Anne Tyrol",
@@ -430,7 +434,9 @@
             "history": {
                 "courseName": "Managing IT Resources",
                 "semestersOffered":["Fall","Spring"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Monday":"8:00-9:50 AM",
+                                     "Thursday":"8:00-9:50 AM"
+                                    },
                 "semestersAvailable":{"Spring 2025": "Matthew John Grill",
                                       "Fall 2024": "Kathleen Sturey Fontaine",
                                       "Spring 2024": "Matthew John Grill",
@@ -459,8 +465,8 @@
             "history": {
                 "courseName": "Web Science Systems Development",
                 "semestersOffered":["Spring"],
-                "currentTimeSlots":{ "Tuesday":"12:00-1:50PM",
-                                     "Friday":"12:00-1:50PM"
+                "currentTimeSlots":{ "Tuesday":"12:00-1:50 PM",
+                                     "Friday":"12:00-1:50 PM"
                                     },
                 "semestersAvailable":{"Spring 2025":"Brian Robert Callahan",
                                       "Spring 2024": "Brian Robert Callahan",
@@ -484,7 +490,9 @@
             "history": {
                 "courseName": "Calculus I",
                 "semestersOffered":["Fall","Spring"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Monday":"8:00-9:50 AM",
+                                     "Thursday":"8:00-9:50 AM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Kseniya Yevgenyevna Klyachko",
                                       "Fall 2024": "Margaret Z. Kiehl",
                                       "Spring 2024": "Kseniya Yevgenyevna Klyachko",
@@ -514,7 +522,10 @@
             "history": {
                 "courseName": "Calculus II",
                 "semestersOffered":["Fall","Spring","Summer"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Tuesday":"12:00-1:20 PM",
+                                     "Wednesday":"12:00-1:50 PM",
+                                     "Friday":"12:00-1:20 PM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Margaret Z. Kiehl",
                                       "Fall 2024": "Belmiro Galo da Silva",
                                       "Summer 2024":"Daniel Franklin Stevenson",
@@ -545,7 +556,9 @@
             "history": {
                 "courseName": "Multivar Calculus & Matrix Algebra",
                 "semestersOffered":["Fall","Summer","Spring"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Monday":"10:00-11:50 AM",
+                                     "Thursday":"10:00-11:50 AM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Elisabeth Maria Brown",
                                       "Fall 2024": "Elisabeth Maria Brown",
                                       "Spring 2024": "Elisabeth Maria Brown",
@@ -579,7 +592,9 @@
             "history": {
                 "courseName": "Introduction to Philosophy",
                 "semestersOffered":["Fall","Spring"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Monday":"10:00-11:50 AM",
+                                     "Thursday":"10:00-11:50 AM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Daniel Peter Thero",
                                       "Fall 2024": "Daniel Peter Thero",
                                       "Spring 2024": "Daniel Peter Thero",
@@ -609,7 +624,9 @@
             "history": {
                 "courseName": "Critical Thinking",
                 "semestersOffered":["Summer","Spring"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Monday":"1:00-3:50 PM",
+                                     "Thursday":"1:00-3:50 PM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"John R Milanese",
                                       "Spring 2024": "John R Milanese",
                                       "Spring 2023": "John R Milanese",
@@ -635,7 +652,9 @@
             "history": {
                 "courseName": "Introduction to Formal Logic",
                 "semestersOffered":["Fall","Summer","Spring"],
-                "currentTimeSlots":{ },
+                "currentTimeSlots":{ "Monday":"12:00-1:50 PM",
+                                     "Thursday":"12:00-1:50 PM"
+                                    },
                 "semestersAvailable":{"Spring 2025":"Selmer Bringsjord",
                                       "Fall 2024": "Bram Van Heuveln",
                                       "Summer 2024":"Bram Van Heuveln",
