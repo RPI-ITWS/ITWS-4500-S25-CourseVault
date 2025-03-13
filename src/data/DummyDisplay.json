@@ -369,6 +369,303 @@
                 "reviewCount": 0,
                 "reviews":{}
             } 
+        },
+        "ITWS-1100": {
+            "documents": [],
+            "history": {
+                "courseName": "Introduction to Information Techology & Web Sciences",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025":"Richard M. Plotka",
+                                      "Fall 2024": "Richard M. Plotka",
+                                      "Spring 2024": "Richard M. Plotka",
+                                      "Fall 2023": "Richard M. Plotka",
+                                      "Spring 2023": "Richard M. Plotka",
+                                      "Fall 2022": "Richard M. Plotka",
+                                      "Spring 2022": "Richard M. Plotka",
+                                      "Fall 2021": "Richard M. Plotka",
+                                      "Spring 2021": "Richard M. Plotka",
+                                      "Fall 2020": "Richard M. Plotka",
+                                      "Spring 2020": "Richard M. Plotka",
+                                      "Fall 2019": "Richard M. Plotka",
+                                      "Spring 2019": "Richard M. Plotka",
+                                      "Fall 2018": "Richard M. Plotka",
+                                      "Spring 2018": "Richard M. Plotka"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "ITWS-1220": {
+            "documents": [],
+            "history": {
+                "courseName": "IT & Society",
+                "semestersOffered":["Summer","Spring"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025": "Christopher James Tozzi",
+                                      "Summer 2024": "Katherine Anne Tyrol",
+                                      "Spring 2024": "Katherine Anne Tyrol",
+                                      "Summer 2023": "Justin Dowdall",
+                                      "Spring 2023": "Christopher James Tozzi",
+                                      "Spring 2022": "Christopher James Tozzi",
+                                      "Spring 2021": "Christopher James Tozzi",
+                                      "Spring 2020": "Christopher James Tozzi",
+                                      "Spring 2019": "Christopher James Tozzi",
+                                      "Spring 2018": "Stephen Charles Pierce"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "ITWS-4310": {
+            "documents": [],
+            "history": {
+                "courseName": "Managing IT Resources",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025": "Matthew John Grill",
+                                      "Fall 2024": "Kathleen Sturey Fontaine",
+                                      "Spring 2024": "Matthew John Grill",
+                                      "Fall 2023": "Linda Kramarchyk",
+                                      "Spring 2023": "Matthew John Grill",
+                                      "Fall 2022": "Linda Kramarchyk",
+                                      "Spring 2022": "Matthew John Grill",
+                                      "Fall 2021": "Matthew John Grill",
+                                      "Spring 2021": "Matthew John Grill",
+                                      "Fall 2020": "Matthew John Grill",
+                                      "Spring 2020": "Matthew John Grill",
+                                      "Fall 2019": "Matthew John Grill",
+                                      "Spring 2019": "Jeffrey G Miner",
+                                      "Fall 2018": "Jeffrey G Miner"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "ITWS-4500": {
+            "documents": [],
+            "history": {
+                "courseName": "Web Science Systems Development",
+                "semestersOffered":["Spring"],
+                "currentTimeSlots":{ "Tuesday":"12:00-1:50PM",
+                                     "Friday":"12:00-1:50PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Brian Robert Callahan",
+                                      "Spring 2024": "Brian Robert Callahan",
+                                      "Spring 2023": "Brian Robert Callahan",
+                                      "Spring 2022": "Brian Robert Callahan",
+                                      "Spring 2021": "Brian Robert Callahan",
+                                      "Spring 2020": "Brian Robert Callahan",
+                                      "Spring 2019": "Brian Robert Callahan",
+                                      "Spring 2018": "Peter A Fox"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "MATH-1010": {
+            "documents": [],
+            "history": {
+                "courseName": "Calculus I",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025":"Kseniya Yevgenyevna Klyachko",
+                                      "Fall 2024": "Margaret Z. Kiehl",
+                                      "Spring 2024": "Kseniya Yevgenyevna Klyachko",
+                                      "Fall 2023": "Margaret Z. Kiehl",
+                                      "Spring 2023": "Kseniya Yevgenyevna Klyachko",
+                                      "Fall 2022": "Margaret Z. Kiehl",
+                                      "Spring 2022": "Gina Irene Kucinski",
+                                      "Fall 2021": "Margaret Z. Kiehl",
+                                      "Spring 2021": "Eliane Zerbetto Traldi",
+                                      "Fall 2020": "Margaret Z. Kiehl",
+                                      "Spring 2020": "David A Schmidt",
+                                      "Fall 2019": "Margaret Z. Kiehl",
+                                      "Spring 2019": "David A Schmidt",
+                                      "Fall 2018": "Margaret Z. Kiehl",
+                                      "Spring 2018": "David A Schmidt"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "MATH-1020": {
+            "documents": [],
+            "history": {
+                "courseName": "Calculus II",
+                "semestersOffered":["Fall","Spring","Summer"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025":"Margaret Z. Kiehl",
+                                      "Fall 2024": "Belmiro Galo da Silva",
+                                      "Summer 2024":"Daniel Franklin Stevenson",
+                                      "Spring 2024": "Margaret Z. Kiehl",
+                                      "Fall 2023": "Belmiro Galo da Silva",
+                                      "Spring 2023": "Margaret Z. Kiehl",
+                                      "Fall 2022": "Kseniya Yevgenyevna Klyachko",
+                                      "Spring 2022": "Margaret Z. Kiehl",
+                                      "Fall 2021": "Eliane Zerbetto Traldi",
+                                      "Spring 2021": "Margaret Z. Kiehl",
+                                      "Fall 2020": "Eliane Zerbetto Traldi",
+                                      "Spring 2020": "Margaret Z. Kiehl",
+                                      "Fall 2019": "David A Schmidt",
+                                      "Spring 2019": "Margaret Z. Kiehl",
+                                      "Fall 2018": "David A Schmidt",
+                                      "Spring 2018": "Margaret Z. Kiehl"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "MATH-2010": {
+            "documents": [],
+            "history": {
+                "courseName": "Multivar Calculus & Matrix Algebra",
+                "semestersOffered":["Fall","Summer","Spring"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025":"Elisabeth Maria Brown",
+                                      "Fall 2024": "Elisabeth Maria Brown",
+                                      "Spring 2024": "Elisabeth Maria Brown",
+                                      "Fall 2023": "Elisabeth Maria Brown",
+                                      "Spring 2023": "Daniel Franklin Stevenson",
+                                      "Fall 2022": "Elisabeth Maria Brown",
+                                      "Spring 2022": "Daniel Franklin Stevenson",
+                                      "Fall 2021": "Elisabeth Maria Brown",
+                                      "Summer 2021": "Daniel Franklin Stevenson",
+                                      "Spring 2021": "Mark H Holmes",
+                                      "Fall 2020": "Mark H Holmes",
+                                      "Summer 2020": "John E. Mitchell",
+                                      "Spring 2020": "Mark H Holmes",
+                                      "Fall 2019": "David A Schmidt",
+                                      "Summer 2019": "Gregor Kovacic",
+                                      "Spring 2019": "David A Schmidt",
+                                      "Fall 2018": "David A Schmidt",
+                                      "Summer 2018": "John E. Mitchell",
+                                      "Spring 2018": "Harry W McLaughlin"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "PHIL-1110": {
+            "documents": [],
+            "history": {
+                "courseName": "Introduction to Philosophy",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025":"Daniel Peter Thero",
+                                      "Fall 2024": "Daniel Peter Thero",
+                                      "Spring 2024": "Daniel Peter Thero",
+                                      "Fall 2023": "Daniel Peter Thero",
+                                      "Spring 2023": "Daniel Peter Thero",
+                                      "Fall 2022": "Daniel Peter Thero",
+                                      "Spring 2022": "Daniel Peter Thero",
+                                      "Fall 2021": "Daniel Peter Thero",
+                                      "Spring 2021": "Daniel Peter Thero",
+                                      "Fall 2020": "Daniel Peter Thero",
+                                      "Spring 2020": "Daniel Peter Thero",
+                                      "Fall 2019": "Daniel Peter Thero",
+                                      "Spring 2019": "Daniel Peter Thero",
+                                      "Fall 2018": "Daniel Peter Thero",
+                                      "Spring 2018": "Daniel Peter Thero"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "PHIL-2100": {
+            "documents": [],
+            "history": {
+                "courseName": "Critical Thinking",
+                "semestersOffered":["Summer","Spring"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025":"John R Milanese",
+                                      "Spring 2024": "John R Milanese",
+                                      "Spring 2023": "John R Milanese",
+                                      "Spring 2022": "John R Milanese",
+                                      "Spring 2021": "John R Milanese",
+                                      "Summer 2020": "Bram Van Heuveln",
+                                      "Spring 2020": "John R Milanese",
+                                      "Summer 2019": "Bram Van Heuveln",
+                                      "Spring 2019": "Bram Van Heuveln",
+                                      "Summer 2018": "Bram Van Heuveln",
+                                      "Spring 2018": "Bram Van Heuveln"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "PHIL-2140": {
+            "documents": [],
+            "history": {
+                "courseName": "Introduction to Formal Logic",
+                "semestersOffered":["Fall","Summer","Spring"],
+                "currentTimeSlots":{ },
+                "semestersAvailable":{"Spring 2025":"Selmer Bringsjord",
+                                      "Fall 2024": "Bram Van Heuveln",
+                                      "Summer 2024":"Bram Van Heuveln",
+                                      "Spring 2024": "Selmer Bringsjord",
+                                      "Fall 2023": "Bram Van Heuveln",
+                                      "Summer 2023": "Bram Van Heuveln",
+                                      "Spring 2023": "Selmer Bringsjord",
+                                      "Fall 2022": "Bram Van Heuveln",
+                                      "Summer 2022": "Bram Van Heuveln",
+                                      "Spring 2022": "Selmer Bringsjord",
+                                      "Fall 2021": "Bram Van Heuveln",
+                                      "Summer 2021": "Bram Van Heuveln",
+                                      "Spring 2021": "Selmer Bringsjord",
+                                      "Fall 2020": "Bram Van Heuveln",
+                                      "Summer 2020": "Bram Van Heuveln",
+                                      "Spring 2020": "Selmer Bringsjord",
+                                      "Fall 2019": "Bram Van Heuveln",
+                                      "Summer 2019": "Bram Van Heuveln",
+                                      "Spring 2019": "Selmer Bringsjord",
+                                      "Fall 2018": "Bram Van Heuveln",
+                                      "Summer 2018": "Bram Van Heuveln",
+                                      "Spring 2018": "Selmer Bringsjord"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
         }
     }
 }
