@@ -88,6 +88,33 @@ app.delete("/logout", (req, res) => {
 })
 
 // =======================================================
+//  Course Pages Backend Functionality for API requests
+// =======================================================
+
+app.get('/courses', (req, res) => {
+    try {
+        const { courses } = dummyData;
+        
+        const formattedData = {
+          courses: {}
+        };
+        
+        for (const courseId in courses) {
+          formattedData.courses[courseId] = {
+            history: courses[courseId].history,
+            thoughts: courses[courseId].thoughts
+          };
+        }
+
+        res.json(formattedData);
+      } catch (error) {
+        console.error('Error processing request:', error);
+        res.status(500).json({ error: 'Failed to process the request' });
+      }
+});	
+
+
+// =======================================================
 //  Downloading Functionality for Backwork Page
 // =======================================================
 
