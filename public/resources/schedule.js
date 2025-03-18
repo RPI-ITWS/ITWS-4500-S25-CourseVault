@@ -1,3 +1,15 @@
+async function fillSchedule() {
+    const response = await fetch(`${window.origin}/userData`);
+
+    if (!response.ok) {
+        throw new Error(`Error Status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    console.log(data.courses);
+}
+
 function createScheduleGrid() {
     const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     const times = Array.from({ length: 24 }, (_, i) => {
@@ -56,6 +68,8 @@ function createScheduleGrid() {
     const contentDiv = document.getElementById('content-block');
     //contentDiv.innerHTML = '';
     contentDiv.appendChild(table);
+
+    fillSchedule();
 }
 
 createScheduleGrid();

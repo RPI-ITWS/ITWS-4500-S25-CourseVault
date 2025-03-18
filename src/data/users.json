@@ -26,7 +26,7 @@
     "first_name": "C",
     "last_name": "M",
     "date_joined": "March 10, 2025",
-    "courses": [],
+    "courses": ["CSCI-1200", "CSCI-4210"],
     "professor_ratings": []
   },
   {
@@ -36,7 +36,7 @@
     "first_name": "Chris",
     "last_name": "M",
     "date_joined": "February 2, 2025",
-    "courses": [],
+    "courses": ["CSCI-1200", "CSCI-4210"],
     "professor_ratings": []
   },
   {
