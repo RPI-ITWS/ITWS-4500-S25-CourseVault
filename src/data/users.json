@@ -46,7 +46,7 @@
     "first_name": "Joshua",
     "last_name": "Collins",
     "date_joined": "March 10, 2025",
-    "courses": [],
+    "courses": ["CSCI-1100","MATH-1020","ITWS-1100","PHIL-1100"],
     "professor_ratings": []
   }
 ]
