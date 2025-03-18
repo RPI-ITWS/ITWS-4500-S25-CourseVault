@@ -93,25 +93,27 @@ app.delete("/logout", (req, res) => {
 
 app.get('/courses', (req, res) => {
     try {
-        const { courses } = dummyData;
-        
-        const formattedData = {
-          courses: {}
+      const { courses } = dummyData;
+      
+      const sortedCourses = Object.keys(courses).sort();
+      
+      const formattedData = {
+        courses: {}
+      };
+      
+      sortedCourses.forEach(courseId => {
+        formattedData.courses[courseId] = {
+          history: courses[courseId].history,
+          thoughts: courses[courseId].thoughts
         };
-        
-        for (const courseId in courses) {
-          formattedData.courses[courseId] = {
-            history: courses[courseId].history,
-            thoughts: courses[courseId].thoughts
-          };
-        }
-
-        res.json(formattedData);
-      } catch (error) {
-        console.error('Error processing request:', error);
-        res.status(500).json({ error: 'Failed to process the request' });
-      }
-});	
+      });
+  
+      res.json(formattedData);
+    } catch (error) {
+      console.error('Error processing request:', error);
+      res.status(500).json({ error: 'Failed to process the request' });
+    }
+  });
 
 
 // =======================================================
