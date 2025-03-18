@@ -76,7 +76,6 @@ app.get('/schedule', (req, res) => {
 })
 
 app.get('/userData', (req, res) => {
-	//res.status(200).send(req.user)
     let userData = JSON.parse(fs.readFileSync(path.join(__dirname, './data/users.json')))
 
     let matchingUser
@@ -86,7 +85,7 @@ app.get('/userData', (req, res) => {
             break
         }
     }
-    
+
     res.status(200).send(matchingUser);
 })
 

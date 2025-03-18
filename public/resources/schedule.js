@@ -6,8 +6,28 @@ async function fillSchedule() {
     }
     
     const data = await response.json();
-    
-    console.log(data.courses);
+
+    for (let i = 0; i < data.courses.length; i++) {
+        const course = data.courses[i];
+
+        const response = await fetch(`${window.location.origin}/AssignmentsStored`)
+
+        if (!response.ok) {
+            throw new Error(`Error Status: ${response.status}`);
+        }
+
+        const courseData = await response.json();
+
+        let foundCourse;
+
+        for (const [courseCode, cData] of Object.entries(courseData.courses)) {
+            if (courseCode === course) {
+                foundCourse = cData;
+            }
+        }
+
+        const times = foundCourse.history.currentTimeSlots;
+    }
 }
 
 function createScheduleGrid() {
