@@ -4,27 +4,49 @@
     "username": "MIUST",
     "pass_hash": "$2b$10$5tuqj0kVru.6bupSCblJr.HwBEPKy7jVxQDTFXkeedkvKDJDkyJ8a",
     "first_name": "Mius",
-    "last_name": "Thomas"
+    "last_name": "Thomas",
+    "date_joined": "March 1, 2025",
+    "courses": [],
+    "professor_ratings": []
   },
   {
     "id": 2,
     "username": "ThomasM",
     "pass_hash": "$2b$10$QbSAJxQn.Q/KynquPkY6F.STDgFleYAPQaHKfz6Vi27.Cp1dE.ShW",
     "first_name": "Thomas",
-    "last_name": "Miles"
+    "last_name": "Miles",
+    "date_joined": "December 27, 2024",
+    "courses": [],
+    "professor_ratings": []
   },
   {
     "id": 3,
-    "username": "collij13@rpi.edu",
-    "pass_hash": "$2b$10$dDutcoD7R35syLT/MBE2JutyKixbj5N3RzOgr318/U.SIU67p89CW",
-    "first_name": "Joshua",
-    "last_name": "Collins"
-  },
-  {
-    "id": 4,
     "username": "Christian2147",
     "pass_hash": "$2b$10$uiPEPgDTOphWYn7C1WJMqO2wpFqBSjhvbh8pkQDL156shukkUx93a",
     "first_name": "C",
-    "last_name": "M"
+    "last_name": "M",
+    "date_joined": "March 10, 2025",
+    "courses": [],
+    "professor_ratings": []
+  },
+  {
+    "id": 4,
+    "username": "Christianm2147",
+    "pass_hash": "$2b$10$cGtSs05X6NSY56LUQcZ2y.jbTPkgZvBEEriz1.oJo2vfcfVTg4ZSe",
+    "first_name": "Chris",
+    "last_name": "M",
+    "date_joined": "February 2, 2025",
+    "courses": [],
+    "professor_ratings": []
+  },
+  {
+    "id": 5,
+    "username": "collij13@rpi.edu",
+    "pass_hash": "$2b$10$WpMCTuhN2wLzWdB8q20pTue5F1LLwL4u9GcULmo4IF0dKsl5mfX/O",
+    "first_name": "Joshua",
+    "last_name": "Collins",
+    "date_joined": "March 10, 2025",
+    "courses": ["CSCI-1100","MATH-1020","ITWS-1100","PHIL-1100"],
+    "professor_ratings": []
   }
 ]

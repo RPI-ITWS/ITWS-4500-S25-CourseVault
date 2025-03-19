@@ -48,11 +48,28 @@ function populateDropdown(query) {
     const dropdown = document.getElementById('courseDropdown');
     dropdown.innerHTML = '';
     
-    const matches = Array.from(availableCourses)
-        .filter(course => course.toLowerCase().includes(query));
+    const matchingCourses = Array.from(availableCourses).filter(course => course.toLowerCase().includes(query));
 
-    if (matches.length) {
-        matches.forEach(course => {
+    matchingCourses.sort((a, b) => {
+        const aMatch = a.match(/^([A-Za-z]+)-(\d{4})$/);
+        const bMatch = b.match(/^([A-Za-z]+)-(\d{4})$/);
+        
+        if (aMatch && bMatch) {
+            const [, aPrefix, aSuffix] = aMatch;
+            const [, bPrefix, bSuffix] = bMatch;
+            
+            if (aPrefix !== bPrefix) {
+                return aPrefix.localeCompare(bPrefix);
+            }
+
+            return parseInt(aSuffix) - parseInt(bSuffix);
+        }
+
+        return a.localeCompare(b);
+    });
+
+    if (matchingCourses.length) {
+        matchingCourses.forEach(course => {
             const item = document.createElement('div');
             item.className = 'dropdown-item';
             

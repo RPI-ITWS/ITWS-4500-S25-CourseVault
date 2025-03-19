@@ -18,33 +18,37 @@ async function hashPassword(password) {
     return await bcrypt.hash(password, saltRounds)
 }
 
-
 module.exports = async (req, res) => {
     try {
         const user = req.body
         console.log(user.username + " " + user.password)
-
+        
         let newUserId
         let userData = JSON.parse(fs.readFileSync(path.join(__dirname, './../data/users.json')))
         if ((newUserId = dupUsername(user.username, userData)) < 0) {
             return res.send("username already in use")
         }
 
+        const currentDate = new Date()
+        const options = { month: 'long', day: 'numeric', year: 'numeric' }
+        const formattedDate = currentDate.toLocaleDateString('en-US', options)
+        
         const newUser = {
             "id": newUserId,
             "username": user.username,
             "pass_hash": await hashPassword(user.password),
             "first_name": user.first_name,
-            "last_name": user.last_name
+            "last_name": user.last_name,
+            "date_joined": formattedDate,
+            "courses": {},
+            "professor_ratings": {}
         }
 
         userData.push(newUser)
         fs.writeFileSync(path.join(__dirname, './../data/users.json'), JSON.stringify(userData, null, 2))
 
         let jwtSecretKey = process.env.JWT_SECRET_KEY
-        console.log(jwtSecretKey)
         const token = jwt.sign(newUser, jwtSecretKey, {expiresIn: "12h"})
-        // add token to cookies
 
         res.cookie("token", token, {
             httpOnly: true,
@@ -56,4 +60,3 @@ module.exports = async (req, res) => {
         return res.status(500).send("Internal Server Error: " + err)
     }
 }
-

@@ -72,7 +72,36 @@
                     "date_assigned": "Spring 2023",
                     "file_name": "DS-HW-10.pdf"
                 }
-            ]
+            ],
+            "history": {
+                "courseName": "Data Structures",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ "Tuesday":"2:00-3:50 PM",
+                                     "Friday":"2:00-3:50 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Jidong Xiao",
+                                      "Fall 2024": "Jidong Xiao",
+                                      "Spring 2024": "Jidong Xiao",
+                                      "Fall 2023": "Jidong Xiao",
+                                      "Spring 2023": "Jidong Xiao",
+                                      "Fall 2022": "Barbara Cutler",
+                                      "Spring 2022": "Jasmine A. Plum",
+                                      "Fall 2021": "Barbara Cutler",
+                                      "Spring 2021": "Jasmine A. Plum",
+                                      "Fall 2020": "Barbara Cutler",
+                                      "Spring 2020": "Jasmine A. Plum",
+                                      "Fall 2019": "Barbara Cutler",
+                                      "Spring 2019": "Jasmine A. Plum",
+                                      "Fall 2018": "Barbara Cutler",
+                                      "Spring 2018": "Jasmine A. Plum"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
         },
         "CSCI-2600": {
             "documents": [
@@ -139,7 +168,37 @@
                     "date_assigned": "Spring 2024",
                     "file_name": "Psoft-HW-8.pdf"
                 }
-            ]
+            ],
+            "history": {
+                "courseName": "Principles of Software",
+                "semestersOffered":["Fall","Summer"],
+                "currentTimeSlots":{ "Monday":"4:00-5:50 PM",
+                                     "Thursday":"4:00-5:50 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Konstantin Kuzmin",
+                                      "Summer 2024":"Konstantin Kuzmin",
+                                      "Spring 2024": "Konstantin Kuzmin",
+                                      "Summer 2023": "Konstantin Kuzmin",
+                                      "Spring 2023": "Konstantin Kuzmin",
+                                      "Summer 2022": "Konstantin Kuzmin",
+                                      "Spring 2022": "Konstantin Kuzmin",
+                                      "Summer 2021": "Konstantin Kuzmin",
+                                      "Spring 2021": "Konstantin Kuzmin",
+                                      "Summer 2020": "Konstantin Kuzmin",
+                                      "Spring 2020": "Konstantin Kuzmin",
+                                      "Fall 2019": "William Albert Thompson",
+                                      "Summer 2019": "Konstantin Kuzmin ",
+                                      "Spring 2019": "William Albert Thompson",
+                                      "Fall 2018": "William Albert Thompson",
+                                      "Spring 2018": "Konstantin Kuzmin"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            }  
         },
         "CSCI-4210": {
             "documents": [
@@ -156,8 +215,476 @@
                     "professor": "Dr. Goldschmidt",
                     "date_assigned": "Spring 2025",
                     "file_name": "OpSys-HW-2.pdf"
+                },
+                {
+                    "document_name": "Exam 1 Solutions",
+                    "assignment_type": "Exam",
+                    "professor": "Dr. Goldschmidt",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "exam1-solns.pdf"
                 }
-            ]
+            ],
+            "history": {
+                "courseName": "Operating Systems",
+                "semestersOffered":["Summer","Spring"],
+                "currentTimeSlots":{ "Monday":"10:00-12:50 PM",
+                                     "Thursday":"10:00-12:50 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"David Eric Goldschmidt",
+                                      "Summer 2024":"David Eric Goldschmidt",
+                                      "Spring 2024": "Wesley D Turner",
+                                      "Summer 2023": "David Eric Goldschmidt",
+                                      "Spring 2023": "David Eric Goldschmidt",
+                                      "Summer 2022": "David Eric Goldschmidt",
+                                      "Spring 2022": "David Eric Goldschmidt",
+                                      "Summer 2021": "David Eric Goldschmidt",
+                                      "Spring 2021": "David Eric Goldschmidt",
+                                      "Summer 2020": "David Eric Goldschmidt",
+                                      "Spring 2020": "Wesley D Turner",
+                                      "Summer 2019": "David Eric Goldschmidt",
+                                      "Spring 2019": "David Eric Goldschmidt",
+                                      "Spring 2018": "David Eric Goldschmidt"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            }  
+        },
+        "CSCI-1100": {
+            "documents": [
+                {
+                    "document_name": "Lab 0",
+                    "assignment_type": "Lab",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-lab-0.pdf"
+                },
+                {
+                    "document_name": "Lab 1",
+                    "assignment_type": "Lab",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-lab-1.pdf"
+                },
+                {
+                    "document_name": "Lab 2",
+                    "assignment_type": "Lab",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-lab-2.pdf"
+                },
+                {
+                    "document_name": "Lab 3",
+                    "assignment_type": "Lab",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-lab-3.pdf"
+                },
+                {
+                    "document_name": "Lab 4",
+                    "assignment_type": "Lab",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-lab-4.pdf"
+                },
+                {
+                    "document_name": "Lab 5",
+                    "assignment_type": "Lab",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-lab-5.pdf"
+                },
+                {
+                    "document_name": "Lab 6",
+                    "assignment_type": "Lab",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-lab-6.pdf"
+                },
+                {
+                    "document_name": "Homework 1",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-HW-1.pdf"
+                },
+                {
+                    "document_name": "Homework 2",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-HW-2.pdf"
+                },
+                {
+                    "document_name": "Homework 3",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-HW-3.pdf"
+                },
+                {
+                    "document_name": "Homework 4",
+                    "assignment_type": "Homework",
+                    "professor": "Dr. Mushtaque",
+                    "date_assigned": "Spring 2025",
+                    "file_name": "CS-1100-HW-4.pdf"
+                }
+            ],
+            "history": {
+                "courseName": "Introduction to Computer Science",
+                "semestersOffered":["Fall","Summer","Spring"],
+                "currentTimeSlots":{ "Monday":"2:00-3:20 PM",
+                                     "Thursday":"2:00-3:20 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Mark Richard Gilder",
+                                      "Fall 2024": "Uzma Mushtaque",
+                                      "Summer 2024":"Uzma Mushtaque",
+                                      "Spring 2024": "Uzma Mushtaque",
+                                      "Fall 2023": "Uzma Mushtaque",
+                                      "Summer 2023": "Uzma Mushtaque",
+                                      "Spring 2023": "Uzma Mushtaque",
+                                      "Fall 2022": "Uzma Mushtaque",
+                                      "Summer 2022": "Uzma Mushtaque",
+                                      "Spring 2022": "Uzma Mushtaque",
+                                      "Fall 2021": "Uzma Mushtaque",
+                                      "Summer 2021": "Uzma Mushtaque",
+                                      "Spring 2021": "Uzma Mushtaque",
+                                      "Fall 2020": "Uzma Mushtaque",
+                                      "Summer 2020": "Uzma Mushtaque",
+                                      "Spring 2020": "Uzma Mushtaque",
+                                      "Fall 2019": "Uzma Mushtaque",
+                                      "Summer 2019": "Uzma Mushtaque",
+                                      "Spring 2019": "Uzma Mushtaque",
+                                      "Fall 2018": "Konstantin Kuzmin",
+                                      "Summer 2018": "Konstantin Kuzmin",
+                                      "Spring 2018": "Konstantin Kuzmin"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "ITWS-1100": {
+            "documents": [],
+            "history": {
+                "courseName": "Introduction to Information Techology & Web Sciences",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ "Monday":"12:00-1:50 PM",
+                                     "Thursday":"12:00-1:50 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Richard M. Plotka",
+                                      "Fall 2024": "Richard M. Plotka",
+                                      "Spring 2024": "Richard M. Plotka",
+                                      "Fall 2023": "Richard M. Plotka",
+                                      "Spring 2023": "Richard M. Plotka",
+                                      "Fall 2022": "Richard M. Plotka",
+                                      "Spring 2022": "Richard M. Plotka",
+                                      "Fall 2021": "Richard M. Plotka",
+                                      "Spring 2021": "Richard M. Plotka",
+                                      "Fall 2020": "Richard M. Plotka",
+                                      "Spring 2020": "Richard M. Plotka",
+                                      "Fall 2019": "Richard M. Plotka",
+                                      "Spring 2019": "Richard M. Plotka",
+                                      "Fall 2018": "Richard M. Plotka",
+                                      "Spring 2018": "Richard M. Plotka"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "ITWS-1220": {
+            "documents": [],
+            "history": {
+                "courseName": "IT & Society",
+                "semestersOffered":["Summer","Spring"],
+                "currentTimeSlots":{ "Tuesday":"8:00-9:50 AM",
+                                     "Friday":"8:00-9:50 AM"
+                                    },
+                "semestersAvailable":{"Spring 2025": "Christopher James Tozzi",
+                                      "Summer 2024": "Katherine Anne Tyrol",
+                                      "Spring 2024": "Katherine Anne Tyrol",
+                                      "Summer 2023": "Justin Dowdall",
+                                      "Spring 2023": "Christopher James Tozzi",
+                                      "Spring 2022": "Christopher James Tozzi",
+                                      "Spring 2021": "Christopher James Tozzi",
+                                      "Spring 2020": "Christopher James Tozzi",
+                                      "Spring 2019": "Christopher James Tozzi",
+                                      "Spring 2018": "Stephen Charles Pierce"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "ITWS-4310": {
+            "documents": [],
+            "history": {
+                "courseName": "Managing IT Resources",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ "Monday":"8:00-9:50 AM",
+                                     "Thursday":"8:00-9:50 AM"
+                                    },
+                "semestersAvailable":{"Spring 2025": "Matthew John Grill",
+                                      "Fall 2024": "Kathleen Sturey Fontaine",
+                                      "Spring 2024": "Matthew John Grill",
+                                      "Fall 2023": "Linda Kramarchyk",
+                                      "Spring 2023": "Matthew John Grill",
+                                      "Fall 2022": "Linda Kramarchyk",
+                                      "Spring 2022": "Matthew John Grill",
+                                      "Fall 2021": "Matthew John Grill",
+                                      "Spring 2021": "Matthew John Grill",
+                                      "Fall 2020": "Matthew John Grill",
+                                      "Spring 2020": "Matthew John Grill",
+                                      "Fall 2019": "Matthew John Grill",
+                                      "Spring 2019": "Jeffrey G Miner",
+                                      "Fall 2018": "Jeffrey G Miner"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "ITWS-4500": {
+            "documents": [],
+            "history": {
+                "courseName": "Web Science Systems Development",
+                "semestersOffered":["Spring"],
+                "currentTimeSlots":{ "Tuesday":"12:00-1:50 PM",
+                                     "Friday":"12:00-1:50 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Brian Robert Callahan",
+                                      "Spring 2024": "Brian Robert Callahan",
+                                      "Spring 2023": "Brian Robert Callahan",
+                                      "Spring 2022": "Brian Robert Callahan",
+                                      "Spring 2021": "Brian Robert Callahan",
+                                      "Spring 2020": "Brian Robert Callahan",
+                                      "Spring 2019": "Brian Robert Callahan",
+                                      "Spring 2018": "Peter A Fox"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "MATH-1010": {
+            "documents": [],
+            "history": {
+                "courseName": "Calculus I",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ "Monday":"8:00-9:50 AM",
+                                     "Thursday":"8:00-9:50 AM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Kseniya Yevgenyevna Klyachko",
+                                      "Fall 2024": "Margaret Z. Kiehl",
+                                      "Spring 2024": "Kseniya Yevgenyevna Klyachko",
+                                      "Fall 2023": "Margaret Z. Kiehl",
+                                      "Spring 2023": "Kseniya Yevgenyevna Klyachko",
+                                      "Fall 2022": "Margaret Z. Kiehl",
+                                      "Spring 2022": "Gina Irene Kucinski",
+                                      "Fall 2021": "Margaret Z. Kiehl",
+                                      "Spring 2021": "Eliane Zerbetto Traldi",
+                                      "Fall 2020": "Margaret Z. Kiehl",
+                                      "Spring 2020": "David A Schmidt",
+                                      "Fall 2019": "Margaret Z. Kiehl",
+                                      "Spring 2019": "David A Schmidt",
+                                      "Fall 2018": "Margaret Z. Kiehl",
+                                      "Spring 2018": "David A Schmidt"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "MATH-1020": {
+            "documents": [],
+            "history": {
+                "courseName": "Calculus II",
+                "semestersOffered":["Fall","Spring","Summer"],
+                "currentTimeSlots":{ "Tuesday":"12:00-1:20 PM",
+                                     "Wednesday":"12:00-1:50 PM",
+                                     "Friday":"12:00-1:20 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Margaret Z. Kiehl",
+                                      "Fall 2024": "Belmiro Galo da Silva",
+                                      "Summer 2024":"Daniel Franklin Stevenson",
+                                      "Spring 2024": "Margaret Z. Kiehl",
+                                      "Fall 2023": "Belmiro Galo da Silva",
+                                      "Spring 2023": "Margaret Z. Kiehl",
+                                      "Fall 2022": "Kseniya Yevgenyevna Klyachko",
+                                      "Spring 2022": "Margaret Z. Kiehl",
+                                      "Fall 2021": "Eliane Zerbetto Traldi",
+                                      "Spring 2021": "Margaret Z. Kiehl",
+                                      "Fall 2020": "Eliane Zerbetto Traldi",
+                                      "Spring 2020": "Margaret Z. Kiehl",
+                                      "Fall 2019": "David A Schmidt",
+                                      "Spring 2019": "Margaret Z. Kiehl",
+                                      "Fall 2018": "David A Schmidt",
+                                      "Spring 2018": "Margaret Z. Kiehl"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "MATH-2010": {
+            "documents": [],
+            "history": {
+                "courseName": "Multivar Calculus & Matrix Algebra",
+                "semestersOffered":["Fall","Summer","Spring"],
+                "currentTimeSlots":{ "Monday":"10:00-11:50 AM",
+                                     "Thursday":"10:00-11:50 AM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Elisabeth Maria Brown",
+                                      "Fall 2024": "Elisabeth Maria Brown",
+                                      "Spring 2024": "Elisabeth Maria Brown",
+                                      "Fall 2023": "Elisabeth Maria Brown",
+                                      "Spring 2023": "Daniel Franklin Stevenson",
+                                      "Fall 2022": "Elisabeth Maria Brown",
+                                      "Spring 2022": "Daniel Franklin Stevenson",
+                                      "Fall 2021": "Elisabeth Maria Brown",
+                                      "Summer 2021": "Daniel Franklin Stevenson",
+                                      "Spring 2021": "Mark H Holmes",
+                                      "Fall 2020": "Mark H Holmes",
+                                      "Summer 2020": "John E. Mitchell",
+                                      "Spring 2020": "Mark H Holmes",
+                                      "Fall 2019": "David A Schmidt",
+                                      "Summer 2019": "Gregor Kovacic",
+                                      "Spring 2019": "David A Schmidt",
+                                      "Fall 2018": "David A Schmidt",
+                                      "Summer 2018": "John E. Mitchell",
+                                      "Spring 2018": "Harry W McLaughlin"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "PHIL-1110": {
+            "documents": [],
+            "history": {
+                "courseName": "Introduction to Philosophy",
+                "semestersOffered":["Fall","Spring"],
+                "currentTimeSlots":{ "Monday":"10:00-11:50 AM",
+                                     "Thursday":"10:00-11:50 AM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Daniel Peter Thero",
+                                      "Fall 2024": "Daniel Peter Thero",
+                                      "Spring 2024": "Daniel Peter Thero",
+                                      "Fall 2023": "Daniel Peter Thero",
+                                      "Spring 2023": "Daniel Peter Thero",
+                                      "Fall 2022": "Daniel Peter Thero",
+                                      "Spring 2022": "Daniel Peter Thero",
+                                      "Fall 2021": "Daniel Peter Thero",
+                                      "Spring 2021": "Daniel Peter Thero",
+                                      "Fall 2020": "Daniel Peter Thero",
+                                      "Spring 2020": "Daniel Peter Thero",
+                                      "Fall 2019": "Daniel Peter Thero",
+                                      "Spring 2019": "Daniel Peter Thero",
+                                      "Fall 2018": "Daniel Peter Thero",
+                                      "Spring 2018": "Daniel Peter Thero"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "PHIL-2100": {
+            "documents": [],
+            "history": {
+                "courseName": "Critical Thinking",
+                "semestersOffered":["Summer","Spring"],
+                "currentTimeSlots":{ "Monday":"1:00-3:50 PM",
+                                     "Thursday":"1:00-3:50 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"John R Milanese",
+                                      "Spring 2024": "John R Milanese",
+                                      "Spring 2023": "John R Milanese",
+                                      "Spring 2022": "John R Milanese",
+                                      "Spring 2021": "John R Milanese",
+                                      "Summer 2020": "Bram Van Heuveln",
+                                      "Spring 2020": "John R Milanese",
+                                      "Summer 2019": "Bram Van Heuveln",
+                                      "Spring 2019": "Bram Van Heuveln",
+                                      "Summer 2018": "Bram Van Heuveln",
+                                      "Spring 2018": "Bram Van Heuveln"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
+        },
+        "PHIL-2140": {
+            "documents": [],
+            "history": {
+                "courseName": "Introduction to Formal Logic",
+                "semestersOffered":["Fall","Summer","Spring"],
+                "currentTimeSlots":{ "Monday":"12:00-1:50 PM",
+                                     "Thursday":"12:00-1:50 PM"
+                                    },
+                "semestersAvailable":{"Spring 2025":"Selmer Bringsjord",
+                                      "Fall 2024": "Bram Van Heuveln",
+                                      "Summer 2024":"Bram Van Heuveln",
+                                      "Spring 2024": "Selmer Bringsjord",
+                                      "Fall 2023": "Bram Van Heuveln",
+                                      "Summer 2023": "Bram Van Heuveln",
+                                      "Spring 2023": "Selmer Bringsjord",
+                                      "Fall 2022": "Bram Van Heuveln",
+                                      "Summer 2022": "Bram Van Heuveln",
+                                      "Spring 2022": "Selmer Bringsjord",
+                                      "Fall 2021": "Bram Van Heuveln",
+                                      "Summer 2021": "Bram Van Heuveln",
+                                      "Spring 2021": "Selmer Bringsjord",
+                                      "Fall 2020": "Bram Van Heuveln",
+                                      "Summer 2020": "Bram Van Heuveln",
+                                      "Spring 2020": "Selmer Bringsjord",
+                                      "Fall 2019": "Bram Van Heuveln",
+                                      "Summer 2019": "Bram Van Heuveln",
+                                      "Spring 2019": "Selmer Bringsjord",
+                                      "Fall 2018": "Bram Van Heuveln",
+                                      "Summer 2018": "Bram Van Heuveln",
+                                      "Spring 2018": "Selmer Bringsjord"
+                }
+            },
+            "thoughts":{
+                "score": 0,
+                "optimal": 0,
+                "reviewCount": 0,
+                "reviews":{}
+            } 
         }
     }
 }
