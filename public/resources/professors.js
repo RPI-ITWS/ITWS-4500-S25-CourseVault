@@ -41,4 +41,22 @@ window.addEventListener("click", function(event) {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const filterSelect = document.getElementById("departmentFilter");
+    const classBoxes = document.querySelectorAll(".class-box");
 
+    filterSelect.addEventListener("change", function () {
+        const selectedDept = this.value;
+
+        classBoxes.forEach(box => {
+            const courseCode = box.getAttribute("data-class") || "";
+            const deptPrefix = courseCode.split(" ")[0];
+
+            if (selectedDept === "all" || deptPrefix === selectedDept) {
+                box.style.display = "block";
+            } else {
+                box.style.display = "none";
+            }
+        });
+    });
+});
