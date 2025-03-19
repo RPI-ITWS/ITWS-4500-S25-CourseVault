@@ -5,16 +5,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Course Vault - Professor Ratings</title>
-        <link rel="stylesheet" href="../resources/style.css">
-        <link rel="stylesheet" href="../resources/professors.css">
+        <link rel="stylesheet" href="./../resources/style.css">
+        <link rel="stylesheet" href="./../resources/everyCourse.css">
 
         <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        
 
-        <script defer src="../components/navbar.js"></script>
-        <script defer src="../components/header.js"></script>
-        <script src="/components/helper.js"></script>
-        <script defer src="../resources/professors.js"></script>
+        <script defer src="./../components/navbar.js"></script>
+        <script defer src="./../components/header.js"></script>
+        <script defer src="./../resources/everyCourse.js"></script>
+
         
     </head>
     <body>
@@ -23,78 +24,15 @@
             
             <div id="content">
                 <div id="headerDiv"></div>
-                <div id="help-block"></div>
-                <div id="filter-container" style="margin: 1rem 0;">
+                <div id="filter-container">
                     <label for="departmentFilter">Filter by Department:</label>
                     <select id="departmentFilter">
                         <option value="all">All Departments</option>
-                        <option value="ITWS">ITWS</option>
-                        <option value="CSCI">CSCI</option>
-                        <option value="MGMT">MGMT</option>
-                        <option value="MATH">MATH</option>
-                        <option value="PHYS">PHYS</option>
                     </select>
                 </div>
                 
                 <div id="class-container">
-                    <div class="class-box" data-class="ITWS 4500" data-description="Web Science Systems Development" data-details="Dr Robert Callahan" data-link="hhhs">
-                        <h1>ITWS 4500</h1>
-                        <h2>Web Science Systems Development</h2>
-                        <h3>Prof: Dr. Callahan</h3>
-                        <h4><a href="../backwork/index.html">Backwork</a></h4>
-                    </div>
-                    <div class="class-box" data-class="CSCI 2500" data-description="Computer Organization" data-details="Masoud Zarifnesha" data-link="hhhs">
-                        <h1>CSCI 2500</h1>
-                        <h2>Computer Organization</h2>
-                        <h3>Prof. Masoud Zarifnesha</h3>
-                        <h4><a href="../backwork/index.html">Backwork</a></h4>
-                    </div>
-                    <div class="class-box" data-class="MGMT 1100" data-description="Management in the Digital Age" data-details="Peggy McDermott" data-link="hhhs">
-                        <h1>MGMT 1100</h1>
-                        <h2>Intro to Management</h2>
-                        <h3>Prof. Peggy McDermott</h3>
-                        <h4><a href="../backwork/index.html">Backwork</a></h4>
-                    </div>
-                    <div class="class-box" data-class="MATH 1020" data-description="Calculus II" data-details="Prof. Belmiro da Silva" data-link="hhhs">
-                        <h1>MATH 1020</h1>
-                        <h2>Calculus II</h2>
-                        <h3>Prof. Belmiro da Silva</h3>
-                        <h4><a href="../backwork/index.html">Backwork</a></h4>
-                    </div>
-                    <div class="class-box" data-class="PHYS 1050" data-description="General Physics" data-details="Julian Georg" data-link="hhhs">
-                        <h1>PHYS 1050</h1>
-                        <h2>General Physics</h2>
-                        <h3>Prof. Julian Georg</h3>
-                        <h4><a href="../backwork/index.html">Backwork</a></h4>
-                    </div>
-                    <div class="class-box" data-class="ITWS 1100" data-description="Intro to ITWS" data-details="Richard Plotka" data-link="hhhs">
-                        <h1>ITWS 1100</h1>
-                        <h2>Intro to ITWS</h2>
-                        <h3>Richard Plotka</h3>
-                        <h4><a href="../backwork/index.html">Backwork</a></h4>
-                    </div>
-                    <div class="class-box" data-class="CSCI 2200" data-description="Foundations of Computer Science" data-details="Dr. Dan DiTursi" data-link="hhhs">
-                        <h1>CSCI 2200</h1>
-                        <h2>Foundations of Computer Science</h2>
-                        <h3>Dr. Dan DiTursi</h3>
-                        <h4><a href="../backwork/index.html">Backwork</a></h4>
-                    </div>
-                    <div class="class-box" data-class="" data-description="" data-details="" data-link="hhhs">
-                        <h1>Class 8 Title</h1>
-                        <h2>Class 8 Subtitle</h2>
-                        <h3></h3>
-                        <h4><a href="../backwork/index.html">Backwork</a></h4>
-                    </div>
                 </div>
-            </div>
-        </div>
-    
-        <div id="classModal" class="modal">
-            <div class="modal-content">
-                <span id="closeModal" class="close">&times;</span>
-                <h1 id="modalClassName"></h1>
-                <h2 id="modalClassDescription"></h2>
-                <h3 id="modalClassDetails"></h3>
             </div>
         </div>
     
