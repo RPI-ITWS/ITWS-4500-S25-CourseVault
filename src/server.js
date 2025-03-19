@@ -115,6 +115,63 @@ app.get('/courses', (req, res) => {
     }
   });
 
+  app.get('/courses/:season', (req, res) => {
+    try {
+      const { courses } = dummyData;
+      const { season } = req.params;
+      
+      const sortedCourses = Object.keys(courses).sort();
+      
+      const formattedData = {
+        courses: {}
+      };
+      
+      let semester = '';
+      if (season.toLowerCase().startsWith('sp') || (season.length >= 2 && (season.toLowerCase()[0] === "s" && season.toLowerCase()[1] !== "u"))) {
+        semester = 'Spring';
+      } else if (season.toLowerCase().startsWith('su')) {
+        semester = 'Summer';
+      } else if (season.toLowerCase().startsWith('fa') || (season.length >= 1 && season.toLowerCase()[0] === "f")) {
+        semester = 'Fall';
+      } else {
+        semester = 'Spring';
+      }
+      
+      const currentYear = new Date().getFullYear();
+      
+      sortedCourses.forEach(courseId => {
+        if (!courses[courseId] || !courses[courseId].history) {
+          console.error(`Course ${courseId} is missing data structure`);
+          formattedData.courses[courseId] = {
+            courseName: "Unknown",
+            Professor: "TBD"
+          };
+          return;
+        }
+        
+        const courseName = courses[courseId].history.courseName || "Unknown";
+        let professor = "TBD";
+        
+        const availableSemesters = courses[courseId].history.semestersAvailable;
+        if (availableSemesters) {
+          const semesterKey = `${semester} ${currentYear}`;
+          if (availableSemesters[semesterKey]) {
+            professor = availableSemesters[semesterKey];
+          }
+        }
+        
+        formattedData.courses[courseId] = {
+          courseName: courseName,
+          Professor: professor
+        };
+      });
+      
+      res.json(formattedData);
+    } catch (error) {
+      console.error('Error processing request:', error);
+      res.status(500).json({ error: 'Failed to process the request' });
+    }
+  });
 
 // =======================================================
 //  Downloading Functionality for Backwork Page
