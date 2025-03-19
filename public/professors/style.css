@@ -104,3 +104,43 @@ body, html {
 .homepage-button:active {
     background-color: #a2927d;
 }
+
+/* Filter container styling */
+.filter-container {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Label styling */
+.filter-container label {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Select dropdown styling */
+.department-select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.department-select:hover {
+    border-color: #999;
+    background-color: #f1f1f1;
+}
+
+.department-select:focus {
+    outline: none;
+    border-color: #666;
+    background-color: #fff;
+}
+
