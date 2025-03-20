@@ -3,7 +3,7 @@ const cookieParser = require("cookie-parser");
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const path = require('path');
 const { PDFDocument } = require('pdf-lib'); 
 const loginRoute = require("./routes/login");
@@ -13,23 +13,38 @@ const dummyData = require('./data/DummyDisplay.json');
 const dummyWork = path.join(__dirname, '../assignments');
 
 require('dotenv').config();
+const uri = process.env.MONGODB;
+
 const app = express();
 const port = 3000;
 
-const client = new MongoClient(process.env.MONGODB);
 
-async function connectToMongo() {
-  try {
-    await client.connect();
-    console.log('Connected to MongoDB');
-    
-    app.locals.db = client.db(); 
-  } catch (err) {
-    console.error('MongoDB connection error:', err);
+const client = new MongoClient(uri, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
+
+  async function connectToMongo() {
+    try {
+      await client.connect();
+      console.log("Established Connection To Mongo Database");
+      
+      app.locals.db = client.db("CourseVault");
+      return true;
+    } catch (error) {
+      console.error("Failed to connect to MongoDB:", error);
+      return false;
+    }
   }
-}
 
 connectToMongo();
+
+const database = client.db("CourseVault");
+const usersCollection = database.collection("Users");
+const courseCollection = database.collection("Classes");
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
@@ -197,24 +212,55 @@ app.get('/courses', (req, res) => {
 //  Downloading Functionality for Backwork Page
 // =======================================================
 
-app.get('/AssignmentsStored', (req, res) => {
-    res.json(dummyData);
-});
-
-app.get('/download/:filename', (req, res) => {
-    const filename = req.params.filename;
-    const filePath = path.join(dummyWork, filename);
-    
-    if (fs.existsSync(filePath)) {
-        res.setHeader('Content-Type', 'application/pdf');
-        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-        
-        const fileStream = fs.createReadStream(filePath);
-        fileStream.pipe(res);
-    } else {
-        res.status(404).send('File not found');
+app.get('/AssignmentsStored', async (req, res) => {
+    try {
+        const courses = await courseCollection.find({}).toArray();
+        const formattedData = {
+            courses: {}
+        };
+        courses.forEach(course => {
+            formattedData.courses[course.CourseID] = {
+                documents: course.documents
+            };
+        });
+        res.json(formattedData);
+    } catch (err) {
+        console.error("Error fetching course data from the database:", err);
+        res.status(500).send("Error loading assignments");
     }
 });
+
+app.get('/download/:filename', async (req, res) => {
+    const filename = req.params.filename;
+
+    try {
+        const course = await courseCollection.findOne({"documents.file_name": filename});
+        if (!course) return res.status(404).send('File not found in any classes');
+        
+        const document = course.documents.find(doc => doc.file_name === filename);
+        if (!document) return res.status(404).send('File not found in the course documents');
+
+        const filePath = path.resolve(__dirname, '..', 'assignments', filename);
+
+        if (fs.existsSync(filePath)) {
+            res.setHeader('Content-Type', 'application/pdf');
+            res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+            res.sendFile(filePath, (err) => {
+                if (err) {
+                    console.error("Error sending file:", err);
+                    res.status(500).send('Internal Server Error');
+                }
+            });
+        } else {
+            console.error('File not found at:', filePath);
+            return res.status(404).send('File not found');
+        }
+    } catch (err) {
+        console.error("Error fetching course data from the database:", err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 
 // =======================================================
 //  Upload Functionality for Uploading Backwork Page
