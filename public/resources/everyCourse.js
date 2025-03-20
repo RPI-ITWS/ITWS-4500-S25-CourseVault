@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             `;
 
             courseBox.addEventListener("click", () => {
-                console.log(`${window.location.origin}/course/${courseID}`);
+                console.log(`${window.location.origin}/course/identifier?id=${courseID}`);
             });
 
             classContainer.appendChild(courseBox);
