@@ -1,22 +1,41 @@
 // server.js
+const cookieParser = require("cookie-parser");
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const fs = require('fs');
+const { MongoClient } = require('mongodb');
 const path = require('path');
 const { PDFDocument } = require('pdf-lib'); 
-const fileUpload = require('express-fileupload');
-const dummyData = require('./data/DummyDisplay.json');
-const dummyWork = path.join(__dirname, '../assignments');
-const app = express();
-const port = 3000;
-require('dotenv').config();
-const cookieParser = require("cookie-parser");
 const loginRoute = require("./routes/login");
 const registerRoute = require("./routes/register");
 const { cookieAuth } = require("./middleware/cookieAuth");
+const dummyData = require('./data/DummyDisplay.json');
+const dummyWork = path.join(__dirname, '../assignments');
+
+require('dotenv').config();
+const app = express();
+const port = 3000;
+
+const client = new MongoClient(process.env.MONGODB);
+
+async function connectToMongo() {
+  try {
+    await client.connect();
+    console.log('Connected to MongoDB');
+    
+    app.locals.db = client.db(); 
+  } catch (err) {
+    console.error('MongoDB connection error:', err);
+  }
+}
+
+connectToMongo();
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieParser())
+app.use(fileUpload())
+
 
 // =======================================================
 //  Unauthenticated Routes
@@ -28,6 +47,7 @@ app.get('/', (req, res) => {
 })
 
 app.post("/login", loginRoute)
+
 app.post("/register", registerRoute)
 
 // =======================================================
@@ -374,4 +394,10 @@ app.use(express.static('public'))
 app.listen(port, () => {
     console.log('Listening on *:3000');
     console.log(`Serving assignments from: ${dummyWork}`);
+});
+
+process.on('SIGINT', async () => {
+  await client.close();
+  console.log('MongoDB connection closed');
+  process.exit(0);
 });
