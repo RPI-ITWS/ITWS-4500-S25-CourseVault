@@ -3,7 +3,7 @@ const cookieParser = require("cookie-parser");
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const path = require('path');
 const { PDFDocument } = require('pdf-lib'); 
 const loginRoute = require("./routes/login");
@@ -13,29 +13,42 @@ const dummyData = require('./data/DummyDisplay.json');
 const dummyWork = path.join(__dirname, '../assignments');
 
 require('dotenv').config();
+const uri = process.env.MONGODB;
+
 const app = express();
 const port = 3000;
 
-const client = new MongoClient(process.env.MONGODB);
 
-async function connectToMongo() {
-  try {
-    await client.connect();
-    console.log('Connected to MongoDB');
-    
-    app.locals.db = client.db(); 
-  } catch (err) {
-    console.error('MongoDB connection error:', err);
+const client = new MongoClient(uri, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
+
+  async function connectToMongo() {
+    try {
+      await client.connect();
+      console.log("Established Connection To Mongo Database");
+      
+      app.locals.db = client.db("CourseVault");
+      return true;
+    } catch (error) {
+      console.error("Failed to connect to MongoDB:", error);
+      return false;
+    }
   }
-}
 
 connectToMongo();
+
+const database = client.db("CourseVault");
+const usersCollection = database.collection("Users");
+const courseCollection = database.collection("Classes");
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieParser())
-app.use(fileUpload())
-
 
 // =======================================================
 //  Unauthenticated Routes
@@ -95,18 +108,19 @@ app.get('/schedule', (req, res) => {
 	res.sendFile(path.join(__dirname, '../public/schedule/index.html'))
 })
 
-app.get('/userData', (req, res) => {
-    let userData = JSON.parse(fs.readFileSync(path.join(__dirname, './data/users.json')))
+app.get('/userData', async (req, res) => {
+	try {
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
 
-    let matchingUser
-    for (let i = 0; i < userData.length; i++) {
-        if (userData[i].username == req.user.username) {
-            matchingUser = userData[i]
-            break
+        if (matchingUser) {
+            res.status(200).send(matchingUser);
+        } else {
+            res.status(404).send({ message: 'User not found' });
         }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: 'Internal Server Error' });
     }
-
-    res.status(200).send(matchingUser);
 })
 
 app.delete("/logout", (req, res) => {
@@ -121,110 +135,130 @@ app.delete("/logout", (req, res) => {
 //  Course Pages Backend Functionality for API requests
 // =======================================================
 
-app.get('/courses', (req, res) => {
+app.get('/courses', async (req, res) => {
     try {
-      const { courses } = dummyData;
-      
-      const sortedCourses = Object.keys(courses).sort();
-      
-      const formattedData = {
-        courses: {}
-      };
-      
-      sortedCourses.forEach(courseId => {
-        formattedData.courses[courseId] = {
-          history: courses[courseId].history,
-          thoughts: courses[courseId].thoughts
+        const courses = await courseCollection.find().toArray();
+
+        const formattedData = {
+            courses: {}
         };
-      });
-  
-      res.json(formattedData);
+
+        courses.forEach(course => {
+            formattedData.courses[course.CourseID] = {
+                history: course.history,
+                thoughts: course.thoughts
+            };
+        });
+
+        res.json(formattedData);
     } catch (error) {
-      console.error('Error processing request:', error);
-      res.status(500).json({ error: 'Failed to process the request' });
+        console.error('Error processing request:', error);
+        res.status(500).json({ error: 'Failed to process the request' });
     }
   });
 
-  app.get('/courses/:season', (req, res) => {
+  app.get('/courses/:season', async (req, res) => {
     try {
-      const { courses } = dummyData;
-      const { season } = req.params;
-      
-      const sortedCourses = Object.keys(courses).sort();
-      
-      const formattedData = {
-        courses: {}
-      };
-      
-      let semester = '';
-      if (season.toLowerCase().startsWith('sp') || (season.length >= 2 && (season.toLowerCase()[0] === "s" && season.toLowerCase()[1] !== "u"))) {
-        semester = 'Spring';
-      } else if (season.toLowerCase().startsWith('su')) {
-        semester = 'Summer';
-      } else if (season.toLowerCase().startsWith('fa') || (season.length >= 1 && season.toLowerCase()[0] === "f")) {
-        semester = 'Fall';
-      } else {
-        semester = 'Spring';
-      }
-      
-      const currentYear = new Date().getFullYear();
-      
-      sortedCourses.forEach(courseId => {
-        if (!courses[courseId] || !courses[courseId].history) {
-          console.error(`Course ${courseId} is missing data structure`);
-          formattedData.courses[courseId] = {
-            courseName: "Unknown",
-            Professor: "TBD"
-          };
-          return;
-        }
-        
-        const courseName = courses[courseId].history.courseName || "Unknown";
-        let professor = "TBD";
-        
-        const availableSemesters = courses[courseId].history.semestersAvailable;
-        if (availableSemesters) {
-          const semesterKey = `${semester} ${currentYear}`;
-          if (availableSemesters[semesterKey]) {
-            professor = availableSemesters[semesterKey];
-          }
-        }
-        
-        formattedData.courses[courseId] = {
-          courseName: courseName,
-          Professor: professor
+        const courses = await courseCollection.find().toArray();
+        const { season } = req.params;
+
+        const sortedCourses = courses.sort((a, b) => a.CourseID.localeCompare(b.CourseID));
+
+        const formattedData = {
+            courses: {}
         };
-      });
-      
-      res.json(formattedData);
+
+        let semester = '';
+        if (season.toLowerCase().startsWith('sp') || (season.length >= 2 && (season.toLowerCase()[0] === "s" && season.toLowerCase()[1] !== "u"))) {
+            semester = 'Spring';
+        } else if (season.toLowerCase().startsWith('su')) {
+            semester = 'Summer';
+        } else if (season.toLowerCase().startsWith('fa') || (season.length >= 1 && season.toLowerCase()[0] === "f")) {
+            semester = 'Fall';
+        } else {
+            semester = 'Spring';
+        }
+
+        const currentYear = new Date().getFullYear();
+
+        sortedCourses.forEach(course => {
+            const courseName = course.history.courseName || "Unknown";
+            let professor = "TBD";
+
+            const availableSemesters = course.history.semestersAvailable;
+            if (availableSemesters) {
+                const semesterKey = `${semester} ${currentYear}`;
+                if (availableSemesters[semesterKey]) {
+                    professor = availableSemesters[semesterKey];
+                }
+            }
+
+            formattedData.courses[course.CourseID] = {
+                courseName: courseName,
+                Professor: professor
+            };
+        });
+
+        res.json(formattedData);
     } catch (error) {
-      console.error('Error processing request:', error);
-      res.status(500).json({ error: 'Failed to process the request' });
+        console.error('Error processing request:', error);
+        res.status(500).json({ error: 'Failed to process the request' });
     }
-  });
+});
 
 // =======================================================
 //  Downloading Functionality for Backwork Page
 // =======================================================
 
-app.get('/AssignmentsStored', (req, res) => {
-    res.json(dummyData);
-});
-
-app.get('/download/:filename', (req, res) => {
-    const filename = req.params.filename;
-    const filePath = path.join(dummyWork, filename);
-    
-    if (fs.existsSync(filePath)) {
-        res.setHeader('Content-Type', 'application/pdf');
-        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-        
-        const fileStream = fs.createReadStream(filePath);
-        fileStream.pipe(res);
-    } else {
-        res.status(404).send('File not found');
+app.get('/AssignmentsStored', async (req, res) => {
+    try {
+        const courses = await courseCollection.find({}).toArray();
+        const formattedData = {
+            courses: {}
+        };
+        courses.forEach(course => {
+            formattedData.courses[course.CourseID] = {
+                documents: course.documents
+            };
+        });
+        res.json(formattedData);
+    } catch (err) {
+        console.error("Error fetching course data from the database:", err);
+        res.status(500).send("Error loading assignments");
     }
 });
+
+app.get('/download/:filename', async (req, res) => {
+    const filename = req.params.filename;
+
+    try {
+        const course = await courseCollection.findOne({"documents.file_name": filename});
+        if (!course) return res.status(404).send('File not found in any classes');
+        
+        const document = course.documents.find(doc => doc.file_name === filename);
+        if (!document) return res.status(404).send('File not found in the course documents');
+
+        const filePath = path.resolve(__dirname, '..', 'assignments', filename);
+
+        if (fs.existsSync(filePath)) {
+            res.setHeader('Content-Type', 'application/pdf');
+            res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+            res.sendFile(filePath, (err) => {
+                if (err) {
+                    console.error("Error sending file:", err);
+                    res.status(500).send('Internal Server Error');
+                }
+            });
+        } else {
+            console.error('File not found at:', filePath);
+            return res.status(404).send('File not found');
+        }
+    } catch (err) {
+        console.error("Error fetching course data from the database:", err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 
 // =======================================================
 //  Upload Functionality for Uploading Backwork Page
@@ -259,133 +293,57 @@ app.post('/upload', async (req, res) => {
         const assignmentType = req.body.assignmentType;
         const professor = req.body.professor;
         const semesterAssigned = req.body.semesterAssigned;
-        const courseCode = req.body.courseCode.toUpperCase(); 
+        const courseCode = req.body.courseCode.toUpperCase();
         
         const uploadedFile = req.files.pdfFile;
-        
+        const originalFileName = uploadedFile.name;
+
         if (uploadedFile.mimetype !== 'application/pdf') {
             return res.status(400).json({
                 success: false,
                 message: 'Only PDF files are allowed'
             });
         }
-
-        try {
-            await PDFDocument.load(uploadedFile.data);
-        } catch (pdfError) {
-            return res.status(400).json({
-                success: false,
-                message: 'Invalid PDF file: ' + pdfError.message
-            });
-        }
-
-        let coursesData = dummyData;
-        const dataFilePath = path.join(__dirname, 'data', 'DummyDisplay.json');
         
-        if (!coursesData || typeof coursesData !== 'object' || !coursesData.courses) {
-            return res.status(500).json({
+        const courseCollection = database.collection("Classes");
+        const course = await courseCollection.findOne({ CourseID: courseCode });
+        
+        if (!course) {
+            return res.status(404).json({
                 success: false,
-                message: 'Invalid data structure in DummyDisplay.json'
+                message: `Course ${courseCode} not found`
             });
         }
-
-        const fileName = uploadedFile.name;
-        const filePath = path.join(dummyWork, fileName);
-
-        if (!fs.existsSync(dummyWork)) {
-            fs.mkdirSync(dummyWork, { recursive: true });
-            console.log(`Created assignments directory at: ${dummyWork}`);
-        }
-
-        if (fs.existsSync(filePath)) {
-            return res.status(400).json({
-                success: false,
-                message: 'A file with this name already exists. Please rename your file before uploading.'
-            });
-        }
-
+        
+        const filePath = path.join(__dirname, '..', 'assignments', originalFileName);
+        
+        await uploadedFile.mv(filePath);
+        
         const newDocument = {
             document_name: documentName,
             assignment_type: assignmentType,
             professor: professor,
             date_assigned: semesterAssigned,
-            file_name: fileName
+            file_name: originalFileName 
         };
-
-		const history = {
-			courseName: courseCode,
-			semestersOffered:[],
-            currentTimeSlots:{},
-			semestersAvailable:{}
-		};
-     
-        const thoughts ={
-            "score": 0,
-            "optimal": 0,
-            "reviewCount": 0,
-            "reviews":{}
-        }; 
-
-        if (!coursesData.courses[courseCode]) {
-            coursesData.courses[courseCode] = {
-            documents: [newDocument],
-            history: history,
-            thoughts: thoughts
-            };
-        } else {
-            const isDuplicate = coursesData.courses[courseCode].documents.some(doc => 
-                doc.document_name === documentName && 
-                doc.professor === professor && 
-                doc.date_assigned === semesterAssigned
-            );
-
-            if (isDuplicate) {
-                return res.status(400).json({
-                    success: false,
-                    message: 'This document already exists for this course'
-                });
-            }
-
-            coursesData.courses[courseCode].documents.push(newDocument);
-        }
-
-        try {
-            const dirPath = path.join(__dirname, 'data');
-            if (!fs.existsSync(dirPath)) {
-                fs.mkdirSync(dirPath, { recursive: true });
-            }
-            
-            await uploadedFile.mv(filePath);
-            
-            fs.writeFileSync(dataFilePath, JSON.stringify(coursesData, null, 4));
-            
-            res.status(200).json({
-                success: true,
-                message: 'Document uploaded and added to course successfully',
-                document: newDocument,
-                courseCode: courseCode
-            });
-        } catch (error) {
-            console.error('Error in file upload or database update:', error);
-            
-            if (fs.existsSync(filePath)) {
-                try {
-                    fs.unlinkSync(filePath);
-                } catch (cleanupError) {
-                    console.error('Error cleaning up file after failed operation:', cleanupError);
-                }
-            }
-            
-            return res.status(500).json({
-                success: false,
-                message: 'Error processing upload. Changes have been rolled back.'
-            });
-        }
+        
+        await courseCollection.updateOne(
+            { CourseID: courseCode },
+            { $push: { documents: newDocument } }
+        );
+        
+        return res.status(200).json({
+            success: true,
+            message: 'Document uploaded successfully',
+            document: newDocument
+        });
+        
     } catch (error) {
         console.error('Upload error:', error);
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
-            message: 'Error uploading file: ' + error.message
+            message: 'Server error during upload',
+            error: error.message
         });
     }
 });

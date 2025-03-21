@@ -5,13 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     fileInput.removeAttribute('multiple');
     
-    fileInput.addEventListener('change', function(event) {
-        if (this.files.length > 1) {
-            this.value = '';
-            alert('Please select only one file at a time');
-        }
-    });
-    
     uploadForm.addEventListener('submit', async function(event) {
         event.preventDefault();
         
@@ -32,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please select a PDF file to upload');
             return;
         }
+
+        const fileName = file.name.toLowerCase();
+        if (!fileName.endsWith('.pdf')) {
+            alert('Only PDF files are allowed');
+            return;
+        }
         
         if (file.type !== 'application/pdf') {
             alert('Only PDF files are allowed');
@@ -47,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('pdfFile', file);
         
         try {
-            const originalButtonText = submitButton.textContent;
             submitButton.textContent = 'Uploading...';
             submitButton.disabled = true;
             
@@ -59,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const result = await response.json();
             
-            submitButton.textContent = originalButtonText;
+            submitButton.textContent = 'Upload';
             submitButton.disabled = false;
             
             if (result.success) {
@@ -69,11 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert(result.message || 'Failed to upload document');
             }
         } catch (error) {
+            submitButton.textContent = 'Upload';
+            submitButton.disabled = false;
             console.error('Upload error:', error);
             alert('An error occurred during upload');
             
-            submitButton.textContent = originalButtonText;
-            submitButton.disabled = false;
+            
         }
     });
 });

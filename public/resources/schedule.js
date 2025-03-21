@@ -1,4 +1,8 @@
-async function fillSchedule() {
+async function fillSchedule(times) {
+    console.log(times);
+}
+
+async function fetchSchedule() {
     const response = await fetch(`${window.origin}/userData`);
 
     if (!response.ok) {
@@ -10,7 +14,7 @@ async function fillSchedule() {
     for (let i = 0; i < data.courses.length; i++) {
         const course = data.courses[i];
 
-        const response = await fetch(`${window.location.origin}/AssignmentsStored`)
+        const response = await fetch(`${window.location.origin}/courses`)
 
         if (!response.ok) {
             throw new Error(`Error Status: ${response.status}`);
@@ -27,6 +31,8 @@ async function fillSchedule() {
         }
 
         const times = foundCourse.history.currentTimeSlots;
+
+        fillSchedule(times);
     }
 }
 
@@ -89,7 +95,7 @@ function createScheduleGrid() {
     //contentDiv.innerHTML = '';
     contentDiv.appendChild(table);
 
-    fillSchedule();
+    fetchSchedule();
 }
 
 createScheduleGrid();

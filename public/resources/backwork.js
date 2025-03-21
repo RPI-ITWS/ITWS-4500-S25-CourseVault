@@ -10,7 +10,6 @@ function initializeFilters() {
     const dropdown = document.getElementById('courseDropdown');
     const typeSelect = document.getElementById('assignmentTypeFilter');
 
-    // Search input events
     search.addEventListener('input', e => {
         const query = e.target.value.toLowerCase();
         if (query) {
@@ -22,11 +21,10 @@ function initializeFilters() {
         filterTable();
     });
 
-    // Filter type change
     typeSelect.addEventListener('change', filterTable);
 
     document.addEventListener('click', key => {
-        if (!search.contains(e.target) && !dropdown.contains(key.target)) {
+        if (!search.contains(key.target) && !dropdown.contains(key.target)) {
             dropdown.classList.remove('show');
         }
     });
