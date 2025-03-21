@@ -49,8 +49,6 @@ const courseCollection = database.collection("Classes");
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieParser())
-app.use(fileUpload())
-
 
 // =======================================================
 //  Unauthenticated Routes
@@ -295,133 +293,57 @@ app.post('/upload', async (req, res) => {
         const assignmentType = req.body.assignmentType;
         const professor = req.body.professor;
         const semesterAssigned = req.body.semesterAssigned;
-        const courseCode = req.body.courseCode.toUpperCase(); 
+        const courseCode = req.body.courseCode.toUpperCase();
         
         const uploadedFile = req.files.pdfFile;
-        
+        const originalFileName = uploadedFile.name;
+
         if (uploadedFile.mimetype !== 'application/pdf') {
             return res.status(400).json({
                 success: false,
                 message: 'Only PDF files are allowed'
             });
         }
-
-        try {
-            await PDFDocument.load(uploadedFile.data);
-        } catch (pdfError) {
-            return res.status(400).json({
-                success: false,
-                message: 'Invalid PDF file: ' + pdfError.message
-            });
-        }
-
-        let coursesData = dummyData;
-        const dataFilePath = path.join(__dirname, 'data', 'DummyDisplay.json');
         
-        if (!coursesData || typeof coursesData !== 'object' || !coursesData.courses) {
-            return res.status(500).json({
+        const courseCollection = database.collection("Classes");
+        const course = await courseCollection.findOne({ CourseID: courseCode });
+        
+        if (!course) {
+            return res.status(404).json({
                 success: false,
-                message: 'Invalid data structure in DummyDisplay.json'
+                message: `Course ${courseCode} not found`
             });
         }
-
-        const fileName = uploadedFile.name;
-        const filePath = path.join(dummyWork, fileName);
-
-        if (!fs.existsSync(dummyWork)) {
-            fs.mkdirSync(dummyWork, { recursive: true });
-            console.log(`Created assignments directory at: ${dummyWork}`);
-        }
-
-        if (fs.existsSync(filePath)) {
-            return res.status(400).json({
-                success: false,
-                message: 'A file with this name already exists. Please rename your file before uploading.'
-            });
-        }
-
+        
+        const filePath = path.join(__dirname, '..', 'assignments', originalFileName);
+        
+        await uploadedFile.mv(filePath);
+        
         const newDocument = {
             document_name: documentName,
             assignment_type: assignmentType,
             professor: professor,
             date_assigned: semesterAssigned,
-            file_name: fileName
+            file_name: originalFileName 
         };
-
-		const history = {
-			courseName: courseCode,
-			semestersOffered:[],
-            currentTimeSlots:{},
-			semestersAvailable:{}
-		};
-     
-        const thoughts ={
-            "score": 0,
-            "optimal": 0,
-            "reviewCount": 0,
-            "reviews":{}
-        }; 
-
-        if (!coursesData.courses[courseCode]) {
-            coursesData.courses[courseCode] = {
-            documents: [newDocument],
-            history: history,
-            thoughts: thoughts
-            };
-        } else {
-            const isDuplicate = coursesData.courses[courseCode].documents.some(doc => 
-                doc.document_name === documentName && 
-                doc.professor === professor && 
-                doc.date_assigned === semesterAssigned
-            );
-
-            if (isDuplicate) {
-                return res.status(400).json({
-                    success: false,
-                    message: 'This document already exists for this course'
-                });
-            }
-
-            coursesData.courses[courseCode].documents.push(newDocument);
-        }
-
-        try {
-            const dirPath = path.join(__dirname, 'data');
-            if (!fs.existsSync(dirPath)) {
-                fs.mkdirSync(dirPath, { recursive: true });
-            }
-            
-            await uploadedFile.mv(filePath);
-            
-            fs.writeFileSync(dataFilePath, JSON.stringify(coursesData, null, 4));
-            
-            res.status(200).json({
-                success: true,
-                message: 'Document uploaded and added to course successfully',
-                document: newDocument,
-                courseCode: courseCode
-            });
-        } catch (error) {
-            console.error('Error in file upload or database update:', error);
-            
-            if (fs.existsSync(filePath)) {
-                try {
-                    fs.unlinkSync(filePath);
-                } catch (cleanupError) {
-                    console.error('Error cleaning up file after failed operation:', cleanupError);
-                }
-            }
-            
-            return res.status(500).json({
-                success: false,
-                message: 'Error processing upload. Changes have been rolled back.'
-            });
-        }
+        
+        await courseCollection.updateOne(
+            { CourseID: courseCode },
+            { $push: { documents: newDocument } }
+        );
+        
+        return res.status(200).json({
+            success: true,
+            message: 'Document uploaded successfully',
+            document: newDocument
+        });
+        
     } catch (error) {
         console.error('Upload error:', error);
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
-            message: 'Error uploading file: ' + error.message
+            message: 'Server error during upload',
+            error: error.message
         });
     }
 });
