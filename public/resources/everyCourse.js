@@ -30,8 +30,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             `;
 
             courseBox.addEventListener("click", () => {
-                console.log(`${window.location.origin}/course/identifier?id=${courseID}`);
-            });
+                localStorage.setItem('courseID', courseID);
+                console.log(`Course ID: ${localStorage.getItem('courseID')}`);
+                window.location.href = `${window.location.origin}/course`;
+              });
 
             classContainer.appendChild(courseBox);
         });
