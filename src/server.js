@@ -238,14 +238,16 @@ app.get('/courses', async (req, res) => {
 
 app.get('/class', async (req, res) => {
     try {
-        const { course_id } = req.body;
-        const course = await courseCollection.findOne({ CourseID: course_id });   
-    } catch (error) {
+        const { course_id } = req.query;
+        const course = await courseCollection.findOne({ CourseID: course_id });
+        
         if (course) {
             res.json(course);
         } else {
             res.status(404).send({ message: "Course not found" });
         }
+    } catch (error) {
+        res.status(500).send({ message: "Server error" });
     }
 });
 

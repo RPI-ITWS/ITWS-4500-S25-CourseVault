@@ -1,0 +1,123 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const courseID = localStorage.getItem('courseID') || 'CSCI-1100';
+    fetchCourseData(courseID);
+  });
+  
+  async function fetchCourseData(courseID) {
+    try {
+      const response = await fetch(`/class?course_id=${courseID}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error fetching course data: ${response.statusText}`);
+      }
+  
+      const courseData = await response.json();
+      updateCourseInfo(courseData);
+    } catch (error) {
+      console.error('Failed to fetch course data:', error);
+      document.querySelector('.container').innerHTML = `
+        <div class="box error">
+          <h2>Error Loading Course Data</h2>
+          <p>Unable to load information for this course. Please try again later.</p>
+        </div>
+      `;
+    }
+  }
+  
+  function updateCourseInfo(data) {
+    document.getElementById('course-name').textContent = data.history.courseName || 'Unknown Course';
+    document.getElementById('course-id').textContent = data.CourseID || 'Unknown ID';
+
+    let timeSlotText = '';
+    if (data.history.currentTimeSlots) {
+        for (const [day, time] of Object.entries(data.history.currentTimeSlots)) {
+            timeSlotText += `${day}: ${time}, `;
+        }
+        timeSlotText = timeSlotText.slice(0, -2);
+    } else {
+        timeSlotText = 'Not scheduled';
+    }
+    document.getElementById('course-time').textContent = timeSlotText;
+
+    let currentProfessor = 'TBD';
+    if (data.history.semestersAvailable) {
+        const mostRecentSemester = Object.keys(data.history.semestersAvailable)[0];
+        if (mostRecentSemester) {
+            currentProfessor = data.history.semestersAvailable[mostRecentSemester];
+        }
+    }
+    document.getElementById('course-professor').textContent = currentProfessor;
+
+    const historyList = document.getElementById('history-list');
+    historyList.innerHTML = '';
+
+    if (data.history.semestersAvailable) {
+        const semesters = Object.keys(data.history.semestersAvailable);
+        const displayCount = Math.min(8, semesters.length);
+
+        for (let i = 0; i < displayCount; i++) {
+            const semester = semesters[i];
+            const professor = data.history.semestersAvailable[semester];
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${semester} - ${professor}`;
+            historyList.appendChild(listItem);
+        }
+
+        if (semesters.length > 8) {
+            const viewMoreButton = document.createElement('button');
+            viewMoreButton.className = 'view-more';
+            viewMoreButton.textContent = 'View More History...';
+            viewMoreButton.onclick = function () {
+                showAllHistory(data.history.semestersAvailable);
+            };
+            historyList.appendChild(viewMoreButton);
+        }
+    } else {
+        const listItem = document.createElement('li');
+        listItem.textContent = 'No history available';
+        historyList.appendChild(listItem);
+    }
+
+    const reviewsList = document.getElementById('reviews-list');
+    reviewsList.innerHTML = '';
+
+    if (data.thoughts.reviews && Object.keys(data.thoughts.reviews).length > 0) {
+        for (const [reviewer, comment] of Object.entries(data.thoughts.reviews)) {
+            const listItem = document.createElement('li');
+            listItem.textContent = `"${comment}" - ${reviewer}`;
+            reviewsList.appendChild(listItem);
+        }
+    } else {
+        const listItem = document.createElement('li');
+        listItem.textContent = 'No reviews available yet';
+        reviewsList.appendChild(listItem);
+    }
+
+    const reviewCountElement = document.getElementById('review-count');
+    if (reviewCountElement) {
+        reviewCountElement.textContent = data.thoughts.reviewCount || 0;
+    }
+
+    const reviewScoreElement = document.getElementById('review-score');
+    if (reviewScoreElement && data.thoughts && data.thoughts.score !== undefined) {
+        reviewScoreElement.textContent = data.thoughts.score.toFixed(1);
+    }
+}
+
+function showAllHistory(semestersData) {
+    const historyList = document.getElementById('history-list');
+    historyList.innerHTML = ''; 
+
+    for (const [semester, professor] of Object.entries(semestersData)) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${semester} - ${professor}`;
+        historyList.appendChild(listItem);
+    }
+}
