@@ -1,22 +1,41 @@
 // server.js
+const cookieParser = require("cookie-parser");
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const fs = require('fs');
+const { MongoClient } = require('mongodb');
 const path = require('path');
 const { PDFDocument } = require('pdf-lib'); 
-const fileUpload = require('express-fileupload');
-const dummyData = require('./data/DummyDisplay.json');
-const dummyWork = path.join(__dirname, '../assignments');
-const app = express();
-const port = 3000;
-require('dotenv').config();
-const cookieParser = require("cookie-parser");
 const loginRoute = require("./routes/login");
 const registerRoute = require("./routes/register");
 const { cookieAuth } = require("./middleware/cookieAuth");
+const dummyData = require('./data/DummyDisplay.json');
+const dummyWork = path.join(__dirname, '../assignments');
+
+require('dotenv').config();
+const app = express();
+const port = 3000;
+
+const client = new MongoClient(process.env.MONGODB);
+
+async function connectToMongo() {
+  try {
+    await client.connect();
+    console.log('Connected to MongoDB');
+    
+    app.locals.db = client.db(); 
+  } catch (err) {
+    console.error('MongoDB connection error:', err);
+  }
+}
+
+connectToMongo();
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieParser())
+app.use(fileUpload())
+
 
 // =======================================================
 //  Unauthenticated Routes
@@ -28,6 +47,7 @@ app.get('/', (req, res) => {
 })
 
 app.post("/login", loginRoute)
+
 app.post("/register", registerRoute)
 
 // =======================================================
@@ -103,26 +123,85 @@ app.delete("/logout", (req, res) => {
 
 app.get('/courses', (req, res) => {
     try {
-        const { courses } = dummyData;
-        
-        const formattedData = {
-          courses: {}
+      const { courses } = dummyData;
+      
+      const sortedCourses = Object.keys(courses).sort();
+      
+      const formattedData = {
+        courses: {}
+      };
+      
+      sortedCourses.forEach(courseId => {
+        formattedData.courses[courseId] = {
+          history: courses[courseId].history,
+          thoughts: courses[courseId].thoughts
         };
-        
-        for (const courseId in courses) {
-          formattedData.courses[courseId] = {
-            history: courses[courseId].history,
-            thoughts: courses[courseId].thoughts
-          };
-        }
+      });
+  
+      res.json(formattedData);
+    } catch (error) {
+      console.error('Error processing request:', error);
+      res.status(500).json({ error: 'Failed to process the request' });
+    }
+  });
 
-        res.json(formattedData);
-      } catch (error) {
-        console.error('Error processing request:', error);
-        res.status(500).json({ error: 'Failed to process the request' });
+  app.get('/courses/:season', (req, res) => {
+    try {
+      const { courses } = dummyData;
+      const { season } = req.params;
+      
+      const sortedCourses = Object.keys(courses).sort();
+      
+      const formattedData = {
+        courses: {}
+      };
+      
+      let semester = '';
+      if (season.toLowerCase().startsWith('sp') || (season.length >= 2 && (season.toLowerCase()[0] === "s" && season.toLowerCase()[1] !== "u"))) {
+        semester = 'Spring';
+      } else if (season.toLowerCase().startsWith('su')) {
+        semester = 'Summer';
+      } else if (season.toLowerCase().startsWith('fa') || (season.length >= 1 && season.toLowerCase()[0] === "f")) {
+        semester = 'Fall';
+      } else {
+        semester = 'Spring';
       }
-});	
-
+      
+      const currentYear = new Date().getFullYear();
+      
+      sortedCourses.forEach(courseId => {
+        if (!courses[courseId] || !courses[courseId].history) {
+          console.error(`Course ${courseId} is missing data structure`);
+          formattedData.courses[courseId] = {
+            courseName: "Unknown",
+            Professor: "TBD"
+          };
+          return;
+        }
+        
+        const courseName = courses[courseId].history.courseName || "Unknown";
+        let professor = "TBD";
+        
+        const availableSemesters = courses[courseId].history.semestersAvailable;
+        if (availableSemesters) {
+          const semesterKey = `${semester} ${currentYear}`;
+          if (availableSemesters[semesterKey]) {
+            professor = availableSemesters[semesterKey];
+          }
+        }
+        
+        formattedData.courses[courseId] = {
+          courseName: courseName,
+          Professor: professor
+        };
+      });
+      
+      res.json(formattedData);
+    } catch (error) {
+      console.error('Error processing request:', error);
+      res.status(500).json({ error: 'Failed to process the request' });
+    }
+  });
 
 // =======================================================
 //  Downloading Functionality for Backwork Page
@@ -325,4 +404,10 @@ app.use(express.static('public'))
 app.listen(port, () => {
     console.log('Listening on *:3000');
     console.log(`Serving assignments from: ${dummyWork}`);
+});
+
+process.on('SIGINT', async () => {
+  await client.close();
+  console.log('MongoDB connection closed');
+  process.exit(0);
 });
