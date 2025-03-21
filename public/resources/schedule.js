@@ -1,3 +1,35 @@
+async function fillSchedule() {
+    const response = await fetch(`${window.origin}/userData`);
+
+    if (!response.ok) {
+        throw new Error(`Error Status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+
+    for (let i = 0; i < data.courses.length; i++) {
+        const course = data.courses[i];
+
+        const response = await fetch(`${window.location.origin}/AssignmentsStored`)
+
+        if (!response.ok) {
+            throw new Error(`Error Status: ${response.status}`);
+        }
+
+        const courseData = await response.json();
+
+        let foundCourse;
+
+        for (const [courseCode, cData] of Object.entries(courseData.courses)) {
+            if (courseCode === course) {
+                foundCourse = cData;
+            }
+        }
+
+        const times = foundCourse.history.currentTimeSlots;
+    }
+}
+
 function createScheduleGrid() {
     const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     const times = Array.from({ length: 24 }, (_, i) => {
@@ -56,6 +88,8 @@ function createScheduleGrid() {
     const contentDiv = document.getElementById('content-block');
     //contentDiv.innerHTML = '';
     contentDiv.appendChild(table);
+
+    fillSchedule();
 }
 
 createScheduleGrid();
