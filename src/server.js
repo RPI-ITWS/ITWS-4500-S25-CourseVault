@@ -251,6 +251,33 @@ app.get('/class', async (req, res) => {
     }
 });
 
+app.post("/addClass", async (req, res) => {
+    try {
+        const { course_id } = req.body;
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+
+        if (matchingUser) {
+            if (!matchingUser.courses.includes(course_id)) {
+                matchingUser.courses.push(course_id);
+
+                await usersCollection.updateOne(
+                    { username: req.user.username },
+                    { $set: { courses: matchingUser.courses } }
+                );
+
+                res.status(200).send({ message: "Course added successfully" });
+            } else {
+                res.status(400).send({ message: "Course already in schedule" });
+            }
+        } else {
+            res.status(404).send({ message: "User not found" });
+        }
+    } catch (error) {
+        res.status(500).send({ message: "An error occurred", error });
+    }
+});
+
+
 // =======================================================
 //  Downloading Functionality for Backwork Page
 // =======================================================
@@ -303,7 +330,6 @@ app.get('/download/:filename', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
 
 // =======================================================
 //  Upload Functionality for Uploading Backwork Page

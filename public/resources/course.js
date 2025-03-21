@@ -121,3 +121,30 @@ function showAllHistory(semestersData) {
         historyList.appendChild(listItem);
     }
 }
+
+async function addClass() {
+    const identifier = localStorage.getItem('courseID') || 'CSCI-1100';
+    console.log(identifier)
+    try {
+        const response = await fetch('/addClass', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ course_id: identifier }),
+            credentials: 'include'
+        });
+
+        if (!response.ok) {
+            const errorText = await response.json();
+            alert(`Error adding course: ${errorText.message}`);
+            return;
+        }
+
+        const data = await response.json();
+        alert(data.message);
+    } catch (error) {
+        alert("An error occurred while adding the course.");
+        console.error("Error:", error);
+    }
+}
