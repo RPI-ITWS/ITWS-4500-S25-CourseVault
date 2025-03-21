@@ -129,7 +129,33 @@ app.delete("/logout", (req, res) => {
 	}
 	res.clearCookie("token")
 	res.status(200).send("User successfully logged out.")
-})
+});
+
+// =======================================================
+//  Profile Page Drop Course Functionality
+// =======================================================
+
+app.delete("/dropcourse", async (req, res) => {
+    try {
+        const { course_id } = req.body;
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+
+        if (matchingUser) {
+            matchingUser.courses = matchingUser.courses.filter(course => course !== course_id);
+
+            await usersCollection.updateOne(
+                { username: req.user.username },
+                { $set: { courses: matchingUser.courses } }
+            );
+
+            res.status(200).send({ message: "Course removed successfully" });
+        } else {
+            res.status(404).send({ message: "User not found" });
+        }
+    } catch (error) {
+        res.status(500).send({ message: "An error occurred", error });
+    }
+});
 
 // =======================================================
 //  Course Pages Backend Functionality for API requests
@@ -203,6 +229,23 @@ app.get('/courses', async (req, res) => {
     } catch (error) {
         console.error('Error processing request:', error);
         res.status(500).json({ error: 'Failed to process the request' });
+    }
+});
+
+// =======================================================
+//  Dyanmic Course Specific Backend Functionality
+// =======================================================
+
+app.get('/class', async (req, res) => {
+    try {
+        const { course_id } = req.body;
+        const course = await courseCollection.findOne({ CourseID: course_id });   
+    } catch (error) {
+        if (course) {
+            res.json(course);
+        } else {
+            res.status(404).send({ message: "Course not found" });
+        }
     }
 });
 
@@ -366,6 +409,6 @@ app.listen(port, () => {
 
 process.on('SIGINT', async () => {
   await client.close();
-  console.log('MongoDB connection closed');
+  console.log('\nMongoDB connection closed');
   process.exit(0);
 });
