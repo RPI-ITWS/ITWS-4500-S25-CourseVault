@@ -124,87 +124,76 @@ app.delete("/logout", (req, res) => {
 //  Course Pages Backend Functionality for API requests
 // =======================================================
 
-app.get('/courses', (req, res) => {
+app.get('/courses', async (req, res) => {
     try {
-      const { courses } = dummyData;
-      
-      const sortedCourses = Object.keys(courses).sort();
-      
-      const formattedData = {
-        courses: {}
-      };
-      
-      sortedCourses.forEach(courseId => {
-        formattedData.courses[courseId] = {
-          history: courses[courseId].history,
-          thoughts: courses[courseId].thoughts
+        const courses = await courseCollection.find().toArray();
+
+        const formattedData = {
+            courses: {}
         };
-      });
-  
-      res.json(formattedData);
+
+        courses.forEach(course => {
+            formattedData.courses[course.CourseID] = {
+                history: course.history,
+                thoughts: course.thoughts
+            };
+        });
+
+        res.json(formattedData);
     } catch (error) {
-      console.error('Error processing request:', error);
-      res.status(500).json({ error: 'Failed to process the request' });
+        console.error('Error processing request:', error);
+        res.status(500).json({ error: 'Failed to process the request' });
     }
   });
 
-  app.get('/courses/:season', (req, res) => {
+  app.get('/courses/:season', async (req, res) => {
     try {
-      const { courses } = dummyData;
-      const { season } = req.params;
-      
-      const sortedCourses = Object.keys(courses).sort();
-      
-      const formattedData = {
-        courses: {}
-      };
-      
-      let semester = '';
-      if (season.toLowerCase().startsWith('sp') || (season.length >= 2 && (season.toLowerCase()[0] === "s" && season.toLowerCase()[1] !== "u"))) {
-        semester = 'Spring';
-      } else if (season.toLowerCase().startsWith('su')) {
-        semester = 'Summer';
-      } else if (season.toLowerCase().startsWith('fa') || (season.length >= 1 && season.toLowerCase()[0] === "f")) {
-        semester = 'Fall';
-      } else {
-        semester = 'Spring';
-      }
-      
-      const currentYear = new Date().getFullYear();
-      
-      sortedCourses.forEach(courseId => {
-        if (!courses[courseId] || !courses[courseId].history) {
-          console.error(`Course ${courseId} is missing data structure`);
-          formattedData.courses[courseId] = {
-            courseName: "Unknown",
-            Professor: "TBD"
-          };
-          return;
-        }
-        
-        const courseName = courses[courseId].history.courseName || "Unknown";
-        let professor = "TBD";
-        
-        const availableSemesters = courses[courseId].history.semestersAvailable;
-        if (availableSemesters) {
-          const semesterKey = `${semester} ${currentYear}`;
-          if (availableSemesters[semesterKey]) {
-            professor = availableSemesters[semesterKey];
-          }
-        }
-        
-        formattedData.courses[courseId] = {
-          courseName: courseName,
-          Professor: professor
+        const courses = await courseCollection.find().toArray();
+        const { season } = req.params;
+
+        const sortedCourses = courses.sort((a, b) => a.CourseID.localeCompare(b.CourseID));
+
+        const formattedData = {
+            courses: {}
         };
-      });
-      
-      res.json(formattedData);
+
+        let semester = '';
+        if (season.toLowerCase().startsWith('sp') || (season.length >= 2 && (season.toLowerCase()[0] === "s" && season.toLowerCase()[1] !== "u"))) {
+            semester = 'Spring';
+        } else if (season.toLowerCase().startsWith('su')) {
+            semester = 'Summer';
+        } else if (season.toLowerCase().startsWith('fa') || (season.length >= 1 && season.toLowerCase()[0] === "f")) {
+            semester = 'Fall';
+        } else {
+            semester = 'Spring';
+        }
+
+        const currentYear = new Date().getFullYear();
+
+        sortedCourses.forEach(course => {
+            const courseName = course.history.courseName || "Unknown";
+            let professor = "TBD";
+
+            const availableSemesters = course.history.semestersAvailable;
+            if (availableSemesters) {
+                const semesterKey = `${semester} ${currentYear}`;
+                if (availableSemesters[semesterKey]) {
+                    professor = availableSemesters[semesterKey];
+                }
+            }
+
+            formattedData.courses[course.CourseID] = {
+                courseName: courseName,
+                Professor: professor
+            };
+        });
+
+        res.json(formattedData);
     } catch (error) {
-      console.error('Error processing request:', error);
-      res.status(500).json({ error: 'Failed to process the request' });
+        console.error('Error processing request:', error);
+        res.status(500).json({ error: 'Failed to process the request' });
     }
-  });
+});
 
 // =======================================================
 //  Downloading Functionality for Backwork Page
