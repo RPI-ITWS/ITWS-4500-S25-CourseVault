@@ -109,7 +109,17 @@ app.get('/schedule', (req, res) => {
 })
 
 app.get('/userData', (req, res) => {
-	res.status(200).send(req.user)
+    let userData = JSON.parse(fs.readFileSync(path.join(__dirname, './data/users.json')))
+
+    let matchingUser
+    for (let i = 0; i < userData.length; i++) {
+        if (userData[i].username == req.user.username) {
+            matchingUser = userData[i]
+            break
+        }
+    }
+
+    res.status(200).send(matchingUser);
 })
 
 app.delete("/logout", (req, res) => {
