@@ -108,8 +108,19 @@ app.get('/schedule', (req, res) => {
 	res.sendFile(path.join(__dirname, '../public/schedule/index.html'))
 })
 
-app.get('/userData', (req, res) => {
-	res.status(200).send(req.user)
+app.get('/userData', async (req, res) => {
+	try {
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+
+        if (matchingUser) {
+            res.status(200).send(matchingUser);
+        } else {
+            res.status(404).send({ message: 'User not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: 'Internal Server Error' });
+    }
 })
 
 app.delete("/logout", (req, res) => {
