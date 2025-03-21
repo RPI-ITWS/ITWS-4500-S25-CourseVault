@@ -16,26 +16,26 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
-const client = new MongoClient(process.env.MONGODB);
+// const client = new MongoClient(process.env.MONGODB);
 
-async function connectToMongo() {
-  try {
-    await client.connect();
-    console.log('Connected to MongoDB');
+// async function connectToMongo() {
+//   try {
+//     await client.connect();
+//     console.log('Connected to MongoDB');
     
-    app.locals.db = client.db(); 
-  } catch (err) {
-    console.error('MongoDB connection error:', err);
-  }
-}
+//     app.locals.db = client.db(); 
+//   } catch (err) {
+//     console.error('MongoDB connection error:', err);
+//   }
+// }
 
-connectToMongo();
+// connectToMongo();
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieParser())
 app.use(fileUpload())
-
+app.use(express.static('public'))
 
 // =======================================================
 //  Unauthenticated Routes
@@ -388,8 +388,6 @@ if (!fs.existsSync(dummyWork)) {
     console.error(`Error: Directory ${dummyWork} does not exist`);
     process.exit(1);
 }
-
-app.use(express.static('public'))
 
 app.listen(port, () => {
     console.log('Listening on *:3000');
