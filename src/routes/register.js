@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 
 async function dupUsername(username, collection) {
     const user = await collection.findOne({ username: username })
-    return user ? -1 : 1
+    return user ? false : true
 }
 
 async function hashPassword(password) {
@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
         const collection = req.app.locals.db.collection("Users")
         const newUserId = await dupUsername(user.username, collection)
         
-        if (newUserId < 0) {
+        if (newUserId) {
             return res.send("Username already in use")
         }
 
