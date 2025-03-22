@@ -1,5 +1,50 @@
-async function fillSchedule(times) {
+async function fillSchedule(times, color) {
     console.log(times);
+    console.log(color);
+
+    const table = document.getElementById('scheduleTable');
+    const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    
+    function timeToRowIndex(time) {
+        const [hourMinute, period] = time.split(' ');
+        const [hour, minute] = hourMinute.split(':').map(num => parseInt(num, 10));
+        
+        const hour24 = period === 'PM' && hour !== 12 ? hour + 12 : hour;
+        const totalMinutes = hour24 * 60 + minute;
+
+        return totalMinutes / 60;
+    }
+
+    for (let day in times) {
+        const timeRange = times[day];
+        const [startTime, endTime] = timeRange.split('-');
+
+        const startHour = timeToRowIndex(startTime);
+        const endHour = timeToRowIndex(endTime);
+
+        const minimumTop = 40;
+        const minimumLeft = 90;
+        const width = 200;
+        const oneUnitHeight = 40;
+
+        const rows = table.rows;
+        const dayIndex = weekdays.indexOf(day);
+
+        const filledSlotDiv = document.createElement('div');
+        filledSlotDiv.textContent = 'Scheduled';
+        filledSlotDiv.style.position = 'absolute';
+        filledSlotDiv.style.top = `${minimumTop + (40 * startHour)}px`;
+        filledSlotDiv.style.left = `${minimumLeft + (200 * dayIndex)}px`;
+        filledSlotDiv.style.width = `${width}px`;
+        filledSlotDiv.style.height = `${oneUnitHeight * (endHour - startHour)}px`;
+        filledSlotDiv.style.backgroundColor = `${color}`;
+        filledSlotDiv.style.color = 'black';
+        filledSlotDiv.style.textAlign = 'center';
+        filledSlotDiv.style.borderRadius = '5px';
+        filledSlotDiv.style.fontWeight = 'bold';
+
+        table.appendChild(filledSlotDiv);
+    }
 }
 
 async function fetchSchedule() {
@@ -10,6 +55,8 @@ async function fetchSchedule() {
     }
     
     const data = await response.json();
+
+    const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'gray'];
 
     for (let i = 0; i < data.courses.length; i++) {
         const course = data.courses[i];
@@ -32,7 +79,7 @@ async function fetchSchedule() {
 
         const times = foundCourse.history.currentTimeSlots;
 
-        fillSchedule(times);
+        fillSchedule(times, colors[i % colors.length]);
     }
 }
 
@@ -47,7 +94,7 @@ function createScheduleGrid() {
     const table = document.createElement('table');
     table.id = 'scheduleTable';
     table.style.border = '2px solid #5a4a3f';
-    table.style.width = '100%';
+    table.style.width = '1092px';
     table.style.borderCollapse = 'collapse';
 
     const headerRow = document.createElement('tr');
@@ -61,6 +108,7 @@ function createScheduleGrid() {
         const th = document.createElement('th');
         th.textContent = day;
         th.style.padding = '10px';
+        th.style.width = '200px';
         th.style.backgroundColor = '#d6c2a8';
         th.style.border = '1px solid #5a4a3f';
         headerRow.appendChild(th);
