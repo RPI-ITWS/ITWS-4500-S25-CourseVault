@@ -1,3 +1,27 @@
+body {
+  background-color: #f5f5f5;
+}
+
+#page {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #f5f5f5;
+}
+
+#content {
+  margin-left: 200px;
+  width: 100%;
+  background-color: #e3d4c0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+  min-height: 100vh;
+  justify-content: flex-start;
+  z-index: 1;
+}
+
+/* Profile name styling */
 .profile-name {
   text-align: center;
   margin-bottom: 20px;
@@ -7,6 +31,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Profile info table styling */
 .profile-info-table {
   margin: 0 auto;
   margin-bottom: 20px;
@@ -29,6 +54,7 @@
   font-weight: bold;
 }
 
+/* Table container styling */
 .table-container {
   width: 100%;
   max-width: 1200px;
@@ -44,6 +70,7 @@
   margin-bottom: 15px;
 }
 
+/* Assignment table styling */
 #assignmentsTable {
   width: 100%;
   border-collapse: collapse;
@@ -88,4 +115,80 @@
   cursor: pointer;
   transition: background-color 0.2s;
   font-size: 0.9em;
+}
+
+.add-controls button:hover {
+  background-color: #206cc3;
+}
+
+#enrolledClassesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#enrolledClassesTable th, 
+#enrolledClassesTable td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+#enrolledClassesTable th {
+  font-weight: bold;
+  background-color: transparent;
+}
+
+#enrolledClassesTable th:first-child, 
+#enrolledClassesTable td:first-child {
+  width: 60%;
+}
+
+#enrolledClassesTable th:last-child, 
+#enrolledClassesTable td:last-child {
+  width: 40%;
+  text-align: center;
+}
+
+#enrolledClassesTable button {
+  margin-top: 8px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+#enrolledClassesTable button:hover {
+  background-color: #206cc3;
+}
+
+.status-message {
+  width: 100%;
+  padding: 10px 16px;
+  margin: 15px 0;
+  border-radius: 2px;
+  font-weight: 500;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.status-message.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
 }

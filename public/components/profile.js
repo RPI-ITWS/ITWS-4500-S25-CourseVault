@@ -6,7 +6,7 @@ const UserProfile = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const [dropStatus, setDropStatus] = useState(null);
 
   const exampleUserData = {
     fullName: "Cam Thomas",
@@ -34,6 +34,38 @@ const UserProfile = () => {
     };
   };
 
+  const handleDropCourse = async (courseId) => {
+    try {
+      setDropStatus({ message: `Dropping course ${courseId}...`, type: 'info' });
+      
+      const response = await fetch(`${window.origin}/dropcourse`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ course_id: courseId }),
+        credentials: 'same-origin'
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        setUserData(prevData => ({
+          ...prevData,
+          classes: prevData.classes.filter(course => course !== courseId)
+        }));
+        setDropStatus({ message: result.message, type: 'success' });
+        
+        setTimeout(() => setDropStatus(null), 3000);
+      } else {
+        setDropStatus({ message: result.message || 'Failed to drop course', type: 'error' });
+      }
+    } catch (error) {
+      console.error("Error dropping course:", error);
+      setDropStatus({ message: 'An error occurred while trying to drop the course', type: 'error' });
+    }
+  };
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -48,7 +80,6 @@ const UserProfile = () => {
         setUserData(formattedData);
 
       } catch (error) {
-
         console.error("Failed to fetch user data:", error);
         setUserData(exampleUserData);
         setError("Failed to load user profile from server. Using default data.");
@@ -103,20 +134,26 @@ const UserProfile = () => {
         )
       )
     ),
+    dropStatus && React.createElement(
+      'div',
+      { className: `status-message ${dropStatus.type}` },
+      dropStatus.message
+    ),
     React.createElement(
       'div',
       { className: 'table-container' },
       React.createElement('h2', null, "Enrolled Classes"),
       React.createElement(
         'table',
-        { id: "assignmentsTable" },
+        { id: "enrolledClassesTable" },
         React.createElement(
           'thead',
           null,
           React.createElement(
             'tr',
             null,
-            React.createElement('th', null, "Class Name")
+            React.createElement('th', null, "Course ID"),
+            React.createElement('th', null, "Actions")
           )
         ),
         React.createElement(
@@ -126,7 +163,17 @@ const UserProfile = () => {
             React.createElement(
               'tr',
               { key: index },
-              React.createElement('td', null, className)
+              React.createElement('td', null, className),
+              React.createElement(
+                'td', 
+                null,
+                className !== "Not Enrolled In Any Classes" && 
+                React.createElement(
+                  'button',
+                  { onClick: () => handleDropCourse(className) },
+                  'Drop Course'
+                )
+              )
             )
           )
         )
