@@ -19,8 +19,8 @@ async function fillSchedule(times, color) {
         const timeRange = times[day];
         const [startTime, endTime] = timeRange.split('-');
 
-        const startHour = timeToRowIndex(startTime);
-        const endHour = timeToRowIndex(endTime);
+        const startHour = timeToRowIndex(startTime) - 7;
+        const endHour = timeToRowIndex(endTime) - 7;
 
         const minimumTop = 40;
         const minimumLeft = 90;
@@ -56,7 +56,17 @@ async function fetchSchedule() {
     
     const data = await response.json();
 
-    const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'gray'];
+    const colors = [
+        '#ff6666',
+        '#66b3ff',
+        '#66ff66',
+        '#ffff66',
+        '#ffcc66',
+        '#cc66ff',
+        '#ffb3ff',
+        '#cc9966',
+        '#b3b3b3'
+    ];
 
     for (let i = 0; i < data.courses.length; i++) {
         const course = data.courses[i];
@@ -85,9 +95,9 @@ async function fetchSchedule() {
 
 function createScheduleGrid() {
     const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-    const times = Array.from({ length: 24 }, (_, i) => {
-        const hour = i % 12 === 0 ? 12 : i % 12;
-        const period = i < 12 ? 'AM' : 'PM';
+    const times = Array.from({ length: 16 }, (_, i) => {
+        const hour = (i + 7) % 12 === 0 ? 12 : (i + 7) % 12;
+        const period = (i + 7) < 12 || (i + 7) >= 24 ? 'AM' : 'PM';
         return `${hour}:00 ${period}`;
     });
 
