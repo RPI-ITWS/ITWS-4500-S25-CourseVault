@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class Info Page</title>
-  <link rel="stylesheet" href="../resources/style.css">
-  <link rel="stylesheet" href="../resources/courses.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Info Page</title>
+    <link rel="stylesheet" href="../resources/style.css">
+    <link rel="stylesheet" href="../resources/courses.css">
 
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-  <script defer src="../components/navbar.js"></script>
-  <script defer src="../components/header.js"></script>
-  <script src="/components/helper.js"></script>
+    <script defer src="../components/navbar.js"></script>
 
-</head>
-<body>
-  <div id="page">
-    <div id="navbar"></div>
-    <div class="container">
-      <!-- Class Info Box -->
-      <div class="box">
-        <h2>Class Info</h2>
-        <p><strong>Name:</strong> Introduction to Computer Science</p>
-        <p><strong>ID:</strong> CSCI 1010</p>
-        <p><strong>Time:</strong> MT 10a-12p</p>
-        <p><strong>Professor:</strong> Dr. Goldschmidt</p>
-        <div class="buttons">
-          <button onclick="alert('Add Review clicked')">Add Review</button>
-          <button onclick="alert('Add to Schedule clicked')">Add to Schedule</button>
+    <script src="./../resources/course.js"></script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="navbar"></div>
+      <div id="header"></div>
+      <div class="container">
+        <div class="box">
+          <h2>Course Info</h2>
+          <p><strong>Name:</strong> <span id="course-name">Loading...</span></p>
+          <p><strong>ID:</strong> <span id="course-id">Loading...</span></p>
+          <p><strong>Time:</strong> <span id="course-time">Loading...</span></p>
+          <p><strong>Professor:</strong> <span id="course-professor">Loading...</span></p>
+          <div class="buttons">
+            <button onclick="alert('Add Review clicked')">Add Review</button>
+            <button onclick="addClass()">Add to Schedule</button>
+          </div>
+        </div>
+
+        <div class="box">
+          <h2>Course History</h2>
+          <ul id="history-list">
+            <li>Loading history...</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h2>Student Reviews <span id="review-score"></span> (<span id="review-count">0</span>)</h2>
+          <ul id="reviews-list">
+            <li>Loading reviews...</li>
+          </ul>
         </div>
       </div>
-
-      <!-- Class History Box -->
-      <div class="box">
-        <h2>Class History</h2>
-        <ul>
-          <li>Fall 2024 - Dr. Jane Doe</li>
-          <li>Spring 2024 - Dr. John Smith</li>
-          <li>Fall 2023 - Dr. Alice Lee</li>
-          <li>Spring 2023 - Dr. John Smith</li>
-        </ul>
-      </div>
-
-      <!-- Reviews Box -->
-      <div class="box">
-        <h2>Other Reviews</h2>
-        <ul>
-          <li>"Great class, very engaging lectures!" - Student A</li>
-          <li>"Challenging but rewarding. Dr. Smith explains well." - Student B</li>
-          <li>"Highly recommend this for CS majors." - Student C</li>
-        </ul>
-      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

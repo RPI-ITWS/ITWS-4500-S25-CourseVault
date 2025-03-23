@@ -129,7 +129,33 @@ app.delete("/logout", (req, res) => {
 	}
 	res.clearCookie("token")
 	res.status(200).send("User successfully logged out.")
-})
+});
+
+// =======================================================
+//  Profile Page Drop Course Functionality
+// =======================================================
+
+app.delete("/dropcourse", async (req, res) => {
+    try {
+        const { course_id } = req.body;
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+
+        if (matchingUser) {
+            matchingUser.courses = matchingUser.courses.filter(course => course !== course_id);
+
+            await usersCollection.updateOne(
+                { username: req.user.username },
+                { $set: { courses: matchingUser.courses } }
+            );
+
+            res.status(200).send({ message: "Course removed successfully" });
+        } else {
+            res.status(404).send({ message: "User not found" });
+        }
+    } catch (error) {
+        res.status(500).send({ message: "An error occurred", error });
+    }
+});
 
 // =======================================================
 //  Course Pages Backend Functionality for API requests
@@ -207,6 +233,52 @@ app.get('/courses', async (req, res) => {
 });
 
 // =======================================================
+//  Dyanmic Course Specific Backend Functionality
+// =======================================================
+
+app.get('/class', async (req, res) => {
+    try {
+        const { course_id } = req.query;
+        const course = await courseCollection.findOne({ CourseID: course_id });
+        
+        if (course) {
+            res.json(course);
+        } else {
+            res.status(404).send({ message: "Course not found" });
+        }
+    } catch (error) {
+        res.status(500).send({ message: "Server error" });
+    }
+});
+
+app.post("/addClass", async (req, res) => {
+    try {
+        const { course_id } = req.body;
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+
+        if (matchingUser) {
+            if (!matchingUser.courses.includes(course_id)) {
+                matchingUser.courses.push(course_id);
+
+                await usersCollection.updateOne(
+                    { username: req.user.username },
+                    { $set: { courses: matchingUser.courses } }
+                );
+
+                res.status(200).send({ message: "Course added successfully" });
+            } else {
+                res.status(400).send({ message: "Course already in schedule" });
+            }
+        } else {
+            res.status(404).send({ message: "User not found" });
+        }
+    } catch (error) {
+        res.status(500).send({ message: "An error occurred", error });
+    }
+});
+
+
+// =======================================================
 //  Downloading Functionality for Backwork Page
 // =======================================================
 
@@ -258,7 +330,6 @@ app.get('/download/:filename', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
 
 // =======================================================
 //  Upload Functionality for Uploading Backwork Page
@@ -366,6 +437,6 @@ app.listen(port, () => {
 
 process.on('SIGINT', async () => {
   await client.close();
-  console.log('MongoDB connection closed');
+  console.log('\nMongoDB connection closed');
   process.exit(0);
 });

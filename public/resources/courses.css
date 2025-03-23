@@ -88,3 +88,18 @@ ul {
     top: 0;
     z-index: 3000;
   }
+
+.view-more {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5a4a3f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
