@@ -346,6 +346,14 @@
                                     "Thursday": "10:00 AM-11:50 AM"
                                 },
             "semestersAvailable": {
+                "Fall 2025": {
+                    "professor": "Jidong Xiao",
+                    "location": "DCC 308",
+                    "time": {
+                        "Monday": "10:00 AM-11:50 AM",
+                        "Thursday": "10:00 AM-11:50 AM"
+                    }
+                },
                 "Spring 2025": {
                     "professor": "David Eric Goldschmidt",
                     "location": "DCC 308",
@@ -554,28 +562,192 @@
             "currentTimeSlots":{ "Monday":"2:00-3:20 PM",
                                     "Thursday":"2:00-3:20 PM"
                                 },
-            "semestersAvailable":{"Spring 2025":"Mark Richard Gilder",
-                                    "Fall 2024": "Uzma Mushtaque",
-                                    "Summer 2024":"Uzma Mushtaque",
-                                    "Spring 2024": "Uzma Mushtaque",
-                                    "Fall 2023": "Uzma Mushtaque",
-                                    "Summer 2023": "Uzma Mushtaque",
-                                    "Spring 2023": "Uzma Mushtaque",
-                                    "Fall 2022": "Uzma Mushtaque",
-                                    "Summer 2022": "Uzma Mushtaque",
-                                    "Spring 2022": "Uzma Mushtaque",
-                                    "Fall 2021": "Uzma Mushtaque",
-                                    "Summer 2021": "Uzma Mushtaque",
-                                    "Spring 2021": "Uzma Mushtaque",
-                                    "Fall 2020": "Uzma Mushtaque",
-                                    "Summer 2020": "Uzma Mushtaque",
-                                    "Spring 2020": "Uzma Mushtaque",
-                                    "Fall 2019": "Uzma Mushtaque",
-                                    "Summer 2019": "Uzma Mushtaque",
-                                    "Spring 2019": "Uzma Mushtaque",
-                                    "Fall 2018": "Konstantin Kuzmin",
-                                    "Summer 2018": "Konstantin Kuzmin",
-                                    "Spring 2018": "Konstantin Kuzmin"
+            "semestersAvailable":
+            {
+                "Fall 2025": {
+                    "professor": "Mark Richard Gilder",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Spring 2025": {
+                    "professor": "Mark Richard Gilder",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Fall 2024": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Summer 2024": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Spring 2024": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Fall 2023": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Summer 2023": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Spring 2023": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Fall 2022": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Summer 2022": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Spring 2022": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Fall 2021": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Summer 2021": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Spring 2021": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Fall 2020": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Summer 2020": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Spring 2020": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Fall 2019": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Summer 2019": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Spring 2019": {
+                    "professor": "Uzma Mushtaque",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Fall 2018": {
+                    "professor": "Konstantin Kuzmin",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Summer 2018": {
+                    "professor": "Konstantin Kuzmin",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00 PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                },
+                "Spring 2018": {
+                    "professor": "Konstantin Kuzmin",
+                    "location": "TBD",
+                    "time": {
+                        "Monday": "2:00PM-3:20 PM",
+                        "Thursday": "2:00 PM-3:20 PM"
+                    }
+                }
             }
         },
         "thoughts":{
@@ -594,21 +766,136 @@
             "currentTimeSlots":{ "Monday":"12:00-1:50 PM",
                                     "Thursday":"12:00-1:50 PM"
                                 },
-            "semestersAvailable":{"Spring 2025":"Richard M. Plotka",
-                                    "Fall 2024": "Richard M. Plotka",
-                                    "Spring 2024": "Richard M. Plotka",
-                                    "Fall 2023": "Richard M. Plotka",
-                                    "Spring 2023": "Richard M. Plotka",
-                                    "Fall 2022": "Richard M. Plotka",
-                                    "Spring 2022": "Richard M. Plotka",
-                                    "Fall 2021": "Richard M. Plotka",
-                                    "Spring 2021": "Richard M. Plotka",
-                                    "Fall 2020": "Richard M. Plotka",
-                                    "Spring 2020": "Richard M. Plotka",
-                                    "Fall 2019": "Richard M. Plotka",
-                                    "Spring 2019": "Richard M. Plotka",
-                                    "Fall 2018": "Richard M. Plotka",
-                                    "Spring 2018": "Richard M. Plotka"
+            "semestersAvailable":
+            {
+                "Fall 2025": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Spring 2025": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Fall 2024": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Spring 2024": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Fall 2023": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Spring 2023": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Fall 2022": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Spring 2022": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Fall 2021": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Spring 2021": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Fall 2020": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Spring 2020": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Fall 2019": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Spring 2019": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Fall 2018": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                },
+                "Spring 2018": {
+                    "professor": "Richard M. Plotka",
+                    "location": "Lally 102",
+                    "time": {
+                        "Monday": "12:00 PM-1:50 PM",
+                        "Thursday": "12:00 PM-1:50 PM"
+                    }
+                }
             }
         },
         "thoughts":{

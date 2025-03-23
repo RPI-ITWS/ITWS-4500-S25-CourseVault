@@ -1,7 +1,5 @@
 async function fillSchedule(course, color, foregroundColor, selectedSemester) {
     const times = course.history.semestersAvailable[selectedSemester].time;
-    console.log(times);
-    console.log(color);
 
     const table = document.getElementById('scheduleTable');
     const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
@@ -32,7 +30,7 @@ async function fillSchedule(course, color, foregroundColor, selectedSemester) {
         const dayIndex = weekdays.indexOf(day);
 
         const filledSlotDiv = document.createElement('div');
-        filledSlotDiv.id = `${course.history.courseName}-${day}-${startHour}-${endHour}`.replace(/[.\s]+/g, '');
+        filledSlotDiv.id = `${course.history.courseName}-${day}-${startHour}-${endHour}`.replace(/[^a-zA-Z0-9]+/g, '');
         filledSlotDiv.innerHTML = `<span style="font-size: 20px; font-weight: bold;">${course.history.courseName}</span><br>${course.history.semestersAvailable[selectedSemester].professor}<br>${course.history.semestersAvailable[selectedSemester].location}`;
         filledSlotDiv.style.position = 'absolute';
         filledSlotDiv.style.top = `${minimumTop + (40 * startHour)}px`;
@@ -116,7 +114,6 @@ async function fetchSchedule() {
         }
 
         const courseData = await response.json();
-        console.log(courseData);
 
         let foundCourse;
 
@@ -126,12 +123,8 @@ async function fetchSchedule() {
             }
         }
 
-        console.log(foundCourse);
-
         const dropdown = document.getElementById("semesterDropdown");
         const selectedSemester = dropdown.value;
-
-        console.log(selectedSemester);
 
         if (selectedSemester in foundCourse.history.semestersAvailable) {
             fillSchedule(foundCourse, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
