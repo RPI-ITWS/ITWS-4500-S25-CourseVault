@@ -13,20 +13,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         Object.entries(data.courses).forEach(([courseID, details]) => {
             const department = courseID.split("-")[0]; 
-            departments.add(department);
+            departments.add(department);    
+            console.log( details.Professor)
 
             const courseBox = document.createElement("div");
             courseBox.classList.add("class-box");
             courseBox.setAttribute("data-class", courseID);
             courseBox.setAttribute("data-department", department);
             courseBox.setAttribute("data-description", details.courseName);
-            courseBox.setAttribute("data-details", details.Professor);
+            courseBox.setAttribute("data-details", details.Professor.professor);
             courseBox.setAttribute("data-link", "#"); 
 
             courseBox.innerHTML = `
                 <h1>${courseID}</h1>
                 <h2>${details.courseName}</h2>
-                <h3>${details.Professor}</h3>
+                <h3>${details.Professor.professor}</h3>
+                <h4>${details.Professor.location}</h4>
             `;
 
             courseBox.addEventListener("click", () => {

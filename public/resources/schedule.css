@@ -27,9 +27,18 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 5%;
-    padding-top: 2.5%;
-    min-width: 400px;
+    padding-top: 1.5%;
+    min-width: 1320px;
     width: 100%;
+}
+
+#semesterDropdown {
+    border: 2px;
+    border-style: solid;
+    border-color: #5a4a3f;
+    border-radius: 10px;
+    background-color: #f2e6d5;
+    margin-bottom: 20px;
 }
 
 #subtitle {
@@ -40,4 +49,5 @@ h1 {
 #scheduleTable {
     border: 2px solid #5a4a3f;
     border-radius: 20px;
+    position: relative;
 }

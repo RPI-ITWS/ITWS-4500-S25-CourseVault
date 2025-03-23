@@ -12,9 +12,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
     min-height: 100vh;
-    justify-content: flex-start;
+    justify-content:start;
     z-index: 1;
 }
 
@@ -216,3 +218,14 @@
   #addDocumentButton:hover {
     background-color: #357ABD;
   }
+
+  #headerDiv {
+    text-align: center;
+    background-color: #d6c2a8;
+    padding: 20px;
+    border-bottom: 2px solid #b5a38a;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-bottom: 5%;
+    font-size: 2vh;
+}
