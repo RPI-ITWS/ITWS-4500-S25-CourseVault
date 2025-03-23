@@ -1,4 +1,5 @@
-async function fillSchedule(times, color) {
+async function fillSchedule(course, color) {
+    const times = course.history.currentTimeSlots;
     console.log(times);
     console.log(color);
 
@@ -31,7 +32,7 @@ async function fillSchedule(times, color) {
         const dayIndex = weekdays.indexOf(day);
 
         const filledSlotDiv = document.createElement('div');
-        filledSlotDiv.textContent = 'Scheduled';
+        filledSlotDiv.textContent = `${course.history.courseName}`;
         filledSlotDiv.style.position = 'absolute';
         filledSlotDiv.style.top = `${minimumTop + (40 * startHour)}px`;
         filledSlotDiv.style.left = `${minimumLeft + (200 * dayIndex)}px`;
@@ -87,9 +88,9 @@ async function fetchSchedule() {
             }
         }
 
-        const times = foundCourse.history.currentTimeSlots;
+        console.log(foundCourse);
 
-        fillSchedule(times, colors[i % colors.length]);
+        fillSchedule(foundCourse, colors[i % colors.length]);
     }
 }
 
@@ -150,7 +151,6 @@ function createScheduleGrid() {
     });
 
     const contentDiv = document.getElementById('content-block');
-    //contentDiv.innerHTML = '';
     contentDiv.appendChild(table);
 
     fetchSchedule();
