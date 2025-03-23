@@ -79,6 +79,7 @@ async function fetchSchedule() {
         }
 
         const courseData = await response.json();
+        console.log(courseData);
 
         let foundCourse;
 
@@ -156,4 +157,29 @@ function createScheduleGrid() {
     fetchSchedule();
 }
 
+function generateSemesterOptions() {
+    const dropdown = document.getElementById("semesterDropdown");
+    dropdown.innerHTML = "";
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const cutoffDate = new Date(year, 4, 31);
+
+    let options = [];
+
+    if (today > cutoffDate) {
+        options = [`Spring ${year + 1}`];
+    } else {
+        options = [`Summer ${year}`, `Fall ${year}`];
+    }
+
+    options.forEach(semester => {
+        const optionElement = document.createElement("option");
+        optionElement.value = semester;
+        optionElement.textContent = semester;
+        dropdown.appendChild(optionElement);
+    });
+}
+
+generateSemesterOptions();
 createScheduleGrid();
