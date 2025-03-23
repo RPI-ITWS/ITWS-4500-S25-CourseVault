@@ -157,3 +157,10 @@ async function addClass() {
         console.error("Error:", error);
     }
 }
+
+function handleReviewButtonClick() {
+    const reviewCourse = localStorage.getItem('courseID') || 'CSCI-1100';
+    localStorage.setItem('reviewCourse', reviewCourse);
+    
+    window.location.href = window.location.origin+'/rating';
+  }

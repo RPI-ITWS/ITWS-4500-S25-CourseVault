@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Course Vault</title>
+        <link rel="stylesheet" href="./../resources/style.css">
+        <link rel="stylesheet" href="./../resources/rating.css">
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin defer></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin defer></script>
+        <script src="./../components/navbar.js" defer></script>
+        <script src="./../components/header.js" defer></script>
+        <script src="./../resources/rating.js" defer></script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="navbar"></div>
+            <div id="content">
+                <div id="headerDiv"></div>
+                <form id="courseRatingForm" action="#" method="post">
+                    <div class="form-group">
+                        <label for="courseId">Course ID:</label>
+                        <input type="text" id="courseId" name="courseId" placeholder="e.g. CSCI-1100" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating:</label>
+                        <div class="rating-bar-container">
+                            <div class="rating-bar">
+                                <div class="rating-fill" id="ratingFill"></div>
+                            </div>
+                            <div class="rating-labels">
+                                <span>0</span>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span>4</span>
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="ratingValue" name="rating" value="5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" name="comment" placeholder="Share your experience with this course..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Submit Rating</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
