@@ -3,7 +3,14 @@ const bcrypt = require('bcrypt')
 
 async function dupUsername(username, collection) {
     const user = await collection.findOne({ username: username })
-    return user ? false : true
+    // console.log(user)
+    return user ? true : false
+}
+
+async function collectionExists(db, collectionName) {
+    const collections = await db.listCollections().toArray();
+    console.log(collections)
+    return collections.some(collection => collection.name === collectionName);
 }
 
 async function hashPassword(password) {
@@ -16,10 +23,13 @@ module.exports = async (req, res) => {
         const user = req.body
         console.log(user)
         
+        const exists = await collectionExists(req.app.locals.db, "Users");
+        if (!exists) {
+            return res.status(500).send({msg: "db connection failed"})
+        } 
         const collection = req.app.locals.db.collection("Users")
-        const newUserId = await dupUsername(user.username, collection)
-        
-        if (newUserId) {
+    
+        if (await dupUsername(user.username, collection)) {
             return res.status(400).send({msg: "Email already in use"})
         }
 
