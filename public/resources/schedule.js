@@ -1,4 +1,4 @@
-async function fillSchedule(course, color, selectedSemester) {
+async function fillSchedule(course, color, foregroundColor, selectedSemester) {
     const times = course.history.semestersAvailable[selectedSemester].time;
     console.log(times);
     console.log(color);
@@ -32,7 +32,8 @@ async function fillSchedule(course, color, selectedSemester) {
         const dayIndex = weekdays.indexOf(day);
 
         const filledSlotDiv = document.createElement('div');
-        filledSlotDiv.textContent = `${course.history.courseName}`;
+        filledSlotDiv.id = `${course.history.courseName}-${day}-${startHour}-${endHour}`.replace(/[.\s]+/g, '');
+        filledSlotDiv.innerHTML = `<span style="font-size: 20px; font-weight: bold;">${course.history.courseName}</span><br>${course.history.semestersAvailable[selectedSemester].professor}<br>${course.history.semestersAvailable[selectedSemester].location}`;
         filledSlotDiv.style.position = 'absolute';
         filledSlotDiv.style.top = `${minimumTop + (40 * startHour)}px`;
         filledSlotDiv.style.left = `${minimumLeft + (200 * dayIndex)}px`;
@@ -42,7 +43,31 @@ async function fillSchedule(course, color, selectedSemester) {
         filledSlotDiv.style.color = 'black';
         filledSlotDiv.style.textAlign = 'center';
         filledSlotDiv.style.borderRadius = '5px';
+        filledSlotDiv.style.borderLeft = `15px solid ${foregroundColor}`;
         filledSlotDiv.style.fontWeight = 'bold';
+        filledSlotDiv.style.overflow = 'auto';
+        filledSlotDiv.style.wordWrap = 'break-word';
+
+        const styleElement = document.createElement('style');
+        styleElement.innerHTML = `
+        #${filledSlotDiv.id}::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+            border-radius: 10px;
+        }
+
+        #${filledSlotDiv.id}::-webkit-scrollbar-track {
+            background-color: ${color};
+            border-radius: 10px;
+        }
+
+        #${filledSlotDiv.id}::-webkit-scrollbar-thumb {
+            background-color: ${foregroundColor};
+            border-radius: 10px;
+        }
+        `;
+
+        document.head.appendChild(styleElement);
 
         table.appendChild(filledSlotDiv);
     }
@@ -68,6 +93,18 @@ async function fetchSchedule() {
         '#cc9966',
         '#b3b3b3'
     ];
+
+    const foregroundColors = [
+        'red',
+        'blue',
+        'green',
+        'yellow',
+        'orange',
+        'purple',
+        'pink',
+        'brown',
+        'gray'
+    ]
 
     for (let i = 0; i < data.courses.length; i++) {
         const course = data.courses[i];
@@ -97,7 +134,7 @@ async function fetchSchedule() {
         console.log(selectedSemester);
 
         if (selectedSemester in foundCourse.history.semestersAvailable) {
-            fillSchedule(foundCourse, colors[i % colors.length], selectedSemester);
+            fillSchedule(foundCourse, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
         }
     }
 }
