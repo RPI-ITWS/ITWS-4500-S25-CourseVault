@@ -45,11 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.getElementById('course-time').textContent = timeSlotText;
 
+    let location = 'TBD';
+    if (data.history.semestersAvailable) {
+        const mostRecentSemester = Object.keys(data.history.semestersAvailable)[0];
+        if (mostRecentSemester) {
+            location = data.history.semestersAvailable[mostRecentSemester].location;
+        }
+    }
+    document.getElementById('location-id').textContent = location;
+
     let currentProfessor = 'TBD';
     if (data.history.semestersAvailable) {
         const mostRecentSemester = Object.keys(data.history.semestersAvailable)[0];
         if (mostRecentSemester) {
-            currentProfessor = data.history.semestersAvailable[mostRecentSemester];
+            currentProfessor = data.history.semestersAvailable[mostRecentSemester].professor;
         }
     }
     document.getElementById('course-professor').textContent = currentProfessor;
@@ -63,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let i = 0; i < displayCount; i++) {
             const semester = semesters[i];
-            const professor = data.history.semestersAvailable[semester];
+            const professor = data.history.semestersAvailable[semester].professor;
 
             const listItem = document.createElement('li');
             listItem.textContent = `${semester} - ${professor}`;

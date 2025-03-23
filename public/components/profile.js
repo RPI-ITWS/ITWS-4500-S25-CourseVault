@@ -14,23 +14,23 @@ const UserProfile = () => {
     joined: "August 24, 2023",
     classes: ["CSCI-1100", "ITWS-1100", "MATH-2100", "PHIL-2100"],
     ratings: [
-      { professor: "Dr. Callahan", rating: 5, comment: "Easily the Best Cactus I know..." },
-      { professor: "Dr. Plum", rating: 3, comment: "Difficult exams!" },
-      { professor: "Dr. Kuzmin", rating: 2, comment: "Difficult to pay attention to at 8 AM." },
-      { professor: "Dr. Plotka", rating: 4, comment: "Reasonable with excused absences." }
+      { class: "ITWS-1100", rating: 5, comment: "Plotka knows what he is talking about." },
+      { class: "CSCI-1100", rating: 3, comment: "Difficult exams!" },
+      { class: "PHIL-2100", rating: 2, comment: "Difficult to pay attention to at 8 AM." },
+      { class: "MATH-2100", rating: 4, comment: "Reasonable with excused absences." }
     ]
   };
 
   const formatData = (data) => {
-    console.log(data.professor_ratings);
+    console.log(data.course_ratings);
     console.log(data.courses);
     return {
       fullName: `${data.first_name} ${data.last_name}`,
       email: data.username,
       joined: data.date_joined,
       classes: data.courses && data.courses.length > 0 ? data.courses : ["Not Enrolled In Any Classes"],
-      ratings: data.professor_ratings && data.professor_ratings.length > 0 ? 
-               data.professor_ratings : [{ professor: "N/a", rating: 0, comment: "No Comments Submitted" }]
+      ratings: data.course_ratings && data.course_ratings.length > 0 ? 
+               data.course_ratings : [{ class: "N/a", rating: 0, comment: "No Comments Submitted" }]
     };
   };
 
@@ -182,7 +182,7 @@ const UserProfile = () => {
     React.createElement(
       'div',
       { className: 'table-container' },
-      React.createElement('h2', null, "Professor Ratings"),
+      React.createElement('h2', null, "Course Ratings"),
       React.createElement(
         'table',
         { id: "assignmentsTable" },
@@ -192,7 +192,7 @@ const UserProfile = () => {
           React.createElement(
             'tr',
             null,
-            React.createElement('th', null, "Professor"),
+            React.createElement('th', null, "Course"),
             React.createElement('th', null, "Rating"),
             React.createElement('th', null, "Comment")
           )
@@ -204,7 +204,7 @@ const UserProfile = () => {
             React.createElement(
               'tr',
               { key: index },
-              React.createElement('td', { className: 'professor-cell' }, item.professor),
+              React.createElement('td', { className: 'professor-cell' }, item.class),
               React.createElement(
                 'td',
                 { className: 'rating-cell' },
