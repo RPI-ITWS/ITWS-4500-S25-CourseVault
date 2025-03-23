@@ -14,13 +14,13 @@ async function hashPassword(password) {
 module.exports = async (req, res) => {
     try {
         const user = req.body
-        console.log(user.username + " " + user.password)
+        console.log(user)
         
         const collection = req.app.locals.db.collection("Users")
         const newUserId = await dupUsername(user.username, collection)
         
         if (newUserId) {
-            return res.send("Username already in use")
+            return res.status(400).send({msg: "Email already in use"})
         }
 
         const currentDate = new Date()
@@ -46,9 +46,9 @@ module.exports = async (req, res) => {
             httpOnly: true,
             // other potential flags
         })
-        return res.redirect("/user")
+        return res.status(200).send({msg: "Registration successful"})
     } catch (err) {
         console.error("Error in registration:", err)
-        return res.status(500).send("Internal Server Error: " + err)
+        return res.status(500).send({msg: "Internal Server Error: " + err})
     }
 }
