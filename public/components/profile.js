@@ -34,6 +34,11 @@ const UserProfile = () => {
     };
   };
 
+  const handleAddRating = () => {
+    localStorage.setItem('reviewCourse', '');
+    window.location.href = `${window.origin}/rating`;
+  };
+
   const handleDropCourse = async (courseId) => {
     try {
       setDropStatus({ message: `Dropping course ${courseId}...`, type: 'info' });
@@ -219,7 +224,10 @@ const UserProfile = () => {
       React.createElement(
         'div',
         { className: 'add-controls' },
-        React.createElement('button', { id: 'addRatingButton' }, 'Add Rating')
+        React.createElement('button', { 
+          id: 'addRatingButton',
+          onClick: handleAddRating 
+        }, 'Add Rating')
       )
     )
   );
