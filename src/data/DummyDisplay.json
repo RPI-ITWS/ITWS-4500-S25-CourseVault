@@ -208,17 +208,17 @@
                         "Friday": "2:00 PM-3:50 PM"
                     }
                 }
-            },
-            "thoughts":{
-                "score": 0,
-                "optimal": 0,
-                "reviewCount": 0,
-                "reviews":{}
             }
+        },
+        "thoughts":{
+            "score": 0,
+            "optimal": 0,
+            "reviewCount": 0,
+            "reviews":{}
         }
     },
     {   
-        "CourseId": "CSCI-2600",
+        "CourseID": "CSCI-2600",
         "documents": [
             {
                 "document_name": "Homework 0",

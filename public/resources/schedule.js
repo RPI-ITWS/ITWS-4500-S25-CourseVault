@@ -1,5 +1,5 @@
-async function fillSchedule(course, color) {
-    const times = course.history.currentTimeSlots;
+async function fillSchedule(course, color, selectedSemester) {
+    const times = course.history.semestersAvailable[selectedSemester].time;
     console.log(times);
     console.log(color);
 
@@ -91,7 +91,14 @@ async function fetchSchedule() {
 
         console.log(foundCourse);
 
-        fillSchedule(foundCourse, colors[i % colors.length]);
+        const dropdown = document.getElementById("semesterDropdown");
+        const selectedSemester = dropdown.value;
+
+        console.log(selectedSemester);
+
+        if (selectedSemester in foundCourse.history.semestersAvailable) {
+            fillSchedule(foundCourse, colors[i % colors.length], selectedSemester);
+        }
     }
 }
 
@@ -183,3 +190,8 @@ function generateSemesterOptions() {
 
 generateSemesterOptions();
 createScheduleGrid();
+
+const semesterDropdown = document.getElementById('semesterDropdown');
+semesterDropdown.addEventListener('change', function() {
+    fetchSchedule();
+});
