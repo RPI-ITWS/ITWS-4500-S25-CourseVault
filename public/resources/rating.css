@@ -29,10 +29,12 @@
     width: 40%;
     margin-bottom: 5%;
     font-size: 2vh;
+    min-width: 250px;
 }
 
 #courseRatingForm {
-    max-width: 550px; 
+    width: 50%;
+    min-width: 250px;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 30px;
@@ -119,4 +121,8 @@ textarea {
 .rating-labels span {
     font-size: 14px;
     color: #555;
+}
+
+#comment{
+    width: 100%;
 }

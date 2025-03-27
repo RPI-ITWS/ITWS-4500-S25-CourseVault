@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #f5f5f5;
 }
 
@@ -19,4 +19,165 @@ body{
     min-height: 100vh;
     justify-content: flex-start;
     z-index: 1;
+}
+
+.profile-name {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #d6c2a8;
+    transition: box-shadow 0.3s;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.table-container {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #d6c2a8;
+    transition: box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.profile-info-table {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #d6c2a8;
+    transition: box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.profile-info-table td {
+    text-align: center;
+    padding: 5px 10px;
+    width: 50%;
+}
+
+.profile-info-table tr td:first-child {
+    font-weight: bold;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.profile-info-table tr td:last-child {
+    text-align: left;
+}
+
+.table-container:hover,
+.profile-info-table:hover,
+.profile-name:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+#enrolledClassesTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#enrolledClassesTable thead tr {
+    background-color: #f8f9fa;
+}
+
+#enrolledClassesTable th,
+#enrolledClassesTable td {
+    text-align: center;
+    padding: 12px;
+    width: 50%;
+}
+
+#enrolledClassesTable tr {
+    background-color: white;
+}
+
+#enrolledClassesTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#enrolledClassesTable th {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    border-bottom: 2px solid #d6c2a8;
+}
+
+#enrolledClassesTable button {
+    background-color: #d6c2a8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enrolledClassesTable button:hover {
+    background-color: #c0a88e;
+}
+
+#assignmentsTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#assignmentsTable thead tr {
+    background-color: #f8f9fa;
+}
+
+#assignmentsTable th,
+#assignmentsTable td {
+    text-align: center;
+    padding: 12px;
+    width: 33.33%; /* Split equally among 3 columns */
+}
+
+#assignmentsTable tr {
+    background-color: white;
+}
+
+#assignmentsTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#assignmentsTable th {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    border-bottom: 2px solid #d6c2a8;
+}
+
+/* Specific cell styling */
+.professor-cell {
+    font-weight: medium;
+}
+
+.rating-cell {
+    color: #ffc107; /* Star rating color */
+}
+
+.comment-cell {
+    text-align: left;
+    padding: 12px;
+}
+
+.add-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#addRatingButton {
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }

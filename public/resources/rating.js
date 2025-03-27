@@ -73,9 +73,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     const form = document.getElementById('courseRatingForm');
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        console.log('Form submitted with rating:', ratingValue.value);
-        alert('Rating submitted: ' + ratingValue.value + '/5');
+        
+        const submitButton = this.querySelector('button[type="submit"]');
+        const courseId = courseIdInput.value;
+        const score = parseInt(ratingValue.value);
+        const comment = document.getElementById('comment').value || "No additional comments";
+    
+        if (!courseId) {
+            alert('Please enter a Course ID');
+            return;
+        }
+
+        if (score === 0) {
+            alert('Please select a rating');
+            return;
+        }
+    
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+    
+        try {
+            const response = await fetch(`${window.location.origin}/addReview`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    course:  courseIdInput.value,
+                    score: parseInt(ratingValue.value),
+                    comment: comment
+                })
+            });
+    
+            const result = await response.json();
+    
+            if (response.ok) {
+                alert('Review submitted successfully!');
+                courseIdInput.value = '';
+                ratingValue.value = 0;
+                ratingFill.style.width = '0%';
+                document.getElementById('comment').value = '';
+            } else {
+                alert(result.message || 'Failed to submit review');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('An error occurred while submitting the review');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit Review';
+        }
     });
 });
