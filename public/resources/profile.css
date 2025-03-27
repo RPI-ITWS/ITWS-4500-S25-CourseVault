@@ -135,7 +135,7 @@ body {
 #assignmentsTable td {
     text-align: center;
     padding: 12px;
-    width: 33.33%; /* Split equally among 3 columns */
+    width: 33.33%;
 }
 
 #assignmentsTable tr {
@@ -153,13 +153,12 @@ body {
     border-bottom: 2px solid #d6c2a8;
 }
 
-/* Specific cell styling */
 .professor-cell {
     font-weight: medium;
 }
 
 .rating-cell {
-    color: #ffc107; /* Star rating color */
+    color: #000000;
 }
 
 .comment-cell {
