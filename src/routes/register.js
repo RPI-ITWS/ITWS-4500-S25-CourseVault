@@ -40,6 +40,7 @@ module.exports = async (req, res) => {
         const newUser = {
             "username": user.username,
             "pass_hash": await hashPassword(user.password),
+            "status":"user",
             "first_name": user.first_name,
             "last_name": user.last_name,
             "date_joined": formattedDate,
