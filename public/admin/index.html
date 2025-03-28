@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../resources/style.css">
+    <link rel="stylesheet" href="../resources/admin.css">
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    
+    <script defer src="../components/navbar.js"></script>
+    <script defer src="../components/header.js"></script>
+    <script defer src="../resources/admin.js"></script>
+    <script defer src="../resources/form-navigation.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="navbar"></div>
+        <div id="content">
+            <div id="headerDiv"></div>
+            <div id="header">
+                <div class="form-navigation">
+                    <button id="addCourseBtn" class="nav-button active">Add Course</button>
+                    <button id="removeFileBtn" class="nav-button">Remove File</button>
+                    <button id="removeCommentBtn" class="nav-button">Remove Comment</button>
+                </div>
+            </div>
+            
+            <div id="forms-container">
+                <form id="addCourseForm" class="admin-form active">
+                    <h2>Add Course</h2>
+                    <textarea id="jsonInput" placeholder="Enter JSON object here..."></textarea>
+                    <button type="submit">Add Course</button>
+                </form>
+                
+                <form id="removeFileForm" class="admin-form">
+                    <h2>Remove File</h2>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="courseCode">Course Code:</label>
+                            <input type="text" id="courseCode" name="courseCode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fileName">File Name:</label>
+                            <input type="text" id="fileName" name="fileName" required>
+                        </div>
+                    </div>
+                    <button type="submit">Remove File</button>
+                </form>
+                
+                <form id="removeCommentForm" class="admin-form">
+                    <h2>Remove Comment</h2>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="courseCode2">Course Code:</label>
+                            <input type="text" id="courseCode2" name="courseCode2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <input type="text" id="comment" name="comment" required>
+                        </div>
+                    </div>
+                    <button type="submit">Remove Comment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
