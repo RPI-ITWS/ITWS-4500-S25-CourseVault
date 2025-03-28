@@ -80,15 +80,27 @@ app.get('/signup', (req, res) => {
 	res.sendFile(path.join(__dirname, '../public/signup/index.html'))
 })
 
-app.get('/user', (req, res) => {
-	console.log("user route")
-	res.sendFile(path.join(__dirname, '../public/user/index.html'))
-})
-
-app.get('/admin', (req, res) => {
-	console.log("admin route")
-	res.sendFile(path.join(__dirname, '../public/admin/index.html'))
-})
+app.get('/user', async (req, res) => {
+    try {
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+        
+        if (matchingUser) {
+            if (matchingUser.status === "admin") {
+                console.log("admin route");
+                res.sendFile(path.join(__dirname, '../public/admin/index.html'));
+            } else {
+                console.log("user route");
+                res.sendFile(path.join(__dirname, '../public/user/index.html'));
+            }
+        } else {
+            console.log("user route");
+            res.sendFile(path.join(__dirname, '../public/user/index.html'));
+        }
+    } catch (error) {
+        console.log("user route");
+        res.sendFile(path.join(__dirname, '../public/user/index.html'));
+    }
+});
 
 app.get('/backwork', (req, res) => {
 	console.log("backwork route")
