@@ -1,9 +1,14 @@
 const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt')
 
+function isValidRPIEmail(email) {
+    const rpiEmailRegex = /^[a-zA-Z0-9]+@rpi\.edu$/;
+    return rpiEmailRegex.test(email);
+}
+
 async function dupUsername(username, collection) {
     const user = await collection.findOne({ username: username })
-    return user ? false : true
+    return !!user
 }
 
 async function hashPassword(password) {
@@ -15,6 +20,10 @@ module.exports = async (req, res) => {
     try {
         const user = req.body
         console.log(user.username + " " + user.password)
+        
+        if (!isValidRPIEmail(user.username)) {
+            return res.status(400).send("Only @rpi.edu email addresses are allowed. Username must contain only letters and numbers.")
+        }
         
         const collection = req.app.locals.db.collection("Users")
         const newUserId = await dupUsername(user.username, collection)
@@ -30,6 +39,7 @@ module.exports = async (req, res) => {
         const newUser = {
             "username": user.username,
             "pass_hash": await hashPassword(user.password),
+            "status":"user",
             "first_name": user.first_name,
             "last_name": user.last_name,
             "date_joined": formattedDate,

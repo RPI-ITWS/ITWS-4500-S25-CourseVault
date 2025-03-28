@@ -78,14 +78,21 @@ app.get('/signup', (req, res) => {
 	res.sendFile(path.join(__dirname, '../public/signup/index.html'))
 })
 
-app.get('/user', (req, res) => {
-	console.log("user route")
-	res.sendFile(path.join(__dirname, '../public/user/index.html'))
-})
+app.get('/user', async (req, res) => {
+    try {
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
 
-app.get('/admin', (req, res) => {
-	console.log("admin route")
-	res.sendFile(path.join(__dirname, '../public/admin/index.html'))
+        if (matchingUser && matchingUser.status === "admin") {
+            console.log("admin route")
+            return res.sendFile(path.join(__dirname, '../public/admin/index.html'))
+        }
+
+        console.log("user route")
+        return res.sendFile(path.join(__dirname, '../public/user/index.html'))
+    } catch (error) {
+        console.error("Error in user route:", error)
+        return res.sendFile(path.join(__dirname, '../public/user/index.html'))
+    }
 })
 
 app.get('/backwork', (req, res) => {
@@ -143,16 +150,10 @@ app.post("/addReview", async (req, res) => {
         const courses = await courseCollection.find().toArray();
 
         const matchedCourse = courses.find(c => {
-            console.log('Comparing:', c.CourseID, 'with', course);
             return c.CourseID.trim() === course.trim();
         });
         
         if (!matchedCourse) {
-            console.log('Detailed Course Comparison:', {
-                courseFromRequest: course,
-                availableCourses: courses.map(c => c.CourseID),
-                comparisonResult: courses.map(c => c.CourseID === course)
-            });
             return res.status(404).send({
                 message: `Course, ${course}, not found`,
                 providedCourseId: course
@@ -522,6 +523,5 @@ app.listen(port, () => {
 
 process.on('SIGINT', async () => {
   await client.close();
-  console.log('\nMongoDB connection closed');
   process.exit(0);
 });
