@@ -49,6 +49,8 @@ const courseCollection = database.collection("Classes");
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieParser())
+app.use(fileUpload())
+app.use(express.static('public'))
 
 // =======================================================
 //  Unauthenticated Routes
@@ -512,8 +514,6 @@ if (!fs.existsSync(dummyWork)) {
     console.error(`Error: Directory ${dummyWork} does not exist`);
     process.exit(1);
 }
-
-app.use(express.static('public'))
 
 app.listen(port, () => {
     console.log('Listening on *:3000');
