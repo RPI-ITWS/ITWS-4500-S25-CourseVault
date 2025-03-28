@@ -22,15 +22,18 @@ const UserProfile = () => {
   };
 
   const formatData = (data) => {
-    console.log(data.course_ratings);
-    console.log(data.courses);
     return {
       fullName: `${data.first_name} ${data.last_name}`,
       email: data.username,
       joined: data.date_joined,
       classes: data.courses && data.courses.length > 0 ? data.courses : ["Not Enrolled In Any Classes"],
       ratings: data.course_ratings && data.course_ratings.length > 0 ? 
-               data.course_ratings : [{ class: "N/a", rating: 0, comment: "No Comments Submitted" }]
+               data.course_ratings.map(rating => ({
+                 class: rating.course,
+                 rating: rating.score,
+                 comment: rating.comment
+               })) : 
+               [{ class: "N/A", rating: 0, comment: "No Comments Submitted" }]
     };
   };
 

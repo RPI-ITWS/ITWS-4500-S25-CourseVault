@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (data.thoughts.reviews && Object.keys(data.thoughts.reviews).length > 0) {
         for (const [reviewer, comment] of Object.entries(data.thoughts.reviews)) {
             const listItem = document.createElement('li');
-            listItem.textContent = `"${comment}" - ${reviewer}`;
+            listItem.textContent = `"${comment}"`;
             reviewsList.appendChild(listItem);
         }
     } else {

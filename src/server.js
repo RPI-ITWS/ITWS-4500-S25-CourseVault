@@ -134,6 +134,91 @@ app.delete("/logout", (req, res) => {
 });
 
 // =======================================================
+//  Add Review Functionality
+// =======================================================
+
+app.post("/addReview", async (req, res) => {
+    try {
+        const { course, score, comment } = req.body;
+
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+        const courses = await courseCollection.find().toArray();
+
+        const matchedCourse = courses.find(c => {
+            console.log('Comparing:', c.CourseID, 'with', course);
+            return c.CourseID.trim() === course.trim();
+        });
+        
+        if (!matchedCourse) {
+            console.log('Detailed Course Comparison:', {
+                courseFromRequest: course,
+                availableCourses: courses.map(c => c.CourseID),
+                comparisonResult: courses.map(c => c.CourseID === course)
+            });
+            return res.status(404).send({
+                message: `Course, ${course}, not found`,
+                providedCourseId: course
+            });
+        }
+
+        if (matchingUser) {
+            const reviews = matchingUser.course_ratings || [];
+
+            if (reviews.length > 0) {
+                const existingReview = reviews.find(review => review.course === course);
+                if (existingReview) {
+                    return res.status(400).send({ message: 'A review for this course already exists' });
+                }
+            }
+
+            const newReview = {
+                course: course,
+                score: parseInt(score),
+                comment: comment || "No additional comments"
+            };
+
+            const newTotal = matchedCourse.thoughts.score + score;
+            const oldAvg = matchedCourse.thoughts.average * matchedCourse.thoughts.reviewCount;
+            const newAvg = (oldAvg + score) / (matchedCourse.thoughts.reviewCount + 1);
+
+            await courseCollection.updateOne(
+                { CourseID: matchedCourse.CourseID },
+                {
+                    $set: {
+                        'thoughts.score': newTotal,
+                        'thoughts.average': newAvg.toPrecision(2),
+                        'thoughts.reviewCount': matchedCourse.thoughts.reviewCount + 1
+                    },
+                    $push: {
+                        'thoughts.reviews': comment
+                    }
+                }
+            );
+
+            await usersCollection.updateOne(
+                { username: req.user.username },
+                { 
+                    $push: { 
+                        course_ratings: newReview 
+                    } 
+                }
+            );
+
+            res.status(201).send({ 
+                message: 'Review added successfully',
+                review: newReview 
+            });
+
+        } else {
+            res.status(404).send({ message: 'User not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: 'Internal Server Error' });
+    }
+});
+
+// =======================================================
 //  Profile Page Drop Course Functionality
 // =======================================================
 
