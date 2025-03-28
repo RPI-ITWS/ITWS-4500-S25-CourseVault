@@ -1,6 +1,12 @@
 const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt')
 
+async function collectionExists(db, collectionName) {
+    const collections = await db.listCollections().toArray();
+    console.log(collections)
+    return collections.some(collection => collection.name === collectionName);
+}
+
 async function validateUser(username, password, collection) {
     const matchingUser = await collection.findOne({ username: username })
     
@@ -18,13 +24,17 @@ async function validateUser(username, password, collection) {
 
 module.exports = async (req, res) => {
     const user = req.body
-    console.log(user.username + " " + user.password)
+    console.log(user)
 
+    const exists = await collectionExists(req.app.locals.db, "Users");
+    if (!exists) {
+        return res.status(500).send({msg: "db connection failed"})
+    } 
     const collection = req.app.locals.db.collection("Users")
 
     let validUser
     if (!(validUser = await validateUser(user.username, user.password, collection))) {
-        return res.send("username or password doesn't match an existing account")
+        return res.status(400).send({msg: "Username or password doesn't match an existing account"})
     }
 
     let jwtSecretKey = process.env.JWT_SECRET_KEY
@@ -35,5 +45,5 @@ module.exports = async (req, res) => {
         httpOnly: true,
         //other potential flags
     })
-    return res.redirect("/user")
+    return res.status(200).send({msg: "Login successful"})
 }

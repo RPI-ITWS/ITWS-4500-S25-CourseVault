@@ -35,6 +35,12 @@
     position: relative;
 }
 
+.form-error {
+    text-align: center;
+    color: red;
+    padding: .75rem .5rem;
+}
+
 label {
     display: block;
     margin-bottom: 8px;
