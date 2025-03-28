@@ -82,24 +82,49 @@ app.get('/signup', (req, res) => {
 
 app.get('/user', async (req, res) => {
     try {
-        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+        // Verify the JWT token first
+        const token = req.cookies.token;
+        if (!token) {
+            return res.redirect('/login');
+        }
+
+        // Decode the token to get user information
+        const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+        
+        const matchingUser = await usersCollection.findOne({ username: decoded.email });
         
         if (matchingUser) {
             if (matchingUser.status === "admin") {
-                console.log("admin route");
+                console.log("Routing to admin page");
                 res.sendFile(path.join(__dirname, '../public/admin/index.html'));
             } else {
-                console.log("user route");
+                console.log("Routing to user page");
                 res.sendFile(path.join(__dirname, '../public/user/index.html'));
             }
         } else {
-            console.log("user route");
-            res.sendFile(path.join(__dirname, '../public/user/index.html'));
+            // No matching user found
+            res.redirect('/login');
         }
     } catch (error) {
-        console.log("user route");
-        res.sendFile(path.join(__dirname, '../public/user/index.html'));
+        console.error("Error in /user route:", error);
+        res.redirect('/login');
     }
+});
+
+app.get('/user', async (req, res) => {     
+    try {         
+        // Verify the JWT token first         
+        const token = req.cookies.token;         
+        if (!token) {             
+            return res.redirect('/login');         
+        }          
+
+        console.log("Routing to user page");
+        res.sendFile(path.join(__dirname, '../public/user/index.html'));
+    } catch (error) {
+        console.error("Error in /user route:", error);
+        res.redirect('/login');
+    } 
 });
 
 app.get('/backwork', (req, res) => {
@@ -519,6 +544,123 @@ app.post('/upload', async (req, res) => {
 });
 
 // =======================================================
+//  admin page w/ privilaged functionality 
+// =======================================================
+
+app.put("/addCourse", async (req, res) => {
+    try {
+        // Check user authentication and admin status
+        const statusData = await usersCollection.findOne({ username: req.user.username });
+        if (!statusData) {
+            return res.status(403).json({
+                status: "fail",
+                message: "Unauthorized: Cannot Identify User"
+            });
+        }
+
+        if (!statusData.isAdmin) {
+            return res.status(403).json({
+                status: "fail",
+                message: "Unauthorized: Admin access required"
+            });
+        }
+
+        const courseData = req.body;
+
+        const validationError = validateCourseObject(courseData);
+        if (validationError) {
+            return res.status(400).json({
+                status: "fail",
+                message: validationError
+            });
+        }
+
+        const existingCourse = await coursesCollection.findOne({ CourseID: courseData.CourseID });
+
+        if (existingCourse) {
+            const updateResult = await coursesCollection.updateOne(
+                { CourseID: courseData.CourseID },
+                { $set: courseData }
+            );
+
+            return res.status(200).json({
+                status: "success",
+                message: "Course updated successfully",
+                courseId: existingCourse._id,
+                data: courseData
+            });
+        } else {
+            const result = await coursesCollection.insertOne(courseData);
+            return res.status(201).json({
+                status: "success",
+                message: "Course added successfully",
+                courseId: result.insertedId,
+                data: courseData
+            });
+        }
+    } catch (error) {
+        console.error("Error in addCourse:", error);
+        return res.status(500).json({
+            status: "error",
+            message: "Internal Server Error"
+        });
+    }
+});
+function validateCourseObject(obj) {
+    if (typeof obj !== 'object' || obj === null) {
+        return "Invalid course object";
+    }
+
+    if (typeof obj.CourseID !== 'string' || !/^\d{4}-\d{4}$/.test(obj.CourseID)) {
+        return "Invalid CourseID format. Must be XXXX-XXXX";
+    }
+
+    if (!Array.isArray(obj.documents)) {
+        return "documents must be an array";
+    }
+
+    if (typeof obj.history !== 'object' || obj.history === null) {
+        return "Invalid history object";
+    }
+
+    if (typeof obj.history.courseName !== 'string' || obj.history.courseName.trim() === '') {
+        return "Invalid or missing courseName";
+    }
+    if (!Array.isArray(obj.history.semestersOffered)) {
+        return "semestersOffered must be an array";
+    }
+
+    if (typeof obj.history.currentTimeSlots !== 'object' || obj.history.currentTimeSlots === null) {
+        return "Invalid currentTimeSlots object";
+    }
+
+    if (typeof obj.history.semestersAvailable !== 'object' || obj.history.semestersAvailable === null) {
+        return "Invalid semestersAvailable object";
+    }
+
+    const thoughts = obj.history.thoughts;
+    if (typeof thoughts !== 'object' || thoughts === null) {
+        return "Invalid thoughts object";
+    }
+
+    const requiredThoughtProps = ['score', 'average', 'reviewCount', 'reviews'];
+    for (let prop of requiredThoughtProps) {
+        if (!(prop in thoughts)) {
+            return `Missing ${prop} in thoughts`;
+        }
+    }
+
+    if (typeof thoughts.score !== 'number' ||
+        typeof thoughts.optimal !== 'number' ||
+        typeof thoughts.reviewCount !== 'number' ||
+        !Array.isArray(thoughts.reviews)) {
+        return "Invalid thoughts properties types";
+    }
+
+    return null;
+}
+
+// =======================================================
 //  Rest of framework functionality 
 // =======================================================
 
@@ -529,11 +671,10 @@ if (!fs.existsSync(dummyWork)) {
 
 app.listen(port, () => {
     console.log('Listening on *:3000');
-    console.log(`Serving assignments from: ${dummyWork}`);
+    console.log(`process.env.BASE_URL: ${process.env.BASE_URL}`);
 });
 
 process.on('SIGINT', async () => {
   await client.close();
-  console.log('\nMongoDB connection closed');
   process.exit(0);
 });

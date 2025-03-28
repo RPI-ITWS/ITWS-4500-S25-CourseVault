@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
     const collection = req.app.locals.db.collection("Users")
 
     let validUser
-    if (!(validUser = await validateUser(user.username, user.password, collection))) {
+    if (!(validUser = await validateUser(user.email, user.password, collection))) {
         return res.status(400).send({msg: "Username or password doesn't match an existing account"})
     }
 
