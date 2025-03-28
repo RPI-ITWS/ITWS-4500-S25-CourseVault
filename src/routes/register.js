@@ -2,9 +2,8 @@ const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt')
 
 async function dupUsername(username, collection) {
-    const user = await collection.findOne({ username: username })
-    // console.log(user)
-    return user ? true : false
+    const user = await collection.findOne({ username: username });
+    return user !== null;
 }
 
 async function collectionExists(db, collectionName) {
@@ -29,7 +28,7 @@ module.exports = async (req, res) => {
         } 
         const collection = req.app.locals.db.collection("Users")
     
-        if (await dupUsername(user.username, collection)) {
+        if (await dupUsername(user.email, collection)) {
             return res.status(400).send({msg: "Email already in use"})
         }
 
@@ -38,7 +37,7 @@ module.exports = async (req, res) => {
         const formattedDate = currentDate.toLocaleDateString('en-US', options)
         
         const newUser = {
-            "username": user.username,
+            "username": user.email,
             "pass_hash": await hashPassword(user.password),
             "status":"user",
             "first_name": user.first_name,

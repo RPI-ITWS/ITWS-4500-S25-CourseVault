@@ -90,7 +90,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-left: 6px solid #d6c2a8;
     transition: box-shadow 0.3s;
-    width: 60vh;
+    width: 65vh;
 }
 
 .admin-form:hover {
