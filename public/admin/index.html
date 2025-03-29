@@ -20,18 +20,15 @@
         <div id="navbar"></div>
         <div id="content">
             <div id="headerDiv"></div>
-            <div id="header">
-                <div class="form-navigation">
-                    <button id="addCourseBtn" class="nav-button active">Add Course</button>
-                    <button id="removeFileBtn" class="nav-button">Remove File</button>
-                    <button id="removeCommentBtn" class="nav-button">Remove Comment</button>
-                </div>
+            <div class="form-navigation">
+                <button id="addCourseBtn" class="nav-button active">Add Course</button>
+                <button id="removeFileBtn" class="nav-button">Remove File</button>
+                <button id="removeCommentBtn" class="nav-button">Remove Comment</button>
             </div>
             
-            <div id="forms-container">
                 <form id="addCourseForm" class="admin-form active">
                     <h2>Add Course</h2>
-                    <textarea id="jsonInput" placeholder="Enter JSON object here..."></textarea>
+                    <textarea id="jsonInput"placeholder=""></textarea>
                     <button type="submit">Add Course</button>
                 </form>
                 
@@ -64,7 +61,6 @@
                     </div>
                     <button type="submit">Remove Comment</button>
                 </form>
-            </div>
         </div>
     </div>
 </body>

@@ -107,7 +107,7 @@ body {
 
 .add-controls button {
   margin-top: 8px;
-  background-color: #4A90E2;
+  background-color: #5a4a3f;
   color: white;
   border: none;
   padding: 4px 8px;
@@ -118,7 +118,7 @@ body {
 }
 
 .add-controls button:hover {
-  background-color: #206cc3;
+  background-color: #8b7355;
 }
 
 #enrolledClassesTable {
@@ -151,7 +151,7 @@ body {
 
 #enrolledClassesTable button {
   margin-top: 8px;
-  background-color: #4A90E2;
+  background-color: #5a4a3f;
   color: white;
   border: none;
   padding: 4px 8px;
@@ -163,7 +163,7 @@ body {
 }
 
 #enrolledClassesTable button:hover {
-  background-color: #206cc3;
+  background-color: #8b7355;
 }
 
 .status-message {

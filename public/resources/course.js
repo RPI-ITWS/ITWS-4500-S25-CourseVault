@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const reviewScoreElement = document.getElementById('review-score');
-    if (reviewScoreElement && data.thoughts && data.thoughts.score !== undefined) {
-        reviewScoreElement.textContent = data.thoughts.score.toFixed(1);
+    if (reviewScoreElement && data.thoughts && data.thoughts.average !== undefined) {
+        reviewScoreElement.textContent = data.thoughts.average;
     }
 }
 
@@ -124,8 +124,9 @@ function showAllHistory(semestersData) {
     const historyList = document.getElementById('history-list');
     historyList.innerHTML = ''; 
 
-    for (const [semester, professor] of Object.entries(semestersData)) {
+    for (const [semester] of Object.entries(semestersData)) {
         const listItem = document.createElement('li');
+        const professor = semestersData[semester].professor;
         listItem.textContent = `${semester} - ${professor}`;
         historyList.appendChild(listItem);
     }
