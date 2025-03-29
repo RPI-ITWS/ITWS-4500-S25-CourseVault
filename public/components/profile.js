@@ -178,7 +178,8 @@ const UserProfile = () => {
                 className !== "Not Enrolled In Any Classes" && 
                 React.createElement(
                   'button',
-                  { onClick: () => handleDropCourse(className) },
+                  { className: 'buttons',
+                    onClick: () => handleDropCourse(className) },
                   'Drop Course'
                 )
               )
@@ -229,6 +230,7 @@ const UserProfile = () => {
         { className: 'add-controls' },
         React.createElement('button', { 
           id: 'addRatingButton',
+          className: 'buttons',
           onClick: handleAddRating 
         }, 'Add Rating')
       )

@@ -397,9 +397,11 @@ app.post("/addClass", async (req, res) => {
             res.status(404).send({ message: "User not found" });
         }
     } catch (error) {
-        res.status(500).send({ message: "An error occurred", error });
+        console.error("Error occurred:", error);  // Log the error
+        res.status(500).send({ message: "An error occurred", error: error.message });
     }
 });
+
 
 
 // =======================================================
