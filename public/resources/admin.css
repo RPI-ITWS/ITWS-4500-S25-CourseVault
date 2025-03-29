@@ -48,22 +48,32 @@
     min-width: 250px;
 }
 
-
 .form-navigation {
     display: flex;
     justify-content: center;
-    background-color: #b5a38a;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #d6c2a8;
+    transition: box-shadow 0.3s;
+    width: 75%;
+}
+
+.form-navigation:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .nav-button {
     flex-grow: 1;
-    padding: 16px 16px;
+    padding: 10px 16px;
+    margin-right: 10px;
     border: none;
-    background-color: #b5a38a;
+    border-radius: 8px;
+    background-color: #5a4a3f;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
-    
 }
 
 .nav-button:last-child {
@@ -71,16 +81,13 @@
 }
 
 .nav-button:hover {
-    background-color: #9c8a72;
+    background-color: #8b7355;
 }
 
 .nav-button.active {
-    background-color: #9c8a72;
+    background-color: #8b7355;
 }
-#forms-container {
-    max-width: 900px;
-    margin: 60px auto;
-}
+
 
 .admin-form {
     display: none;
@@ -90,7 +97,8 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-left: 6px solid #d6c2a8;
     transition: box-shadow 0.3s;
-    width: 65vh;
+    width: 75%;
+    margin: 60px auto;
 }
 
 .admin-form:hover {
@@ -127,17 +135,17 @@
 
 button[type="submit"] {
     width: 100%;
-    padding: 12px 16px;
+    padding: 10px 16px;
     border: none;
     border-radius: 8px;
-    background-color: #b5a38a;
+    background-color: #5a4a3f;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover {
-    background-color: #9c8a72;
+    background-color: #8b7355;
 }
 
 #jsonInput {
