@@ -43,8 +43,8 @@ module.exports = async (req, res) => {
             "first_name": user.first_name,
             "last_name": user.last_name,
             "date_joined": formattedDate,
-            "courses": {},
-            "professor_ratings": {}
+            "courses": [],
+            "course_ratings": []
         }
 
         await collection.insertOne(newUser)
