@@ -551,6 +551,8 @@ app.put("/addCourse", async (req, res) => {
     try {
         // Check user authentication and admin status
         const statusData = await usersCollection.findOne({ username: req.user.username });
+        console.log(req.user.username);
+        console.log(statusData);
         if (!statusData) {
             return res.status(403).json({
                 status: "fail",
@@ -558,7 +560,7 @@ app.put("/addCourse", async (req, res) => {
             });
         }
 
-        if (!statusData.isAdmin) {
+        if (!statusData.status === "admin") {
             return res.status(403).json({
                 status: "fail",
                 message: "Unauthorized: Admin access required"
@@ -575,10 +577,10 @@ app.put("/addCourse", async (req, res) => {
             });
         }
 
-        const existingCourse = await coursesCollection.findOne({ CourseID: courseData.CourseID });
+        const existingCourse = await courseCollection.findOne({ CourseID: courseData.CourseID });
 
         if (existingCourse) {
-            const updateResult = await coursesCollection.updateOne(
+            const updateResult = await courseCollection.updateOne(
                 { CourseID: courseData.CourseID },
                 { $set: courseData }
             );
@@ -590,7 +592,7 @@ app.put("/addCourse", async (req, res) => {
                 data: courseData
             });
         } else {
-            const result = await coursesCollection.insertOne(courseData);
+            const result = await courseCollection.insertOne(courseData);
             return res.status(201).json({
                 status: "success",
                 message: "Course added successfully",
@@ -611,7 +613,7 @@ function validateCourseObject(obj) {
         return "Invalid course object";
     }
 
-    if (typeof obj.CourseID !== 'string' || !/^\d{4}-\d{4}$/.test(obj.CourseID)) {
+    if (typeof obj.CourseID !== 'string' || !/^[A-Z]{2,4}-\d{4}$/.test(obj.CourseID)) {
         return "Invalid CourseID format. Must be XXXX-XXXX";
     }
 
@@ -638,7 +640,7 @@ function validateCourseObject(obj) {
         return "Invalid semestersAvailable object";
     }
 
-    const thoughts = obj.history.thoughts;
+    const thoughts = obj.thoughts;
     if (typeof thoughts !== 'object' || thoughts === null) {
         return "Invalid thoughts object";
     }
@@ -651,7 +653,7 @@ function validateCourseObject(obj) {
     }
 
     if (typeof thoughts.score !== 'number' ||
-        typeof thoughts.optimal !== 'number' ||
+        typeof thoughts.average !== 'number' ||
         typeof thoughts.reviewCount !== 'number' ||
         !Array.isArray(thoughts.reviews)) {
         return "Invalid thoughts properties types";
