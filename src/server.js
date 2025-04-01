@@ -162,6 +162,21 @@ app.get('/userData', async (req, res) => {
     }
 })
 
+app.get('/status', async (req, res) => {
+    try {
+        const matchingUser = await usersCollection.findOne({ username: req.user.username });
+
+        if (matchingUser) {
+            res.status(200).json({ status: matchingUser.status });
+        } else {
+            res.status(404).json({ status: 'unkown' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
 app.delete("/logout", (req, res) => {
 	if (!req.user) {
 		res.status(401).send("No user present to logout.")
