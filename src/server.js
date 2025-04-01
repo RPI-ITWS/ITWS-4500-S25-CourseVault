@@ -65,6 +65,35 @@ app.post("/login", loginRoute)
 
 app.post("/register", registerRoute)
 
+app.get('/status', async (req, res) => {
+    try {
+        const authHeader = req.headers.authorization;
+        
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return res.status(200).json({ status: 'unknown' });
+        }
+        
+        const token = authHeader.split(' ')[1];
+        
+        jwt.verify(token, process.env.JWT_SECRET_KEY, async (err, decoded) => {
+            if (err) {
+                return res.status(200).json({ status: 'unknown' });
+            }
+            
+            const matchingUser = await usersCollection.findOne({ username: decoded.username });
+            
+            if (matchingUser) {
+                res.status(200).json({ status: matchingUser.status });
+            } else {
+                res.status(200).json({ status: 'unknown' });
+            }
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
 // =======================================================
 app.use(cookieAuth)
 //  Authenticated Routes (everything below)
@@ -161,21 +190,6 @@ app.get('/userData', async (req, res) => {
         res.status(500).send({ message: 'Internal Server Error' });
     }
 })
-
-app.get('/status', async (req, res) => {
-    try {
-        const matchingUser = await usersCollection.findOne({ username: req.user.username });
-
-        if (matchingUser) {
-            res.status(200).json({ status: matchingUser.status });
-        } else {
-            res.status(404).json({ status: 'unkown' });
-        }
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Internal Server Error' });
-    }
-});
 
 app.delete("/logout", (req, res) => {
 	if (!req.user) {
