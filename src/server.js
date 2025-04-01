@@ -66,6 +66,37 @@ app.post("/login", loginRoute)
 
 app.post("/register", registerRoute)
 
+app.get('/status', async (req, res) => {
+    try {
+        const token = req.cookies.token;
+        
+        if (!token) { 
+            return res.status(200).json({ status: 'unknown' }); 
+        }
+        
+        try {
+            const jwt = require('jsonwebtoken');
+            const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+            
+            if (!decoded || !decoded.username) { 
+                return res.status(200).json({ status: 'unknown' }); 
+            }
+            
+            const matchingUser = await usersCollection.findOne({ username: decoded.username });
+            if (matchingUser) {
+                res.status(200).json({ status: matchingUser.status });
+            } else {
+                res.status(200).json({ status: 'unknown' });
+            }
+        } catch (jwtError) {
+            return res.status(200).json({ status: 'unknown' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
 // =======================================================
 app.use(cookieAuth)
 //  Authenticated Routes (everything below)
@@ -95,25 +126,6 @@ app.get('/user', async (req, res) => {
         console.error("Error in /user route:", error);
         res.redirect('/login');
     } 
-});
-
-app.get('/status', async (req, res) => {
-    const token = req.cookies.token;
-    if (!token) { return res.status(200).json({ status: 'unknown' }); }
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-        if (!decoded || !decoded.username) { return res.status(200).json({ status: 'unknown' }); }
-
-        const matchingUser = await usersCollection.findOne({ username: decoded.username });
-        if (matchingUser) {
-            res.status(200).json({ status: matchingUser.status });
-        } else {
-            res.status(200).json({ status: 'unknown' });
-        }
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Internal Server Error' });
-    }
 });
 
 app.get('/backwork', (req, res) => {
