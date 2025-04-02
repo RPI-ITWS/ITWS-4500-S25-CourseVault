@@ -50,7 +50,6 @@ const courseCollection = database.collection("Classes");
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieParser())
-app.use(fileUpload())
 app.use(express.static('public'))
 
 // =======================================================
@@ -541,6 +540,81 @@ app.post('/upload', async (req, res) => {
         return res.status(500).json({
             success: false,
             message: 'Server error during upload',
+            error: error.message
+        });
+    }
+});
+
+app.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
+    try {
+        const { courseCode, fileName } = req.params;
+        
+        if (!courseCode || !fileName) {
+            return res.status(400).json({
+                success: false,
+                message: 'Course code and file name are required'
+            });
+        }
+
+        const statusData = await usersCollection.findOne({ username: req.user.username });
+        console.log(req.user.username);
+        console.log(statusData);
+        if (!statusData) {
+            return res.status(403).json({
+                status: "fail",
+                message: "Unauthorized: Cannot Identify User"
+            });
+        }
+
+        if (!statusData.status === "admin") {
+            return res.status(403).json({
+                status: "fail",
+                message: "Unauthorized: Admin access required"
+            });
+        }
+        
+        const courseCollection = database.collection("Classes");
+        
+        const course = await courseCollection.findOne({ CourseID: courseCode.toUpperCase() });
+        if (!course) {
+            return res.status(404).json({
+                success: false,
+                message: `Course ${courseCode} not found`
+            });
+        }
+        
+        const docIndex = course.documents.findIndex(doc => doc.file_name === fileName);
+        if (docIndex === -1) {
+            return res.status(404).json({
+                success: false,
+                message: `File ${fileName} not found in course ${courseCode}`
+            });
+        }
+        
+        await courseCollection.updateOne(
+            { CourseID: courseCode.toUpperCase() },
+            { $pull: { documents: { file_name: fileName } } }
+        );
+        
+        // Delete the physical file
+        const filePath = path.resolve(__dirname, '..', 'assignments', fileName);
+        
+        if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
+        } else {
+            console.warn(`File ${fileName} not found in the filesystem, but was removed from the database`);
+        }
+        
+        return res.status(200).json({
+            success: true,
+            message: `File ${fileName} has been successfully removed from course ${courseCode}`
+        });
+        
+    } catch (error) {
+        console.error('Error removing file:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Server error while removing file',
             error: error.message
         });
     }

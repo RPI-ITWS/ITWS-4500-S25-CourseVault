@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navButtons = document.querySelectorAll('.nav-button');
     const forms = document.querySelectorAll('.admin-form');
     const addCourseForm = document.getElementById('addCourseForm');
+    const removeFileForm = document.getElementById('removeFileForm');
     const jsonInput = document.getElementById('jsonInput');
 
     jsonInput.placeholder = 
@@ -86,6 +87,36 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 alert(error.message);
             }
+        }
+    });
+
+    removeFileForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const courseCode = document.getElementById('courseCode').value.trim();
+        const fileName = document.getElementById('fileName').value.trim();
+        
+        if (!courseCode || !fileName) {
+            alert('Please fill in all fields');
+            return;
+        }
+        
+        try {
+            const response = await fetch(`/remove-file/${courseCode}/${fileName}`, {
+                method: 'DELETE'
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                alert(data.message);
+                removeFileForm.reset();
+            } else {
+                alert(data.message || 'Error removing file');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while trying to remove the file');
         }
     });
 });

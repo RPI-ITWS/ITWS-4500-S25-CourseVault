@@ -4,133 +4,115 @@ body {
     padding: 0;
     min-height: 100vh;
     background-color: #f5f5f5;
-}
-
-#page {
+  }
+  
+  #page {
     display: flex;
+    flex-wrap: nowrap;
+    background-color: #f5f5f5;
     width: 100%;
     min-height: 100vh;
     position: relative;
     z-index: 1;
-}
-
-#content {
-    flex: 1;
-    background-color: #e3d4c0;
-    padding: 5%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    box-sizing: border-box;
+  }
+  
+  #content {
     margin-left: 200px;
     width: calc(100% - 200px);
+    background-color: #e3d4c0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    min-height: 100vh;
+    height: fit-content;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    box-sizing: border-box;
     position: relative;
-    z-index: -1;
-}
-
-#pageTitle {
+    z-index: 1;
+  }
+  
+  #pageTitle {
     text-align: center;
     margin-bottom: 20px;
-}
-
-.table-container {
+  }
+  
+  .table-container {
     width: 100%;
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    padding: 20px 15px;
-    background: white;
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #d6c2a8;
+    transition: box-shadow 0.3s;
     margin-bottom: 20px;
+    position: relative;
     z-index: 1;
-}
-
-.upload-form {
+  }
+  
+  .table-container:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  }
+  
+  .upload-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
     position: relative;
     z-index: 1;
-}
-
-.upload-form label {
+  }
+  
+  .upload-form label {
     font-weight: bold;
-}
-
-.upload-form input, .upload-form select {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    color: #5a4a3f;
+  }
+  
+  .upload-form input, .upload-form select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #b5a38a;
+    border-radius: 0;
+    background-color: #f9f9f9;
+    color: #5a4a3f;
     width: 100%;
     box-sizing: border-box;
-}
-
-.upload-form button {
-    padding: 12px 20px;
-    background-color: #4A90E2;
+    transition: all 0.2s ease;
+  }
+  
+  .upload-form input:focus, .upload-form select:focus {
+    outline: none;
+    border-color: #8b7355;
+    box-shadow: 0 0 0 2px rgba(181, 163, 138, 0.25);
+  }
+  
+  .upload-form button {
+    padding: 8px 16px;
+    background-color: #5a4a3f;
     color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s;
-    width: auto;
-    align-self: flex-start;
-}
-
-.upload-form button:hover {
-    background-color: #357ABD;
-}
-
-.upload-form input[type="file"] {
-    padding: 5px;
-    background-color: #f9f9f9;
-}
-
-#assignmentsTable {
-    width: 100%;
-    border-collapse: collapse;
-    background: #ffffff;
-    position: relative;
-    table-layout: fixed;
-    z-index: 1;
-}
-
-#assignmentsTable th, #assignmentsTable td {
-    padding: 10px 12px;
-    text-align: left;
-    border: none;
-    line-height: 18px;
-    background: transparent;
-}
-
-#assignmentsTable th {
-    background: transparent;
-    font-weight: bold;
-    border-bottom: 2px solid #0000ff40;
-    position: sticky;
-    top: 0;
-}
-
-#assignmentsTable tbody tr:hover {
-    background-color: rgba(160, 148, 134, 0.2);
-}
-
-#assignmentsTable button {
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    padding: 4px 8px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9em;
-}
-
-#assignmentsTable button:hover {
-    background-color: #357ABD;
-}
-
-.search-controls {
+    transition: background-color 0.3s ease;
+    width: auto;
+    align-self: flex-start;
+  }
+  
+  .upload-form button:hover {
+    background-color: #8b7355;
+  }
+  
+  .upload-form input[type="file"] {
+    padding: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .search-controls {
     display: flex;
     gap: 20px;
     align-items: center;
@@ -138,5 +120,17 @@ body {
     width: 100%;
     max-width: 1200px;
     position: relative;
-    z-index: -1;
+    z-index: 1;
+  }
+
+  #headerDiv {
+    text-align: center;
+    background-color: #d6c2a8;
+    padding: 20px;
+    border-bottom: 2px solid #b5a38a;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-bottom: 5%;
+    font-size: 2vh;
+    min-width: 250px;
 }
