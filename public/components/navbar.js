@@ -194,7 +194,7 @@ function Navbar() {
             id: 'profButton', 
             text: isLoggedIn ? 'Courses' : 'Sign Up',
             onClick: () => window.location.href = isLoggedIn ? 
-                `${window.origin}/professors` : 
+                `${window.origin}/courses` : 
                 `${window.origin}/signup`
         }),
         isLoggedIn

@@ -1,5 +1,9 @@
 'use strict';
-// console.log("lol")
+
+document.addEventListener('DOMContentLoaded', () => {
+    determineStatus();
+});
+
 const loginSubmit = document.querySelector("#submit-button")
 console.log(loginSubmit)
 
@@ -77,3 +81,21 @@ loginSubmit.addEventListener("click", async function(event) {
     }
     
 })
+
+function determineStatus() {
+    return fetch('/status')
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'user') {
+          window.location.href = `${window.location.origin}/user/`;
+        } else if (data.status === 'admin') {
+          window.location.href = `${window.location.origin}/admin/`;
+        }
+        return;
+      })
+      .catch(error => {
+        console.error('Error checking user status:', error);
+        window.location.href = `${window.location.origin}/`;
+        return;
+      });
+  }

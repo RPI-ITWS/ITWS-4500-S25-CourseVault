@@ -1,5 +1,8 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
+
+    determineStatus();
+    
     const ratingBar = document.querySelector('.rating-bar');
     const ratingFill = document.getElementById('ratingFill');
     const ratingValue = document.getElementById('ratingValue');
@@ -127,3 +130,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function determineStatus() {
+    return fetch('/status')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.status);
+        if (data.status === 'unknown') {
+          window.location.href = `${window.location.origin}/`;
+        }
+        return;
+      })
+      .catch(error => {
+        console.error('Error checking user status:', error);
+        window.location.href = `${window.location.origin}/`;
+        return;
+      });
+}
