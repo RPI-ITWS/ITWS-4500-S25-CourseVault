@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Must be a logged in admin to access this page
+    determineStatus();
+
     const navButtons = document.querySelectorAll('.nav-button');
     const forms = document.querySelectorAll('.admin-form');
     const addCourseForm = document.getElementById('addCourseForm');
@@ -120,3 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+function determineStatus() {
+  return fetch('/status')
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'unknown') {
+        window.location.href = `${window.location.origin}/`;
+      } else if (data.status === 'user') {
+        window.location.href = `${window.location.origin}/user/`;
+      }
+      return;
+    })
+    .catch(error => {
+      console.error('Error checking user status:', error);
+      window.location.href = `${window.location.origin}/`;
+      return;
+    });
+}

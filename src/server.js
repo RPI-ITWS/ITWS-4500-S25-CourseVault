@@ -132,9 +132,9 @@ app.get('/backwork', (req, res) => {
 	res.sendFile(path.join(__dirname, '../public/backwork/index.html'))
 })
 
-app.get('/professors', (req, res) => {
-	console.log("professors route")
-	res.sendFile(path.join(__dirname, '../public/professors/index.html'))
+app.get('/courses', (req, res) => {
+	console.log("courses route")
+	res.sendFile(path.join(__dirname, '../public/courses/index.html'))
 })
 
 app.get('/resources', (req, res) => {

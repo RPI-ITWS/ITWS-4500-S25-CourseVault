@@ -55,6 +55,35 @@ function Navbar() {
         );
     }
 
+    function determineStatus() {
+        return fetch('/status')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Status check:", data.status);
+                if (data.status === 'unknown') {
+                    window.location.href = `${window.location.origin}/`;
+                } else if (data.status === 'admin') {
+                    if (window.location.href === `${window.location.origin}/admin/`){
+                        return;
+                    }else{
+                        window.location.href = `${window.location.origin}/admin/`;
+                    }
+                } else if (data.status === 'user') {
+                    window.location.href = `${window.location.origin}/user/`;
+                }
+                return;
+            })
+            .catch(error => {
+                console.error('Error checking user status:', error);
+                window.location.href = `${window.location.origin}/`;
+                return 'error';
+            });
+    }
+
+    const handleHomeClick = () => {
+        determineStatus();
+    };
+
     const handleMoreClick = (e) => {
         e.stopPropagation();
         setIsDropdownVisible(prev => !prev);
@@ -152,9 +181,7 @@ function Navbar() {
         React.createElement(NavButton, { 
             id: 'homeButton', 
             text: 'Home', 
-            onClick: () => window.location.href = isLoggedIn ? 
-            `${window.origin}/user` : 
-            `${window.origin}/`
+            onClick: handleHomeClick
         }),
         React.createElement(NavButton, { 
             id: 'backworkButton',
