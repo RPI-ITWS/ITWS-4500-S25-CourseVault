@@ -1,0 +1,305 @@
+WEBVTT
+
+1 "" (0)
+00:00:00.000 --> 00:00:05.456
+So, have you got either of you guys made progress?
+
+2 "Collins, Joshua" (3389230080)
+00:00:05.456 --> 00:00:07.283
+Since the last time we talked.
+
+3 "Adam" (2005182720)
+00:00:07.283 --> 00:00:16.496
+I mean, yeah, I did like a basic, just like start since yesterday, but nothing like notable.
+
+4 "Collins, Joshua" (3389230080)
+00:00:16.496 --> 00:00:23.275
+Got it. Also Mayas, how are you doing on the, the endpoint?
+
+5 "Thomas, Mius" (285416960)
+00:00:23.275 --> 00:00:34.159
+I finished it and I made a pull request. It was actually a lot more simple than I thought it would be. It's like literally a one liner.
+
+6 "Collins, Joshua" (3389230080)
+00:00:34.159 --> 00:00:40.175
+But ok let me I'll send, let me approve it.
+
+7 "Thomas, Mius" (285416960)
+00:00:40.175 --> 00:00:46.778
+Okay, do you still want me to make a button or like add it to like the the more tab.
+
+8 "Collins, Joshua" (3389230080)
+00:00:46.778 --> 00:01:15.369
+Yeah, I added the button and there's I think it's in the server.js. I have a, actually, NO, it's not server yet, let me pull it up real quick. There's a fun, there's a function I basically just left empty so that you can just go in and add it. I think all you have to do is just find a way to expire the cookie or whatever or forcefully get rid of it.
+
+9 "Thomas, Mius" (285416960)
+00:01:15.369 --> 00:01:16.794
+Okay, yeah, I can do that.
+
+10 "Collins, Joshua" (3389230080)
+00:01:16.794 --> 00:01:30.955
+I think it's in the Navar.js Oh yeah. Navar.JS line 63 through 67.
+
+11 "Collins, Joshua" (3389230080)
+00:01:33.354 --> 00:01:37.408
+That's under the components folder.
+
+12 "Thomas, Mius" (285416960)
+00:01:37.408 --> 00:01:39.793
+Oh, I'm looking at my lab repo.
+
+13 "Collins, Joshua" (3389230080)
+00:01:39.793 --> 00:01:43.596
+No worries.
+
+14 "Thomas, Mius" (285416960)
+00:01:43.596 --> 00:01:49.832
+You said line 63? Yeah, starting at line 63.
+
+15 "Collins, Joshua" (3389230080)
+00:01:49.832 --> 00:01:51.913
+It's that just handle live.
+
+16 "Thomas, Mius" (285416960)
+00:01:51.913 --> 00:01:57.191
+Yeah. Okay.
+
+17 "Collins, Joshua" (3389230080)
+00:01:57.191 --> 00:02:09.995
+Cool. Yeah, you might, you might have to make an endpoint for that and I didn't know, so I didn't do anything that all it does is just returning to the login page if you, if you do the logout right there.
+
+18 "Thomas, Mius" (285416960)
+00:02:09.995 --> 00:02:14.352
+Yeah, I already, I already made a logout endpoint.
+
+19 "Collins, Joshua" (3389230080)
+00:02:14.352 --> 00:02:40.693
+So. Okay. Oh, so that's perfect actually. Yeah. Okay, so it looks like Christian cannot join us. Oh yeah, let me approve that, that change you made. Oh dang, really? Is it, is it that's simple, this just app.get user data.
+
+20 "Thomas, Mius" (285416960)
+00:02:40.693 --> 00:03:01.950
+Send request.user? It's it's that simple because the the middleware, the like is that checks over all the the points or the endpoints after like the root endpoint which like the landing page and then like the login and register endpoints.
+
+21 "Thomas, Mius" (285416960)
+00:03:01.950 --> 00:03:22.612
+The the middleware checks all the other endpoints or like all the pages to make sure that you're logged in, already assigns like the request, like an object user the the app user object to like the the user actual like the actual users like information object.
+
+22 "Collins, Joshua" (3389230080)
+00:03:22.612 --> 00:03:24.731
+So you can just return that.
+
+23 "Thomas, Mius" (285416960)
+00:03:24.731 --> 00:03:30.789
+I didn't realize I did that already until like an hour into me looking into it.
+
+24 "Collins, Joshua" (3389230080)
+00:03:30.789 --> 00:03:33.771
+Oh, they said yeah so it.
+
+25 "Thomas, Mius" (285416960)
+00:03:33.771 --> 00:03:39.549
+It's just it's just been there whenever you're logged in and I just, I just returned it.
+
+26 "Collins, Joshua" (3389230080)
+00:03:39.549 --> 00:03:59.780
+That's perfect actually. I'm guessing that if I make a, I can make a post request or what is it pull, put, put or pull or put or post request basically I can do wreck.user.whatever equals and then I can change something in the courses or.
+
+27 "Collins, Joshua" (3389230080)
+00:03:59.780 --> 00:04:09.506
+The, because for every, I don't know if you saw but for every user I've added courses in professor ratings.
+
+28 "Thomas, Mius" (285416960)
+00:04:09.506 --> 00:04:11.486
+Yeah.
+
+29 "Collins, Joshua" (3389230080)
+00:04:11.486 --> 00:04:29.190
+If I make a request like that, a request endpoint to basically add or delete from those, I think I can just do rec.user.courses or.professor_ratings. Does that sound about right? Yeah, that should work if you make that like an array. Yeah, well yeah it's a.
+
+30 "Thomas, Mius" (285416960)
+00:04:29.190 --> 00:04:33.004
+Oh, ok, cool. Yeah. Yeah, that that's perfect.
+
+31 "Collins, Joshua" (3389230080)
+00:04:33.004 --> 00:04:40.469
+Yeah, cause my idea was I can just add, We Yeah cause for the sake of simplicity for Christian's endpoints or for.
+
+32 "Collins, Joshua" (3389230080)
+00:04:40.469 --> 00:04:56.679
+Christian's site for the courses, I can just.appe use.append or whatever and then when he wants to remove one, we can just search through the list and then remove. And then for professor ratings, same thing.
+
+33 "Thomas, Mius" (285416960)
+00:04:56.679 --> 00:04:58.919
+Yeah, I mean that's.
+
+34 "Collins, Joshua" (3389230080)
+00:04:58.919 --> 00:05:10.820
+**** you you I I had to applaud you. Your, your work is really solid. I mean, how did you even find this middleware?
+
+35 "Thomas, Mius" (285416960)
+00:05:10.820 --> 00:05:42.959
+I just did some research on, like, the, like JWT and cookie manager or cookie parser. So honestly it wasn't that hard, there was just some some I guess learning curves but like after that like it wasn't, it wasn't really that, that, that odd to use. And once I once I like figure out the, the cookie off like middleware, like, and I was kind of just like.
+
+36 "Collins, Joshua" (3389230080)
+00:05:42.959 --> 00:06:01.259
+Well, good news is that means as long as Adam, you get your done in the next week or two, hopefully earlier rather than later, I know you're busy, but, that means basically I can just blitz through the back end for Adam and then we'll be good for his page and then.
+
+37 "Collins, Joshua" (3389230080)
+00:06:01.259 --> 00:06:23.276
+Once that's done, Christians should just have a relatively straightforward job to do for the last page and then after that, all we really need to do is a small admin page. We might have to have you might have to do something for that later, but right now we probably won't worry about it. Cause the admin page is that's gonna be if we have time, we'll add that.
+
+38 "Thomas, Mius" (285416960)
+00:06:23.276 --> 00:06:26.102
+Yeah, I'll try to do it.
+
+39 "Adam" (2005182720)
+00:06:26.102 --> 00:06:38.890
+I definitely wanna do it today or tomorrow because I have Fox on Monday so I wanna like kind of not do anything this weekend except study for that doing it now would be advantageous.
+
+40 "Collins, Joshua" (3389230080)
+00:06:38.890 --> 00:06:55.868
+Yeah, just work on it, let me know if you need any help here or there. But Yeah, we should be I mean, to be honest, your 1st page is almost completely what we need it to be. I mean, it has just about I'm just gonna add the filter.
+
+41 "Adam" (2005182720)
+00:06:55.868 --> 00:07:04.649
+After probably or I'm gonna do the other page 1st, I think just to have like a basic of both and probably work on the filter, but yeah, I'll I'll definitely text you.
+
+42 "Collins, Joshua" (3389230080)
+00:07:04.649 --> 00:07:28.053
+Here's the thing, whenever, you struggle with, I'll come through and just help clean it up and then we'll be good. Because what I'll do is I'll take that static data and I'll display all the classes that are our dummy display Json has. That way, I'll use a little bit of JavaScript for that, and then we should be good.
+
+43 "Adam" (2005182720)
+00:07:28.053 --> 00:07:31.891
+Yeah, that sounds good. And Christian can update us on some.
+
+44 "Collins, Joshua" (3389230080)
+00:07:31.891 --> 00:07:48.469
+Yeah, yeah. Oh, yeah, I mean if you, if you get this done or at least if you touched up that new page, actually, just focus on the the page about the course, the courses specifically, you know the dynamic.
+
+45 "Collins, Joshua" (3389230080)
+00:07:48.469 --> 00:07:53.032
+When we were talking about? Yeah, I'll I'll handle the form page.
+
+46 "Adam" (2005182720)
+00:07:53.032 --> 00:07:54.729
+Okay.
+
+47 "Collins, Joshua" (3389230080)
+00:07:54.729 --> 00:08:33.873
+Because, if I do the form page, that means you just do that one page, I can the back the back end for that new one that I was telling you about isn't too heavy. It's more so just get all data and then touching up the front end to then display the data should be, should be relatively simple. Yeah, also Mayas, do you know if there's any way like if I click on a button to transfer that data to the next page through cookies?
+
+48 "Thomas, Mius" (285416960)
+00:08:33.873 --> 00:08:38.152
+What do you mean exactly?
+
+49 "Collins, Joshua" (3389230080)
+00:08:38.152 --> 00:08:58.789
+Like like cause I we were trying to get Adam to do a page for his classes site so he has like different buttons like actually let me share let me share my screen real quick so here is Adam's old screen. So the idea is that we have different.
+
+50 "Collins, Joshua" (3389230080)
+00:08:58.789 --> 00:09:19.743
+The Classes and our new ideas if we click on them, we'll go to a dynamically generated page called like web science systems development and I just need to know like how can I click on the the button and then like tell the new website that is loading that this is for ITWS 04:50?
+
+51 "Thomas, Mius" (285416960)
+00:09:30.221 --> 00:09:35.182
+I don't think cookies is the right way to do.
+
+52 "Collins, Joshua" (3389230080)
+00:09:35.182 --> 00:09:38.703
+That I think easier.
+
+53 "Thomas, Mius" (285416960)
+00:09:38.703 --> 00:10:03.989
+Because, when we have our database set up, you're gonna have to call, we're gonna make endpoints to grab like course information from the database anyways. So it's just about figuring out like what information to grab based on what site you're going to.
+
+54 "Thomas, Mius" (285416960)
+00:10:03.989 --> 00:10:19.469
+And if the site is being, if we're having like a template site that's being dynamically, that's dynamically rendering all the course information, which we should be because that makes the most sense cause it's gonna be theoretically like hundreds of courses.
+
+55 "Thomas, Mius" (285416960)
+00:10:19.469 --> 00:10:39.033
+I think we should probably just figure out what, it'd have to be figured out like what site we came from or honestly we could.
+
+56 "Adam" (2005182720)
+00:10:39.033 --> 00:10:42.555
+Yeah, we that's the.
+
+57 "Collins, Joshua" (3389230080)
+00:10:42.555 --> 00:11:06.030
+I was thinking we could just purely pass it in as a query like it would be like public/class/and then the query, and then whatever that query, it would just be like iTWS-forty 500, and then in that query it will then go to our JSON data and look up ITWS 4500.
+
+58 "Thomas, Mius" (285416960)
+00:11:06.030 --> 00:11:16.930
+Yeah grab that information from there. Yeah, it Yeah, it should probably be a query or a header Honestly a header might make more sense just so it's more secure.
+
+59 "Collins, Joshua" (3389230080)
+00:11:16.930 --> 00:11:19.568
+But yeah, that would.
+
+60 "Thomas, Mius" (285416960)
+00:11:19.568 --> 00:11:37.667
+Probably the way to go with that and like in in whatever like HTML or JS that like the professor's page has, like you would just add the, I guess you'd add like the the content.
+
+61 "Adam" (2005182720)
+00:11:37.667 --> 00:11:40.129
+Like the the court.
+
+62 "Thomas, Mius" (285416960)
+00:11:40.129 --> 00:11:42.088
+This ID LIKEWS 45.
+
+63 "Collins, Joshua" (3389230080)
+00:11:42.088 --> 00:11:44.597
+Hundred? Yeah, that are the.
+
+64 "Thomas, Mius" (285416960)
+00:11:44.597 --> 00:11:52.130
+The or the query and just call it from oh actually wait, how would you send that? So.
+
+65 "Collins, Joshua" (3389230080)
+00:11:52.130 --> 00:11:57.249
+Yeah, NO, that's the only hard part, but I'll I'll figure that out. I'll see if that's possible.
+
+66 "Thomas, Mius" (285416960)
+00:11:57.249 --> 00:12:04.653
+Yeah, ok. But it'll probably just be a bit of research.
+
+67 "Collins, Joshua" (3389230080)
+00:12:04.653 --> 00:12:17.309
+Yeah, and worst case scenario, if that doesn't work, what we can do here for this one is like he already have we already have it so that if you click on it, it displays information like this.
+
+68 "Collins, Joshua" (3389230080)
+00:12:17.309 --> 00:12:35.010
+What we can do is we can just have all the information displayed here and then we could have like add add course button at the top and add a rate a comment at the top, and then from there we can just have those two buttons do something rather than making it a whole in separate page.
+
+69 "Thomas, Mius" (285416960)
+00:12:35.010 --> 00:12:37.607
+Yeah, yeah.
+
+70 "Collins, Joshua" (3389230080)
+00:12:37.607 --> 00:12:56.089
+Yeah, I mean either way we'll be, we'll be fine. I think we're in a good standpoint here or a good point here because I mean, the last two features that we have to do right now aren't a ton of functionality in terms of code wise, it's more of just making sure.
+
+71 "Collins, Joshua" (3389230080)
+00:12:56.089 --> 00:13:04.259
+That the data can support the feature and I think I took care of that for the most part.
+
+72 "Collins, Joshua" (3389230080)
+00:13:04.259 --> 00:13:19.439
+So I think we're all good for the day. I'll keep you guys updated if anything changes, but I think we're in a good spot. Adam, just keep on doing that, that new page and tweaking the current one and then I think we'll be good.
+
+73 "Collins, Joshua" (3389230080)
+00:13:19.439 --> 00:13:25.425
+Yeah.
+
+74 "Adam" (2005182720)
+00:13:25.425 --> 00:13:27.702
+No, that's all for me.
+
+75 "Collins, Joshua" (3389230080)
+00:13:27.702 --> 00:13:32.146
+Okay, take care, guys.
+
+76 "Thomas, Mius" (285416960)
+00:13:32.146 --> 00:13:35.508
+Zero. Zero.
