@@ -9,8 +9,8 @@ const { PDFDocument } = require('pdf-lib');
 const loginRoute = require("./routes/login");
 const registerRoute = require("./routes/register");
 const { cookieAuth } = require("./middleware/cookieAuth");
-const dummyData = require('./data/DummyDisplay.json');
-const dummyWork = path.join(__dirname, '../assignments');
+const localJsonData = require('./data/DummyDisplay.json');
+const pdfFolder = path.join(__dirname, '../assignments');
 const jwt = require("jsonwebtoken");
 
 require('dotenv').config();
@@ -803,8 +803,8 @@ app.delete("/deleteReview", async (req, res) => {
 //  Rest of framework functionality 
 // =======================================================
 
-if (!fs.existsSync(dummyWork)) {
-    console.error(`Error: Directory ${dummyWork} does not exist`);
+if (!fs.existsSync(pdfFolder)) {
+    console.error(`Error: Directory ${pdfFolder} does not exist`);
     process.exit(1);
 }
 
