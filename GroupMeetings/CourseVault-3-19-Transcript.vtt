@@ -1,0 +1,201 @@
+WEBVTT
+
+1 "" (0)
+00:00:00.000 --> 00:00:05.687
+Yeah, so if, if he joins, he joins.
+
+2 "Collins, Joshua" (1047847168)
+00:00:05.687 --> 00:00:29.984
+If he doesn't he doesn't, it's fine. Okay, so 1st off, my goal this week is to help, once Adam, once you push your pages to the, to the main, I'll approve it and then I'll work on the back end for it to get it working completely. I'll probably, do you have an add course button already on it?
+
+3 "Adam" (2302608128)
+00:00:29.984 --> 00:00:35.844
+No, I just have review or wait for the, the class info page.
+
+4 "Collins, Joshua" (1047847168)
+00:00:35.844 --> 00:00:42.323
+So like the dynamic class page, does it have a section for add review and add course?
+
+5 "Adam" (2302608128)
+00:00:42.323 --> 00:00:45.296
+Like it has add course to your schedule.
+
+6 "Collins, Joshua" (1047847168)
+00:00:45.296 --> 00:00:46.784
+Yes.
+
+7 "Adam" (2302608128)
+00:00:46.784 --> 00:00:51.067
+Yeah, as add review of the class and add to like the schedule page.
+
+8 "Adam" (2302608128)
+00:00:51.846 --> 00:00:55.386
+Yeah, I can put a 3rd button if you want to like we don't even need a.
+
+9 "Collins, Joshua" (1047847168)
+00:00:55.386 --> 00:01:01.410
+No, yeah, we're fine right now. We'll, it just has two bugs.
+
+10 "Collins, Joshua" (1047847168)
+00:01:01.410 --> 00:01:19.920
+Yeah, yeah, we'll we'll we'll be good right now with what that is cause I'm just trying to get base functionality down and then if we have time, we can polish it and make it look pretty. Yeah. And then, yeah, so that's good. We're also gonna have to start soon.
+
+11 "Collins, Joshua" (1047847168)
+00:01:19.920 --> 00:01:39.920
+Adding mobile to it and I talked to, I talked to you about this Mayas, it was basically just along the lines of, in your in our CSS, it's gonna have to be like, when the screen is under this size deal with the, the ratio.
+
+12 "Collins, Joshua" (1047847168)
+00:01:39.920 --> 00:01:44.700
+Those and that's basically about it.
+
+13 "Collins, Joshua" (1047847168)
+00:01:44.700 --> 00:02:00.985
+Yeah, it's not it's not too bad yeah so yeah I was gonna say for Mias, if you can do the registering that I told you about yesterday and, what was the others I I told you two things, I can't remember. What was 2nd one?
+
+14 "Thomas, Mius" (737768960)
+00:02:00.985 --> 00:02:05.084
+Yeah, the other thing was, was working on starting mobile UI.
+
+15 "Collins, Joshua" (1047847168)
+00:02:05.084 --> 00:02:25.986
+Okay, yeah. Yeah. Yeah, and then I'm gonna help Adam finish his functionality once we're good there, we have two of the three big pieces done, and then the 3rd part is just making sure Christian does his part without blowing up because I don't know if you heard Maya's, but he was kind of really up in arms yesterday.
+
+16 "Thomas, Mius" (737768960)
+00:02:25.986 --> 00:02:36.186
+Yeah, I was half listening. I didn't know what he was getting mad about though, to be honest, but.
+
+17 "Adam" (2302608128)
+00:02:36.186 --> 00:02:39.401
+I have the same.
+
+18 "Collins, Joshua" (1047847168)
+00:02:39.401 --> 00:03:04.447
+Exact opinion about that. I I really don't understand why or how he really worked out how to be that mad about something. I mean, I I didn't think we're I I talked to two or three different people in different groups and they're all in a similar circumstance where they have like half their project done. They just gotta get the rest done and they're a little panicked but not anything out of.
+
+19 "Adam" (2302608128)
+00:03:04.447 --> 00:03:27.223
+Yeah, and if you watch all the mentor presentations, they're all in the same place. Like two other groups said like, Yeah, we like we don't have this function right now it was we're on a completely normal traffic from the last two semesters of this is the same class as intro and it's the same class as websites with added technologies, like run the exact like fine path. We have like what two months, month and a half left? Yeah.
+
+20 "Collins, Joshua" (1047847168)
+00:03:27.223 --> 00:03:47.810
+I mean, yeah, and then on top of that, we probably have the smallest group out of everybody, so if anybody were to get a little bit of, not like special treatment, but like understanding of, oh yeah, you guys have been a little busy. I kind of understand why yours isn't exactly a hundred percent, maybe like NO.
+
+21 "Collins, Joshua" (1047847168)
+00:03:47.810 --> 00:03:55.264
+95 %. You're a little light on people to just sit there and do the work.
+
+22 "Adam" (2302608128)
+00:03:55.264 --> 00:03:56.558
+Yep. Yeah.
+
+23 "Thomas, Mius" (737768960)
+00:03:56.558 --> 00:04:03.806
+I don't really know what the need is to meet with Alejan or like it.
+
+24 "Collins, Joshua" (1047847168)
+00:04:03.806 --> 00:04:11.460
+It's it's it's basically gonna be a talk about like how some of us have less work than others. That that's my guess of what he's gonna try and do.
+
+25 "Collins, Joshua" (1047847168)
+00:04:11.460 --> 00:04:29.129
+So, Marius, do you have nothing to worry about? You have more work than him, so it's not like you're slacking off or anything. And then we we could talk about how, and then for Adam, we're gonna tell talk about like how you have a lot of work that's currently in the pipeline.
+
+26 "Collins, Joshua" (1047847168)
+00:04:29.129 --> 00:04:49.126
+He was just being a little impatient about the timeline for it. And then he'll, then Callihan will understand. I mean, as long as I'm at a commit like two pages, so like as long as you're trying to actively do work and then or explain why you haven't had the biggest amount of contributions, Calluhan's fine with.
+
+27 "Adam" (2302608128)
+00:04:49.126 --> 00:05:04.300
+Okay, also he doesn't like my group last semester, one guy had like a hundred 50 commits and the rest of us had like 50 combined and we didn't like NO one heard anything about it. Like longer just took over the projects.
+
+28 "Collins, Joshua" (1047847168)
+00:05:04.300 --> 00:05:05.756
+Yeah.
+
+29 "Adam" (2302608128)
+00:05:05.756 --> 00:05:08.357
+Also I know him, like I'm doing research.
+
+30 "Collins, Joshua" (1047847168)
+00:05:08.357 --> 00:05:36.439
+So I'm just not trying to be rude. He can't, he's being a little, he's being a little over the top with it so when we have this meeting, you know, just add calm, be professional, Callingham won't be mad or anything. It's just persons kind of going over the top with it, which is funny considering he's only really done the main page.
+
+31 "Collins, Joshua" (1047847168)
+00:05:36.439 --> 00:05:54.269
+And a little bit of the but anyway, yeah, so our main goal is to get Adam's page done within the next week or so and then devote the rest of the time, and then also the start working on the mobile development look.
+
+32 "Collins, Joshua" (1047847168)
+00:05:54.269 --> 00:06:11.849
+And we'll then after that we'll focus on getting Christian's stuff done and an admin page. The admin page is just gonna be basically a nav bar four different like forms like add new course delete course, delete.
+
+33 "Collins, Joshua" (1047847168)
+00:06:11.849 --> 00:06:37.449
+PDF and delete review. Just so that like if you're an admin, oh and then yeah the only other thing I need you to do after those two things is, have it so whenever you register, you register as a user and then we can also hardcore set certain people to admin. So if you're an admin, you go to the admin homepage, if you're a user, you go to the user homepage.
+
+34 "Thomas, Mius" (737768960)
+00:06:37.449 --> 00:06:40.517
+Okay, yeah that that's really pretty simple.
+
+35 "Collins, Joshua" (1047847168)
+00:06:40.517 --> 00:07:07.080
+Yeah, because I'll I'll just make I think we already have an empty HTML file called like admin or in an admin folder, so, it's gonna be relatively simple for your end since it's already kind of, since the structure of the site is already there, we should be pretty good. And then, I mean, is there anything else you guys need to, we need to cover?
+
+36 "Adam" (2302608128)
+00:07:07.080 --> 00:07:19.999
+No, I'm just, I was just I'm gonna try like CSS my filter because it's literally just a text and then a dropdown menu but like it doesn't matter, I can just make the PR anyways.
+
+37 "Collins, Joshua" (1047847168)
+00:07:19.999 --> 00:07:36.939
+Yeah, what you should PR what you have right now and then mess with the CS on a separate branch and when it's done, let me know and I'll add it to it. Yeah. I mean I'm mainly just gonna focus on getting does data display on yours or is it still stale data?
+
+38 "Adam" (2302608128)
+00:07:36.939 --> 00:07:42.338
+No, it's still like it it only filters by the courses I put on here.
+
+39 "Collins, Joshua" (1047847168)
+00:07:42.338 --> 00:08:00.751
+Okay, so like all departments because I only put eight as like a, as a place. Yeah well it does, you know. Yeah, I'll add some JavaScript to do to basically go get all the courses and pull all the primary data we need for that page and we should be good.
+
+40 "Adam" (2302608128)
+00:08:00.751 --> 00:08:07.556
+I mean, I don't even think you need to pull it like there are a sub there we could just list all of the courses.
+
+41 "Collins, Joshua" (1047847168)
+00:08:07.556 --> 00:08:12.578
+Yeah, NO, that's what I was gonna do. I was gonna display it based off of what the Json has.
+
+42 "Adam" (2302608128)
+00:08:12.578 --> 00:08:14.574
+Yeah.
+
+43 "Collins, Joshua" (1047847168)
+00:08:14.574 --> 00:08:43.499
+Yeah, nothing too crazy and then I'll get the back end running so that like reviews and stuff work and we should be good. Yeah, I mean, I I think we're in a really good spot at least cause, I mean I've I've seen my fair share of really good groups and really bad groups, I think between every what we have done and what everybody else has done, we're, we're pretty.
+
+44 "Collins, Joshua" (1047847168)
+00:08:43.499 --> 00:09:00.599
+On par or ahead of the game. Yeah, we found a lot of the setup. We just haven't gotten the final finished product, but we're in a good spot though. I'd say we're probably like 8080 5 % of the way there.
+
+45 "Collins, Joshua" (1047847168)
+00:09:00.599 --> 00:09:07.613
+Yeah, so, anything else?
+
+46 "Adam" (2302608128)
+00:09:07.613 --> 00:09:12.118
+Yeah, I mean, I'm just gonna make the PR like a minute or two, so just gonna look at.
+
+47 "Collins, Joshua" (1047847168)
+00:09:12.118 --> 00:09:22.293
+Okay, just me when you're done with that and with that I did you guys a farewell and I hope you guys have a good afternoon.
+
+48 "Adam" (2302608128)
+00:09:22.293 --> 00:09:24.174
+Alright, see it.
+
+49 "Collins, Joshua" (1047847168)
+00:09:24.174 --> 00:09:30.497
+Yeah, and Adam I might talk to you on Friday or next.
+
+50 "Thomas, Mius" (737768960)
+00:09:30.497 --> 00:09:32.436
+See you.

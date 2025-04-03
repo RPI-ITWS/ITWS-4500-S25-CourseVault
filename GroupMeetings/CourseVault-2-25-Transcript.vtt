@@ -1,0 +1,533 @@
+WEBVTT
+
+1 "" (0)
+00:00:00.000 --> 00:00:05.082
+I just started recording, I I added it, I added a little bit to the.
+
+2 "Collins, Joshua" (3290368)
+00:00:05.082 --> 00:00:08.960
+Slides just to add more slides in general.
+
+3 "Marinkovich, Christian" (1379745536)
+00:00:08.960 --> 00:00:12.956
+Because so we need to somehow stretch that to 5 min too, so.
+
+4 "Collins, Joshua" (3290368)
+00:00:12.956 --> 00:00:14.676
+We want. Yeah.
+
+5 "Adam" (1224760064)
+00:00:14.676 --> 00:00:28.159
+I mean it should be fine cause like our group last year had like six slides as well cause I was also looking at it's not much but like 5 min does go by pretty fast, so yeah, like what you did is like fine.
+
+6 "Collins, Joshua" (3290368)
+00:00:28.159 --> 00:00:59.278
+Yeah, we All we need to do is really, if we need to talk, probably what we can have is Adam talk about catalog and then mention how we, we want our like page to look there. I can talk about how we're gonna talk about the I can talk about the backward page and then Christian you can talk about the rate by professor page and then we can go and then once we're done talking about those three individual pages, we can go on and talk about front end, back end and then design and then go into the demo.
+
+7 "Marinkovich, Christian" (1379745536)
+00:00:59.278 --> 00:01:04.159
+Can I talk about the schedule planning page? Cause I'm kind of in the process of making.
+
+8 "Collins, Joshua" (3290368)
+00:01:04.159 --> 00:01:06.199
+On that. Oh yeah sorry the other way.
+
+9 "Marinkovich, Christian" (1379745536)
+00:01:06.199 --> 00:01:19.902
+Yeah, so let's leave this in the notes. So schedule page, and then I don't know however you guys want to split it up and then we're all gonna talk here.
+
+10 "Collins, Joshua" (3290368)
+00:01:19.902 --> 00:01:29.918
+Yeah, I'll do the back. Who wants to do that? I could do that. Yeah, you can do that one. You and.
+
+11 "Adam" (1224760064)
+00:01:29.918 --> 00:01:32.238
+Yeah, I can do whatever.
+
+12 "Marinkovich, Christian" (1379745536)
+00:01:32.238 --> 00:01:35.316
+I could just do this entire side. I'm fine.
+
+13 "Collins, Joshua" (3290368)
+00:01:35.316 --> 00:01:41.598
+Yeah, Mayas, do you wanna take the backend page since you did the sign in feature and then you can talk about that?
+
+14 "Thomas, Mius" (1939922176)
+00:01:41.598 --> 00:01:45.780
+Yeah, yeah, that makes sense. Okay, so.
+
+15 "Collins, Joshua" (3290368)
+00:01:45.780 --> 00:02:23.537
+Yeah, might as well get yeah data. And then also Yeah, I I'll also talk briefly about the, the JSON, at least about the the assignment JSON might as well also talk about how, like, the JSON for storing users data and how passwords are hashed and whatnot. And then I can talk about UI and UX, I mean, it's not that's not that much. It's really just did you push your classes page?
+
+16 "Adam" (1224760064)
+00:02:23.537 --> 00:02:35.012
+I pushed the basic version, but I was gonna say I have like a more advanced version I've been working on. I just have like a retarted issue because I can show you if.
+
+17 "Marinkovich, Christian" (1379745536)
+00:02:35.012 --> 00:02:40.090
+I mean it's ok just just I, I still don't see it on main, so I was wondering if anyone.
+
+18 "Collins, Joshua" (3290368)
+00:02:40.090 --> 00:02:53.734
+I just I legitimately just merged it but I didn't see it up like I don't see it appear. It's probably because it's going to/professors. I don't know if that made my own folder.
+
+19 "Marinkovich, Christian" (1379745536)
+00:02:53.734 --> 00:02:55.868
+Like I did. It's just not.
+
+20 "Collins, Joshua" (3290368)
+00:02:55.868 --> 00:03:00.190
+Okay, yeah. So the button yeah so we'll just move that over yeah.
+
+21 "Marinkovich, Christian" (1379745536)
+00:03:00.190 --> 00:03:03.512
+Okay, can you guys fix the button so that it works for time.
+
+22 "Collins, Joshua" (3290368)
+00:03:03.512 --> 00:03:07.491
+Yeah, can you fix the button button Adam and then.
+
+23 "Marinkovich, Christian" (1379745536)
+00:03:07.491 --> 00:03:09.689
+I mean, where is it located?
+
+24 "Collins, Joshua" (3290368)
+00:03:09.689 --> 00:03:17.892
+I think it's located in where is it? It's slash.
+
+25 "Adam" (1224760064)
+00:03:17.892 --> 00:03:25.431
+Hold on, let me let me push I think I think I put in the wrong like I didn't put I think I should have put in public, but it didn't.
+
+26 "Marinkovich, Christian" (1379745536)
+00:03:25.431 --> 00:03:28.192
+Oh, you put it in class page, Doug.
+
+27 "Adam" (1224760064)
+00:03:28.192 --> 00:03:35.869
+Yeah, that's probably the issue. That's the way. Oh, NO NO, I put it in class page, I put its own folder but the folder's not in public.
+
+28 "Collins, Joshua" (3290368)
+00:03:35.869 --> 00:03:39.612
+Where is the folder? Just like it.
+
+29 "Adam" (1224760064)
+00:03:39.612 --> 00:03:41.574
+Under course ball. I'm moving it.
+
+30 "Marinkovich, Christian" (1379745536)
+00:03:41.574 --> 00:03:43.970
+Yeah, yeah. Fix that, so do we have.
+
+31 "Collins, Joshua" (3290368)
+00:03:43.970 --> 00:03:52.570
+Move it, yeah, just move it move all your stuff into the professors page for right now and we'll fix the we'll fix the button later.
+
+32 "Adam" (1224760064)
+00:03:52.570 --> 00:03:54.392
+You mean the profile I don't even see the profile.
+
+33 "Marinkovich, Christian" (1379745536)
+00:03:54.392 --> 00:03:56.373
+There's a professor's.
+
+34 "Collins, Joshua" (3290368)
+00:03:56.373 --> 00:04:17.913
+Copy and paste that ****. Yeah, just copy and paste it over, get rid of the index.HTML that's already there. Yeah. That way the button works we'll just fix the, we'll just rename the button later or link the pathing through the button and we'll be good. Good ****.
+
+35 "Adam" (1224760064)
+00:04:17.913 --> 00:04:24.769
+It's not see a professor's folder like at all. I don't know if like my should be updated.
+
+36 "Marinkovich, Christian" (1379745536)
+00:04:24.769 --> 00:04:27.333
+Yeah, what did you think about?
+
+37 "Collins, Joshua" (3290368)
+00:04:27.333 --> 00:04:34.291
+I forgot that it's four bytes and I thought it was eight bytes and I did everything based off of that.
+
+38 "Marinkovich, Christian" (1379745536)
+00:04:34.291 --> 00:04:37.213
+Holy ****, doug. That's all.
+
+39 "Thomas, Mius" (1939922176)
+00:04:37.213 --> 00:04:39.255
+I have that hurts the year.
+
+40 "Collins, Joshua" (3290368)
+00:04:39.255 --> 00:04:52.856
+Yeah, NO dude, I just got stressed out and then I just doubled something that didn't need to be doubled. I don't know why I thought it was eight bytes. I know I know pointer is eight bytes, I don't know why I thought it was.
+
+41 "Marinkovich, Christian" (1379745536)
+00:04:52.856 --> 00:05:00.893
+Yeah, those are the kind of mistakes that might **** me over to if I made one. Oh, well, probably did. The test was awful.
+
+42 "Adam" (1224760064)
+00:05:00.893 --> 00:05:04.631
+I actually thought it wasn't that bad. I thought it was pretty easy.
+
+43 "Marinkovich, Christian" (1379745536)
+00:05:04.631 --> 00:05:08.433
+But, that's given I didn't make any mistake.
+
+44 "Adam" (1224760064)
+00:05:08.433 --> 00:05:16.791
+In the chat I don't know like if i'm missing then update it because like it that's like currents it's current.
+
+45 "Marinkovich, Christian" (1379745536)
+00:05:16.791 --> 00:05:22.612
+Right, so did you, did you, did you push the stuff?
+
+46 "Adam" (1224760064)
+00:05:22.612 --> 00:05:31.977
+Adam. My what I updated? No, not yet, but I can do that. I'll push it now, the directory is gonna be ****** up because I was doing it the wrong thing.
+
+47 "Collins, Joshua" (3290368)
+00:05:31.977 --> 00:05:36.093
+Yeah, why, why is public so small?
+
+48 "Marinkovich, Christian" (1379745536)
+00:05:36.093 --> 00:05:37.531
+On that phone.
+
+49 "Thomas, Mius" (1939922176)
+00:05:37.531 --> 00:05:50.355
+Oh, I mean public so small. Merge main before he makes a pull request. Cause I don't think he has the Yeah that's an older version.
+
+50 "Adam" (1224760064)
+00:05:50.355 --> 00:05:56.433
+Yeah, that's what I'm saying, but like I I I made a new branch like yesterday, so I don't know if what I thought of.
+
+51 "Collins, Joshua" (3290368)
+00:05:56.433 --> 00:06:01.454
+You probably made a branch off of another branch and not off the.
+
+52 "Adam" (1224760064)
+00:06:01.454 --> 00:06:07.195
+Need one. No, I was off man. Okay, well.
+
+53 "Marinkovich, Christian" (1379745536)
+00:06:07.195 --> 00:06:09.811
+What happened there?
+
+54 "Adam" (1224760064)
+00:06:09.811 --> 00:06:20.693
+That's ok well whatever I'll make it give me the switch. Yeah, and ok yeah you're right with the **** ok I My thing might be retired then. All right.
+
+55 "Collins, Joshua" (3290368)
+00:06:20.693 --> 00:06:22.773
+Do you want me to just fix that.
+
+56 "Adam" (1224760064)
+00:06:22.773 --> 00:06:26.172
+Real quick for you? No, I I can do it, I can do it.
+
+57 "Marinkovich, Christian" (1379745536)
+00:06:26.172 --> 00:06:29.990
+What did you do bill? Oh wait, I don't see nothing.
+
+58 "Adam" (1224760064)
+00:06:29.990 --> 00:06:39.270
+That's it. I'll just I'm just gonna copy it into.
+
+59 "Adam" (1224760064)
+00:06:39.270 --> 00:06:57.847
+To professors your professors one, so I'll just copy over yeah this into alright what you guys can discuss what things are gonna take.
+
+60 "Marinkovich, Christian" (1379745536)
+00:06:57.847 --> 00:07:11.747
+Alright, so how do we want, we'll have ok we gotta split the slides and finish the slideshow cause I kind of don't want to, is there like an order that we're going tomorrow?
+
+61 "Adam" (1224760064)
+00:07:11.747 --> 00:07:15.591
+I think it's random. It's random. Oh.
+
+62 "Marinkovich, Christian" (1379745536)
+00:07:15.591 --> 00:07:23.270
+Okay, we should get 10 min. Is there any questions? I think.
+
+63 "Thomas, Mius" (1939922176)
+00:07:23.270 --> 00:07:34.506
+There is, right? Work like website or websites where like you can just like tell groups to ask questions, maybe not ask questions like then you're just done. Yeah.
+
+64 "Collins, Joshua" (3290368)
+00:07:34.506 --> 00:07:56.806
+Don't worry I got I got your changes made for you. Yeah I at least I changed it to a new I put it in the folder let me request it right now. Can you approve that for me real quick?
+
+65 "Adam" (1224760064)
+00:07:56.806 --> 00:08:01.226
+There we go.
+
+66 "Collins, Joshua" (3290368)
+00:08:01.226 --> 00:08:08.807
+Yeah, so now when you go to professors, you should be good.
+
+67 "Thomas, Mius" (1939922176)
+00:08:11.368 --> 00:08:16.706
+Okay.
+
+68 "Collins, Joshua" (3290368)
+00:08:16.706 --> 00:08:26.567
+Okay, let me double check to make sure that's good.
+
+69 "Marinkovich, Christian" (1379745536)
+00:08:26.567 --> 00:08:32.986
+Oh, my God.
+
+70 "Collins, Joshua" (3290368)
+00:08:32.986 --> 00:08:37.426
+Let me see. The HTML is wonky cause it's probably.
+
+71 "Adam" (1224760064)
+00:08:37.426 --> 00:08:40.148
+Yeah, let me just fix the issue.
+
+72 "Marinkovich, Christian" (1379745536)
+00:08:40.148 --> 00:08:44.507
+What the ****?
+
+73 "Collins, Joshua" (3290368)
+00:08:44.507 --> 00:08:55.665
+Oh, it's oh yeah because it's dot/../resources style. Yeah, you guys didn't stop.
+
+74 "Marinkovich, Christian" (1379745536)
+00:08:55.665 --> 00:08:59.066
+Yeah, that's all that the style that CSS is missing.
+
+75 "Collins, Joshua" (3290368)
+00:08:59.066 --> 00:09:06.929
+Yeah, you also need, you probably need the component style for.
+
+76 "Collins, Joshua" (3290368)
+00:09:06.929 --> 00:09:26.483
+Oh, yeah, you probably don't have the yeah you don't have the but do you Okay yeah you do you have it at the bottom, that's why. Okay.
+
+77 "Marinkovich, Christian" (1379745536)
+00:09:26.483 --> 00:09:33.407
+Yeah.
+
+78 "Adam" (1224760064)
+00:09:33.407 --> 00:09:43.867
+Yeah, I was gonna say like cause I would when I was working locally, I was just like putting it in the same flow, like the style sheet and the script file, should I always put it like doesn't matter if it's always in resources or.
+
+79 "Collins, Joshua" (3290368)
+00:09:43.867 --> 00:09:49.109
+It's probably good happy to put in resources just to play safe.
+
+80 "Adam" (1224760064)
+00:10:04.024 --> 00:10:06.845
+I'm not hard, please.
+
+81 "Collins, Joshua" (3290368)
+00:10:06.845 --> 00:10:11.365
+Yeah, it seems that your CSS is a little messed up.
+
+82 "Adam" (1224760064)
+00:10:11.365 --> 00:10:14.426
+I think it's because the link is.
+
+83 "Marinkovich, Christian" (1379745536)
+00:10:14.426 --> 00:10:18.906
+I think it's because you see your code.
+
+84 "Collins, Joshua" (3290368)
+00:10:18.906 --> 00:10:32.382
+Yeah. Your your aged or so your your CSS didn't account for the fact that the nav bar is where the nav bar is.
+
+85 "Marinkovich, Christian" (1379745536)
+00:10:32.382 --> 00:10:33.163
+Okay.
+
+86 "Adam" (1224760064)
+00:10:33.163 --> 00:10:37.103
+Oh ****. Yeah, I was working on old.
+
+87 "Marinkovich, Christian" (1379745536)
+00:10:37.103 --> 00:10:42.022
+What the hell, doug?
+
+88 "Collins, Joshua" (1807487744)
+00:10:42.022 --> 00:10:45.544
+Okay.
+
+89 "Marinkovich, Christian" (1379745536)
+00:10:45.544 --> 00:10:53.321
+Why is the source this? Okay, that's probably why it's ****** up.
+
+90 "Marinkovich, Christian" (1379745536)
+00:10:53.964 --> 00:11:00.901
+Components navar.js. I could probably fix.
+
+91 "Marinkovich, Christian" (1379745536)
+00:11:14.086 --> 00:11:17.225
+What is the script.js?
+
+92 "Adam" (1224760064)
+00:11:17.225 --> 00:11:23.460
+For the, when you click on it, it pops up.
+
+93 "Marinkovich, Christian" (1379745536)
+00:11:23.460 --> 00:11:26.764
+Talking about? We don't even have a script.js.
+
+94 "Adam" (1224760064)
+00:11:26.764 --> 00:11:31.183
+No, I made one for now, just like test.
+
+95 "Marinkovich, Christian" (1379745536)
+00:11:31.183 --> 00:11:34.004
+I don't even see it.
+
+96 "Collins, Joshua" (3290368)
+00:11:34.004 --> 00:11:35.862
+Yeah, it didn't exist.
+
+97 "Adam" (1224760064)
+00:11:35.862 --> 00:11:46.102
+Just in the file. Yeah, because I haven't I don't think I think that's an older version because I've been working on that the last like hour. That's what I'm saying like I can just copy it over cause I have everything here.
+
+98 "Marinkovich, Christian" (1379745536)
+00:11:46.102 --> 00:11:50.423
+Alright.
+
+99 "Collins, Joshua" (1807487744)
+00:11:50.423 --> 00:11:53.042
+Okay.
+
+100 "Collins, Joshua" (3290368)
+00:11:58.800 --> 00:12:05.240
+Yeah. Kind of go. What the **** happened?
+
+101 "Marinkovich, Christian" (1379745536)
+00:12:05.240 --> 00:12:11.443
+Why the **** is this thing so show? Oh.
+
+102 "Collins, Joshua" (1807487744)
+00:12:11.443 --> 00:12:14.363
+Okay.
+
+103 "Marinkovich, Christian" (1379745536)
+00:12:14.363 --> 00:12:20.284
+What is this, we don't need this.
+
+104 "Marinkovich, Christian" (1379745536)
+00:12:20.284 --> 00:12:27.020
+Oh, I guess we do.
+
+105 "Collins, Joshua" (3290368)
+00:12:27.020 --> 00:12:38.655
+Yeah Adam, just get your fixed by tomorrow morning. I I need to go so I cause I need to study for another test and study for them.
+
+106 "Marinkovich, Christian" (1379745536)
+00:12:38.655 --> 00:12:46.333
+I can't that didn't fix it. Never mind. Yeah, could you, yeah, if you get your stuff fixed, that'd be good.
+
+107 "Collins, Joshua" (3290368)
+00:12:51.416 --> 00:12:59.134
+If you need help, just look at some of the other csss to see how everything works.
+
+108 "Adam" (1224760064)
+00:12:59.134 --> 00:13:05.657
+I'll tell you, it's just it's just the linking because you guys are an old version.
+
+109 "Collins, Joshua" (3290368)
+00:13:05.657 --> 00:13:10.974
+Okay, and with that, I think we're in a good spot for tomorrow once this page is.
+
+110 "Marinkovich, Christian" (1379745536)
+00:13:10.974 --> 00:13:15.196
+Good. Okay, so wait, I want to make sure we got the slides split up though.
+
+111 "Collins, Joshua" (3290368)
+00:13:15.196 --> 00:13:17.697
+Yeah.
+
+112 "Marinkovich, Christian" (1379745536)
+00:13:17.697 --> 00:13:46.968
+Demo, who's gonna be in charge of the demo and how are we doing the demo? Who's displaying what? So I have a slide for front end functionality where I'll talk about like what we currently have in the front end and like how we're currently doing it, and then we're all gonna, we're gonna talk about, ok, schedule page, backward page you're talking about. Who's talking about the professor page? I guess Adam is cause he's working on.
+
+113 "Collins, Joshua" (3290368)
+00:13:46.968 --> 00:13:51.227
+Right. Yeah.
+
+114 "Marinkovich, Christian" (1379745536)
+00:13:51.227 --> 00:14:02.051
+Front end is me, back end is Mayas. We're all gonna talk in this beginning part because we're all gonna introduce ourselves UX UI design, who's doing the demo?
+
+115 "Collins, Joshua" (3290368)
+00:14:02.051 --> 00:14:04.411
+I can do the demo.
+
+116 "Marinkovich, Christian" (1379745536)
+00:14:04.411 --> 00:14:15.609
+I mean, I think we should, I think we should split the demo though. It's gonna be a big thing. It's 5 min doc. You're not you're not the only one doing the demo. Yeah, yeah.
+
+117 "Collins, Joshua" (3290368)
+00:14:15.609 --> 00:14:17.529
+Yeah.
+
+118 "Marinkovich, Christian" (1379745536)
+00:14:17.529 --> 00:14:22.051
+Demo for the home page. I'll do the.
+
+119 "Adam" (1224760064)
+00:14:22.051 --> 00:14:24.611
+Yeah.
+
+120 "Marinkovich, Christian" (1379745536)
+00:14:24.611 --> 00:14:41.949
+Yeah, I could do the demo part for the homepage and like the login part of it. And then, you know, once you're logged in, you guys can take over the demo for the specific pages that we have. So.
+
+121 "Collins, Joshua" (3290368)
+00:14:41.949 --> 00:14:44.510
+Yeah, I think we'll get there.
+
+122 "Marinkovich, Christian" (1379745536)
+00:14:44.510 --> 00:14:54.949
+Oh, we gotta show, we gotta show the process of making an account too. And then I guess you could do the rest.
+
+123 "Collins, Joshua" (3290368)
+00:14:54.949 --> 00:15:07.928
+Yeah, if we're gonna demonstrate a new, the process of making a new one, we should probably have Adam use his laptop since his cookies since he doesn't have any cookies.
+
+124 "Thomas, Mius" (1939922176)
+00:15:07.928 --> 00:15:25.310
+Oh, the cookies get erased. Okay. Yeah, so yeah I'll use my laptop then. Actually speaking of speaking about that actually, I don't think I don't remember how long I set the cookies.
+
+125 "Marinkovich, Christian" (1379745536)
+00:15:25.310 --> 00:15:29.919
+It doesn't matter if you could just open a guest account and it's problem solved. It's.
+
+126 "Thomas, Mius" (1939922176)
+00:15:29.919 --> 00:15:42.979
+Not that hard. No, it does matter because if if I didn't change the length of times to take to get invalidated, then they get it validated within like a second, and then you get logged out immediately.
+
+127 "Collins, Joshua" (3290368)
+00:15:42.979 --> 00:15:53.222
+Yeah. No, I I've had a few scenarios where I have left my computer running and I come back and I'm still logged in, so it's not whoever the you set it to, it's set to a.
+
+128 "Thomas, Mius" (1939922176)
+00:15:53.222 --> 00:15:58.979
+Quite a while. Okay, that's good then. I I cause I was testing it, I couldn't remember if I changed it back.
+
+129 "Collins, Joshua" (3290368)
+00:15:58.979 --> 00:16:19.549
+I think you did. Okay, cool. Yeah, and then I think we're all good, like we'll just go over our respective pages. We'll have Maya's show our the login and then we'll, we'll we'll highlight our homepage in our, our nav bar and then our backward page.
+
+130 "Collins, Joshua" (3290368)
+00:16:19.549 --> 00:16:23.108
+And we'll I think that'll get us.
+
+131 "Marinkovich, Christian" (1379745536)
+00:16:23.108 --> 00:16:31.343
+To 10 min. I don't know why the **** I have there we go. Good ****.
+
+132 "Collins, Joshua" (3290368)
+00:16:31.343 --> 00:16:35.861
+Yeah, so I'm gonna unrecord now.
+
+133 "Marinkovich, Christian" (1379745536)
+00:16:35.861 --> 00:16:38.532
+Now, good stuff.

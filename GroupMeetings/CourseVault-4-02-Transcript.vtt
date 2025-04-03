@@ -1,0 +1,217 @@
+WEBVTT
+
+1 "Collins, Joshua" (140841472)
+00:00:00.000 --> 00:00:26.840
+Okay, so it's recorded, it's recording let me just text Mayas. Okay.
+
+2 "Collins, Joshua" (140841472)
+00:00:26.840 --> 00:00:33.150
+So Adam, how are you doing on your CSS stuff?
+
+3 "Adam" (910670336)
+00:00:33.150 --> 00:00:40.351
+I'm making progress today, I had to do homework yesterday.
+
+4 "Collins, Joshua" (140841472)
+00:00:40.351 --> 00:00:44.753
+Okay, so where how how much do you think you're done right now?
+
+5 "Adam" (910670336)
+00:00:44.753 --> 00:01:00.430
+Well, I mean like I said yesterday, all the pages are dynamic except for the ******* nav bar. So, and she said something about the nav bar, but Loki I don't want to say like I didn't ******* understand her through her accent.
+
+6 "Collins, Joshua" (140841472)
+00:01:00.430 --> 00:01:01.835
+Okay.
+
+7 "Adam" (910670336)
+00:01:01.835 --> 00:01:04.972
+Did she, like, did you did you catch what she.
+
+8 "Collins, Joshua" (140841472)
+00:01:04.972 --> 00:01:07.047
+Said, I don't remember.
+
+9 "Adam" (910670336)
+00:01:07.047 --> 00:01:15.114
+Yeah, so, whatever I'll figure it out because yeah, I haven't I haven't touched it since.
+
+10 "Collins, Joshua" (140841472)
+00:01:15.114 --> 00:01:21.210
+Yesterday. Yeah, also can you approve my my PR I made yesterday? All it does is.
+
+11 "Collins, Joshua" (140841472)
+00:01:21.210 --> 00:01:38.035
+It adds a little bit of functionality to the admin page and it did change some of the CSS. All it did was basically for my backward page and upload backward page, I I changed the format to look more like the other pages.
+
+12 "Adam" (910670336)
+00:01:38.035 --> 00:01:39.853
+Yeah, right.
+
+13 "Collins, Joshua" (140841472)
+00:01:39.853 --> 00:01:49.232
+And then the every course page I just made the, each of the classes look like the rest the rest of the pages.
+
+14 "Adam" (910670336)
+00:01:49.232 --> 00:01:54.412
+Does that screw up? Cause, like, obviously I've been working on my own branch, does that screwed that.
+
+15 "Collins, Joshua" (140841472)
+00:01:54.412 --> 00:02:04.874
+Okay, I'm thinking since have you actually physically changed anything that's not the, the app media part of the CSS?
+
+16 "Adam" (910670336)
+00:02:04.874 --> 00:02:10.650
+A little bit, but nothing that's like too major it's like you said, it's mostly just the ammunity.
+
+17 "Collins, Joshua" (140841472)
+00:02:10.650 --> 00:02:22.409
+Yeah, probably what you'll have to do is you'll just probably have to see if I changed anything that you changed. If you do, you're gonna have to just, you can probably just copy it.
+
+18 "Adam" (910670336)
+00:02:22.409 --> 00:02:24.989
+He just changed my stuff back.
+
+19 "Collins, Joshua" (140841472)
+00:02:24.989 --> 00:02:43.771
+And then we can see. But overall I didn't change that much about it. I also, hey Mayas, I'm trying to figure out why you can't see the data.
+
+20 "Thomas, Mius " (1681459200)
+00:02:43.771 --> 00:02:50.768
+Okay, I can download compass. I just haven't used it yet.
+
+21 "Collins, Joshua" (140841472)
+00:02:50.768 --> 00:03:18.070
+Yeah, NO, the funny thing is I had the same I had where I can't see it on the page itself, but once I do the connections strings, I can see it. And I think Christian has the same thing. So I think like if you download compass, and then connect that way, I think you'll be able to see the data there.
+
+22 "Thomas, Mius " (1681459200)
+00:03:18.070 --> 00:03:20.148
+Okay, I'll do it right.
+
+23 "Collins, Joshua" (140841472)
+00:03:20.148 --> 00:03:36.840
+Yeah, oh, let me see, maybe it might be just because now it might be network access might not be.
+
+24 "Collins, Joshua" (140841472)
+00:03:36.840 --> 00:03:44.407
+Let me add IP address.
+
+25 "Adam" (910670336)
+00:03:44.407 --> 00:03:47.407
+Okay.
+
+26 "Collins, Joshua" (140841472)
+00:03:47.407 --> 00:04:07.450
+Okay. I might I might have fixed it, I'm not entirely sure maybe.
+
+27 "Adam" (910670336)
+00:04:07.450 --> 00:04:11.947
+What were the two pages you said you changed the admin and the.
+
+28 "Collins, Joshua" (140841472)
+00:04:11.947 --> 00:04:24.247
+Upload backward. I I did the upload upload backward page, the backward page, and then I think it's called every course.CSS.
+
+29 "Adam" (910670336)
+00:04:24.247 --> 00:04:33.511
+Yeah, ok. I changed a little bit more than the media, but like I can see it, so I'll probably just play with it.
+
+30 "Collins, Joshua" (140841472)
+00:04:33.511 --> 00:04:57.989
+If you move those over to your branch as well just to see them, I I think that won't be too bad. No. And and most of it was just like you you remember my upload, my my backward page, there's just a white background with blue buttons. Now it's dark brown buttons that turn light brown when you hover over them and.
+
+31 "Collins, Joshua" (140841472)
+00:04:57.989 --> 00:05:13.499
+The table fits the style of the rest of the web sorry also yeah also let me send you, what the Excel looks like.
+
+32 "Collins, Joshua" (140841472)
+00:05:13.499 --> 00:05:30.899
+Of the, yeah, let me send you the let me export the data so you can at least see it real quick ok export data full collection JSON.
+
+33 "Collins, Joshua" (140841472)
+00:05:30.899 --> 00:05:53.661
+Oh Export data full collection JSON, ok, so let me add these two files for you.
+
+34 "Thomas, Mius " (1681459200)
+00:05:53.661 --> 00:05:58.040
+Okay, I I can see it on compass now. Yeah, you're.
+
+35 "Collins, Joshua" (140841472)
+00:05:58.040 --> 00:06:17.939
+You're right. Okay. That's so weird. Yeah, I don't know why it's like that. I also sent you the data in our discord. So look at the users, you can see every user underneath their hashed password now has the.status attribute.
+
+36 "Collins, Joshua" (140841472)
+00:06:17.939 --> 00:06:44.572
+So all of our accounts are admins, but if you go down to like 2nd to last one, this, I made one named after one of my swim buddies His name is John Hobbin. He's has the status of users, so if we log in as John, theoretically he should go to the user homepage, but all of us when we log in should go to the admin home page.
+
+37 "Thomas, Mius " (1681459200)
+00:06:44.572 --> 00:06:47.648
+And that makes sense.
+
+38 "Collins, Joshua" (140841472)
+00:06:47.648 --> 00:06:53.474
+That, that might I don't know how are you intending to approach it if you haven't.
+
+39 "Christian" (1066914560)
+00:06:53.474 --> 00:06:55.169
+Started or what? Yeah.
+
+40 "Collins, Joshua" (140841472)
+00:06:55.169 --> 00:07:03.015
+Or just like handling like the users going to unauthorized pages or if they go to an unau.
+
+41 "Christian" (1066914560)
+00:07:03.015 --> 00:07:05.909
+Authorized page just direct them back to the user homepage.
+
+42 "Collins, Joshua" (140841472)
+00:07:05.909 --> 00:07:11.170
+Okay, so are we gonna do like we'll we'll just do it through the front end kind of.
+
+43 "Christian" (1066914560)
+00:07:11.170 --> 00:07:24.614
+Like that, we could, yeah, that should not be that hard to do. It's just like check check that's the 1st thing you do when you load a new page, like an admin page is you just check whether the user is an admin, if not then you just redirect them.
+
+44 "Collins, Joshua" (140841472)
+00:07:24.614 --> 00:07:31.575
+To the user page. Well, good news is I just added the status attribute view, so I'll I'll take care of that.
+
+45 "Christian" (1066914560)
+00:07:31.575 --> 00:07:34.433
+Okay. Yeah, so I made an API.
+
+46 "Collins, Joshua" (140841472)
+00:07:34.433 --> 00:07:58.549
+Dot get request that basically looks at are you logged in or not? If you're not logged in, it says unknown. If you're logged in, it'll then check to see if your user and admin and then return those statuses. So, I'll I'll add that to all the pages except for what is it, your page Chris.
+
+47 "Christian" (1066914560)
+00:07:58.549 --> 00:07:59.811
+Then.
+
+48 "Collins, Joshua" (140841472)
+00:07:59.811 --> 00:08:31.834
+Okay. Yeah, I'll do it for the rest of the pages, test it out, make a push to it, and then I'll let you know how it goes that so then you get implemented on yours so I don't break anything that you're currently working on yeah but other than that and Adam just make sure you get the CSS worked out. Adam, if you need help with the the now bar, ask Marius for some help.
+
+49 "Adam" (910670336)
+00:08:31.834 --> 00:08:33.593
+Okay.
+
+50 "Collins, Joshua" (140841472)
+00:08:33.593 --> 00:08:47.034
+Cause I'm gonna try and implement the, the rerouting stuff and then I'll also finish up the last feature of the admin page and then I think we should be good.
+
+51 "Adam" (910670336)
+00:08:47.034 --> 00:08:49.373
+Nope, that sounds good.
+
+52 "Collins, Joshua" (140841472)
+00:08:49.373 --> 00:08:56.572
+Yes, and with that, I bidd you guys a very well. I'll see you guys on Friday.
+
+53 "Thomas, Mius " (1681459200)
+00:08:56.572 --> 00:08:58.073
+Yeah.
+
+54 "Christian" (1066914560)
+00:08:58.073 --> 00:09:02.268
+See you. See it.

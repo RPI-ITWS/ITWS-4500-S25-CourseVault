@@ -1,0 +1,537 @@
+WEBVTT
+
+1 "Collins, Joshua" (2028380160)
+00:00:00.000 --> 00:00:07.202
+So I also pushed a change, so all the data is up to date now.
+
+2 "Marinkovich, Christian" (3616703232)
+00:00:07.202 --> 00:00:12.643
+So it all has the thing you mean?
+
+3 "Collins, Joshua" (2028380160)
+00:00:12.643 --> 00:00:21.466
+Yeah, yeah, yeah. Like if, can you, have you set it up on campus so you can see it?
+
+4 "Marinkovich, Christian" (3616703232)
+00:00:21.466 --> 00:00:26.308
+We should update automatically. Yeah, ok. Yeah, You're.
+
+5 "Collins, Joshua" (2028380160)
+00:00:26.308 --> 00:00:47.525
+Yeah, and it all works now, right? You were saying it wasn't working earlier? Yeah, NO, yeah, I didn't realize that some of my classes that I had on my schedule were only, were only fall and or sorry, only spring and then looking at fall it did they didn't appear or if they did have a false mester, I had enough.
+
+6 "Marinkovich, Christian" (3616703232)
+00:00:47.525 --> 00:01:00.827
+So the way it works is it checks the date. If the date is in the spring, it's gonna only show you fall in summer. If the date, so if once 30 May passes, it'll show you the spring register.
+
+7 "Collins, Joshua" (2028380160)
+00:01:00.827 --> 00:01:02.043
+Yeah, yeah, yeah.
+
+8 "Marinkovich, Christian" (3616703232)
+00:01:02.043 --> 00:01:07.806
+I made Opsys be available on the fall because I was too lazy to change the rest of it, but we could change that back.
+
+9 "Collins, Joshua" (2028380160)
+00:01:07.806 --> 00:01:12.224
+No, NO, you're you're fine. It I mean, NO one's gonna really correct us.
+
+10 "Marinkovich, Christian" (3616703232)
+00:01:12.224 --> 00:01:16.885
+Well, so the reason why the CSS is funky is I think because I set a fixed width.
+
+11 "Collins, Joshua" (2028380160)
+00:01:16.885 --> 00:01:23.685
+Yeah, the, if you just get that taken care of, you should be your page should be fine. It was just so much easier to work.
+
+12 "Marinkovich, Christian" (3616703232)
+00:01:23.685 --> 00:01:34.841
+Work with the divs that way, but I can fix it because, The placement of the divs could be based on those relative sizes of the tables things instead of being a fixed size.
+
+13 "Collins, Joshua" (2028380160)
+00:01:34.841 --> 00:01:44.341
+So, yeah, why i found the best way to do it is you have the context of what you do to flex grow of the remaining size, like keep that the same.
+
+14 "Marinkovich, Christian" (3616703232)
+00:01:44.341 --> 00:02:17.446
+Name or I don't even need to worry about that. I could literally just No I think my implementation works. It's just that the numbers I use here, let me show you. I use minimum top minimum left, which is like the like top right, like the minimum it could be like at the very top of the table, like that including like the headers. I set that to a fixed value of 40 and 90, but if the table does not have a fixed size, that could change. So I would just set it to the size of those headers.
+
+15 "Collins, Joshua" (2028380160)
+00:02:17.446 --> 00:02:22.364
+No, because you can use the width of the screen itself and then make it a ratio for the.
+
+16 "Marinkovich, Christian" (3616703232)
+00:02:22.364 --> 00:02:27.042
+Table. I mean for the table I'll just set the width to like 100 or like 80 % or.
+
+17 "Collins, Joshua" (2028380160)
+00:02:27.042 --> 00:02:32.190
+Or something. Yeah, and then do the same with the other things, just keep the Yeah as long as you keep.
+
+18 "Collins, Joshua" (2028380160)
+00:02:32.190 --> 00:02:48.459
+Well, here's the thing with the table you can make a ratio and then set the width to a certain like percentage and then the height will also be in line with that ratio. So then you can also do the same thing with the overlays so that they are always in the same spot regardless of the screen size.
+
+19 "Marinkovich, Christian" (3616703232)
+00:02:48.459 --> 00:02:51.021
+We'll figure it out. It should be fine.
+
+20 "Marinkovich, Christian" (3616703232)
+00:02:53.482 --> 00:02:56.103
+But it works.
+
+21 "Collins, Joshua" (2028380160)
+00:02:56.103 --> 00:03:10.438
+Major thing we have to do left is on my courses page, I need to have the rating system work and that's only because I need to make the button go to a new page, to a form page and then have that form page like update the.
+
+22 "Marinkovich, Christian" (3616703232)
+00:03:10.438 --> 00:03:31.230
+So the other thing that we need to do with the database and the only thing we need to do, is we need to add sections. So under time, we can format this later. So you see how under semester's available, there's all the semesters, right? And then there's like the professor, the location, and the time.
+
+23 "Marinkovich, Christian" (3616703232)
+00:03:31.230 --> 00:03:49.380
+Under time, instead of it having be like a Tuesday Friday, we would have it be sections. There would be another array called sections, and then it would literally just list them out like 01020304, and it would just have the lab times.
+
+24 "Collins, Joshua" (2028380160)
+00:03:49.380 --> 00:03:58.181
+I would have to do there is if I do the, I'd have to do like a dropdown, like, what section do you want?
+
+25 "Marinkovich, Christian" (3616703232)
+00:03:58.181 --> 00:04:07.842
+Yeah, NO, that's easy. So, and then in the users, No, that's that's gonna be really easy. All you gotta do in the users is, you know how it said courses?
+
+26 "Collins, Joshua" (2028380160)
+00:04:07.842 --> 00:04:10.176
+And then it has like the course number.
+
+27 "Marinkovich, Christian" (3616703232)
+00:04:10.176 --> 00:04:27.860
+Just add the-01-02-03 to the course string, and that's all you gotta do. And then I can manipulate the string in a way so that it knows how to read it. So oh ok this 1st part of the string matches that, course, course ID, so then it'll look through, which it already does look through the course.
+
+28 "Marinkovich, Christian" (3616703232)
+00:04:27.860 --> 00:04:40.082
+And then it'll check 2nd part to see what times it should place on there. And that's all we need to do. It's a very simple fix. It'll probably take like 2 h at most. I mean that's like if we're slow and bad.
+
+29 "Collins, Joshua" (2028380160)
+00:04:40.082 --> 00:04:48.028
+Yeah, could you do that only because I have to, I still have to do the project cause my group is going kind of slow on this.
+
+30 "Marinkovich, Christian" (3616703232)
+00:04:48.028 --> 00:04:51.168
+Well, my group is struggling I don't even know what the hell to say anymore.
+
+31 "Collins, Joshua" (2028380160)
+00:04:51.168 --> 00:04:58.763
+Well, NO dude, all of our, all of our functions are like 90 % correct. It's like the statistics that are ******* us up.
+
+32 "Marinkovich, Christian" (3616703232)
+00:04:58.763 --> 00:05:13.901
+My, my, my function, so here's the funny thing, the other three functions aren't even done or like barely even started. My function's fully correct, so I'm like done with my parts. I'm kind of telling them to figure it out.
+
+33 "Collins, Joshua" (2028380160)
+00:05:13.901 --> 00:05:19.985
+We yeah, we basically have like I'm doing the S and JF one and now when it was, is annoying.
+
+34 "Marinkovich, Christian" (3616703232)
+00:05:19.985 --> 00:05:30.742
+Yeah, well this this I I'm so happy this table works. You know, you have NO idea like how like pain in the *** excuse me pain in the *** this table was to make.
+
+35 "Collins, Joshua" (2028380160)
+00:05:30.742 --> 00:05:32.503
+Yeah, and then.
+
+36 "Marinkovich, Christian" (3616703232)
+00:05:32.503 --> 00:05:40.242
+That's the the height of each div is literally like calculated mathematically by how long each classes and it's *******.
+
+37 "Collins, Joshua" (2028380160)
+00:05:40.242 --> 00:05:50.102
+Well that works. Yeah, I'd say our next step right now should probably get mobile development, and then once we're done with that, we, we can start implementing that the section stuff too. Also I.
+
+38 "Marinkovich, Christian" (3616703232)
+00:05:50.102 --> 00:05:53.076
+Notice that the thing loads really slowly.
+
+39 "Collins, Joshua" (2028380160)
+00:05:53.076 --> 00:05:55.801
+What the schedule? Yeah, like when.
+
+40 "Marinkovich, Christian" (3616703232)
+00:05:55.801 --> 00:06:04.545
+When like there's four classes, it just takes like 2 s or like it takes like a second to load, which I don't know I didn't notice that cause it always loads in.
+
+41 "Collins, Joshua" (2028380160)
+00:06:04.545 --> 00:06:05.656
+On summer. So I.
+
+42 "Marinkovich, Christian" (3616703232)
+00:06:05.656 --> 00:06:22.744
+Oh yeah, but when you try to click on fall and then it loads in all the classes, it takes like a second to actually load in the dips. I don't know, I don't know if something I did makes it slow, but whatever. I don't really care. That's, like a later thing we can fix or we can just not worry about it all. We didn't learn optimization this year, we learned it last year, so who cares?
+
+43 "Collins, Joshua" (2028380160)
+00:06:22.744 --> 00:06:25.702
+Yeah, right? Oh, yeah.
+
+44 "Marinkovich, Christian" (3616703232)
+00:06:25.702 --> 00:06:30.949
+I mean we we I will try to look at that like later after the schedule page is done cause I I really.
+
+45 "Collins, Joshua" (2028380160)
+00:06:30.949 --> 00:06:54.106
+Yeah, here's what I've learned at least with how Callhan like Candle's grading. It's more so like does does it's a more so a proof of concept as long as you have good amount of data and I mean, we have almost two and a half thousand lines of manually inputted data, so we're not sure a way we can automatically input that or that's why I was also going to try and work on.
+
+46 "Marinkovich, Christian" (3616703232)
+00:06:54.106 --> 00:07:21.285
+If you could try, ok, you can get maybe Mayas or someone to look at it, whoever's in charge of backend, see if there's like a way we can get actual data from sys. So that instead of like, I don't know if Sys has like an API, it probably does cause I've seen a lot of websites use it likes. If we can just get the data from sys, format it in the way that we want it to be, and then we don't have to do all the manual work.
+
+47 "Collins, Joshua" (2028380160)
+00:07:21.285 --> 00:07:36.378
+Yeah, but I mean, at least right now data wise, we're fine. I mean more data's better but like right data wise we're fine and as long as our functions work and we've method is like it'd be cool.
+
+48 "Marinkovich, Christian" (3616703232)
+00:07:36.378 --> 00:07:55.619
+Cool because this website is basically gonna break after 30 May for the schedule page cause like unless you manually update the data and add spring of 2026 like course availability to there like you're not gonna be able to register for classes for spring because it literally checks for every semester is this class available or not?
+
+49 "Marinkovich, Christian" (3616703232)
+00:07:55.619 --> 00:08:12.968
+Yeah, so it would be cool if we get like a actual like data like that dynamically updates. Also, the other thing I'm adding to the schedule page is that it's gonna be like windows below the schedule where you could actually drop a course. There's, like, gonna be an X button that's gonna be like, oh, you can exit, you can X out of this course and drop it.
+
+50 "Collins, Joshua" (2028380160)
+00:08:12.968 --> 00:08:19.066
+Yeah. Because I also did the same thing there. You can see how I I did it.
+
+51 "Marinkovich, Christian" (3616703232)
+00:08:19.066 --> 00:08:24.763
+Yeah, and then there I mean but it'll be like an X button it'll be like, are you sure and then it would probably pop up with the things saying.
+
+52 "Collins, Joshua" (2028380160)
+00:08:24.763 --> 00:08:26.424
+Are you sure you want to drop this course and I'll.
+
+53 "Marinkovich, Christian" (3616703232)
+00:08:26.424 --> 00:08:28.168
+Like and then be like, yeah.
+
+54 "Collins, Joshua" (2028380160)
+00:08:28.168 --> 00:08:36.481
+I think it's called let me see. Yeah, I think it's, it's under components, it's profile.js.
+
+55 "Marinkovich, Christian" (3616703232)
+00:08:36.481 --> 00:08:46.820
+And also I realized I don't, you know how, you know how quacks says like oh like one out of like 500 possible schedules, whatever. Yeah. We're not doing that. We don't need to do that because.
+
+56 "Collins, Joshua" (2028380160)
+00:08:46.820 --> 00:09:02.023
+Because the way we did it was like if there's multiple like like when we when we start like because like take the math classes, e.g., like all the different sections also have different like times of the actual lectures.
+
+57 "Marinkovich, Christian" (3616703232)
+00:09:02.023 --> 00:09:10.794
+But here's the thing, we're not The reason why Quax has that is because it allows you to like when when you click on a course, it'll try to put all the different sections on the scheduler.
+
+58 "Marinkovich, Christian" (3616703232)
+00:09:11.760 --> 00:09:38.574
+And you could you could load all that. I'm like I'm not doing that, yeah, we're not making that happen. I'm just gonna straight up say like if there's a conflict, there's gonna be a black box that appears saying conflict and it's not gonna give any more information. But the cool thing about this versus quacks is when there's a conflict on the quacks schedule, it just crashes entirely or like it doesn't load anything. On my schedule, it's still gonna load all your courses. It's just gonna say conflict when there's like two courses coming.
+
+59 "Collins, Joshua" (2028380160)
+00:09:38.574 --> 00:09:51.416
+Oh, oh, I see what you mean. Yeah, yeah, that's actually perfect because I was gonna initially make it so that the add like the add one on the courses page was gonna then see like, do they overlap if they overlap error out?
+
+60 "Marinkovich, Christian" (3616703232)
+00:09:51.416 --> 00:10:13.501
+No, don't don't even have an error out, it doesn't matter. I'll just say conflict. I mean if there's a conflict, yeah, it'll literally like e.g. over operating systems instead of like, let's say there was a conflict with operating systems, right? Instead of rendering operating systems Ginox zhao DCC three oh eight, it'll just render two black boxes and it'll say conflict.
+
+61 "Collins, Joshua" (2028380160)
+00:10:13.501 --> 00:10:15.278
+Okay, yeah.
+
+62 "Marinkovich, Christian" (3616703232)
+00:10:15.278 --> 00:10:34.037
+Sorry, yeah, but all the other classes are still gonna register, so you're still gonna see like if you're like in data structures, you'll still see like oh data structures is there. It'll only and that that's pretty much gonna be the entire schedules page. I think I'm pretty much done. I'm gonna try to convert some of it to react if if it need be.
+
+63 "Collins, Joshua" (2028380160)
+00:10:34.037 --> 00:10:44.916
+Oh yeah to react just that we have more of a case at least with our react components because I mean we already have we're gonna state that we're only gonna use react on components that repeat which.
+
+64 "Marinkovich, Christian" (3616703232)
+00:10:44.916 --> 00:10:50.771
+Might be these **** which I don't know if I'll be able to convert all this to react. It might be a pain in the ***, but I'm gonna try.
+
+65 "Collins, Joshua" (2028380160)
+00:10:50.771 --> 00:11:06.394
+Yeah, but, yeah, I say overall, just get your CSS good, make sure the header matches the other two pages like backwarding courses where course fall has like this little border and stuff. U.
+
+66 "Marinkovich, Christian" (3616703232)
+00:11:06.394 --> 00:11:11.895
+I mean, the header doesn't match on any of the pages. I just.
+
+67 "Collins, Joshua" (2028380160)
+00:11:11.895 --> 00:11:13.793
+What is Wait, where?
+
+68 "Marinkovich, Christian" (3616703232)
+00:11:13.793 --> 00:11:27.794
+Like on your page it just doesn't exist. The, the, the courses page looks pretty good on whatever I'll fix it. That doesn't matter. That's a later worry.
+
+69 "Collins, Joshua" (2028380160)
+00:11:27.794 --> 00:11:37.476
+The screen real quick cause if you go to the main, if you go to the main branch, ok, can you see my screen?
+
+70 "Collins, Joshua" (2028380160)
+00:11:38.492 --> 00:11:39.448
+Yeah so.
+
+71 "Marinkovich, Christian" (3616703232)
+00:11:39.448 --> 00:11:48.918
+How do we want it to be, by the way? Do we want it to be like that? Okay, yeah. That's who we want it to be, ok. I am on the main branch. What did you do?
+
+72 "Collins, Joshua" (2028380160)
+00:11:48.918 --> 00:11:51.317
+Yeah, I I say right now do it based off of like.
+
+73 "Marinkovich, Christian" (3616703232)
+00:11:51.317 --> 00:11:55.894
+The what did you change on the main branch, by the way? Hold up, let me see.
+
+74 "Collins, Joshua" (2028380160)
+00:11:55.894 --> 00:12:05.235
+Legitimately basically that header and then like some of the stuff for the courses page so that it actually displays the information.
+
+75 "Collins, Joshua" (2028380160)
+00:12:06.035 --> 00:12:25.587
+Okay. Because when I changed the, the, the data itself, a lot of this like the the name right here would just be object object. And then also down here it would be object object. Yeah, yeah. I, I saw that I was about to. Yeah, but I mean the add schedule button here works, I need to do this add review one cause that's good.
+
+76 "Collins, Joshua" (2028380160)
+00:12:25.587 --> 00:12:31.674
+Good stuff. I also have this, view more history. Oh yeah, I see, I need to fix this.
+
+77 "Marinkovich, Christian" (3616703232)
+00:12:31.674 --> 00:12:37.112
+I'm gonna fix my page for that. So also we got to fix the homepage for that too.
+
+78 "Collins, Joshua" (2028380160)
+00:12:37.112 --> 00:12:45.459
+Oh, what do you mean the homepage like right here? Yeah, like the header, you see how it's different? Yeah, yeah, yeah. That's what I'm saying, yeah.
+
+79 "Collins, Joshua" (2028380160)
+00:12:46.615 --> 00:12:57.496
+Yeah, and then we also need to come up with because like this this one is slightly bigger than courses because I think courses has So you know how like ok so.
+
+80 "Marinkovich, Christian" (3616703232)
+00:12:57.496 --> 00:13:29.450
+By the way, like, ok, I I I hope this makes sense with the classes, right? I just want to really quickly point it out. Like, you know how like classes are offered and like some classes are offered, like, when you're picking classes, you're not picking for a specific semester, you're just picking classes. And then it's gonna look, so like, e.g., if a class is offered for both spring of 2020 or summer of 2025 and fall of 2025, it's gonna appear on both schedules. If it's only offered on one, it's gonna appear on only one. If it's offered on neither, it's just not gonna appear at all.
+
+81 "Collins, Joshua" (2028380160)
+00:13:29.450 --> 00:13:32.390
+Exactly, yeah. I was aware.
+
+82 "Marinkovich, Christian" (3616703232)
+00:13:32.390 --> 00:13:35.587
+Yeah, ok. That's just makes it so much easier.
+
+83 "Collins, Joshua" (2028380160)
+00:13:35.587 --> 00:13:40.690
+You to have yeah like look at yeah like you got.
+
+84 "Marinkovich, Christian" (3616703232)
+00:13:40.690 --> 00:13:47.250
+****. That's pretty good. So it works. Wait, it works on your end. What are you talking about?
+
+85 "Collins, Joshua" (2028380160)
+00:13:47.250 --> 00:14:00.372
+No that's because I, this screen you're seeing is a big screen. If I go, if I bring it down to my smaller screen, let me stop sharing that and then come down here to my smaller screen.
+
+86 "Collins, Joshua" (2028380160)
+00:14:03.112 --> 00:14:15.108
+I think it's this one it's showing that one again. Give me a second.
+
+87 "Marinkovich, Christian" (3616703232)
+00:14:15.108 --> 00:14:20.049
+That's weird.
+
+88 "Collins, Joshua" (2028380160)
+00:14:20.049 --> 00:14:24.647
+Yeah, like, look, look, yeah, this is what it looks like on my smaller screen.
+
+89 "Marinkovich, Christian" (3616703232)
+00:14:24.647 --> 00:14:30.695
+Oh, yeah. Because it's too, it's too small, ok.
+
+90 "Collins, Joshua" (2028380160)
+00:14:30.695 --> 00:14:48.452
+Yeah, so that that's why I was telling you about the ratios and also like yeah so if you do the ratio by the table, so if you make the ratio of the table based off of, like the size of content or like the width of content.
+
+91 "Marinkovich, Christian" (3616703232)
+00:14:48.452 --> 00:14:52.772
+Yeah, NO, I I know how to do that. I had done it before. I just got it.
+
+92 "Collins, Joshua" (2028380160)
+00:14:52.772 --> 00:15:04.846
+Yeah, make the tables with like a hundred percent and then set like the ratio to something that makes that looks good and then do the same thing to each of these because if it follows the same ratio, it'll be.
+
+93 "Marinkovich, Christian" (3616703232)
+00:15:04.846 --> 00:15:20.149
+Be the same place. I'm gonna try to work on that. I don't know when hopefully soon. I'm like trying to study for peaceoft, and I have to meet with my I have to meet with my Opposis group too. So I also gotta do HCI, so after that I can probably.
+
+94 "Collins, Joshua" (2028380160)
+00:15:20.149 --> 00:15:28.347
+Probably try to look at it. Yeah I know what you mean because I have to do this and the lecture exercise, and then I also exercise is easy but.
+
+95 "Marinkovich, Christian" (3616703232)
+00:15:28.347 --> 00:15:31.990
+We don't have the gradable yet, so I.
+
+96 "Collins, Joshua" (2028380160)
+00:15:31.990 --> 00:15:46.707
+Yeah, yeah we're and then I have AI test on Tuesday Diffie test I also need a study for my Diffi test on Wednesday and then we are gonna get our new lab on Tuesday. It shouldn't be bad, but then I have the certification on Sunday.
+
+97 "Collins, Joshua" (2028380160)
+00:15:48.684 --> 00:16:01.108
+Yeah I am I am really proud of this page though. Holy ****. I'm actually worked. Actually now that I think about it, I'll probably just try to get Mayas and Adam to handle the admin page for us.
+
+98 "Marinkovich, Christian" (3616703232)
+00:16:01.108 --> 00:16:09.846
+Yeah, honestly, like, ok, we don't really need anything for admin regarding the schedule page. The schedule page should work the same way without.
+
+99 "Collins, Joshua" (2028380160)
+00:16:09.846 --> 00:16:27.239
+Well we need the we should while I'll probably talk to about is like, let me pull up this real quick is with our, our user data, probably under like under date joined, I'll probably have like.
+
+100 "Collins, Joshua" (2028380160)
+00:16:27.239 --> 00:16:48.329
+Profile type, user or admin, and then what we'll do is depending on which kind of person you are, if you're a user, you get taken to the user homepage. If you're an admin taken to the admin homepage and that homepage for the admin is basically just gonna be a big form on like the ad add course information and.
+
+101 "Marinkovich, Christian" (3616703232)
+00:16:48.329 --> 00:17:00.743
+Okay, yeah, if we can't make the database dynamic with SIS, can we at least try to make it dynamic by having the admins be able to edit the course semester offered and all the information about the courses? Yeah.
+
+102 "Collins, Joshua" (2028380160)
+00:17:00.743 --> 00:17:04.586
+I was gonna say like that's why I wanted to tackle.
+
+103 "Marinkovich, Christian" (3616703232)
+00:17:04.586 --> 00:17:10.704
+Yeah, you have Myas and especially Adam work on that because I feel.
+
+104 "Collins, Joshua" (2028380160)
+00:17:10.704 --> 00:17:12.960
+I don't know man.
+
+105 "Marinkovich, Christian" (3616703232)
+00:17:12.960 --> 00:17:18.367
+Adam has not done. Like I just committed a lot of lines, I committed like a thousand lines last night, so I I.
+
+106 "Collins, Joshua" (2028380160)
+00:17:18.367 --> 00:17:33.167
+Should be good. Yeah, well let me pull up the Excel real quick cause I I took I I did tell you guys about this because I didn't want people to be crazy about it, but I did keep an Excel spreadsheet of contributions. Let me update the table so that it actually actively.
+
+107 "Marinkovich, Christian" (3616703232)
+00:17:33.167 --> 00:17:34.322
+Flags.
+
+108 "Collins, Joshua" (2028380160)
+00:17:34.322 --> 00:17:44.912
+Yeah your your recent contributions because if we still do that talk with Callihan I am gonna bring up this just so that we can talk about like who hasn't been doing what, like.
+
+109 "Marinkovich, Christian" (3616703232)
+00:17:44.912 --> 00:17:53.808
+I mean my percentage is perfect actually. 2020 1 % like ok it's a little bit low, but like you should be everyone should be around 25 %.
+
+110 "Collins, Joshua" (2028380160)
+00:17:53.808 --> 00:18:19.529
+Yeah well that's based off commits. Let me yeah because also there's addition. Let me let me update your numbers here. So you were six five oh two and you are now up to four oh six one and then the other two are the same and then you now have 1636 and then I have 459 and this is now.
+
+111 "Collins, Joshua" (2028380160)
+00:18:19.529 --> 00:18:41.774
+24, this is 50. Yeah, so now yeah you basically you and you and Mayas are around the same right now, so are not the same, like you're slightly over, he's slightly under, but it's relatively close on YouTube. Adam's just way under, same thing here, same thing here, we have a good breakdown in terms of deletions and then commits, he's lacking, but.
+
+112 "Marinkovich, Christian" (3616703232)
+00:18:41.774 --> 00:18:54.728
+Yeah. Yeah. I don't know. Yeah, Adam needs to definitely like step up this game, but all of his numbers are like single digits.
+
+113 "Collins, Joshua" (2028380160)
+00:18:54.728 --> 00:19:12.539
+Yeah, and that's the main trend I noticed was like, we don't need to yeah like my he does good work, you just need him to get to like push his stuff. You're doing good, I'm doing good. Adam, on the other hand, has just kind of been free loading and trying to get him to.
+
+114 "Collins, Joshua" (2028380160)
+00:19:12.539 --> 00:19:18.857
+Do more work. I don't wanna exactly like ratt them out the counterhand, but like.
+
+115 "Marinkovich, Christian" (3616703232)
+00:19:18.857 --> 00:19:32.800
+At this point I don't know, we'll see. I mean, my schedule page is going well, so I feel like I can get some, I feel like I can, with good time management, I can probably try to contribute some to like the main **** that we got.
+
+116 "Collins, Joshua" (2028380160)
+00:19:32.800 --> 00:19:34.975
+What are going on? Yeah, I mean.
+
+117 "Marinkovich, Christian" (3616703232)
+00:19:34.975 --> 00:19:44.455
+Like I just I just made the database ten times better. Our database is like better now. All we gotta do is add the sections and we're literally good. We don't need to add anything else. We just need to make sure that the.
+
+118 "Collins, Joshua" (2028380160)
+00:19:44.455 --> 00:19:58.755
+Yeah. Yeah, I'd say our main con concern right now is mobile development and the admin page and then if we can tackle both of those, then a final touch for your page would be the sections.
+
+119 "Marinkovich, Christian" (3616703232)
+00:19:58.755 --> 00:20:07.616
+Yeah, and that's it, and that's all we need. And honestly, I'm probably just gonna do that next time I work on it, add the sections, add that part.
+
+120 "Collins, Joshua" (2028380160)
+00:20:07.616 --> 00:20:18.598
+Do it. Yeah let me know when you do that because I will have to double check to make sure that like it doesn't actively wreck the you saw the other classes. That's just our backup, the classes.
+
+121 "Marinkovich, Christian" (3616703232)
+00:20:18.598 --> 00:20:23.615
+Extra. That's like the backup from like before yesterday, so if I ******.
+
+122 "Collins, Joshua" (2028380160)
+00:20:23.615 --> 00:20:26.081
+Anything up which I don't think I did.
+
+123 "Marinkovich, Christian" (3616703232)
+00:20:26.081 --> 00:20:30.518
+But you know I didn't I didn't bother to check so I just backed up the entire database, so always good.
+
+124 "Collins, Joshua" (2028380160)
+00:20:30.518 --> 00:20:38.253
+Well, yeah, of course, I just kept that as like a JSON file on my local so I mean I always had a backup is.
+
+125 "Marinkovich, Christian" (3616703232)
+00:20:38.253 --> 00:20:42.576
+Just I kept it as a but that JSON file we had on the thing was really outdated.
+
+126 "Collins, Joshua" (2028380160)
+00:20:42.576 --> 00:20:44.340
+Needed for some reason.
+
+127 "Marinkovich, Christian" (3616703232)
+00:20:44.340 --> 00:20:50.359
+Yeah I ****** up the entire database for like, I I spent 45 min trying to fix it.
+
+128 "Collins, Joshua" (2028380160)
+00:20:50.359 --> 00:21:00.218
+That's fine. Yeah, don't worry about the data that we have on our site itself because, that is old JSON data that we should not be referencing.
+
+129 "Marinkovich, Christian" (3616703232)
+00:21:00.218 --> 00:21:07.694
+We should still try to update it in case we need to like wipe the database on Mongo and upload it again or something.
+
+130 "Collins, Joshua" (2028380160)
+00:21:07.694 --> 00:21:12.479
+Actually, well, there's probably a way to download this.
+
+131 "Collins, Joshua" (2028380160)
+00:21:12.479 --> 00:21:29.814
+Actually, now that I think about it, we can on the admin page, we can have a one called like refresh database where we refresh our classes collection using the classes at your collection. Like if a lot of things aren't good, we can completely wipe the.
+
+132 "Marinkovich, Christian" (3616703232)
+00:21:29.814 --> 00:21:33.952
+Documents. Yeah, but the class is extra is like the old structure, so.
+
+133 "Collins, Joshua" (2028380160)
+00:21:33.952 --> 00:22:05.113
+That's what I mean like we'll all we can we can copy what currently is in classes into classes extra except with NO documents and NO thoughts or whatever or or keep it the way yeah actually just blindly copy classes into classes extra, and then our reset button just all it does is pull classes extra and put it into classes. That way if there's so many things wrong, you can do like a major reset. Yeah, that would work.
+
+134 "Marinkovich, Christian" (3616703232)
+00:22:05.113 --> 00:22:14.664
+Alright, what time is it? Okay, yeah, I gotta go cause I gotta get laundry done, so I gotta get my laundry in 5 min, so we're good, right?

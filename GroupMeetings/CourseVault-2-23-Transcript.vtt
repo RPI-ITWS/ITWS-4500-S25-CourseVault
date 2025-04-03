@@ -1,0 +1,761 @@
+WEBVTT
+
+1 "Marinkovich, Christian" (598586880)
+00:00:00.000 --> 00:00:15.157
+Yeah, we're good. All right. Great. Alright, so have you guys gotten anything done? Cause we kind of gotta get like a lot of things done and I really don't have any time.
+
+2 "Collins, Joshua" (4276840960)
+00:00:15.157 --> 00:00:27.581
+I got more data added to the, the backward I I got my backwards you all to Okay, I think we need to all focus on front end.
+
+3 "Marinkovich, Christian" (598586880)
+00:00:27.581 --> 00:00:43.745
+Yeah, like for like just forget about the back end. As long as it works, like as long as something pops up, something pops up. We need to really focus on the front end, so and the presentation because I'm not gonna be I I really don't have like much time to like work on it.
+
+4 "Collins, Joshua" (4276840960)
+00:00:43.745 --> 00:00:45.941
+What is our presentation?
+
+5 "Adam" (2117586944)
+00:00:45.941 --> 00:00:52.498
+Tuesday, it's on Tuesday. Oh NO, yeah. Yes. It's literally in two days, Doc, so.
+
+6 "Marinkovich, Christian" (598586880)
+00:00:52.498 --> 00:01:03.637
+We got like we gotta like make like a slideshow and we gotta make like a good enough front end by that day and I really don't have time cause I got two exams coming up so I'm I'm kind of like locked out.
+
+7 "Collins, Joshua" (4276840960)
+00:01:03.637 --> 00:01:04.977
+Okay, I will.
+
+8 "Adam" (2117586944)
+00:01:04.977 --> 00:01:21.199
+What I will say is presentation we don't have to worry about, we can I can do that like myself pretty much obviously I'm not just gonna do like you guys can see it, but we can do that like an hour. It's really the front that we need to work on. I was also gonna say do we want to beat tomorrow also?
+
+9 "Marinkovich, Christian" (598586880)
+00:01:21.199 --> 00:01:23.762
+To like do that. No, I can't meet tomorrow, dr.
+
+10 "Collins, Joshua" (4276840960)
+00:01:23.762 --> 00:01:27.121
+Yeah, we both of us can't meet tomorrow because we have offices.
+
+11 "Marinkovich, Christian" (598586880)
+00:01:27.121 --> 00:01:30.397
+Yeah, we got offices. That's what I'm saying, that's why like I kind of.
+
+12 "Adam" (2117586944)
+00:01:30.397 --> 00:01:32.777
+Tuesday?
+
+13 "Marinkovich, Christian" (598586880)
+00:01:32.777 --> 00:01:34.139
+On on Monday night.
+
+14 "Adam" (2117586944)
+00:01:34.139 --> 00:02:00.414
+So I don't want to be like a dick, but like it's our midterm presentation to be fair. Like I also have two exams on Thursday so like I completely understand it's just, you know. Yeah, just like a little bit. I'm probably gonna do I'm probably not gonna leave my desk from now until tomorrow. So we don't focus on.
+
+15 "Marinkovich, Christian" (598586880)
+00:02:00.414 --> 00:02:02.916
+Back end anymore. I think we should just focus on front.
+
+16 "Collins, Joshua" (4276840960)
+00:02:02.916 --> 00:02:27.652
+Okay but here's the one thing with the Okay, we we can do the, if we do if we here's the thing with the the midterm presentation for my what I've seen. It's with what we have right now we have a, we basically have done half of the front end and half of the back end. And he said either have like one like as long as we've shown progress, we're gonna do fine.
+
+17 "Marinkovich, Christian" (598586880)
+00:02:27.652 --> 00:02:46.458
+We need to have enough front end, so it's not just about showing progress, it's like we need to have a front end like pretty much done to show, at least we need to have like the main pages done. So we actually kind of have to lock in for the next few days. This is kind of what I've been saying and.
+
+18 "Adam" (2117586944)
+00:02:46.458 --> 00:03:00.416
+I mean it's not complicated, you just gotta it's just putting in work because like it's the back end stuff that's gonna take the most time. So we just gotta throw pages together. The other thing about if it's gonna be our final page is show something.
+
+19 "Marinkovich, Christian" (598586880)
+00:03:00.416 --> 00:03:03.776
+What do we currently have? Cause I haven't even I haven't even checked that, so.
+
+20 "Collins, Joshua" (4276840960)
+00:03:03.776 --> 00:03:20.096
+We have we have the backward page completely done, which ok great with with like 30 different PDFs of dummy data and a search feature and filter feature. Let me see.
+
+21 "Marinkovich, Christian" (598586880)
+00:03:20.096 --> 00:03:28.998
+Wow, ok, that's a lot of, that's a lot of commits. Holy crap, what did I missed? Okay, you said I need like an env file, so like, could you like run me through how to.
+
+22 "Collins, Joshua" (4276840960)
+00:03:28.998 --> 00:03:38.717
+Yeah, so all all you need to do is take that yeah Mayas said he you need to download the EMV file and give me 1 s, let me get to my computer.
+
+23 "Marinkovich, Christian" (598586880)
+00:03:38.717 --> 00:03:44.217
+Hold up dog, where's that EMB file? Cause I'm kinda, if I'm gonna be working on this, I'm gonna be working on this.
+
+24 "Collins, Joshua" (4276840960)
+00:03:44.217 --> 00:03:47.019
+Today. Oh, ok. Here it is. I've.
+
+25 "Marinkovich, Christian" (598586880)
+00:03:47.019 --> 00:03:49.099
+Yeah alright where do we put the CMV fi.
+
+26 "Collins, Joshua" (4276840960)
+00:03:49.099 --> 00:03:51.977
+Let me pull up the folder.
+
+27 "Marinkovich, Christian" (598586880)
+00:03:51.977 --> 00:03:54.557
+I got it downloaded by the way.
+
+28 "Collins, Joshua" (4276840960)
+00:03:54.557 --> 00:03:56.836
+Yeah, let's see.
+
+29 "Marinkovich, Christian" (598586880)
+00:03:56.836 --> 00:04:00.355
+I'm assuming we put it in our.
+
+30 "Collins, Joshua" (4276840960)
+00:04:00.355 --> 00:04:04.456
+You just put it right in the root, the root folder.
+
+31 "Marinkovich, Christian" (598586880)
+00:04:04.456 --> 00:04:08.134
+Right, so.
+
+32 "Collins, Joshua" (4276840960)
+00:04:08.134 --> 00:04:13.275
+And, when you do make sure it's saved as.env and not just env.
+
+33 "Marinkovich, Christian" (598586880)
+00:04:13.275 --> 00:04:16.098
+Oh ok because it's right now it's.
+
+34 "Collins, Joshua" (4276840960)
+00:04:16.098 --> 00:04:20.958
+Make sure you reading dot.env. Is that all the.
+
+35 "Marinkovich, Christian" (598586880)
+00:04:20.958 --> 00:04:22.377
+We need and then we just run normally.
+
+36 "Collins, Joshua" (4276840960)
+00:04:22.377 --> 00:04:45.059
+Right. I believe it's, the way Mias did it is it's now it's node CRSRC/server server yeah ok yeah when you sign up, it will save your stuff to the.
+
+37 "Marinkovich, Christian" (598586880)
+00:04:45.059 --> 00:04:48.382
+Oh, it says it says cannot find module.en.
+
+38 "Collins, Joshua" (4276840960)
+00:04:48.382 --> 00:04:53.077
+Oh yeah, just do npm.install oh yeah NPM install.
+
+39 "Marinkovich, Christian" (598586880)
+00:04:53.077 --> 00:04:55.320
+MPM install what? Yeah.
+
+40 "Collins, Joshua" (4276840960)
+00:04:55.320 --> 00:05:03.578
+Just NPM install it'll see what modules you're missing, it'll install it for you. Okay.
+
+41 "Adam" (2117586944)
+00:05:03.578 --> 00:05:06.011
+Yeah, this is also what I would say it's like.
+
+42 "Marinkovich, Christian" (598586880)
+00:05:06.011 --> 00:05:24.737
+Just have it working so someone's computer like does how to run the MV. Oh, ok, ok. So now I go to local. All right, great, it's there. So how does the login work? We log in. Is there like a username hold up? We gotta get this login feature like pretty much.
+
+43 "Collins, Joshua" (4276840960)
+00:05:24.737 --> 00:05:29.878
+Working. It does work. You just need to sign up.
+
+44 "Marinkovich, Christian" (598586880)
+00:05:29.878 --> 00:05:32.475
+Well, you know, we already have a dummy accounts.
+
+45 "Collins, Joshua" (4276840960)
+00:05:32.475 --> 00:05:40.217
+Yeah, let me try and pull up what he put his as. I'm just gonna.
+
+46 "Marinkovich, Christian" (598586880)
+00:05:40.217 --> 00:05:44.576
+I like use, oh, I can't use passwords cause I don't know I guess we have to, I can make one though right.
+
+47 "Collins, Joshua" (4276840960)
+00:05:44.576 --> 00:05:53.558
+Yeah, you can. Yeah, just make your own dummy account cause that's what I did and he also has one or two of them.
+
+48 "Marinkovich, Christian" (598586880)
+00:05:53.558 --> 00:06:02.098
+Is there like a username? You said there's a username field, but there is NO username field for.
+
+49 "Collins, Joshua" (4276840960)
+00:06:02.098 --> 00:06:04.737
+Oh, what does it appear as?
+
+50 "Marinkovich, Christian" (598586880)
+00:06:04.737 --> 00:06:07.519
+Email. Oh I'm guessing the email.
+
+51 "Collins, Joshua" (4276840960)
+00:06:07.519 --> 00:06:21.913
+Yeah, yeah. Cause that we should fix that, but that's fine for now, it doesn't matter. Well I mean it it's fine because right now that's the primary way we're gonna eventually like restrict like if you're not, you have to have a R like RPI.
+
+52 "Marinkovich, Christian" (598586880)
+00:06:21.913 --> 00:06:26.776
+Email I guess. Okay, so then we should change the database field from username to email.
+
+53 "Collins, Joshua" (4276840960)
+00:06:26.776 --> 00:06:33.480
+Yeah, well, we'll do that. Yeah communication.
+
+54 "Marinkovich, Christian" (598586880)
+00:06:33.480 --> 00:06:35.456
+Wow, so this all works.
+
+55 "Collins, Joshua" (4276840960)
+00:06:35.456 --> 00:06:46.015
+Yeah, so the login, my, my is to the login and it got the the back that back end working. That that was all of him.
+
+56 "Marinkovich, Christian" (598586880)
+00:06:46.015 --> 00:06:57.537
+Okay. Hey, there's a few problems with this, with this backward page that I really don't like. I don't like the white color.
+
+57 "Collins, Joshua" (4276840960)
+00:06:57.537 --> 00:07:02.915
+I think a piece of paper in a manila folder look.
+
+58 "Marinkovich, Christian" (598586880)
+00:07:02.915 --> 00:07:13.797
+Okay, but like we should probably keep it with the website theme. So like, I mean if we're not using white as like a our color from the color template, right?
+
+59 "Collins, Joshua" (4276840960)
+00:07:13.797 --> 00:07:20.899
+That's a that's a quick fix you could do. Yeah, that's what I mean. Just change that. That's for later, that doesn't matter.
+
+60 "Marinkovich, Christian" (598586880)
+00:07:20.899 --> 00:07:33.759
+For now. Also, I don't know if there's a way you could do this but have like the PDF like kind of like display, like kind of how you drew it out or like it kind of like, it's like its own like little box or like icon instead of just being like a list.
+
+61 "Collins, Joshua" (4276840960)
+00:07:33.759 --> 00:07:54.180
+Yeah, I was gonna try and do that. I didn't know exactly how to do that without using installs and I have never used the installs and that would be trying to make sure I don't install something that's bad because Callihan did say to be careful about. I don't know.
+
+62 "Marinkovich, Christian" (598586880)
+00:07:54.180 --> 00:07:59.175
+What is this? That's cool. Wait, so how did you manage to upload the the PDF?
+
+63 "Collins, Joshua" (4276840960)
+00:07:59.175 --> 00:08:08.256
+I manually inputted them. I, I was gonna work on making an imp upload page later.
+
+64 "Marinkovich, Christian" (598586880)
+00:08:08.256 --> 00:08:11.598
+But, oh again.
+
+65 "Adam" (2117586944)
+00:08:11.598 --> 00:08:34.379
+And what we could do is just like bake an upload page, like he could even like chat GBT just like a basic front end page. And then you just tell him tomorrow like us like it's not working yet because he doesn't care. It's just about progress cause like that happened so many times last year where kit like teams would show pages and then, oh, it's not working yet, we'll get it working. But I'd rather have the main three pages work.
+
+66 "Adam" (2117586944)
+00:08:34.379 --> 00:08:37.301
+So yeah, obviously, but again that's.
+
+67 "Marinkovich, Christian" (598586880)
+00:08:37.301 --> 00:08:40.401
+Like it's not.
+
+68 "Collins, Joshua" (4276840960)
+00:08:40.401 --> 00:08:43.469
+Yeah, but also keep in mind.
+
+69 "Collins, Joshua" (4276840960)
+00:08:43.469 --> 00:09:02.034
+From when we did, at least when we did ours, we, we just had it looking like this and we say and when we, and when we said oh well we're gonna do this, it's not working right now, but this is what we're going to do. Callihant give us full credit because Callihant understands you're, you're only halfway.
+
+70 "Adam" (2117586944)
+00:09:02.034 --> 00:09:07.320
+Yeah, that's what I was saying. Thank you. But we should still have like the majority of the main.
+
+71 "Marinkovich, Christian" (598586880)
+00:09:07.320 --> 00:09:09.339
+Stuff done, that's what I'm saying.
+
+72 "Collins, Joshua" (4276840960)
+00:09:09.339 --> 00:09:23.421
+What can we get done with in the next 48 h plus getting around the offices tests and I also have some AI test on Tuesday morning before this class. So it's What can we get done?
+
+73 "Marinkovich, Christian" (598586880)
+00:09:23.421 --> 00:09:30.561
+Is we could just have like a dummy version of the professors in the schedule page. That's what we could try to get done.
+
+74 "Adam" (2117586944)
+00:09:30.561 --> 00:09:59.643
+Right, what we should do is write out what we want done, put in the chat cause I'm like, I don't know literally the only thing I can also go down and do it. Well just like write down everything and we can just be like, this will be done like and then this we can just put a dummy thing up because again like I don't really have to do anything until midterm and then I kind of have to lock in. So I've kind of like, I can like try to go down the list and just make minor edits and just make it presentable essentially while you guys can study for Opsys and whatever else.
+
+75 "Collins, Joshua" (4276840960)
+00:09:59.643 --> 00:10:04.840
+Yeah, can you Adam, can you tackle the, what was it called.
+
+76 "Adam" (2117586944)
+00:10:04.840 --> 00:10:07.747
+The class page? Excuse me.
+
+77 "Collins, Joshua" (4276840960)
+00:10:07.747 --> 00:10:14.825
+Excuse me guys. I'll I'll jump on the upload page and then add that to the backward one since I've already.
+
+78 "Marinkovich, Christian" (598586880)
+00:10:14.825 --> 00:10:21.404
+Alright guys, I put it in the chat what we need done. So we should that's all we really need to do like that's like the.
+
+79 "Adam" (2117586944)
+00:10:21.404 --> 00:10:50.282
+I was I was gonna say earlier that like I've like have a basic class page or there's not much functionality that just lists out classes. I guess what I could do, I don't get stuff man, I don't have a good I'll I'll push it when I actually like make the CSS nicer. I don't have a good idea how it's supposed to link to the rest of the website, so like for now like my plan was just to if you click so like class one's piece off you just click on it and then a pop up menu like comes up that's just like professor whatever and I guess I could put a link to something else.
+
+80 "Marinkovich, Christian" (598586880)
+00:10:50.282 --> 00:11:08.782
+Here's what we could do for that. We could do like a rating. We could put that on like the professor/ratings. How about this? We, we renamed the professors page to the ratings page and because that's what we were gonna originally have. I don't even know why we called it professors cause it's not just about professors. We're gonna have ratings for like courses and for different professors.
+
+81 "Collins, Joshua" (4276840960)
+00:11:08.782 --> 00:11:10.055
+Right? Yeah.
+
+82 "Marinkovich, Christian" (598586880)
+00:11:10.055 --> 00:11:12.840
+Yeah cause it was like right my.
+
+83 "Collins, Joshua" (4276840960)
+00:11:12.840 --> 00:11:15.502
+Professor. So it was kind of like a.
+
+84 "Marinkovich, Christian" (598586880)
+00:11:15.502 --> 00:11:18.539
+Yeah, but we should we should call it.
+
+85 "Collins, Joshua" (4276840960)
+00:11:18.539 --> 00:11:22.866
+Yeah, we can do that. Okay, good, good stuff.
+
+86 "Adam" (2117586944)
+00:11:22.866 --> 00:11:27.863
+Yeah reconvene tomorrow. I can also do you.
+
+87 "Marinkovich, Christian" (598586880)
+00:11:27.863 --> 00:11:37.299
+For that class page you could just push it to the for the professors page. Like you could have the the class page just a link to the proper.
+
+88 "Adam" (2117586944)
+00:11:37.299 --> 00:11:39.021
+Processors page for like on the rating.
+
+89 "Marinkovich, Christian" (598586880)
+00:11:39.021 --> 00:12:05.862
+Or something. Yeah, yeah. And just like maybe like make it tailored towards like ratings. I don't know if you can have like a dummy, like, all you need is I'll click something and then you guys can see it. Okay. So what are we doing with we don't have a profile page alright we just won't access that, that doesn't matter. We need to fix some of these links.
+
+90 "Collins, Joshua" (4276840960)
+00:12:05.862 --> 00:12:09.094
+Which ones are broken?
+
+91 "Marinkovich, Christian" (598586880)
+00:12:09.094 --> 00:12:25.962
+Well, what's broken is that we should not be seeing login and sign up. I don't know why we're seeing that. I literally changed to fix that. So that broke. When, when you're logged in, you shouldn't be seeing a login and sign up, a tab, so I don't know why.
+
+92 "Collins, Joshua" (4276840960)
+00:12:25.962 --> 00:12:27.240
+Are in the navoid.
+
+93 "Marinkovich, Christian" (598586880)
+00:12:27.240 --> 00:12:46.206
+Yeah, I I literally fixed that and then someone decided to That's weird or something ****** with something. What the hell doug? Come on. Yeah, why, why aren't we seeing that? Oh, I know why we're seeing that.
+
+94 "Collins, Joshua" (4276840960)
+00:12:46.206 --> 00:12:50.585
+Is it because we're using the JS and not the JSX?
+
+95 "Marinkovich, Christian" (598586880)
+00:12:50.585 --> 00:13:03.059
+Up never mind. I, I I *******, why are we Why are you seeing that?
+
+96 "Marinkovich, Christian" (598586880)
+00:13:03.059 --> 00:13:21.479
+I forget where were the more button. This is annoying ok This is what we shouldn't be seeing. So where was this edited?
+
+97 "Marinkovich, Christian" (598586880)
+00:13:21.479 --> 00:13:31.365
+Okay, so I can fix that. I can work on fixing.
+
+98 "Collins, Joshua" (4276840960)
+00:13:31.365 --> 00:13:33.186
+Doing that. Yeah, NO worries.
+
+99 "Marinkovich, Christian" (598586880)
+00:13:33.186 --> 00:13:58.029
+But basically, it's gonna, and it doesn't even work for some reason, so why, why doesn't it work? Alright, whatever. So we gotta make these links work. So I'll work on that. I'll work on making all these links work as nicely as possible. And then Adam.
+
+100 "Adam" (2117586944)
+00:13:58.029 --> 00:13:59.686
+Yeah.
+
+101 "Marinkovich, Christian" (598586880)
+00:13:59.686 --> 00:14:07.425
+You can start creating a slideshow, right? And can you put it inside the like google drive folder?
+
+102 "Adam" (2117586944)
+00:14:07.425 --> 00:14:10.920
+Yeah, I'm just gonna copy what my group did last year cause we got around.
+
+103 "Collins, Joshua" (4276840960)
+00:14:10.920 --> 00:14:13.972
+Yeah just like we presented.
+
+104 "Adam" (2117586944)
+00:14:13.972 --> 00:14:26.819
+We present like what is it, what does it do? How does it like back and forth or not pushed out, but like well like we did like like our server was configured like security stuff and then live demo feedback and questions and that's right.
+
+105 "Marinkovich, Christian" (598586880)
+00:14:26.819 --> 00:14:29.679
+Okay, how long is this supposed to be? Do we have like an s.
+
+106 "Adam" (2117586944)
+00:14:29.679 --> 00:14:38.795
+What Ten groups? Ten groups and 50 min, and then you're gonna buy us like 20 min for moving around.
+
+107 "Marinkovich, Christian" (598586880)
+00:14:38.795 --> 00:14:44.359
+The start. Well, it's, we have a we have an a hundred and 10 min in the period.
+
+108 "Adam" (2117586944)
+00:14:44.359 --> 00:14:48.778
+Yeah, so say 90 min for 13 or.
+
+109 "Marinkovich, Christian" (598586880)
+00:14:48.778 --> 00:14:50.959
+Yeah, 90 minister 13 group.
+
+110 "Adam" (2117586944)
+00:14:50.959 --> 00:14:52.939
+Groups, maybe 10 min per.
+
+111 "Collins, Joshua" (4276840960)
+00:14:52.939 --> 00:14:57.418
+But I'll ask, some of my friends that.
+
+112 "Marinkovich, Christian" (598586880)
+00:14:57.418 --> 00:15:01.677
+My guess we're gonna have to present for at least 5 min.
+
+113 "Adam" (2117586944)
+00:15:01.677 --> 00:15:02.634
+Yeah.
+
+114 "Collins, Joshua" (4276840960)
+00:15:02.634 --> 00:15:03.180
+Yeah, I thought.
+
+115 "Adam" (2117586944)
+00:15:03.180 --> 00:15:14.637
+It's probably like presentation will be like 3 min. The the live demo could be like 5 min and then 2 min Q and A or something like that.
+
+116 "Marinkovich, Christian" (598586880)
+00:15:14.637 --> 00:15:17.318
+I'm gonna canate, should I ask Callian about.
+
+117 "Adam" (2117586944)
+00:15:17.318 --> 00:15:23.853
+Yeah sure can't hurt Cause he never say, he didn't say anything.
+
+118 "Marinkovich, Christian" (598586880)
+00:15:23.853 --> 00:15:28.319
+Ask cause it was the. I don't know cause he's, you know, calling him.
+
+119 "Marinkovich, Christian" (598586880)
+00:15:28.319 --> 00:15:47.959
+Yes, ok, I DM Tim, so hopefully he'll give me an answer.
+
+120 "Adam" (2117586944)
+00:15:47.959 --> 00:15:53.098
+Is.
+
+121 "Marinkovich, Christian" (598586880)
+00:15:53.098 --> 00:15:59.226
+Yeah, cause I I also have peace offed on Wednesday so and I haven't even started making that crib sheet.
+
+122 "Adam" (2117586944)
+00:15:59.226 --> 00:16:00.188
+Okay.
+
+123 "Marinkovich, Christian" (598586880)
+00:16:00.188 --> 00:16:03.324
+So I'm I'm kind of screwed for.
+
+124 "Collins, Joshua" (4276840960)
+00:16:03.324 --> 00:16:06.945
+That, piece off warm wasn't too bad. I don't.
+
+125 "Marinkovich, Christian" (598586880)
+00:16:06.945 --> 00:16:15.607
+I'm more worried about piece off than offices, so I hope that gives I'm not feeling too bad about offices I think I.
+
+126 "Collins, Joshua" (4276840960)
+00:16:15.607 --> 00:16:23.426
+Think, I think I'll be fine once I get into that one. It's just I don't know with goalshipment you don't know until you see the test.
+
+127 "Marinkovich, Christian" (598586880)
+00:16:23.426 --> 00:16:31.187
+It's gonna be mostly multiple choice with a bunch of like open ended questions. So.
+
+128 "Collins, Joshua" (4276840960)
+00:16:31.187 --> 00:16:47.593
+Yeah, but I'll get that upload page add add on to the the backward going and then we'll, and then Adam, you get the, the classes done and then we can just copy and paste that page over to professors and then just change up some of the wording.
+
+129 "Adam" (2117586944)
+00:16:47.593 --> 00:16:51.428
+All what we'll do is we'll quickly, like, highlight.
+
+130 "Collins, Joshua" (4276840960)
+00:16:51.428 --> 00:16:53.783
+And then move on to the next one.
+
+131 "Adam" (2117586944)
+00:16:53.783 --> 00:17:01.205
+Yeah, because like basically I've just made like I, I picked eight, but however many, I just made a div and then there's information.
+
+132 "Collins, Joshua" (4276840960)
+00:17:01.205 --> 00:17:02.486
+Yeah.
+
+133 "Adam" (2117586944)
+00:17:02.486 --> 00:17:04.386
+Something crazy.
+
+134 "Collins, Joshua" (4276840960)
+00:17:04.386 --> 00:17:11.009
+Exactly. So, yeah, we, we can just be asked the way that one looks once we get past the press.
+
+135 "Marinkovich, Christian" (598586880)
+00:17:11.009 --> 00:17:18.308
+Okay, wait, so who's, who's making this class scheduler?
+
+136 "Collins, Joshua" (4276840960)
+00:17:18.308 --> 00:17:26.806
+Like the the dummy stuff. I thought Adam already had a little bit worked on that. Was that the one that you had? That's for the rating.
+
+137 "Marinkovich, Christian" (598586880)
+00:17:26.806 --> 00:17:33.065
+But like we have also have a class scheduler page. Like, are we gonna make a dummy version of that.
+
+138 "Adam" (2117586944)
+00:17:33.065 --> 00:17:47.245
+That. Yeah, it could probably make a dollar one or just say like we're implementing it in the future because like you can and if we don't if we don't have any yeah we're planning on making a scheduler page, we're gonna implement it in the future, like it doesn't matter. We just have to like.
+
+139 "Collins, Joshua" (4276840960)
+00:17:47.245 --> 00:18:05.228
+Any progress? Here's my thing. If we have, we basically have a working backward page and right now if Adam gets on the front end for the professors page, we're effectively halfway done with the project. So being at that stage at the midterm, we should not be docked any points.
+
+140 "Adam" (2117586944)
+00:18:05.228 --> 00:18:08.906
+Yeah, and also he's a very lightwriter, I mean you guys.
+
+141 "Marinkovich, Christian" (598586880)
+00:18:08.906 --> 00:18:19.469
+I mean I don't I want to get a hundred on this after that. So I don't I don't care, like if we get a 95, I'll I'll consider that a loss Doug. I'd wanna get a hundred on.
+
+142 "Collins, Joshua" (4276840960)
+00:18:19.469 --> 00:18:22.772
+This presentation. Yeah, NO worries, we'll do that.
+
+143 "Marinkovich, Christian" (598586880)
+00:18:22.772 --> 00:18:25.343
+Yeah my friend.
+
+144 "Adam" (2117586944)
+00:18:25.343 --> 00:18:29.130
+You said that 5 min for the slides and 5 min for the presentation.
+
+145 "Collins, Joshua" (4276840960)
+00:18:29.130 --> 00:18:30.127
+Okay.
+
+146 "Marinkovich, Christian" (598586880)
+00:18:30.127 --> 00:18:31.748
+Okay, what do you mean 5 min for the.
+
+147 "Adam" (2117586944)
+00:18:31.748 --> 00:18:33.804
+Presentation, like the lab demo.
+
+148 "Marinkovich, Christian" (598586880)
+00:18:33.804 --> 00:18:38.046
+The demo, so we gotta make a 5 min demo. So that's why I see we gotta get some front end.
+
+149 "Adam" (2117586944)
+00:18:38.046 --> 00:18:48.865
+Yeah, so we could do that and then we can meet again tomorrow, like I was saying, just to kind of run through the presentation and run through how long we think the slides are gonna be or what the demo's gonna be.
+
+150 "Marinkovich, Christian" (598586880)
+00:18:48.865 --> 00:18:56.044
+Okay, and then, when do we wanna meet tomorrow?
+
+151 "Adam" (2117586944)
+00:18:56.044 --> 00:18:59.805
+I should be good anytime. Let me just check though.
+
+152 "Collins, Joshua" (4276840960)
+00:18:59.805 --> 00:19:02.721
+Probably, after.
+
+153 "Adam" (2117586944)
+00:19:02.721 --> 00:19:05.366
+I would assume it's like matter Ted, right?
+
+154 "Collins, Joshua" (4276840960)
+00:19:05.366 --> 00:19:07.764
+Yeah, you wanna do like 09:00 P.M.?
+
+155 "Marinkovich, Christian" (598586880)
+00:19:07.764 --> 00:19:10.203
+Yeah, we could do 09:00 p.m..
+
+156 "Collins, Joshua" (4276840960)
+00:19:10.203 --> 00:19:14.244
+Does that work with you?
+
+157 "Marinkovich, Christian" (598586880)
+00:19:14.244 --> 00:19:15.746
+I don't think it's probably even.
+
+158 "Thomas, Mius" (99674112)
+00:19:15.746 --> 00:19:19.806
+Sorry, oh yeah, what's up?
+
+159 "Collins, Joshua" (4276840960)
+00:19:19.806 --> 00:19:32.726
+Yeah. Yeah I think we should be good also the login stuff when I signed up, everything got saved and it looks good.
+
+160 "Thomas, Mius" (99674112)
+00:19:32.726 --> 00:19:36.962
+Wait, what time did it be the USA you wanted to meet again?
+
+161 "Collins, Joshua" (4276840960)
+00:19:36.962 --> 00:19:45.789
+Tomorrow because we're gonna try and add one or two more things to make this look a little bit more polished for our.
+
+162 "Adam" (2117586944)
+00:19:45.789 --> 00:19:52.647
+Presentation or just to run over the presentation like so we don't just walk in a class on Tuesday and not know what we're doing.
+
+163 "Thomas, Mius" (99674112)
+00:19:52.647 --> 00:19:56.765
+Yeah, sure. I mean we can count.
+
+164 "Adam" (2117586944)
+00:19:56.765 --> 00:20:00.925
+One is like one of the meetings, but we don't have to record it. It's not really it.
+
+165 "Thomas, Mius" (99674112)
+00:20:00.925 --> 00:20:04.126
+I would assume we also don't need our.
+
+166 "Adam" (2117586944)
+00:20:04.126 --> 00:20:06.626
+Wednesday because we don't really have anything to discuss because spring breaks.
+
+167 "Collins, Joshua" (4276840960)
+00:20:06.626 --> 00:20:11.285
+Coming up. Yeah. Yeah if we're not meeting on Wednesday then we definitely.
+
+168 "Marinkovich, Christian" (598586880)
+00:20:11.285 --> 00:20:14.083
+You have to record it. He's probably gonna expect this to meet two times.
+
+169 "Collins, Joshua" (4276840960)
+00:20:14.083 --> 00:20:14.742
+This week.
+
+170 "Adam" (2117586944)
+00:20:14.742 --> 00:20:24.763
+Yeah. All right, so maybe we can record tomorrow just because it doesn't matter. Yeah. Just record and whatever. Don't me and then don't be it on Wednesday. Yeah.
+
+171 "Collins, Joshua" (4276840960)
+00:20:24.763 --> 00:20:29.098
+Yeah, and one thing will be good. Right.
+
+172 "Marinkovich, Christian" (598586880)
+00:20:29.098 --> 00:20:40.623
+Good. So, ok, Sounds good. Alright, I'll get working on the fixing some of the navigation.
+
+173 "Collins, Joshua" (4276840960)
+00:20:40.623 --> 00:20:45.983
+Yeah, I'll get that upload page, at least looking like it does.
+
+174 "Marinkovich, Christian" (598586880)
+00:20:45.983 --> 00:20:52.963
+Yeah, and make make if you can make the backward page like just look a little nicer, like get rid of the white like stuff.
+
+175 "Collins, Joshua" (4276840960)
+00:20:52.963 --> 00:20:54.862
+Yeah.
+
+176 "Marinkovich, Christian" (598586880)
+00:20:54.862 --> 00:21:02.702
+Yeah, I don't know if you'll be able to I mean, yeah, you probably won't for the next 48 h, so I guess you can keep it as a list, but.
+
+177 "Collins, Joshua" (4276840960)
+00:21:02.702 --> 00:21:03.590
+Okay.
+
+178 "Marinkovich, Christian" (598586880)
+00:21:03.590 --> 00:21:20.039
+Yeah, yeah. Is there a way to hold up? I'm gonna I'm curious I'm trying to look in your.
+
+179 "Marinkovich, Christian" (598586880)
+00:21:20.039 --> 00:21:38.642
+Yeah, that's cool, ok, so it works. Yeah, I like how you, I like how you styled like the suggestions in the search, like that kind of coloring, that's good. I'm trying to make it that same coloring like throughout.
+
+180 "Collins, Joshua" (4276840960)
+00:21:38.642 --> 00:21:42.702
+You know. Yeah, and also make it take up the entire screen.
+
+181 "Marinkovich, Christian" (598586880)
+00:21:42.702 --> 00:21:49.901
+Not just like half the screen cause you know, and have like a little header. I don't know if you can actually the header doesn't matter, just make it take up the entire.
+
+182 "Collins, Joshua" (4276840960)
+00:21:49.901 --> 00:22:09.580
+Screen yeah right now the head, the height works based off of how many, what was it bumps there are or how many yeah I have it so that it only drops down at most like ten items just so that it's not like cause on my small screen it's fine and then I blow it up on a big screen and then it looks wonky or vice.
+
+183 "Marinkovich, Christian" (598586880)
+00:22:09.580 --> 00:22:30.401
+Okay what you can to make the styling good? Yeah. Just so that we can because we're probably gonna be displaying that quite a bit since the other pages won't be like fully working. So if we, is he actually, do he actually have to have a 10 min presentation? Cause that's pretty wild.
+
+184 "Collins, Joshua" (4276840960)
+00:22:30.401 --> 00:22:38.720
+My my guess is that's like the like limit is he he he's he broke it down as essentially five.
+
+185 "Marinkovich, Christian" (598586880)
+00:22:38.720 --> 00:22:45.380
+But if he wants if that's the limit then he wants it to be that.
+
+186 "Collins, Joshua" (4276840960)
+00:22:45.380 --> 00:23:09.679
+I mean, he, from what I've understand with his presentation or his things is as long as if it says if he says 10 min and you're like above eight, then you're good. Like, as long as you're not well under the limit, you're fine. And as long as you have shown that you've done actually done work together as a group, you're good. And since we have a we have the ability.
+
+187 "Collins, Joshua" (4276840960)
+00:23:09.679 --> 00:23:27.959
+When you login, we have the ability to, to download data and we already have like we we've established our server works, our, well, yeah, our API works, we are working on the back end and the front end, but we both have working models for both, for most of for at least half of our pages.
+
+188 "Marinkovich, Christian" (598586880)
+00:23:27.959 --> 00:23:33.019
+Good. All right.
+
+189 "Collins, Joshua" (4276840960)
+00:23:33.019 --> 00:23:39.997
+Yeah, so with that, I'll beat you guys a good day and, we'll see you guys tomorrow.
+
+190 "Adam" (2117586944)
+00:23:39.997 --> 00:23:41.136
+Yeah.

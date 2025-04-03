@@ -1,0 +1,321 @@
+WEBVTT
+
+1 "Collins, Joshua" (2423191808)
+00:00:00.000 --> 00:00:05.998
+And also, I got that certification done.
+
+2 "Adam" (3566702080)
+00:00:05.998 --> 00:00:13.178
+You pass? Yeah. ****. So you need off the shelf for a quiz too.
+
+3 "Collins, Joshua" (2423191808)
+00:00:13.178 --> 00:00:18.192
+I mean, I would I would have recommended doing it. It's not that bad.
+
+4 "Adam" (3566702080)
+00:00:18.192 --> 00:00:26.394
+I mean, I know it's recorded, but I don't think the quizzes are that bad anyways. Yeah.
+
+5 "Collins, Joshua" (2423191808)
+00:00:26.394 --> 00:00:55.250
+But, yeah, I'm gonna work this week later this week I'm gonna start working on the What is it called? I'm gonna finish up the admin page. I'm gonna try and get Mayas to work on two more two features. Basically, when a user logs in, it's gonna I want them to check the status of the user if they're an admin to get a the admin homepage and if they.
+
+6 "Collins, Joshua" (2423191808)
+00:00:55.250 --> 00:00:59.379
+For a normal user, they get to the standard user page.
+
+7 "Collins, Joshua" (2423191808)
+00:01:00.378 --> 00:01:16.710
+Which I think is not too bad. And then we just have to set up we can only register with RPI emails. And then I think that's the pretty much done there and then I just.
+
+8 "Collins, Joshua" (2423191808)
+00:01:16.710 --> 00:01:36.282
+And for the admin page, I need to finish the delete, requests for deleting reviews and deleting PDFs, which also shouldn't be too bad.
+
+9 "Adam" (3566702080)
+00:01:36.282 --> 00:01:37.838
+Yep.
+
+10 "Collins, Joshua" (2423191808)
+00:01:37.838 --> 00:01:52.153
+Yeah, and then after that it's all just making all of our pages look and look a certain way and then getting them to look good in mobile development and then we should be good.
+
+11 "Adam" (3566702080)
+00:01:52.153 --> 00:02:06.198
+Yeah, doesn't sound like it's too bad for the last semester. I mean what we have well three and a half weeks of school then we'll see if we get screwed by the placement.
+
+12 "Collins, Joshua" (2423191808)
+00:02:06.198 --> 00:02:30.120
+Yeah, we can get this all done within the next week and a half realistically because if you can't get all the done, just hand over like the components, the the CSS for the components and stuff and we can see about helping you out there, but overall you should have more than enough time to get it done in the next two weeks.
+
+13 "Collins, Joshua" (2423191808)
+00:02:30.120 --> 00:02:45.150
+And then, we can then move every, then we need to move everything over to the VM and then basically change all the fetching because the fetches uses use windows.location.origin.
+
+14 "Collins, Joshua" (2423191808)
+00:02:45.150 --> 00:03:02.100
+Slash whatever the API request is basically it just needs to be Windows.location.origin/node/API request. I thought Windows.location.origin would handle that.
+
+15 "Collins, Joshua" (2423191808)
+00:03:02.100 --> 00:03:29.356
+Apparently does not and then we also needed to change all the links on the HTML pages to do/node/the pathing to that so minor fixes that shouldn't be too difficult. It should just take like an hour just to double check to make sure that everything's good for that. Yeah. Christian just said he's.
+
+16 "Adam" (3566702080)
+00:03:29.356 --> 00:03:36.478
+Try to get laundry. I don't really wanna wait 5 min so if you can just check would be awesome.
+
+17 "Collins, Joshua" (2423191808)
+00:03:36.478 --> 00:03:55.199
+Yeah. Or whatever yeah I just I would hope Mayas, I'm guessing Mayas forgot about today. It's fine. I just, we just need to find a way to tell him to do get him to do his part.
+
+18 "Collins, Joshua" (2423191808)
+00:03:56.978 --> 00:04:09.715
+Although Attrition was freaking out a little bit last night about the the login stuff, he just kind of He needs to just calm down about that though.
+
+19 "Adam" (3566702080)
+00:04:09.715 --> 00:04:25.315
+I mean, yeah, do you some of them like he's gotta understand that unless we've royally messed this up, we're gonna get like not maybe not on a hundred, even though that's what we got last semester, but we'll be fine.
+
+20 "Collins, Joshua" (2423191808)
+00:04:25.315 --> 00:04:39.176
+I mean, to be fair, we've met all the so far we've met all the requirements outside of the mobile development, so I mean, it's not like we're gonna get NO credit. We're, we're pretty self sufficient here.
+
+21 "Adam" (3566702080)
+00:04:39.176 --> 00:04:45.833
+And have we set up the scrum review yet with call ahead and or Priyanka.
+
+22 "Collins, Joshua" (2423191808)
+00:04:45.833 --> 00:04:49.355
+Oh NO, we need to set that up.
+
+23 "Adam" (3566702080)
+00:04:49.355 --> 00:04:58.791
+Alright, we could, I mean, this week might be a little sudden I don't know what their schedule's like, but we could set that up on Tuesday when we're in class.
+
+24 "Collins, Joshua" (2423191808)
+00:04:58.791 --> 00:05:06.569
+Yes. Yeah, I'm just texting, I'm texting the group chat for my as real quick.
+
+25 "Collins, Joshua" (2423191808)
+00:05:06.569 --> 00:05:30.810
+Adams to be.
+
+26 "Adam" (3566702080)
+00:05:30.810 --> 00:05:46.067
+Yeah.
+
+27 "Collins, Joshua" (2423191808)
+00:05:46.067 --> 00:06:02.729
+There we go. Yeah. Yeah, like I said, if you can just do your the front end for your stuff, let me know how that's going. I might be able to help out here and there, but that's gonna be the last big hurdle that we really need to do.
+
+28 "Collins, Joshua" (2423191808)
+00:06:02.729 --> 00:06:19.049
+And I think, like admin page wise, there's nothing that I'll change in terms of the structure, so you're good to do this mobile for that one as well. I don't think I'm gonna at most I would change like a little bit of the.
+
+29 "Collins, Joshua" (2423191808)
+00:06:19.049 --> 00:06:39.411
+Save the backward page for last the because I I'm gonna redo that one to kind of make it like the new page design because if you go back up you can see the text from Christian from 1222 in the morning, you see how like the enrolled classes kind of have that style to me.
+
+30 "Adam" (3566702080)
+00:06:39.411 --> 00:06:41.290
+Yeah.
+
+31 "Collins, Joshua" (2423191808)
+00:06:41.290 --> 00:06:56.573
+That's what I'm gonna do with the the backward page because Christian kept complaining about the, the way it looked and how it looked too bland, so if I do that, I think we'll be good.
+
+32 "Adam" (3566702080)
+00:06:56.573 --> 00:06:58.416
+Nope, that sounds good.
+
+33 "Collins, Joshua" (2423191808)
+00:06:58.416 --> 00:07:15.659
+Yeah. And then, yeah, just let's use that as a reference of like, of the styling scheme I think, yeah, basically we're gonna have that kind of outline I forgot the border radius in this one, but.
+
+34 "Collins, Joshua" (2423191808)
+00:07:15.659 --> 00:07:32.189
+It is always that border radius, it has a hovering feature and then the it's always that dark brown for buttons and wider brown if you're hovering over the buttons kind of deal. I mean it should be all relatively straightforward, nothing.
+
+35 "Collins, Joshua" (2423191808)
+00:07:32.189 --> 00:07:48.749
+At this point it's at this point we're just trying to get a finished product. If we get done early enough, we might add a, another bell or whistle here and there, but the most part we have a product that works in 95 % of circumstances.
+
+36 "Collins, Joshua" (2423191808)
+00:07:48.749 --> 00:07:52.411
+And we're just touching up the last 5 %.
+
+37 "Adam" (3566702080)
+00:07:52.411 --> 00:07:55.250
+Yeah, then we have some time for error testing.
+
+38 "Collins, Joshua" (2423191808)
+00:07:55.250 --> 00:08:24.059
+Yeah, also I'm, when I'm implementing the, the leading review, function, what I'll probably do is I'll probably so the way that a review is stored is, you have a user who, when they make a rating for a class, on the users, the user gets stored like, oh, I made a comment on, data structures. I left a review and I scored it at three out of five.
+
+39 "Collins, Joshua" (2423191808)
+00:08:24.059 --> 00:08:40.739
+And then in the data structures one, you add three to the total score, you add one to the review count, and then you change the average based off of those two numbers and then you append the review to a list of reviews.
+
+40 "Collins, Joshua" (2423191808)
+00:08:40.739 --> 00:08:56.639
+So when I do the delete function, what I'm gonna do is I'm just gonna remove that comment from the force itself. It's kind of like hiding a co I shouldn't call it deleting a comment. I should be calling calling it like hiding a comment. Hiding comment.
+
+41 "Collins, Joshua" (2423191808)
+00:08:56.639 --> 00:09:13.139
+So the comments still exists on like the user's profile, but it does not exist on the course. So you can't so NO other users will be able to see the comment on underneath the course itself. That way if that user then tries to re.
+
+42 "Collins, Joshua" (2423191808)
+00:09:13.139 --> 00:09:30.119
+Upload a review, they can't because you can't review something that you've already reviewed because my main concern was if I tried to do it on both ends, the way I have it set up, I would have to find a way to.
+
+43 "Collins, Joshua" (2423191808)
+00:09:30.119 --> 00:09:46.919
+Oh, hey Christian. So, I was just telling Adam about the delete review function I'm gonna add to the admin page. Okay. Basically with the comments, I have it stored on the course end for the user.
+
+44 "Collins, Joshua" (2423191808)
+00:09:46.919 --> 00:10:06.316
+And what I'm gonna do is I'm gonna have it so that the delete functionality gets rid of the review on the course, but keeps it on the user. That way if the user tries to re comment the same comment, they can't because we have backend that prevents you from commenting on the same class twice.
+
+45 "Marinkovich, Christian" (2371801088)
+00:10:06.316 --> 00:10:08.133
+That sounds like a good idea.
+
+46 "Collins, Joshua" (2423191808)
+00:10:08.133 --> 00:10:10.534
+Yeah, that, well, so the.
+
+47 "Marinkovich, Christian" (2371801088)
+00:10:10.534 --> 00:10:22.089
+So how how complete I haven't really checked the review feature. How complete is it? I tried doing a review for a course and it worked, so I'm seeing that it is working.
+
+48 "Collins, Joshua" (2423191808)
+00:10:22.089 --> 00:10:34.374
+Yeah, it, the adding course one completely works. I did change up slightly how it's displayed because originally it just showed how many points in total it has, but now the course shows the.
+
+49 "Marinkovich, Christian" (2371801088)
+00:10:34.374 --> 00:10:39.214
+By the way.
+
+50 "Collins, Joshua" (2423191808)
+00:10:39.214 --> 00:10:41.673
+With the with the moving logged into Thomas.
+
+51 "Marinkovich, Christian" (2371801088)
+00:10:41.673 --> 00:10:52.334
+This account, I think it's because the thing is expiring, and for some reason when it expires, it automatically logs me in as Thomas and the logout feature doesn't work.
+
+52 "Collins, Joshua" (2423191808)
+00:10:52.334 --> 00:10:53.995
+Yeah, I don't.
+
+53 "Marinkovich, Christian" (2371801088)
+00:10:53.995 --> 00:10:59.053
+That's weird. We really we have to fix that though because that's a pretty big bug.
+
+54 "Collins, Joshua" (2423191808)
+00:10:59.053 --> 00:11:08.813
+But here's the thing though, I every time I've done that, whether I've logged out or stayed logged in and then come back 12 h later, I've never run into that issue.
+
+55 "Marinkovich, Christian" (2371801088)
+00:11:08.813 --> 00:11:27.892
+I don't know. I mean I also just ran out of RAM because freaking Java decided to use the entire thing so I don't know if that has anything to do with it, but I screwed up my computer's ramp, so I I don't know. But I don't think so, I don't think, and even if it does, that still is something we should fix.
+
+56 "Collins, Joshua" (2423191808)
+00:11:27.892 --> 00:11:44.636
+Yeah. Well that's a very serious like bug. Well, here's the issue with that. I don't know where that bug and lies, I don't know if that's a bug with our code itself or the library we're using because it might be an issue with when the cookie expires if you're still actively.
+
+57 "Marinkovich, Christian" (2371801088)
+00:11:44.636 --> 00:11:55.409
+So if I if I go, so the way I fixed it before was if I just go directly to the route, I retype the URL to go directly to the root.
+
+58 "Marinkovich, Christian" (2371801088)
+00:11:55.409 --> 00:12:13.477
+It does actually lead me to the logout page, but I think, Yeah, ok, so I see what's happening. Alright, so here's the problem. When you're logged out, right? When you're logged out and you try to access.
+
+59 "Marinkovich, Christian" (2371801088)
+00:12:14.816 --> 00:12:19.796
+Normally be able to access only when you're logged in, you're automatically logged in as Thomas.
+
+60 "Collins, Joshua" (2423191808)
+00:12:19.796 --> 00:12:21.756
+Okay, so that's.
+
+61 "Marinkovich, Christian" (2371801088)
+00:12:21.756 --> 00:12:44.794
+That's why it's doing that, and then it doesn't let you log out because you're already logged out. So we have to fix it so that you can't access the other pages when you're logged out and you can only like it like when it logs you out automatically, it doesn't seem to be redirecting you to the homepage, which it should be doing and instead it's just leaving you at the current page logging you in as Thomas.
+
+62 "Collins, Joshua" (2423191808)
+00:12:44.794 --> 00:12:53.495
+I see. Let's, let me let's try and get Mayas to do I mean I wish he was here so we can tell her about that.
+
+63 "Marinkovich, Christian" (2371801088)
+00:12:53.495 --> 00:12:57.156
+Because I don't know why he's not here. Like, what the hell guy?
+
+64 "Collins, Joshua" (2423191808)
+00:12:57.156 --> 00:13:05.969
+Yeah, it Yeah, I think what he completely redid the login function out cause originally when we did our login function.
+
+65 "Collins, Joshua" (2423191808)
+00:13:05.969 --> 00:13:31.355
+It was just purely a back end call, but the issue was like if he logged in incorrectly or didn't sign in properly, it would completely take down the the login page and sign in page. So he fixed that issue, but for some reason it looks like the routes that he developed that he created don't particularly like stop somebody like they used to. Okay so whatever whatever the.
+
+66 "Marinkovich, Christian" (2371801088)
+00:13:31.355 --> 00:13:36.517
+The reason is, that's that's that's what the issue is. I just figured that out right now, so.
+
+67 "Collins, Joshua" (2423191808)
+00:13:36.517 --> 00:13:43.254
+Yeah, so, yeah, let's, let's try and contact with them. I'll try and like mess.
+
+68 "Marinkovich, Christian" (2371801088)
+00:13:43.254 --> 00:13:51.197
+Also he's gotta show up to these meetings. I mean like I know he's doing work, but if he's not showing up, that's also something to let the professor know about.
+
+69 "Collins, Joshua" (2423191808)
+00:13:51.197 --> 00:13:52.317
+Okay.
+
+70 "Marinkovich, Christian" (2371801088)
+00:13:52.317 --> 00:14:05.076
+Like I, he has to show up to these meetings because like how and he doesn't show up to class, so we can't communicate with him in any way other than through text, which he rarely responds to. So that's kind of an issue.
+
+71 "Collins, Joshua" (2423191808)
+00:14:05.076 --> 00:14:24.094
+Yeah, I'm gonna I'm gonna go give him ah let's end the conversation here just work on your your page in the Adam, make sure you send Christian your web, like your nav bar CSS so he can test his, yeah I'm.
+
+72 "Marinkovich, Christian" (2371801088)
+00:14:24.094 --> 00:14:36.477
+I'm gonna worry about the schedule page cause it's still not completed CSS wise, so I still have to fix that up because the the grid, you know how you had it on your screen where it was bugged down?
+
+73 "Collins, Joshua" (2423191808)
+00:14:36.477 --> 00:14:47.382
+Yeah, that's because it was on a fixed size, so I gotta fix it. Yeah. Especially since you have width be a percentage.
+
+74 "Marinkovich, Christian" (2371801088)
+00:14:47.382 --> 00:14:51.363
+Yeah, I'll have with be a percentage and then it'll hopefully fix the problem.
+
+75 "Collins, Joshua" (2423191808)
+00:14:51.363 --> 00:15:02.325
+Yeah, so, and then I'll also and Adam if you send them your nav bar dots I think it's style.CSS once you do you have that already converted into mobile?
+
+76 "Adam" (3566702080)
+00:15:02.325 --> 00:15:09.202
+Yeah I'm still working on it. I probably I'll probably be done today, so I'll probably text you like later and hopefully.
+
+77 "Collins, Joshua" (2423191808)
+00:15:09.202 --> 00:15:20.083
+Yeah, just make sure you send him the style.CSS so that he can then once you get once Christian gets his normal CSS running, he can then support the mobile feature on his page.
+
+78 "Adam" (3566702080)
+00:15:20.083 --> 00:15:21.502
+Okay.
+
+79 "Collins, Joshua" (2423191808)
+00:15:21.502 --> 00:15:35.643
+Yeah, and then I will go try and call Mayas to fill him in on the bugs and the two or three things he needs to do for us. Okay. So with that I see, I will see you guys.
+
+80 "Marinkovich, Christian" (2371801088)
+00:15:35.643 --> 00:15:39.456
+Later. Alright, I'll see you.
