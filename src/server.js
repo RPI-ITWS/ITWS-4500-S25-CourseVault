@@ -132,9 +132,9 @@ app.get('/backwork', (req, res) => {
 	res.sendFile(path.join(__dirname, '../public/backwork/index.html'))
 })
 
-app.get('/professors', (req, res) => {
-	console.log("professors route")
-	res.sendFile(path.join(__dirname, '../public/professors/index.html'))
+app.get('/courses', (req, res) => {
+	console.log("courses route")
+	res.sendFile(path.join(__dirname, '../public/courses/index.html'))
 })
 
 app.get('/resources', (req, res) => {
@@ -402,8 +402,6 @@ app.post("/addClass", async (req, res) => {
     }
 });
 
-
-
 // =======================================================
 //  Downloading Functionality for Backwork Page
 // =======================================================
@@ -545,6 +543,126 @@ app.post('/upload', async (req, res) => {
     }
 });
 
+// =======================================================
+//  admin page w/ privilaged functionality 
+// =======================================================
+
+app.put("/addCourse", async (req, res) => {
+    try {
+        // Check user authentication and admin status
+        const statusData = await usersCollection.findOne({ username: req.user.username });
+        console.log(req.user.username);
+        console.log(statusData);
+        if (!statusData) {
+            return res.status(403).json({
+                status: "fail",
+                message: "Unauthorized: Cannot Identify User"
+            });
+        }
+
+        if (!statusData.status === "admin") {
+            return res.status(403).json({
+                status: "fail",
+                message: "Unauthorized: Admin access required"
+            });
+        }
+
+        const courseData = req.body;
+
+        const validationError = validateCourseObject(courseData);
+        if (validationError) {
+            return res.status(400).json({
+                status: "fail",
+                message: validationError
+            });
+        }
+
+        const existingCourse = await courseCollection.findOne({ CourseID: courseData.CourseID });
+
+        if (existingCourse) {
+            const updateResult = await courseCollection.updateOne(
+                { CourseID: courseData.CourseID },
+                { $set: courseData }
+            );
+
+            return res.status(200).json({
+                status: "success",
+                message: "Course updated successfully",
+                courseId: existingCourse._id,
+                data: courseData
+            });
+        } else {
+            const result = await courseCollection.insertOne(courseData);
+            return res.status(201).json({
+                status: "success",
+                message: "Course added successfully",
+                courseId: result.insertedId,
+                data: courseData
+            });
+        }
+    } catch (error) {
+        console.error("Error in addCourse:", error);
+        return res.status(500).json({
+            status: "error",
+            message: "Internal Server Error"
+        });
+    }
+});
+
+function validateCourseObject(obj) {
+    if (typeof obj !== 'object' || obj === null) {
+        return "Invalid course object";
+    }
+
+    if (typeof obj.CourseID !== 'string' || !/^[A-Z]{2,4}-\d{4}$/.test(obj.CourseID)) {
+        return "Invalid CourseID format. Must be XXXX-XXXX";
+    }
+
+    if (!Array.isArray(obj.documents)) {
+        return "documents must be an array";
+    }
+
+    if (typeof obj.history !== 'object' || obj.history === null) {
+        return "Invalid history object";
+    }
+
+    if (typeof obj.history.courseName !== 'string' || obj.history.courseName.trim() === '') {
+        return "Invalid or missing courseName";
+    }
+    if (!Array.isArray(obj.history.semestersOffered)) {
+        return "semestersOffered must be an array";
+    }
+
+    if (typeof obj.history.currentTimeSlots !== 'object' || obj.history.currentTimeSlots === null) {
+        return "Invalid currentTimeSlots object";
+    }
+
+    if (typeof obj.history.semestersAvailable !== 'object' || obj.history.semestersAvailable === null) {
+        return "Invalid semestersAvailable object";
+    }
+
+    const thoughts = obj.thoughts;
+    if (typeof thoughts !== 'object' || thoughts === null) {
+        return "Invalid thoughts object";
+    }
+
+    const requiredThoughtProps = ['score', 'average', 'reviewCount', 'reviews'];
+    for (let prop of requiredThoughtProps) {
+        if (!(prop in thoughts)) {
+            return `Missing ${prop} in thoughts`;
+        }
+    }
+
+    if (typeof thoughts.score !== 'number' ||
+        typeof thoughts.average !== 'number' ||
+        typeof thoughts.reviewCount !== 'number' ||
+        !Array.isArray(thoughts.reviews)) {
+        return "Invalid thoughts properties types";
+    }
+
+    return null;
+}
+
 app.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
     try {
         const { courseCode, fileName } = req.params;
@@ -620,124 +738,66 @@ app.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
     }
 });
 
-// =======================================================
-//  admin page w/ privilaged functionality 
-// =======================================================
+app.delete("/deleteReview", async (req, res) => {
+  try {
+    const { courseID, comment } = req.body;
 
-app.put("/addCourse", async (req, res) => {
-    try {
-        // Check user authentication and admin status
-        const statusData = await usersCollection.findOne({ username: req.user.username });
-        console.log(req.user.username);
-        console.log(statusData);
-        if (!statusData) {
-            return res.status(403).json({
-                status: "fail",
-                message: "Unauthorized: Cannot Identify User"
-            });
-        }
-
-        if (!statusData.status === "admin") {
-            return res.status(403).json({
-                status: "fail",
-                message: "Unauthorized: Admin access required"
-            });
-        }
-
-        const courseData = req.body;
-
-        const validationError = validateCourseObject(courseData);
-        if (validationError) {
-            return res.status(400).json({
-                status: "fail",
-                message: validationError
-            });
-        }
-
-        const existingCourse = await courseCollection.findOne({ CourseID: courseData.CourseID });
-
-        if (existingCourse) {
-            const updateResult = await courseCollection.updateOne(
-                { CourseID: courseData.CourseID },
-                { $set: courseData }
-            );
-
-            return res.status(200).json({
-                status: "success",
-                message: "Course updated successfully",
-                courseId: existingCourse._id,
-                data: courseData
-            });
-        } else {
-            const result = await courseCollection.insertOne(courseData);
-            return res.status(201).json({
-                status: "success",
-                message: "Course added successfully",
-                courseId: result.insertedId,
-                data: courseData
-            });
-        }
-    } catch (error) {
-        console.error("Error in addCourse:", error);
-        return res.status(500).json({
-            status: "error",
-            message: "Internal Server Error"
+    const statusData = await usersCollection.findOne({ username: req.user.username });
+    console.log(req.user.username);
+    console.log(statusData);
+    if (!statusData) {
+        return res.status(403).json({
+            status: "fail",
+            message: "Unauthorized: Cannot Identify User"
         });
     }
-});
-function validateCourseObject(obj) {
-    if (typeof obj !== 'object' || obj === null) {
-        return "Invalid course object";
-    }
 
-    if (typeof obj.CourseID !== 'string' || !/^[A-Z]{2,4}-\d{4}$/.test(obj.CourseID)) {
-        return "Invalid CourseID format. Must be XXXX-XXXX";
+    if (!statusData.status === "admin") {
+        return res.status(403).json({
+            status: "fail",
+            message: "Unauthorized: Admin access required"
+        });
     }
-
-    if (!Array.isArray(obj.documents)) {
-        return "documents must be an array";
+    
+    const matchedCourse = await courseCollection.findOne({ 
+      CourseID: courseID.trim() 
+    });
+    
+    if (!matchedCourse) {
+      return res.status(404).send({
+        message: `Course ${courseID} not found`,
+        providedCourseId: courseID
+      });
     }
-
-    if (typeof obj.history !== 'object' || obj.history === null) {
-        return "Invalid history object";
+    
+    const reviewToDelete = userReviews.find(review => review.course === courseID);
+    
+    if (!reviewToDelete) {
+      return res.status(404).send({ message: 'Review not found for this course' });
     }
-
-    if (typeof obj.history.courseName !== 'string' || obj.history.courseName.trim() === '') {
-        return "Invalid or missing courseName";
+    
+    if (reviewToDelete.comment !== comment) {
+      return res.status(403).send({ message: 'Comment does not match the existing review' });
     }
-    if (!Array.isArray(obj.history.semestersOffered)) {
-        return "semestersOffered must be an array";
-    }
-
-    if (typeof obj.history.currentTimeSlots !== 'object' || obj.history.currentTimeSlots === null) {
-        return "Invalid currentTimeSlots object";
-    }
-
-    if (typeof obj.history.semestersAvailable !== 'object' || obj.history.semestersAvailable === null) {
-        return "Invalid semestersAvailable object";
-    }
-
-    const thoughts = obj.thoughts;
-    if (typeof thoughts !== 'object' || thoughts === null) {
-        return "Invalid thoughts object";
-    }
-
-    const requiredThoughtProps = ['score', 'average', 'reviewCount', 'reviews'];
-    for (let prop of requiredThoughtProps) {
-        if (!(prop in thoughts)) {
-            return `Missing ${prop} in thoughts`;
+    await courseCollection.updateOne(
+      { CourseID: courseID },
+      {
+        $pull: {
+          'thoughts.reviews': comment
         }
-    }
-
-    if (typeof thoughts.score !== 'number' ||
-        typeof thoughts.average !== 'number' ||
-        typeof thoughts.reviewCount !== 'number' ||
-        !Array.isArray(thoughts.reviews)) {
-        return "Invalid thoughts properties types";
-    }
-
-    return null;
-}
+      }
+    );
+    
+    res.status(200).send({
+      message: 'Review deleted successfully',
+      deletedReview: reviewToDelete
+    });
+    
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: 'Internal Server Error' });
+  }
+});
 
 // =======================================================
 //  Rest of framework functionality 

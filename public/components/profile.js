@@ -238,7 +238,27 @@ const UserProfile = () => {
   );
 };
 
+function determineStatus() {
+  return fetch('/status')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.status);
+      if (data.status === 'unknown') {
+        window.location.href = `${window.location.origin}/`;
+      }
+      return;
+    })
+    .catch(error => {
+      console.error('Error checking user status:', error);
+      window.location.href = `${window.location.origin}/`;
+      return;
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+
+  determineStatus();
+
   const contentNode = document.getElementById('content');
   if (contentNode) {
     const root = ReactDOM.createRoot(contentNode);

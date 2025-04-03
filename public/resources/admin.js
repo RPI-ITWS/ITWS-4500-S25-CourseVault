@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Must be a logged in admin to access this page
+    determineStatus();
+
     const navButtons = document.querySelectorAll('.nav-button');
     const forms = document.querySelectorAll('.admin-form');
     const addCourseForm = document.getElementById('addCourseForm');
     const removeFileForm = document.getElementById('removeFileForm');
     const jsonInput = document.getElementById('jsonInput');
+    const removeCommentForm = document.getElementById('removeCommentForm');
 
     jsonInput.placeholder = 
     `Enter Course Json Here...
@@ -119,4 +124,57 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('An error occurred while trying to remove the file');
         }
     });
+
+    removeCommentForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const courseID = document.getElementById('courseCode2').value.trim();
+        const comment = document.getElementById('comment').value.trim();
+        
+        if (!courseID || !comment) {
+            alert('Please fill in all fields');
+            return;
+        }
+        
+        try {
+            const response = await fetch(`${window.location.origin}/deleteReview`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ courseID, comment })
+            });
+            
+            const data = await response.json();
+            
+            if (response.ok) {
+                alert('Comment removed successfully!');
+                removeCommentForm.reset();
+            } else {
+                alert(data.message || 'Error removing comment');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while trying to remove the comment');
+        }
+    });
 });
+
+
+function determineStatus() {
+  return fetch('/status')
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'unknown') {
+        window.location.href = `${window.location.origin}/`;
+      } else if (data.status === 'user') {
+        window.location.href = `${window.location.origin}/user/`;
+      }
+      return;
+    })
+    .catch(error => {
+      console.error('Error checking user status:', error);
+      window.location.href = `${window.location.origin}/`;
+      return;
+    });
+}

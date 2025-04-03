@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    determineStatus();
+
     initializeTable();
     initializeFilters();
 });
@@ -170,3 +173,20 @@ function initializeTable() {
 document.getElementById("addDocumentButton").addEventListener("click", function() {
     window.location.href = "./../UploadWork/index.html";
 });
+
+function determineStatus() {
+    return fetch('/status')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.status);
+        if (data.status === 'unknown') {
+          window.location.href = `${window.location.origin}/`;
+        }
+        return;
+      })
+      .catch(error => {
+        console.error('Error checking user status:', error);
+        window.location.href = `${window.location.origin}/`;
+        return;
+      });
+}
