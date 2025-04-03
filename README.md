@@ -36,3 +36,14 @@
       inappropriate or bad documents from specfifc courses.
 
 The focus of this site is to offer a one stop shop for anything an RPI student may need to succeed in their academic endeavors.
+
+#### Node.js packages used:
+ - ##### Cookie-Parser
+ - ##### Express
+ - ##### Express-FileUpload
+ - ##### FS
+ - ##### JsonWebToken
+ - ##### MongoDB
+ - ##### Path
+ - ##### PDF-Lib
+
