@@ -287,9 +287,8 @@ function determineStatus() {
       });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    determineStatus();
-});
+
+determineStatus();
 
 generateSemesterOptions();
 createScheduleGrid();
