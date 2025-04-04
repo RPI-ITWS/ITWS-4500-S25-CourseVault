@@ -23,82 +23,94 @@ async function fillSchedule(course, courseId, color, foregroundColor, selectedSe
 
     for (let day in times) {
         const timeRange = times[day];
-        const [startTime, endTime] = timeRange.split('-');
+        console.log(timeRange);
 
-        const startHour = timeToRowIndex(startTime) - 7;
-        const endHour = timeToRowIndex(endTime) - 7;
+        let timeRangesArray = [];
 
-        const scheduleGrid = document.getElementById("scheduleTable");
-        const allRows = scheduleGrid.querySelectorAll("tr");
-        const firstRow = allRows[0];
-        const secondRow = allRows[1];
-        const firstTimeColumn = secondRow?.querySelector("td.timeColumn");
-        const headerBlocks = firstRow.querySelectorAll("th");
-        const innerCell = headerBlocks[1];
-
-        const minimumTop = innerCell.getBoundingClientRect().height + 0.6;
-        const minimumLeft = firstTimeColumn.getBoundingClientRect().width;
-        const width = innerCell.getBoundingClientRect().width;
-        const oneUnitHeight = firstTimeColumn.getBoundingClientRect().height;
-
-        const rows = table.rows;
-        const dayIndex = weekdays.indexOf(day);
-
-        const filledSlotDiv = document.createElement('div');
-        filledSlotDiv.className = 'course-block';
-        filledSlotDiv.id = `${course.history.courseName}-${day}-${startHour}-${endHour}`.replace(/[^a-zA-Z0-9]+/g, '');
-        filledSlotDiv.innerHTML = `<span style="font-size: 20px; font-weight: bold;">${course.history.courseName}</span><br>${course.history.semestersAvailable[selectedSemester].professor}<br>${course.history.semestersAvailable[selectedSemester].location}`;
-        filledSlotDiv.style.position = 'absolute';
-        filledSlotDiv.style.top = `${minimumTop + (oneUnitHeight * startHour)}px`;
-        filledSlotDiv.style.left = `${minimumLeft + (width * dayIndex)}px`;
-        filledSlotDiv.style.width = `${width}px`;
-        filledSlotDiv.style.height = `${oneUnitHeight * (endHour - startHour)}px`;
-        filledSlotDiv.style.backgroundColor = `${color}`;
-        filledSlotDiv.style.color = 'black';
-        filledSlotDiv.style.textAlign = 'center';
-        filledSlotDiv.style.borderRadius = '5px';
-        filledSlotDiv.style.borderLeft = `15px solid ${foregroundColor}`;
-        filledSlotDiv.style.fontWeight = 'bold';
-        filledSlotDiv.style.overflow = 'auto';
-        filledSlotDiv.style.wordWrap = 'break-word';
-
-        const styleElement = document.createElement('style');
-        styleElement.innerHTML = `
-        #${filledSlotDiv.id}::-webkit-scrollbar {
-            width: 12px;
-            height: 12px;
-            border-radius: 10px;
+        if (timeRange.includes(" | ")) {
+            timeRangesArray = timeRange.split(" | ");
+        } else {
+            timeRangesArray = [timeRange];
         }
 
-        #${filledSlotDiv.id}::-webkit-scrollbar-track {
-            background-color: ${color};
-            border-radius: 10px;
+        for (let i = 0; i < timeRangesArray.length; i++) {
+            const [startTime, endTime] = timeRangesArray[i].split('-');
+
+            const startHour = timeToRowIndex(startTime) - 7;
+            const endHour = timeToRowIndex(endTime) - 7;
+
+            const scheduleGrid = document.getElementById("scheduleTable");
+            const allRows = scheduleGrid.querySelectorAll("tr");
+            const firstRow = allRows[0];
+            const secondRow = allRows[1];
+            const firstTimeColumn = secondRow?.querySelector("td.timeColumn");
+            const headerBlocks = firstRow.querySelectorAll("th");
+            const innerCell = headerBlocks[1];
+
+            const minimumTop = innerCell.getBoundingClientRect().height + 0.6;
+            const minimumLeft = firstTimeColumn.getBoundingClientRect().width;
+            const width = innerCell.getBoundingClientRect().width;
+            const oneUnitHeight = firstTimeColumn.getBoundingClientRect().height;
+
+            const rows = table.rows;
+            const dayIndex = weekdays.indexOf(day);
+
+            const filledSlotDiv = document.createElement('div');
+            filledSlotDiv.className = 'course-block';
+            filledSlotDiv.id = `${course.history.courseName}-${day}-${startHour}-${endHour}`.replace(/[^a-zA-Z0-9]+/g, '');
+            filledSlotDiv.innerHTML = `<span style="font-size: 20px; font-weight: bold;">${course.history.courseName}</span><br>${course.history.semestersAvailable[selectedSemester].professor}<br>${course.history.semestersAvailable[selectedSemester].location}`;
+            filledSlotDiv.style.position = 'absolute';
+            filledSlotDiv.style.top = `${minimumTop + (oneUnitHeight * startHour)}px`;
+            filledSlotDiv.style.left = `${minimumLeft + (width * dayIndex)}px`;
+            filledSlotDiv.style.width = `${width}px`;
+            filledSlotDiv.style.height = `${oneUnitHeight * (endHour - startHour)}px`;
+            filledSlotDiv.style.backgroundColor = `${color}`;
+            filledSlotDiv.style.color = 'black';
+            filledSlotDiv.style.textAlign = 'center';
+            filledSlotDiv.style.borderRadius = '5px';
+            filledSlotDiv.style.borderLeft = `15px solid ${foregroundColor}`;
+            filledSlotDiv.style.fontWeight = 'bold';
+            filledSlotDiv.style.overflow = 'auto';
+            filledSlotDiv.style.wordWrap = 'break-word';
+
+            const styleElement = document.createElement('style');
+            styleElement.innerHTML = `
+            #${filledSlotDiv.id}::-webkit-scrollbar {
+                width: 12px;
+                height: 12px;
+                border-radius: 10px;
+            }
+
+            #${filledSlotDiv.id}::-webkit-scrollbar-track {
+                background-color: ${color};
+                border-radius: 10px;
+            }
+
+            #${filledSlotDiv.id}::-webkit-scrollbar-thumb {
+                background-color: ${foregroundColor};
+                border-radius: 10px;
+            }
+            `;
+
+            document.head.appendChild(styleElement);
+
+            const removeCourse = document.createElement('input');
+            removeCourse.className = 'removeButton';
+            removeCourse.id = filledSlotDiv.id + 'remove';
+            removeCourse.type = 'button';
+            removeCourse.value = 'Drop Course';
+            removeCourse.style.backgroundColor = `${foregroundColor}`;
+
+            removeCourse.onclick = async function () {
+                await dropCourse(courseId);
+                cleanUp();
+                fetchSchedule();
+            }
+
+            filledSlotDiv.appendChild(removeCourse);
+
+            table.appendChild(filledSlotDiv);
         }
-
-        #${filledSlotDiv.id}::-webkit-scrollbar-thumb {
-            background-color: ${foregroundColor};
-            border-radius: 10px;
-        }
-        `;
-
-        document.head.appendChild(styleElement);
-
-        const removeCourse = document.createElement('input');
-        removeCourse.className = 'removeButton';
-        removeCourse.id = filledSlotDiv.id + 'remove';
-        removeCourse.type = 'button';
-        removeCourse.value = 'Drop Course';
-        removeCourse.style.backgroundColor = `${foregroundColor}`;
-
-        removeCourse.onclick = async function () {
-            await dropCourse(courseId);
-            cleanUp();
-            fetchSchedule();
-        }
-
-        filledSlotDiv.appendChild(removeCourse);
-
-        table.appendChild(filledSlotDiv);
     }
 }
 
