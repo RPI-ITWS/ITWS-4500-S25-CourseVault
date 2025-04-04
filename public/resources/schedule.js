@@ -5,7 +5,7 @@ const colors = ['#ff6666','#66b3ff','#66ff66','#ffff66','#ffcc66','#cc66ff','#ff
 
 const foregroundColors = ['red','blue','green','yellow','orange','purple','pink','brown','gray']
 
-async function fillSchedule(course, color, foregroundColor, selectedSemester) {
+async function fillSchedule(course, courseId, color, foregroundColor, selectedSemester) {
     const times = course.history.semestersAvailable[selectedSemester].time;
 
     const table = document.getElementById('scheduleTable');
@@ -90,6 +90,12 @@ async function fillSchedule(course, color, foregroundColor, selectedSemester) {
         removeCourse.value = 'Drop Course';
         removeCourse.style.backgroundColor = `${foregroundColor}`;
 
+        removeCourse.onclick = async function () {
+            await dropCourse(courseId);
+            cleanUp();
+            fetchSchedule();
+        }
+
         filledSlotDiv.appendChild(removeCourse);
 
         table.appendChild(filledSlotDiv);
@@ -119,10 +125,12 @@ async function fetchSchedule() {
         courses = courseData.courses;
 
         let foundCourse;
+        let courseId;
 
         for (const [courseCode, cData] of Object.entries(courseData.courses)) {
             if (courseCode === course) {
                 foundCourse = cData;
+                courseId = courseCode;
             }
         }
 
@@ -130,7 +138,7 @@ async function fetchSchedule() {
         const selectedSemester = dropdown.value;
 
         if (selectedSemester in foundCourse.history.semestersAvailable) {
-            fillSchedule(foundCourse, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
+            fillSchedule(foundCourse, courseId, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
         }
     }
 }
@@ -140,10 +148,12 @@ async function refetchSchedule() {
         const course = userCourses[i];
 
         let foundCourse;
+        let courseId;
 
         for (const [courseCode, cData] of Object.entries(courses)) {
             if (courseCode === course) {
                 foundCourse = cData;
+                courseId = courseCode;
             }
         }
 
@@ -151,8 +161,25 @@ async function refetchSchedule() {
         const selectedSemester = dropdown.value;
 
         if (selectedSemester in foundCourse.history.semestersAvailable) {
-            fillSchedule(foundCourse, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
+            fillSchedule(foundCourse, courseId, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
         }
+    }
+}
+
+async function dropCourse(course_id) {
+    const response = await fetch(`${window.origin}/dropcourse`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ course_id: course_id }),
+        credentials: 'same-origin'
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+        console.error("Error dropping course:", error);
     }
 }
 
