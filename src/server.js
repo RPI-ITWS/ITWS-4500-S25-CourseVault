@@ -285,7 +285,7 @@ app.delete("/dropcourse", async (req, res) => {
 //  Course Pages Backend Functionality for API requests
 // =======================================================
 
-app.get('/courses', async (req, res) => {
+app.get('/allcourses', async (req, res) => {
     try {
         const courses = await courseCollection.find().toArray();
 
