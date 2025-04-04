@@ -83,6 +83,15 @@ async function fillSchedule(course, color, foregroundColor, selectedSemester) {
 
         document.head.appendChild(styleElement);
 
+        const removeCourse = document.createElement('input');
+        removeCourse.className = 'removeButton';
+        removeCourse.id = filledSlotDiv.id + 'remove';
+        removeCourse.type = 'button';
+        removeCourse.value = 'Drop Course';
+        removeCourse.style.backgroundColor = `${foregroundColor}`;
+
+        filledSlotDiv.appendChild(removeCourse);
+
         table.appendChild(filledSlotDiv);
     }
 }
@@ -197,7 +206,7 @@ function createScheduleGrid() {
             const cell = document.createElement('td');
             cell.textContent = '';
             cell.style.border = '1px solid #ccc';
-            cell.style.height = '40px';
+            cell.style.height = '60px';
             row.appendChild(cell);
         });
 

@@ -63,3 +63,23 @@ h1 {
     min-width: 610px;
     position: relative;
 }
+
+.removeButton {
+    width: 80%;
+    border: none;
+    padding: 5px;
+    left: -12px;
+    top: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
