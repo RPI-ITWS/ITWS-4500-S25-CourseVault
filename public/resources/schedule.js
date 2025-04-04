@@ -1,3 +1,10 @@
+let userCourses = null;
+let courses = null;
+
+const colors = ['#ff6666','#66b3ff','#66ff66','#ffff66','#ffcc66','#cc66ff','#ffb3ff','#cc9966','#b3b3b3'];
+
+const foregroundColors = ['red','blue','green','yellow','orange','purple','pink','brown','gray']
+
 async function fillSchedule(course, color, foregroundColor, selectedSemester) {
     const times = course.history.semestersAvailable[selectedSemester].time;
 
@@ -88,47 +95,44 @@ async function fetchSchedule() {
     }
     
     const data = await response.json();
-
-    const colors = [
-        '#ff6666',
-        '#66b3ff',
-        '#66ff66',
-        '#ffff66',
-        '#ffcc66',
-        '#cc66ff',
-        '#ffb3ff',
-        '#cc9966',
-        '#b3b3b3'
-    ];
-
-    const foregroundColors = [
-        'red',
-        'blue',
-        'green',
-        'yellow',
-        'orange',
-        'purple',
-        'pink',
-        'brown',
-        'gray'
-    ]
+    userCourses = data.courses;
 
     for (let i = 0; i < data.courses.length; i++) {
         const course = data.courses[i];
 
-        const response = await fetch(`${window.location.origin}/allcourses`)
-
-        console.log(response);
+        const response = await fetch(`${window.location.origin}/allcourses`);
 
         if (!response.ok) {
             throw new Error(`Error Status: ${response.status}`);
         }
 
         const courseData = await response.json();
+        courses = courseData.courses;
 
         let foundCourse;
 
         for (const [courseCode, cData] of Object.entries(courseData.courses)) {
+            if (courseCode === course) {
+                foundCourse = cData;
+            }
+        }
+
+        const dropdown = document.getElementById("semesterDropdown");
+        const selectedSemester = dropdown.value;
+
+        if (selectedSemester in foundCourse.history.semestersAvailable) {
+            fillSchedule(foundCourse, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
+        }
+    }
+}
+
+async function refetchSchedule() {
+    for (let i = 0; i < userCourses.length; i++) {
+        const course = userCourses[i];
+
+        let foundCourse;
+
+        for (const [courseCode, cData] of Object.entries(courses)) {
             if (courseCode === course) {
                 foundCourse = cData;
             }
@@ -245,7 +249,7 @@ function cleanUp() {
 
 function handleResize() {
     cleanUp();
-    fetchSchedule();
+    refetchSchedule();
 }
 
 window.addEventListener("resize", handleResize);
