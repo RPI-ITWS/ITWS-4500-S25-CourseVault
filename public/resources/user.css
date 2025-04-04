@@ -4,13 +4,21 @@
     background-color: #f2e6d5;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100vh;
     margin-left: 200px;
 }
 
 #headerDiv {
-    margin: auto;
+    text-align: center;
+    background-color: #d6c2a8;
+    padding: 20px;
+    border-bottom: 2px solid #b5a38a;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-bottom: 5%;
+    font-size: .9em;
+    min-width: 250px;
 }
 
 h1 {
