@@ -83,17 +83,11 @@ body, html {
     text-align: center;
     height: 100%;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    border-left: 6px solid #d6c2a8;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    background-color: #f2e6d5;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     cursor: pointer;
-}
-
-.class-box:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-    transform: scale(1.025); 
 }
 
 
@@ -114,6 +108,10 @@ body, html {
     font-size: 0.9em;
 }
 
+.class-box:hover {
+    transform: scale(1.1);  
+}
+
 #headerDiv {
     text-align: center;
     background-color: #d6c2a8;
@@ -121,9 +119,7 @@ body, html {
     border-bottom: 2px solid #b5a38a;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     width: 40%;
-    margin-bottom: 5%;
-    font-size: 1em;
-    min-width: 250px;
+    font-size: 2vh;
 }
 
 #filter-container {
@@ -164,4 +160,229 @@ body, html {
     outline: none;
     border-color: #666;
     background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    #navbar {
+        width: 60px;
+        min-width: 60px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-right: 2px solid #5a4a3f;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0;
+        z-index: 3000;
+        background-color: #d6c2a8;
+        display: flex;
+    }
+
+    .nav-tab {
+        padding: 10px 5px;
+        border-radius: 0;
+        border-right: none;
+        min-width: 60px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        margin: 0;
+        flex: 1;
+    }
+
+    .nav-tab h3 {
+        display: block;
+        font-size: 12px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    #moreButton {
+        margin-top: auto;
+        padding: 10px 5px;
+        flex: 0 0 auto;
+    }
+
+    #moreButton img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #dropdownMenu {
+        left: 60px;
+        top: 0;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        flex-direction: column;
+        background-color: #f2e6d5;
+        border: 1px solid #d4c3ae;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        max-height: none;
+        overflow-y: auto;
+    }
+
+    .dropdown-item {
+        padding: 15px 20px;
+        border-top: 1px solid #d4c3ae;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+
+    #content {
+        margin-left: 60px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        overflow-x: auto;
+        position: left;
+        z-index: 1;
+        width: 1000px;
+        
+    }
+
+    /* Scale down all content elements */
+    table, img, input, select, textarea, button, 
+    .container, .section, .card, .box, ul, ol {
+        transform: scale(0.85);
+        transform-origin: top left;
+    }
+
+    /* Adjust font sizes proportionally */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: clamp(0.75rem, 2vw, 0.9rem);
+        line-height: 1.3;
+    }
+
+    /* Make buttons more compact */
+    button {
+        padding: 6px 12px;
+        min-height: 32px;
+        font-size: 14px;
+    }
+
+    /* Adjust spacing */
+    .section {
+        margin-bottom: 8px;
+    }
+
+    /* Ensure containers don't overflow */
+    .container {
+        padding: 0 6px;
+    }
+
+    /* Make lists more compact */
+    ul, ol {
+        padding-left: 12px;
+    }
+
+    /* Adjust card spacing */
+    .card, .box {
+        margin: 6px 0;
+        padding: 6px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    #navbar {
+        width: 50px;
+        min-width: 50px;
+    }
+
+    .nav-tab {
+        padding: 8px 4px;
+        min-width: 50px;
+    }
+
+    .nav-tab h3 {
+        font-size: 11px;
+    }
+
+    #moreButton {
+        padding: 8px 4px;
+    }
+
+    #moreButton img {
+        width: 16px;
+        height: 16px;
+    }
+
+    #dropdownMenu {
+        left: 50px;
+        width: 180px;
+        height: 100vh;
+    }
+
+    .dropdown-item {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    #content {
+        margin-left: 50px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        overflow-x: auto;
+        position: left;
+        z-index: 1;
+        width: 1000px;
+        
+    }
+
+    /* Further scale down all content elements */
+    table, img, input, select, textarea, button, 
+    .container, .section, .card, .box, ul, ol {
+        transform: scale(0.75);
+        transform-origin: top left;
+    }
+
+    /* Further reduce font sizes */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
+    }
+
+    p {
+        font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+    }
+
+    /* Make buttons even more compact */
+    button {
+        padding: 4px 8px;
+        min-height: 28px;
+        font-size: 12px;
+    }
+
+    /* Further reduce spacing */
+    .section {
+        margin-bottom: 4px;
+    }
+
+    /* Reduce container padding */
+    .container {
+        padding: 0 3px;
+    }
+
+    /* Make lists even more compact */
+    ul, ol {
+        padding-left: 8px;
+    }
+
+    /* Further reduce card spacing */
+    .card, .box {
+        margin: 3px 0;
+        padding: 4px;
+    }
 }

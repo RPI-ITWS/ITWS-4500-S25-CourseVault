@@ -1,167 +1,366 @@
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    height: 100vh;
-    overflow-x: hidden
+    min-height: 100vh;
+    background-color: #f5f5f5;
 }
 
 #page {
     display: flex;
-    flex-wrap: nowrap;
-    background-color: #f5f5f5;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
-#navbar {
-    width: 200px;
-    min-width: 200px;
-    height: 100vh;
-    background-color: #d6c2a8;
+#content {
+    flex: 1;
+    background-color: #e3d4c0;
+    padding: 5%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    position: relative;
+    z-index: -1;
+}
+
+#pageTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 20px 15px;
+    background: white;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.upload-form {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    border-right: 2px solid #5a4a3f;
-    padding: 0;
-    position: fixed;
-    z-index: 3000;
-}
-
-#homeButton {
-    position: relative;
-}
-
-#backworkButton {
-    position: relative;
-}
-
-#profButton {
-    position: relative;
-}
-
-#classesButton {
-    position: relative;
-}
-
-#moreButton {
-    margin-top: auto;
-    border-top: none;
-    text-align: center;
-    padding: 10% 0;
-    background-color: #e6d5c0;
-    position: relative;
-}
-
-#homeButton::after, #backworkButton::after,
-#profButton::after, #classesButton::after,
-#moreButton:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    gap: 20px;
     width: 100%;
-    height: 5px;
-    border-bottom-left-radius: 10px;
-}
-
-#homeButton::after {
-    background-color: rgba(225, 0, 0, 0.5);
-}
-
-#backworkButton::after {
-    background-color: rgb(0, 0, 225, 0.5);
-}
-
-#profButton::after {
-    background-color: rgb(225, 225, 0, 0.5);
-}
-
-#classesButton::after {
-    background-color: rgb(0, 225, 0, 0.5);
-}
-
-#moreButton:after{
-    background-color: rgba(225, 0, 225, 0.5);
-}
-
-.nav-tab {
-    padding: 10% 5%;
-    cursor: pointer;
-    transition: all 0.3s;
     position: relative;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    background-color: #e6d5c0;
-    border-right: 1px solid #d4c3ae;
-    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    z-index: 1;
 }
 
-.nav-tab:not(:last-child) {
-    margin: 0;
+.upload-form label {
+    font-weight: bold;
 }
 
-.nav-tab:hover {
-    background-color: #f2e6d5;
+.upload-form input, .upload-form select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.nav-tab.active {
-    background-color: #ac9f90;
-    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
-}
-
-
-.nav-tab::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 4px;
-    height: 100%;
-    background-color: transparent;
-    transition: background-color 0.3s;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.nav-tab:hover::before {
-    background-color: #8b7355;
-}
-
-#dropdownMenu {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: #f2e6d5;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-    border: 1px solid #d4c3ae;
-    overflow: hidden;
-    z-index: 4000;
-    width: auto;
-    align-items: stretch; 
-    height: 100%; 
-}
-
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    padding: 10px 20px;
+.upload-form button {
+    padding: 12px 20px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.5s;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    width: auto;
+    align-self: flex-start;
+}
+
+.upload-form button:hover {
+    background-color: #357ABD;
+}
+
+.upload-form input[type="file"] {
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+#assignmentsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    position: relative;
+    table-layout: fixed;
+    z-index: 1;
+}
+
+#assignmentsTable th, #assignmentsTable td {
+    padding: 10px 12px;
+    text-align: left;
+    border: none;
+    line-height: 18px;
+    background: transparent;
+}
+
+#assignmentsTable th {
+    background: transparent;
+    font-weight: bold;
+    border-bottom: 2px solid #0000ff40;
+    position: sticky;
+    top: 0;
+}
+
+#assignmentsTable tbody tr:hover {
+    background-color: rgba(160, 148, 134, 0.2);
+}
+
+#assignmentsTable button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
     font-size: 0.9em;
-    color: #5a4a3f;
-    border-top: 1px solid #d4c3ae; 
-    background-color: #f2e6d5;
 }
 
-.dropdown-item:first-child {
-    border-left: none;
+#assignmentsTable button:hover {
+    background-color: #357ABD;
 }
 
-.dropdown-item:hover {
-    background-color: #e6d5c0;
+.search-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    z-index: -1;
+}
+@media screen and (max-width: 768px) {
+    #navbar {
+        width: 60px;
+        min-width: 60px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-right: 2px solid #5a4a3f;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0;
+        z-index: 3000;
+        background-color: #d6c2a8;
+        display: flex;
+    }
+
+    .nav-tab {
+        padding: 10px 5px;
+        border-radius: 0;
+        border-right: none;
+        min-width: 60px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        margin: 0;
+        flex: 1;
+    }
+
+    .nav-tab h3 {
+        display: block;
+        font-size: 12px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    #moreButton {
+        margin-top: auto;
+        padding: 10px 5px;
+        flex: 0 0 auto;
+    }
+
+    #moreButton img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #dropdownMenu {
+        left: 60px;
+        top: 0;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        flex-direction: column;
+        background-color: #f2e6d5;
+        border: 1px solid #d4c3ae;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        max-height: none;
+        overflow-y: auto;
+    }
+
+    .dropdown-item {
+        padding: 15px 20px;
+        border-top: 1px solid #d4c3ae;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+
+    #content {
+        margin-left: 60px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        overflow-x: auto;
+        position: left;
+        z-index: 1;
+        width: 1000px;
+        
+    }
+
+    /* Scale down all content elements */
+    table, img, input, select, textarea, button, 
+    .container, .section, .card, .box, ul, ol {
+        transform: scale(0.85);
+        transform-origin: top left;
+    }
+
+    /* Adjust font sizes proportionally */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: clamp(0.75rem, 2vw, 0.9rem);
+        line-height: 1.3;
+    }
+
+    /* Make buttons more compact */
+    button {
+        padding: 6px 12px;
+        min-height: 32px;
+        font-size: 14px;
+    }
+
+    /* Adjust spacing */
+    .section {
+        margin-bottom: 8px;
+    }
+
+    /* Ensure containers don't overflow */
+    .container {
+        padding: 0 6px;
+    }
+
+    /* Make lists more compact */
+    ul, ol {
+        padding-left: 12px;
+    }
+
+    /* Adjust card spacing */
+    .card, .box {
+        margin: 6px 0;
+        padding: 6px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    #navbar {
+        width: 50px;
+        min-width: 50px;
+    }
+
+    .nav-tab {
+        padding: 8px 4px;
+        min-width: 50px;
+    }
+
+    .nav-tab h3 {
+        font-size: 11px;
+    }
+
+    #moreButton {
+        padding: 8px 4px;
+    }
+
+    #moreButton img {
+        width: 16px;
+        height: 16px;
+    }
+
+    #dropdownMenu {
+        left: 50px;
+        width: 180px;
+        height: 100vh;
+    }
+
+    .dropdown-item {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    #content {
+        margin-left: 50px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        overflow-x: auto;
+        position: left;
+        z-index: 1;
+        width: 1000px;
+        
+    }
+
+    /* Further scale down all content elements */
+    table, img, input, select, textarea, button, 
+    .container, .section, .card, .box, ul, ol {
+        transform: scale(0.75);
+        transform-origin: top left;
+    }
+
+    /* Further reduce font sizes */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
+    }
+
+    p {
+        font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+    }
+
+    /* Make buttons even more compact */
+    button {
+        padding: 4px 8px;
+        min-height: 28px;
+        font-size: 12px;
+    }
+
+    /* Further reduce spacing */
+    .section {
+        margin-bottom: 4px;
+    }
+
+    /* Reduce container padding */
+    .container {
+        padding: 0 3px;
+    }
+
+    /* Make lists even more compact */
+    ul, ol {
+        padding-left: 8px;
+    }
+
+    /* Further reduce card spacing */
+    .card, .box {
+        margin: 3px 0;
+        padding: 4px;
+    }
 }
