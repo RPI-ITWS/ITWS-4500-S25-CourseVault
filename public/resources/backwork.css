@@ -80,13 +80,13 @@
 #assignmentsTable th:nth-child(1),
 #assignmentsTable td:nth-child(1) { width: 20%; }
 #assignmentsTable th:nth-child(2),
-#assignmentsTable td:nth-child(2) { width: 15%; }
+#assignmentsTable td:nth-child(2) { width: 20%; }
 #assignmentsTable th:nth-child(3),
 #assignmentsTable td:nth-child(3) { width: 20%; }
 #assignmentsTable th:nth-child(4),
-#assignmentsTable td:nth-child(4) { width: 15%; }
+#assignmentsTable td:nth-child(4) { width: 12.5%; }
 #assignmentsTable th:nth-child(5),
-#assignmentsTable td:nth-child(5) { width: 15%; }
+#assignmentsTable td:nth-child(5) { width: 12.5%; }
 #assignmentsTable th:nth-child(6),
 #assignmentsTable td:nth-child(6) { width: 15%; }
 
@@ -237,4 +237,124 @@
   margin-bottom: 5%;
   font-size: .9em;
   min-width: 250px;
+}
+
+/* Mobile fixes for content area */
+@media screen and (max-width: 768px) {
+  #content {
+      margin-left: 60px;
+      width: calc(100% - 60px); /* Replace fixed 1000px width */
+      min-height: 100vh;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+      position: relative; /* Change from 'left' */
+      z-index: 1;
+  }
+
+  #assignmentsTable td {
+    padding: 8px 4px;
+    font-size: 0.75rem;
+}
+
+#assignmentsTable th {
+  font-size: 0.5rem;
+}
+  
+  /* Remove transform scaling which causes layout issues */
+  table, img, input, select, textarea, button, 
+  .container, .section, .card, .box, ul, ol {
+      transform: none;
+      max-width: 100%;
+  }
+  
+  /* Adjust table container for mobile */
+  .table-container {
+      padding: 15px;
+      width: 95%;
+  }
+  
+  /* Adjust search controls for mobile */
+  .search-controls {
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .search-container, 
+  .type-filter-container {
+      width: 100%;
+  }
+
+  #assignmentsTable th:nth-child(1),
+  #assignmentsTable td:nth-child(1) { width: 20%; }
+  #assignmentsTable th:nth-child(2),
+  #assignmentsTable td:nth-child(2) { width: 20%; }
+  #assignmentsTable th:nth-child(3),
+  #assignmentsTable td:nth-child(3) { width: 0%; }
+  #assignmentsTable th:nth-child(4),
+  #assignmentsTable td:nth-child(4) { width: 20%; }
+  #assignmentsTable th:nth-child(5),
+  #assignmentsTable td:nth-child(5) { width: 20%; }
+  #assignmentsTable th:nth-child(6),
+  #assignmentsTable td:nth-child(6) { width: 20%; }
+
+}
+
+@media screen and (max-width: 480px) {
+  #content {
+      margin-left: 50px;
+      width: calc(100% - 50px); 
+      padding-right: 3%;
+      padding-left: 3%;
+  }
+  
+  #assignmentsTable th{
+      padding: 10px 4px;
+      font-size: 0.5rem;
+      width: 100%;
+  }
+
+  #assignmentsTable td {
+      padding: 8px 4px;
+      font-size: 0.6rem;
+  }
+
+  tr{
+    width: fit-content;
+  }
+
+  #assignmentsTable{
+    width: fit-content;
+  }
+  
+  #headerDiv {
+      width: 85%;
+      padding: 15px 10px;
+  }
+
+  #addDocumentButton {
+    padding: 10px 12px;
+    min-height: 5vh; 
+}
+  
+  #assignmentsTable button {
+      min-height: 2vh; 
+  }
+  
+  #assignmentsTable tbody {
+      max-height: 300px;
+  }
+
+#assignmentsTable th:nth-child(1),
+#assignmentsTable td:nth-child(1) { width: 20%; }
+#assignmentsTable th:nth-child(2),
+#assignmentsTable td:nth-child(2) { width: 20%; }
+#assignmentsTable th:nth-child(3),
+#assignmentsTable td:nth-child(3) { width: 0%; }
+#assignmentsTable th:nth-child(4),
+#assignmentsTable td:nth-child(4) { width: 20%; }
+#assignmentsTable th:nth-child(5),
+#assignmentsTable td:nth-child(5) { width: 20%; }
+#assignmentsTable th:nth-child(6),
+#assignmentsTable td:nth-child(6) { width: 20%; }
 }

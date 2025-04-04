@@ -126,10 +126,7 @@ function Navbar() {
             },
             React.createElement('img', {
                 src: '/resources/photos/menu.png',
-                alt: 'More',
-                style: {
-                    width: '12%'
-                }
+                alt: 'More'
             }),
             React.createElement('div',
                 {
