@@ -181,7 +181,7 @@ async function refetchSchedule() {
         const selectedSemester = dropdown.value;
 
         if (selectedSemester in foundCourse.history.semestersAvailable) {
-            fillSchedule(foundCourse, courseId, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
+            fillSchedule(foundCourse, courseId, transparentColors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
         }
     }
 }
