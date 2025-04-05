@@ -3,6 +3,14 @@ let courses = null;
 
 const colors = ['#ff6666','#66b3ff','#66ff66','#ffff66','#ffcc66','#cc66ff','#ffb3ff','#cc9966','#b3b3b3'];
 
+const transparentColors = colors.map(hex => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    const alpha = 0.5;
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+});
+
 const foregroundColors = ['red','blue','green','yellow','orange','purple','pink','brown','gray']
 
 async function fillSchedule(course, courseId, color, foregroundColor, selectedSemester) {
@@ -150,7 +158,7 @@ async function fetchSchedule() {
         const selectedSemester = dropdown.value;
 
         if (selectedSemester in foundCourse.history.semestersAvailable) {
-            fillSchedule(foundCourse, courseId, colors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
+            fillSchedule(foundCourse, courseId, transparentColors[i % colors.length], foregroundColors[i % foregroundColors.length], selectedSemester);
         }
     }
 }
