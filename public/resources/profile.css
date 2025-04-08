@@ -10,7 +10,7 @@ body {
 
 #content {
     margin-left: 200px;
-    width: 100%;
+    width: calc(100% - 200px);
     background-color: #e3d4c0;
     display: flex;
     align-items: center;
@@ -19,6 +19,7 @@ body {
     min-height: 100vh;
     justify-content: flex-start;
     z-index: 1;
+    transition: all 0.3s ease;
 }
 
 .profile-name {
@@ -30,6 +31,8 @@ body {
     transition: box-shadow 0.3s;
     margin-bottom: 20px;
     text-align: center;
+    width: 100%;
+    max-width: 800px;
 }
 
 .table-container {
@@ -40,6 +43,8 @@ body {
     border-left: 6px solid #d6c2a8;
     transition: box-shadow 0.3s;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .profile-info-table {
@@ -51,6 +56,7 @@ body {
     border-left: 6px solid #d6c2a8;
     transition: box-shadow 0.3s;
     margin-bottom: 20px;
+    max-width: 800px;
 }
 
 .profile-info-table td {
@@ -194,4 +200,93 @@ body {
 
 .buttons:hover {
     background-color: #8b7355;
+}
+
+@media screen and (max-width: 768px) {
+    #content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        padding: 4%;
+    }
+    
+    .profile-name,
+    .table-container,
+    .profile-info-table {
+        padding: 20px;
+        width: 90%;
+    }
+    
+    .profile-info-table td {
+        padding: 4px 8px;
+    }
+    
+    #enrolledClassesTable th,
+    #enrolledClassesTable td,
+    #assignmentsTable th,
+    #assignmentsTable td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    
+    #enrolledClassesTable button {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+    
+    .buttons {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #content {
+        margin-left: 50px;
+        width: calc(100% - 50px);
+        padding: 3%;
+    }
+    
+    .profile-name,
+    .table-container,
+    .profile-info-table {
+        padding: 15px;
+        width: 95%;
+    }
+    
+    .profile-info-table tr td:first-child {
+        padding-right: 8px;
+    }
+    
+    .profile-info-table td {
+        padding: 3px 6px;
+        font-size: 0.85em;
+    }
+    
+    #enrolledClassesTable th,
+    #enrolledClassesTable td,
+    #assignmentsTable th,
+    #assignmentsTable td {
+        padding: 8px 5px;
+        font-size: 0.8em;
+    }
+    
+    #enrolledClassesTable th,
+    #assignmentsTable th {
+        font-size: 0.75em;
+    }
+    
+    #enrolledClassesTable button {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+    
+    .comment-cell {
+        padding: 8px;
+    }
+    
+    .buttons {
+        padding: 6px 10px;
+        font-size: 0.8em;
+        margin-right: 6px;
+    }
 }

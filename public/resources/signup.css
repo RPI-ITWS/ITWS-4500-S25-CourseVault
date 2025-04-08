@@ -7,6 +7,7 @@
     justify-content: center;
     padding: 5%;
     min-height: 100vh;
+    transition: all 0.3s ease;
 }
 
 #signUpTitle{
@@ -81,4 +82,70 @@ button {
 
 button:hover {
     background-color: #333333;
+}
+
+@media screen and (max-width: 768px) {
+    #content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        padding: 4%;
+    }
+    
+    #signUpTitle {
+        font-size: 1.5em;
+    }
+    
+    #signup-container {
+        width: clamp(260px, 80%, 350px);
+        padding: 30px;
+    }
+    
+    label {
+        font-size: 0.95em;
+    }
+    
+    input[type="text"], input[type="password"], input[type="email"] {
+        font-size: 0.95em;
+    }
+    
+    button {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #content {
+        margin-left: 50px;
+        width: calc(100% - 50px);
+        padding: 3%;
+    }
+    
+    #signUpTitle {
+        font-size: 1.3em;
+    }
+    
+    #signup-container {
+        width: clamp(240px, 90%, 320px);
+        padding: 25px;
+        aspect-ratio: auto;
+        height: auto;
+        min-height: 420px;
+    }
+    
+    label {
+        font-size: 0.9em;
+        margin-bottom: 6px;
+    }
+    
+    input[type="text"], input[type="password"], input[type="email"] {
+        padding: 8px 0;
+        font-size: 0.9em;
+    }
+    
+    button {
+        padding: 8px;
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
 }
