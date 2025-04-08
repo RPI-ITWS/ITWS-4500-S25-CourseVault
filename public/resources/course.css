@@ -19,6 +19,7 @@ body {
     background-color: #f2e6d5;
 }
 
+
 .container {
     display: grid;
     grid-template-columns: 1fr;

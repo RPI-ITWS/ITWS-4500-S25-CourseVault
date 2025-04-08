@@ -4,30 +4,6 @@ h1 {
     margin: auto;
 }
 
-#content {
-    flex-grow: 1;
-    flex-direction: column;
-    background-color: #f2e6d5;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin-left: 200px;
-}
-
-#content-block {
-    margin: auto;
-    flex-grow: 1;
-    flex-direction: column;
-    background-color: #f2e6d5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5%;
-    min-width: 400px;
-    width: 100%;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -53,26 +29,43 @@ body, html {
     height: 100vh;
     background-color: #d6c2a8;
     border-right: 1px solid #b5a38a;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
 }
 
 #content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     overflow-y: auto;
+    padding: 20px;
     padding-bottom: 120px;
+    background-color: #f2e6d5;
+}
+
+#content-block {
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 #class-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    padding: 20px;
-    height: 100%;
+    gap: 15px;
+    width: 100%;
 }
 
 .class-box {
@@ -81,7 +74,6 @@ body, html {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    height: 100%;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 16px;
@@ -89,13 +81,13 @@ body, html {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
+    height: 100%;
 }
 
 .class-box:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-    transform: scale(1.025); 
+    transform: scale(1.025);
 }
-
 
 .class-box h1 {
     font-size: 1.25em;
@@ -120,10 +112,10 @@ body, html {
     padding: 20px;
     border-bottom: 2px solid #b5a38a;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 40%;
-    margin-bottom: 5%;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
     font-size: 1em;
-    min-width: 250px;
 }
 
 #filter-container {
@@ -132,7 +124,7 @@ body, html {
     justify-content: center;
     align-items: center;
     padding: 15px 0;
-    z-index: 999; 
+    z-index: 99;
 }
 
 #filter-container label {
@@ -140,20 +132,18 @@ body, html {
     font-weight: bold;
     color: #5a4a3f;
     margin-right: 10px;
-    
 }
 
 #departmentFilter {
     padding: 8px 12px;
     font-size: 1rem;
     border: 1px solid #b5a38a;
-    border-radius: 0; 
+    border-radius: 0;
     background-color: #f9f9f9;
     color: #5a4a3f;
     transition: all 0.2s ease;
     cursor: pointer;
 }
-
 
 #departmentFilter:hover {
     border-color: #999;
@@ -166,3 +156,68 @@ body, html {
     background-color: #fff;
 }
 
+@media screen and (max-width: 992px) {
+    #class-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #navbar {
+        width: 60px;
+        min-width: 60px;
+    }
+    
+    #content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        padding: 15px;
+    }
+    
+    #headerDiv {
+        width: 100%;
+        max-width: 300px;
+        font-size: 0.9em;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    #class-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .class-box {
+        padding: 15px;
+    }
+}
+
+/* Mobile Small */
+@media screen and (max-width: 480px) {
+    #navbar {
+        width: 50px;
+        min-width: 50px;
+    }
+    
+    #content {
+        margin-left: 50px;
+        width: calc(100% - 50px);
+        padding: 10px;
+    }
+    
+    #headerDiv {
+        width: 100%;
+        font-size: 0.8em;
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    #filter-container label {
+        font-size: 0.9rem;
+    }
+    
+    #departmentFilter {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}

@@ -101,3 +101,99 @@ h1 {
     margin-right: auto;
     margin-left: 20px;
 }
+
+@media screen and (max-width: 768px) {     
+    #navbar {         
+        width: 60px;         
+        min-width: 60px;         
+        height: 100vh;     
+    }          
+    
+    #content {         
+        margin-left: 60px;         
+        width: calc(100% - 60px);         
+        padding-right: 4%;         
+        padding-left: 4%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }      
+    
+    #shadow {         
+        width: 100%;     
+    }
+    
+    #help-block {
+        min-width: 300px;
+        box-sizing: border-box;
+    }
+    
+    #button-container {
+        flex-wrap: wrap;
+    }
+    
+    .homepage-button {
+        width: 70%;
+    }
+}  
+
+@media screen and (max-width: 576px) {
+    #button-container {
+        flex-direction: column;
+    }
+    
+    #left-buttons, #right-buttons {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .homepage-button {
+        width: 80%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    #headerDiv {
+        width: 80%;
+        min-width: 200px;
+    }
+    
+    #findBackworkButton, #uploadBackworkButton,
+    #findProfessorButton, #rateProfessorButton {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {     
+    #navbar {         
+        width: 50px;         
+        min-width: 50px;         
+        height: 100vh;     
+    }          
+    
+    #content {         
+        margin-left: 50px;         
+        width: calc(100% - 50px);         
+        padding-right: 3%;         
+        padding-left: 3%;     
+    }      
+    
+    #shadow {         
+        width: 100%;     
+    }
+    
+    #help-block {
+        min-width: auto;
+        padding: 5% 2%;
+    }
+    
+    .homepage-button {
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    #sub-title {
+        font-size: 30px;
+        text-align: center;
+    }
+}
