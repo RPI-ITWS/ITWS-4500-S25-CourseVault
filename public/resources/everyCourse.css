@@ -165,3 +165,78 @@ body, html {
     border-color: #666;
     background-color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+    #content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+    
+    #headerDiv {
+        width: 70%;
+        min-width: 200px;
+        font-size: 0.85em;
+        padding: 15px;
+    }
+    
+    #class-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .class-box {
+        padding: 15px;
+    }
+    
+    #filter-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #filter-container label {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    #departmentFilter {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #content {
+        margin-left: 50px;
+        width: calc(100% - 50px);
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+    
+    #headerDiv {
+        width: 85%;
+        min-width: 150px;
+        font-size: 0.8em;
+        padding: 12px;
+        margin-bottom: 4%;
+    }
+    
+    #class-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .class-box {
+        padding: 12px;
+    }
+    
+    #filter-container label {
+        font-size: 0.9rem;
+    }
+    
+    #departmentFilter {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+        width: 90%;
+    }
+}

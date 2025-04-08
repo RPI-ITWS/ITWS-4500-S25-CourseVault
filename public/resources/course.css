@@ -10,13 +10,14 @@ body {
     overflow-x: hidden;
     background-color: #f2e6d5;
     padding-left: 220px; 
+    transition: padding-left 0.3s ease;
 }
 
 #page {
     display: flex;
     flex-direction: row;
     background-color: #f2e6d5;
-  }
+}
 
 .container {
     display: grid;
@@ -24,6 +25,9 @@ body {
     gap: 30px;
     max-width: 900px;
     margin: 60px auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .box {
@@ -86,7 +90,8 @@ ul {
     left: 0;
     top: 0;
     z-index: 3000;
-  }
+    transition: width 0.3s ease, min-width 0.3s ease;
+}
 
 .view-more {
     display: block;
@@ -101,4 +106,79 @@ ul {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-left: 80px;
+    }
+    
+    #navbar {
+        width: 60px;
+        min-width: 60px;
+    }
+    
+    .container {
+        margin: 40px auto;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .box {
+        padding: 20px;
+    }
+    
+    .buttons button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    
+    .view-more {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding-left: 60px;
+    }
+    
+    #navbar {
+        width: 50px;
+        min-width: 50px;
+    }
+    
+    .container {
+        margin: 30px auto;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .box {
+        padding: 15px;
+    }
+    
+    .box h2 {
+        font-size: 1.2em;
+    }
+    
+    .box p {
+        font-size: 0.9em;
+    }
+    
+    ul {
+        font-size: 0.9em;
+    }
+    
+    .buttons button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+        margin-right: 6px;
+    }
+    
+    .view-more {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }

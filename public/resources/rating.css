@@ -18,6 +18,7 @@
     min-height: 100vh;
     justify-content:start;
     z-index: 1;
+    transition: all 0.3s ease;
 }
 
 #headerDiv {
@@ -30,6 +31,7 @@
     margin-bottom: 5%;
     font-size: 2vh;
     min-width: 250px;
+    transition: width 0.3s ease, min-width 0.3s ease;
 }
 
 #courseRatingForm {
@@ -40,6 +42,7 @@
     border-left: 6px solid #d6c2a8;
     transition: box-shadow 0.3s;
     width: 60%;
+    max-width: 800px;
 }
 
 #courseRatingForm:hover {
@@ -94,6 +97,7 @@ button[type="submit"]{
     color: white;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover{
@@ -142,4 +146,114 @@ button[type="submit"]:hover{
 
 #comment{
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    #content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+    
+    #headerDiv {
+        width: 70%;
+        min-width: 200px;
+        font-size: 0.85em;
+        padding: 15px;
+    }
+    
+    #courseRatingForm {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    #courseRatingForm h2 {
+        font-size: 18px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .form-group label {
+        font-size: 0.9em;
+    }
+    
+    .form-group input[type="text"], 
+    .form-group textarea,
+    #courseId,
+    #comment {
+        padding: 8px;
+        font-size: 13px;
+    }
+    
+    button[type="submit"] {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    
+    .rating-bar {
+        height: 18px;
+    }
+    
+    .rating-labels span {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #content {
+        margin-left: 50px;
+        width: calc(100% - 50px);
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+    
+    #headerDiv {
+        width: 85%;
+        min-width: 150px;
+        font-size: 0.8em;
+        padding: 12px;
+        margin-bottom: 4%;
+    }
+    
+    #courseRatingForm {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    #courseRatingForm h2 {
+        font-size: 16px;
+    }
+    
+    .form-group {
+        margin-bottom: 10px;
+    }
+    
+    .form-group label {
+        font-size: 0.85em;
+        margin-bottom: 3px;
+    }
+    
+    .form-group input[type="text"], 
+    .form-group textarea,
+    #courseId,
+    #comment {
+        padding: 6px;
+        font-size: 12px;
+    }
+    
+    button[type="submit"] {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+    
+    .rating-bar {
+        height: 16px;
+    }
+    
+    .rating-labels span {
+        font-size: 11px;
+    }
 }
