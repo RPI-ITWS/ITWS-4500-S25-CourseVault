@@ -1,9 +1,16 @@
+let url = "";
+if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+  url = "http://localhost:3000";
+}else{
+  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 
     determineStatus();
     
     try {
-        const response = await fetch(`${window.location.origin}/courses/spring`);
+        const response = await fetch(`${url}/courses/spring`);
         if (!response.ok) {
             throw new Error("Failed to fetch course data");
         }
@@ -17,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         Object.entries(data.courses).forEach(([courseID, details]) => {
             const department = courseID.split("-")[0]; 
             departments.add(department);    
-            console.log( details.Professor)
+            // console.log( details.Professor)
 
             const courseBox = document.createElement("div");
             courseBox.classList.add("class-box");
@@ -36,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             courseBox.addEventListener("click", () => {
                 localStorage.setItem('courseID', courseID);
-                console.log(`Course ID: ${localStorage.getItem('courseID')}`);
+                // console.log(`Course ID: ${localStorage.getItem('courseID')}`);
                 window.location.href = `${window.location.origin}/course`;
               });
 
@@ -67,18 +74,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function determineStatus() {
-    return fetch('/status')
+    return fetch(`${url}/status`)
       .then(response => response.json())
       .then(data => {
-        console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${window.location.origin}/`;
+          window.location.href = `${url}/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${url}/`;
         return;
       });
 }

@@ -1,5 +1,12 @@
 'use strict';
 
+url = "";
+if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+  url = "http://localhost:3000";
+}else{
+  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+}
+
 function createHelper() {
     return React.createElement(
         React.Fragment,
@@ -14,12 +21,12 @@ function createHelper() {
                 createHomepageButton({ 
                     id: 'findBackworkButton', 
                     text: 'Find Backwork',
-                    onClick: () => window.location.href = `${window.origin}/backwork`
+                    onClick: () => window.location.href = `${url}/backwork`
                 }),
                 createHomepageButton({ 
                     id: 'uploadBackworkButton', 
                     text: 'Upload Backwork',
-                    onClick: () => window.location.href = `${window.origin}/UploadWork`
+                    onClick: () => window.location.href = `${url}/UploadWork`
                 })
             ),
             React.createElement(
@@ -28,12 +35,12 @@ function createHelper() {
                 createHomepageButton({ 
                     id: 'findProfessorButton', 
                     text: 'Rate A Course',
-                    onClick: () => window.location.href = `${window.origin}/professors` 
+                    onClick: () => window.location.href = `${url}/professors` 
                 }),
                 createHomepageButton({ 
                     id: 'rateProfessorButton', 
                     text: 'Create A Schedule',
-                    onClick: () => window.location.href = `${window.origin}/schedule`
+                    onClick: () => window.location.href = `${url}/schedule`
                 })
             )
         )

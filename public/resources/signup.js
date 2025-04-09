@@ -1,11 +1,16 @@
 'use strict';
+let url = "";
+if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+  url = "http://localhost:3000";
+}else{
+  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     determineStatus();
 });
 
 const registerSubmit = document.querySelector("#submit-button")
-console.log(registerSubmit)
 
 function validEmail(email) {
     if (email.slice(-8) != "@rpi.edu") {
@@ -33,7 +38,6 @@ registerSubmit.addEventListener("click", async function(event) {
         password: document.querySelector("#password").value,
         passwordRetype: document.querySelector("#password-retype").value
     }
-    // console.log(registrationData)
 
     if (!registrationData.first_name.trim() || !registrationData.last_name.trim() ||
     !registrationData.email.trim() || !registrationData.password.trim() ||
@@ -59,7 +63,7 @@ registerSubmit.addEventListener("click", async function(event) {
 
     if (isFormValid) {
         try {
-            const res = await fetch(`/register`, {
+            const res = await fetch(`${url}/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -67,8 +71,6 @@ registerSubmit.addEventListener("click", async function(event) {
                 body: JSON.stringify(registrationData)
             })
             const resData = await res.json()
-            // console.log(res.status)
-            // console.log(resData)
            
             if (res.status == 400) { // bad request => email in use already
                 error.innerText = "The provided email is already associated with an account."
@@ -81,7 +83,7 @@ registerSubmit.addEventListener("click", async function(event) {
             error.style.color = "green"
             error.style.display = "block"
             //redirect to /user
-            window.location.href = "/user"
+            window.location.href = `${url}/user`
         } catch (err) {
             console.error('There was a problem with registration request:', err);
             // return { err: `problem with API call, ${err.status} status`}
@@ -98,19 +100,19 @@ registerSubmit.addEventListener("click", async function(event) {
 
 
 function determineStatus() {
-    return fetch('/status')
+    return fetch(`${url}/status`)
       .then(response => response.json())
       .then(data => {
         if (data.status === 'user') {
-          window.location.href = `${window.location.origin}/user/`;
+          window.location.href = `${url}/user/`;
         } else if (data.status === 'admin') {
-          window.location.href = `${window.location.origin}/admin/`;
+          window.location.href = `${url}/admin/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${url}/`;
         return;
       });
   }

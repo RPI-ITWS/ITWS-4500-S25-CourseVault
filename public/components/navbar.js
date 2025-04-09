@@ -1,5 +1,12 @@
 'use strict';
 
+url = "";
+if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+  url = "http://localhost:3000";
+}else{
+  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+}
+
 function Navbar() {
     const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
     const nonAuthPaths = ['', '/', '/login', '/login/', '/signup', '/signup/']
@@ -56,26 +63,26 @@ function Navbar() {
     }
 
     function determineStatus() {
-        return fetch('/status')
+        return fetch(`${url}/status`)
             .then(response => response.json())
             .then(data => {
                 console.log("Status check:", data.status);
                 if (data.status === 'unknown') {
-                    window.location.href = `${window.location.origin}/`;
+                    window.location.href = `${url}/`;
                 } else if (data.status === 'admin') {
-                    if (window.location.href === `${window.location.origin}/admin/`){
+                    if (window.location.href === `${url}/admin/`){
                         return;
                     }else{
-                        window.location.href = `${window.location.origin}/admin/`;
+                        window.location.href = `${url}/admin/`;
                     }
                 } else if (data.status === 'user') {
-                    window.location.href = `${window.location.origin}/user/`;
+                    window.location.href = `${url}/user/`;
                 }
                 return;
             })
             .catch(error => {
                 console.error('Error checking user status:', error);
-                window.location.href = `${window.location.origin}/`;
+                window.location.href = `${url}/`;
                 return 'error';
             });
     }
@@ -91,7 +98,7 @@ function Navbar() {
 
     const handleLogout = () => {
         // setIsLoggedIn(false);
-        fetch(`${window.origin}/logout`, {
+        fetch(`${url}/logout`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'}
           })
@@ -141,13 +148,13 @@ function Navbar() {
                         key: 'profile',
                         id: 'profile',
                         text: 'Profile',
-                        onClick: () => window.location.href = `${window.origin}/profile`
+                        onClick: () => window.location.href = `${url}/profile`
                     }),
                     React.createElement(DropdownItem, { 
                         key: 'settings',
                         id: 'settings',
                         text: 'Settings',
-                        onClick: () => window.location.href = `${window.origin}`
+                        onClick: () => window.location.href = `${url}`
                     }),
                     React.createElement(DropdownItem, { 
                         key: 'logout',
@@ -161,13 +168,13 @@ function Navbar() {
                         key: 'login',
                         id: 'login',
                         text: 'Login',
-                        onClick: () => window.location.href = `${window.origin}/login`
+                        onClick: () => window.location.href = `${url}/login`
                     }),
                     React.createElement(DropdownItem, {
                         key: 'signup',
                         id: 'signup',
                         text: 'Signup',
-                        onClick: () => window.location.href = `${window.origin}/signup`
+                        onClick: () => window.location.href = `${url}/signup`
                     }),
                 ]
             )
@@ -184,15 +191,15 @@ function Navbar() {
             id: 'backworkButton',
             text: isLoggedIn ? 'Backwork' : 'Login', 
             onClick: () => window.location.href = isLoggedIn ? 
-                `${window.origin}/backwork` : 
-                `${window.origin}/login`
+                `${url}/backwork` : 
+                `${url}/login`
         }),
         React.createElement(NavButton, { 
             id: 'profButton', 
             text: isLoggedIn ? 'Courses' : 'Sign Up',
             onClick: () => window.location.href = isLoggedIn ? 
-                `${window.origin}/courses` : 
-                `${window.origin}/signup`
+                `${url}/courses` : 
+                `${url}/signup`
         }),
         isLoggedIn
         ? [
@@ -200,7 +207,7 @@ function Navbar() {
                 key: 'classesButton',
                 id: 'classesButton', 
                 text: 'Schedule',
-                onClick: () => window.location.href = `${window.origin}/schedule`
+                onClick: () => window.location.href = `${url}/schedule`
             }),
             React.createElement(MoreButton, { key: 'moreButton' })
         ]
