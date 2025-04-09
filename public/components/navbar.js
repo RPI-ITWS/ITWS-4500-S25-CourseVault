@@ -132,7 +132,7 @@ function Navbar() {
                 }
             },
             React.createElement('img', {
-                src: '/resources/photos/menu.png',
+                src: './../resources/photos/menu.png',
                 alt: 'More'
             }),
             React.createElement('div',
