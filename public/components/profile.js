@@ -2,13 +2,6 @@
 
 const { useState, useEffect } = React;
 
-let url = "";
-if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-  url = "http://localhost:3000";
-}else{
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
-}
-
 const UserProfile = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -46,14 +39,14 @@ const UserProfile = () => {
 
   const handleAddRating = () => {
     localStorage.setItem('reviewCourse', '');
-    window.location.href = `${window.origin}/node/rating`;
+    window.location.href = `${window.origin}/rating`;
   };
 
   const handleDropCourse = async (courseId) => {
     try {
       setDropStatus({ message: `Dropping course ${courseId}...`, type: 'info' });
       
-      const response = await fetch(`${window.origin}/node/dropcourse`, {
+      const response = await fetch(`${window.origin}/dropcourse`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +77,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`${window.origin}/node/userData`);
+        const response = await fetch(`${window.origin}/userData`);
         
         if (!response.ok) {
           throw new Error(`Error Status: ${response.status}`);
@@ -246,18 +239,18 @@ const UserProfile = () => {
 };
 
 function determineStatus() {
-  return fetch(`${url}/status`)
+  return fetch('/status')
     .then(response => response.json())
     .then(data => {
       console.log(data.status);
       if (data.status === 'unknown') {
-        window.location.href = `${url}/`;
+        window.location.href = `${window.location.origin}/`;
       }
       return;
     })
     .catch(error => {
       console.error('Error checking user status:', error);
-      window.location.href = `${url}/`;
+      window.location.href = `${window.location.origin}/`;
       return;
     });
 }

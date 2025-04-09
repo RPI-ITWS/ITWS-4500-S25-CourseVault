@@ -1,17 +1,11 @@
 'use strict';
-let url = "";
-if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-  url = "http://localhost:3000";
-}else{
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
-}
-
 
 document.addEventListener('DOMContentLoaded', () => {
     determineStatus();
 });
 
 const loginSubmit = document.querySelector("#submit-button")
+console.log(loginSubmit)
 
 function validEmail(email) {
     if (email.slice(-8) != "@rpi.edu") {
@@ -35,6 +29,7 @@ loginSubmit.addEventListener("click", async function(event) {
         email: document.querySelector("#email").value,
         password: document.querySelector("#password").value,
     }
+    // console.log(registrationData)
 
     if (!registrationData.email.trim() || !registrationData.password.trim()) {
         !error.innerText ? error.innerText = "Please complete all fields to continue." : ""
@@ -51,7 +46,7 @@ loginSubmit.addEventListener("click", async function(event) {
     if (isFormValid) {
         //call backend api, get response, if 200 and good, redirect to /user
         try {
-            const res = await fetch(`${url}/login`, {
+            const res = await fetch(`/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -88,19 +83,19 @@ loginSubmit.addEventListener("click", async function(event) {
 })
 
 function determineStatus() {
-    return fetch(`${url}/status`)
+    return fetch('/status')
       .then(response => response.json())
       .then(data => {
         if (data.status === 'user') {
-          window.location.href = `${url}/user/`;
+          window.location.href = `${window.location.origin}/user/`;
         } else if (data.status === 'admin') {
-          window.location.href = `${url}/admin/`;
+          window.location.href = `${window.location.origin}/admin/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${url}/`;
+        window.location.href = `${window.location.origin}/`;
         return;
       });
   }

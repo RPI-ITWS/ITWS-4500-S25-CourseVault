@@ -1,10 +1,3 @@
-let url = "";
-if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-  url = "http://localhost:3000";
-}else{
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
-}
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // Must be a logged in admin to access this page
@@ -77,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Input must be a valid JSON object');
             }
             
-            const response = await fetch(`${url}/addCourse`, {
+            const response = await fetch(`${window.location.origin}/addCourse`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -114,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         try {
-            const response = await fetch(`${url}/remove-file/${courseCode}/${fileName}`, {
+            const response = await fetch(`/remove-file/${courseCode}/${fileName}`, {
                 method: 'DELETE'
             });
             
@@ -144,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         try {
-            const response = await fetch(`${url}/deleteReview`, {
+            const response = await fetch(`${window.location.origin}/deleteReview`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -169,19 +162,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function determineStatus() {
-  return fetch(`${url}/status`)
+  return fetch('/status')
     .then(response => response.json())
     .then(data => {
       if (data.status === 'unknown') {
-        window.location.href = `${url}/`;
+        window.location.href = `${window.location.origin}/`;
       } else if (data.status === 'user') {
-        window.location.href = `${url}/user/`;
+        window.location.href = `${window.location.origin}/user/`;
       }
       return;
     })
     .catch(error => {
       console.error('Error checking user status:', error);
-      window.location.href = `${url}/`;
+      window.location.href = `${window.location.origin}/`;
       return;
     });
 }

@@ -1,10 +1,3 @@
-let url = "";
-if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-  url = "http://localhost:3000";
-}else{
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     
     determineStatus();
@@ -144,7 +137,7 @@ function updateNoResults(hasResults) {
 }
 
 function initializeTable() {
-    fetch(`${url}/AssignmentsStored`)
+    fetch(`${window.location.origin}/AssignmentsStored`)
         .then(response => response.ok ? response.json() : Promise.reject('Network error'))
         .then(data => {
             availableCourses = new Set(Object.keys(data.courses));
@@ -178,21 +171,22 @@ function initializeTable() {
 }
 
 document.getElementById("addDocumentButton").addEventListener("click", function() {
-    window.location.href = `${url}/UploadWork/index.html`;
+    window.location.href = "./../UploadWork/index.html";
 });
 
 function determineStatus() {
-    return fetch(`${url}/status`)
+    return fetch('/status')
       .then(response => response.json())
       .then(data => {
+        console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${url}/`;
+          window.location.href = `${window.location.origin}/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${url}/`;
+        window.location.href = `${window.location.origin}/`;
         return;
       });
 }

@@ -1,11 +1,4 @@
 // script.js
-let url = "";
-if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-  url = "http://localhost:3000";
-}else{
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
-}
-
 document.addEventListener('DOMContentLoaded', function() {
 
     determineStatus();
@@ -105,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'Submitting...';
     
         try {
-            const response = await fetch(`${url}/addReview`, {
+            const response = await fetch(`${window.location.origin}/addReview`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -139,17 +132,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function determineStatus() {
-    return fetch(`${url}/status`)
+    return fetch('/status')
       .then(response => response.json())
       .then(data => {
+        console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${url}`;
+          window.location.href = `${window.location.origin}/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${url}`;
+        window.location.href = `${window.location.origin}/`;
         return;
       });
 }
