@@ -2,6 +2,13 @@
 
 const { useState, useEffect } = React;
 
+let url = "";
+if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+  url = "http://localhost:3000";
+}else{
+  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+}
+
 const UserProfile = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -239,18 +246,18 @@ const UserProfile = () => {
 };
 
 function determineStatus() {
-  return fetch(`${window.location.origin}/node/status`)
+  return fetch(`${url}/status`)
     .then(response => response.json())
     .then(data => {
       console.log(data.status);
       if (data.status === 'unknown') {
-        window.location.href = `${window.location.origin}/node/`;
+        window.location.href = `${url}/`;
       }
       return;
     })
     .catch(error => {
       console.error('Error checking user status:', error);
-      window.location.href = `${window.location.origin}/node/`;
+      window.location.href = `${url}/`;
       return;
     });
 }

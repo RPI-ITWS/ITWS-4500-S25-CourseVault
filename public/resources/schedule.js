@@ -1,3 +1,10 @@
+let url = "";
+if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+  url = "http://localhost:3000";
+}else{
+  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+}
+
 let userCourses = null;
 let courses = null;
 
@@ -31,7 +38,7 @@ async function fillSchedule(course, courseId, color, foregroundColor, selectedSe
 
     for (let day in times) {
         const timeRange = times[day];
-        console.log(timeRange);
+        //console.log(timeRange);
 
         let timeRangesArray = [];
 
@@ -135,7 +142,7 @@ async function fetchSchedule() {
     for (let i = 0; i < data.courses.length; i++) {
         const course = data.courses[i];
 
-        const response = await fetch(`${window.location.origin}/node/allcourses`);
+        const response = await fetch(`${url}/allcourses`);
 
         if (!response.ok) {
             throw new Error(`Error Status: ${response.status}`);
@@ -291,18 +298,17 @@ function generateSemesterOptions() {
 }
 
 function determineStatus() {
-    return fetch(`${window.location.origin}/node/status`)
+    return fetch(`${url}/status`)
       .then(response => response.json())
       .then(data => {
-        console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${window.location.origin}/node/`;
+          window.location.href = `${url}/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/node/`;
+        window.location.href = `${url}/`;
         return;
       });
 }

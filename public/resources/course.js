@@ -1,3 +1,10 @@
+let url = "";
+if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+  url = "http://localhost:3000";
+}else{
+  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     determineStatus();
@@ -8,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   async function fetchCourseData(courseID) {
     try {
-      const response = await fetch(`${window.location.origin}/node/class?course_id=${courseID}`, {
+      const response = await fetch(`${url}/class?course_id=${courseID}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -137,9 +144,9 @@ function showAllHistory(semestersData) {
 
 async function addClass() {
     const identifier = localStorage.getItem('courseID') || 'CSCI-1100';
-    console.log(identifier)
+    // console.log(identifier)
     try {
-        const response = await fetch(`${window.location.origin}/node/addClass`, {
+        const response = await fetch(`${url}/addClass`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -170,18 +177,17 @@ function handleReviewButtonClick() {
   }
 
   function determineStatus() {
-    return fetch(`${window.location.origin}/node/status`)
+    return fetch(`${url}/status`)
       .then(response => response.json())
       .then(data => {
-        console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${window.location.origin}/node/`;
+          window.location.href = `${url}/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/node/`;
+        window.location.href = `${url}/`;
         return;
       });
 }

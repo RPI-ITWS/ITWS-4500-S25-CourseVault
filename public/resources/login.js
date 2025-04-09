@@ -1,11 +1,17 @@
 'use strict';
+let url = "";
+if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+  url = "http://localhost:3000";
+}else{
+  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     determineStatus();
 });
 
 const loginSubmit = document.querySelector("#submit-button")
-console.log(loginSubmit)
 
 function validEmail(email) {
     if (email.slice(-8) != "@rpi.edu") {
@@ -29,7 +35,6 @@ loginSubmit.addEventListener("click", async function(event) {
         email: document.querySelector("#email").value,
         password: document.querySelector("#password").value,
     }
-    // console.log(registrationData)
 
     if (!registrationData.email.trim() || !registrationData.password.trim()) {
         !error.innerText ? error.innerText = "Please complete all fields to continue." : ""
@@ -46,7 +51,7 @@ loginSubmit.addEventListener("click", async function(event) {
     if (isFormValid) {
         //call backend api, get response, if 200 and good, redirect to /user
         try {
-            const res = await fetch(`${window.location.origin}/node/login`, {
+            const res = await fetch(`${url}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -83,19 +88,19 @@ loginSubmit.addEventListener("click", async function(event) {
 })
 
 function determineStatus() {
-    return fetch(`${window.location.origin}/node/status`)
+    return fetch(`${url}/status`)
       .then(response => response.json())
       .then(data => {
         if (data.status === 'user') {
-          window.location.href = `${window.location.origin}/node/user/`;
+          window.location.href = `${url}/user/`;
         } else if (data.status === 'admin') {
-          window.location.href = `${window.location.origin}/node/admin/`;
+          window.location.href = `${url}/admin/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/node/`;
+        window.location.href = `${url}/`;
         return;
       });
   }
