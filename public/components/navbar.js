@@ -1,10 +1,12 @@
 'use strict';
-
+let photo_url = '';
 url = "";
 if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
   url = "http://localhost:3000";
+  photo_url = "/resources/photos/menu.png";
 }else{
   url = "https://course-vault.eastus.cloudapp.azure.com/node";
+  photo_url = "/node/resources/photos/menu.png";
 }
 
 function Navbar() {
@@ -132,7 +134,7 @@ function Navbar() {
                 }
             },
             React.createElement('img', {
-                src: './../resources/photos/menu.png',
+                src: '/resources/photos/menu.png',
                 alt: 'More'
             }),
             React.createElement('div',
