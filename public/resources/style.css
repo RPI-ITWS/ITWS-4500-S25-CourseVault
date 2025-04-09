@@ -119,7 +119,6 @@ body {
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
 }
 
-
 .nav-tab::before {
     position: absolute;
     top: 0;
@@ -151,7 +150,7 @@ body {
 }
 
 .dropdown-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center; 
     padding: 10px 20px;
@@ -159,8 +158,9 @@ body {
     transition: background-color 0.5s;
     font-size: 0.9em;
     color: #5a4a3f;
-    border-top: 1px solid #d4c3ae; 
+    border-left: 1px solid #d4c3ae; 
     background-color: #f2e6d5;
+    white-space: nowrap;
 }
 
 .dropdown-item:first-child {
@@ -229,22 +229,34 @@ body {
 
     #dropdownMenu {
         left: 60px;
-        top: 0;
-        width: 200px;
-        height: 100vh;
+        top: auto;
+        bottom: 0;
+        width: auto;
+        height: auto;
         position: fixed;
-        flex-direction: column;
+        display: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
         background-color: #f2e6d5;
         border: 1px solid #d4c3ae;
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-        max-height: none;
-        overflow-y: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
     }
 
     .dropdown-item {
         padding: 15px 20px;
-        border-top: 1px solid #d4c3ae;
-        font-size: clamp(0.8rem, 2vw, 1rem);
+        border-left: 1px solid #d4c3ae;
+        border-top: none;
+        font-size: 0.9rem;
+        width: auto;
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .dropdown-item:first-child {
+        border-left: none;
     }
 
     #content {
@@ -256,45 +268,6 @@ body {
         position: left;
         z-index: 1;
         width: 1000px;
-        
-    }
-
-    img, button, .container, .section, .card, .box, ul, ol {
-        transform: scale(0.85);
-        transform-origin: top left;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        font-size: clamp(0.9rem, 2.5vw, 1.5rem);
-        line-height: 1.2;
-    }
-
-    p {
-        font-size: clamp(0.75rem, 2vw, 0.9rem);
-        line-height: 1.3;
-    }
-
-    button {
-        padding: 6px 12px;
-        min-height: 32px;
-        font-size: 14px;
-    }
-
-    .section {
-        margin-bottom: 8px;
-    }
-
-    .container {
-        padding: 0 6px;
-    }
-
-    ul, ol {
-        padding-left: 12px;
-    }
-
-    .card, .box {
-        margin: 6px 0;
-        padding: 6px;
     }
 }
 
@@ -324,8 +297,9 @@ body {
 
     #dropdownMenu {
         left: 50px;
-        width: 180px;
-        height: 100vh;
+        width: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 
     .dropdown-item {
@@ -335,45 +309,5 @@ body {
 
     #content {
         margin-left: 50px;
-        min-height: 100vh;
-        box-sizing: border-box;
-        transition: all 0.3s ease;
-        overflow-x: auto;
-        position: left;
-        z-index: 1;
-        width: 1000px;
-        
-    }
-
-
-    h1, h3, h4, h5, h6 {
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
-    }
-
-    p {
-        font-size: clamp(0.7rem, 1.8vw, 0.8rem);
-    }
-
-    button {
-        padding: 4px 8px;
-        min-height: 28px;
-        font-size: 12px;
-    }
-
-    .section {
-        margin-bottom: 4px;
-    }
-
-    .container {
-        padding: 0 3px;
-    }
-
-    ul, ol {
-        padding-left: 8px;
-    }
-
-    .card, .box {
-        margin: 3px 0;
-        padding: 4px;
     }
 }
