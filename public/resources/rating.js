@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'Submitting...';
     
         try {
-            const response = await fetch(`${window.location.origin}/addReview`, {
+            const response = await fetch(`${window.location.origin}/node/addReview`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -132,18 +132,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function determineStatus() {
-    return fetch('/status')
+    return fetch(`${window.location.origin}/node/status`)
       .then(response => response.json())
       .then(data => {
         console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${window.location.origin}/`;
+          window.location.href = `${window.location.origin}/node`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node`;
         return;
       });
 }

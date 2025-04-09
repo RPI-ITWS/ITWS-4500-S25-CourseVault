@@ -5,20 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function determineStatus() {
-  return fetch('/status')
+  return fetch(`${window.location.origin}/node/status`)
     .then(response => response.json())
     .then(data => {
       console.log(data.status);
       if (data.status === 'user') {
-        window.location.href = `${window.location.origin}/user/`;
+        window.location.href = `${window.location.origin}/node/user/`;
       } else if (data.status === 'admin') {
-        window.location.href = `${window.location.origin}/admin/`;
+        window.location.href = `${window.location.origin}/node/admin/`;
       }
       return;
     })
     .catch(error => {
       console.error('Error checking user status:', error);
-      window.location.href = `${window.location.origin}/`;
+      window.location.href = `${window.location.origin}/node/`;
       return;
     });
 }

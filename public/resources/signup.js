@@ -59,7 +59,7 @@ registerSubmit.addEventListener("click", async function(event) {
 
     if (isFormValid) {
         try {
-            const res = await fetch(`/register`, {
+            const res = await fetch(`${window.location.origin}/node/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ registerSubmit.addEventListener("click", async function(event) {
             error.style.color = "green"
             error.style.display = "block"
             //redirect to /user
-            window.location.href = "/user"
+            window.location.href = `${window.location.origin}/node/user`
         } catch (err) {
             console.error('There was a problem with registration request:', err);
             // return { err: `problem with API call, ${err.status} status`}
@@ -98,19 +98,19 @@ registerSubmit.addEventListener("click", async function(event) {
 
 
 function determineStatus() {
-    return fetch('/status')
+    return fetch(`${window.location.origin}/node/status`)
       .then(response => response.json())
       .then(data => {
         if (data.status === 'user') {
-          window.location.href = `${window.location.origin}/user/`;
+          window.location.href = `${window.location.origin}/node/user/`;
         } else if (data.status === 'admin') {
-          window.location.href = `${window.location.origin}/admin/`;
+          window.location.href = `${window.location.origin}/node/admin/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node/`;
         return;
       });
   }

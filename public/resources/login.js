@@ -46,7 +46,7 @@ loginSubmit.addEventListener("click", async function(event) {
     if (isFormValid) {
         //call backend api, get response, if 200 and good, redirect to /user
         try {
-            const res = await fetch(`/login`, {
+            const res = await fetch(`${window.location.origin}/node/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -83,19 +83,19 @@ loginSubmit.addEventListener("click", async function(event) {
 })
 
 function determineStatus() {
-    return fetch('/status')
+    return fetch(`${window.location.origin}/node/status`)
       .then(response => response.json())
       .then(data => {
         if (data.status === 'user') {
-          window.location.href = `${window.location.origin}/user/`;
+          window.location.href = `${window.location.origin}/node/user/`;
         } else if (data.status === 'admin') {
-          window.location.href = `${window.location.origin}/admin/`;
+          window.location.href = `${window.location.origin}/node/admin/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node/`;
         return;
       });
   }

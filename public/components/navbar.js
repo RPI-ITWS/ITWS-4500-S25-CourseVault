@@ -56,26 +56,26 @@ function Navbar() {
     }
 
     function determineStatus() {
-        return fetch('/status')
+        return fetch(`${window.location.origin}/node/status`)
             .then(response => response.json())
             .then(data => {
                 console.log("Status check:", data.status);
                 if (data.status === 'unknown') {
-                    window.location.href = `${window.location.origin}/`;
+                    window.location.href = `${window.location.origin}/node/`;
                 } else if (data.status === 'admin') {
-                    if (window.location.href === `${window.location.origin}/admin/`){
+                    if (window.location.href === `${window.location.origin}/node/admin/`){
                         return;
                     }else{
-                        window.location.href = `${window.location.origin}/admin/`;
+                        window.location.href = `${window.location.origin}/node/admin/`;
                     }
                 } else if (data.status === 'user') {
-                    window.location.href = `${window.location.origin}/user/`;
+                    window.location.href = `${window.location.origin}/node/user/`;
                 }
                 return;
             })
             .catch(error => {
                 console.error('Error checking user status:', error);
-                window.location.href = `${window.location.origin}/`;
+                window.location.href = `${window.location.origin}/node/`;
                 return 'error';
             });
     }
@@ -91,7 +91,7 @@ function Navbar() {
 
     const handleLogout = () => {
         // setIsLoggedIn(false);
-        fetch(`${window.origin}/logout`, {
+        fetch(`${window.origin}/node/logout`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'}
           })
@@ -141,13 +141,13 @@ function Navbar() {
                         key: 'profile',
                         id: 'profile',
                         text: 'Profile',
-                        onClick: () => window.location.href = `${window.origin}/profile`
+                        onClick: () => window.location.href = `${window.origin}/node/profile`
                     }),
                     React.createElement(DropdownItem, { 
                         key: 'settings',
                         id: 'settings',
                         text: 'Settings',
-                        onClick: () => window.location.href = `${window.origin}`
+                        onClick: () => window.location.href = `${window.origin}/node`
                     }),
                     React.createElement(DropdownItem, { 
                         key: 'logout',
@@ -161,13 +161,13 @@ function Navbar() {
                         key: 'login',
                         id: 'login',
                         text: 'Login',
-                        onClick: () => window.location.href = `${window.origin}/login`
+                        onClick: () => window.location.href = `${window.origin}/node/login`
                     }),
                     React.createElement(DropdownItem, {
                         key: 'signup',
                         id: 'signup',
                         text: 'Signup',
-                        onClick: () => window.location.href = `${window.origin}/signup`
+                        onClick: () => window.location.href = `${window.origin}/node/signup`
                     }),
                 ]
             )
@@ -184,15 +184,15 @@ function Navbar() {
             id: 'backworkButton',
             text: isLoggedIn ? 'Backwork' : 'Login', 
             onClick: () => window.location.href = isLoggedIn ? 
-                `${window.origin}/backwork` : 
-                `${window.origin}/login`
+                `${window.origin}/node/backwork` : 
+                `${window.origin}/node/login`
         }),
         React.createElement(NavButton, { 
             id: 'profButton', 
             text: isLoggedIn ? 'Courses' : 'Sign Up',
             onClick: () => window.location.href = isLoggedIn ? 
-                `${window.origin}/courses` : 
-                `${window.origin}/signup`
+                `${window.origin}/node/courses` : 
+                `${window.origin}/node/signup`
         }),
         isLoggedIn
         ? [
@@ -200,7 +200,7 @@ function Navbar() {
                 key: 'classesButton',
                 id: 'classesButton', 
                 text: 'Schedule',
-                onClick: () => window.location.href = `${window.origin}/schedule`
+                onClick: () => window.location.href = `${window.origin}/node/schedule`
             }),
             React.createElement(MoreButton, { key: 'moreButton' })
         ]

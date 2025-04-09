@@ -137,7 +137,7 @@ function updateNoResults(hasResults) {
 }
 
 function initializeTable() {
-    fetch(`${window.location.origin}/AssignmentsStored`)
+    fetch(`${window.location.origin}/node/AssignmentsStored`)
         .then(response => response.ok ? response.json() : Promise.reject('Network error'))
         .then(data => {
             availableCourses = new Set(Object.keys(data.courses));
@@ -175,18 +175,18 @@ document.getElementById("addDocumentButton").addEventListener("click", function(
 });
 
 function determineStatus() {
-    return fetch('/status')
+    return fetch(`${window.location.origin}/node/status`)
       .then(response => response.json())
       .then(data => {
         console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${window.location.origin}/`;
+          window.location.href = `${window.location.origin}/node/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node/`;
         return;
       });
 }

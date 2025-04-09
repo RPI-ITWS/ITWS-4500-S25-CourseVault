@@ -39,14 +39,14 @@ const UserProfile = () => {
 
   const handleAddRating = () => {
     localStorage.setItem('reviewCourse', '');
-    window.location.href = `${window.origin}/rating`;
+    window.location.href = `${window.origin}/node/rating`;
   };
 
   const handleDropCourse = async (courseId) => {
     try {
       setDropStatus({ message: `Dropping course ${courseId}...`, type: 'info' });
       
-      const response = await fetch(`${window.origin}/dropcourse`, {
+      const response = await fetch(`${window.origin}/node/dropcourse`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`${window.origin}/userData`);
+        const response = await fetch(`${window.origin}/node/userData`);
         
         if (!response.ok) {
           throw new Error(`Error Status: ${response.status}`);
@@ -239,18 +239,18 @@ const UserProfile = () => {
 };
 
 function determineStatus() {
-  return fetch('/status')
+  return fetch(`${window.location.origin}/node/status`)
     .then(response => response.json())
     .then(data => {
       console.log(data.status);
       if (data.status === 'unknown') {
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node/`;
       }
       return;
     })
     .catch(error => {
       console.error('Error checking user status:', error);
-      window.location.href = `${window.location.origin}/`;
+      window.location.href = `${window.location.origin}/node/`;
       return;
     });
 }

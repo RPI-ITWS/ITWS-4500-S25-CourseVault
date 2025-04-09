@@ -123,7 +123,7 @@ async function fillSchedule(course, courseId, color, foregroundColor, selectedSe
 }
 
 async function fetchSchedule() {
-    const response = await fetch(`${window.origin}/userData`);
+    const response = await fetch(`${window.origin}/node/userData`);
 
     if (!response.ok) {
         throw new Error(`Error Status: ${response.status}`);
@@ -135,7 +135,7 @@ async function fetchSchedule() {
     for (let i = 0; i < data.courses.length; i++) {
         const course = data.courses[i];
 
-        const response = await fetch(`${window.location.origin}/allcourses`);
+        const response = await fetch(`${window.location.origin}/node/allcourses`);
 
         if (!response.ok) {
             throw new Error(`Error Status: ${response.status}`);
@@ -187,7 +187,7 @@ async function refetchSchedule() {
 }
 
 async function dropCourse(course_id) {
-    const response = await fetch(`${window.origin}/dropcourse`, {
+    const response = await fetch(`${window.origin}/node/dropcourse`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -291,18 +291,18 @@ function generateSemesterOptions() {
 }
 
 function determineStatus() {
-    return fetch('/status')
+    return fetch(`${window.location.origin}/node/status`)
       .then(response => response.json())
       .then(data => {
         console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${window.location.origin}/`;
+          window.location.href = `${window.location.origin}/node/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node/`;
         return;
       });
 }

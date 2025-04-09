@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Input must be a valid JSON object');
             }
             
-            const response = await fetch(`${window.location.origin}/addCourse`, {
+            const response = await fetch(`${window.location.origin}/node/addCourse`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         try {
-            const response = await fetch(`/remove-file/${courseCode}/${fileName}`, {
+            const response = await fetch(`${window.location.origin}/node/remove-file/${courseCode}/${fileName}`, {
                 method: 'DELETE'
             });
             
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         try {
-            const response = await fetch(`${window.location.origin}/deleteReview`, {
+            const response = await fetch(`${window.location.origin}/node/deleteReview`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -162,19 +162,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function determineStatus() {
-  return fetch('/status')
+  return fetch(`${window.location.origin}/node/status`)
     .then(response => response.json())
     .then(data => {
       if (data.status === 'unknown') {
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node/`;
       } else if (data.status === 'user') {
-        window.location.href = `${window.location.origin}/user/`;
+        window.location.href = `${window.location.origin}/node/user/`;
       }
       return;
     })
     .catch(error => {
       console.error('Error checking user status:', error);
-      window.location.href = `${window.location.origin}/`;
+      window.location.href = `${window.location.origin}/node/`;
       return;
     });
 }

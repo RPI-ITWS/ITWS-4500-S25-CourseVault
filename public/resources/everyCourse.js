@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     determineStatus();
     
     try {
-        const response = await fetch(`${window.location.origin}/courses/spring`);
+        const response = await fetch(`${window.location.origin}/node/courses/spring`);
         if (!response.ok) {
             throw new Error("Failed to fetch course data");
         }
@@ -67,18 +67,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function determineStatus() {
-    return fetch('/status')
+    return fetch(`${window.location.origin}/node/status`)
       .then(response => response.json())
       .then(data => {
         console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${window.location.origin}/`;
+          window.location.href = `${window.location.origin}/node/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node/`;
         return;
       });
 }

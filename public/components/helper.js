@@ -14,12 +14,12 @@ function createHelper() {
                 createHomepageButton({ 
                     id: 'findBackworkButton', 
                     text: 'Find Backwork',
-                    onClick: () => window.location.href = `${window.origin}/backwork`
+                    onClick: () => window.location.href = `${window.origin}/node/backwork`
                 }),
                 createHomepageButton({ 
                     id: 'uploadBackworkButton', 
                     text: 'Upload Backwork',
-                    onClick: () => window.location.href = `${window.origin}/UploadWork`
+                    onClick: () => window.location.href = `${window.origin}/node/UploadWork`
                 })
             ),
             React.createElement(
@@ -28,12 +28,12 @@ function createHelper() {
                 createHomepageButton({ 
                     id: 'findProfessorButton', 
                     text: 'Rate A Course',
-                    onClick: () => window.location.href = `${window.origin}/professors` 
+                    onClick: () => window.location.href = `${window.origin}/node/professors` 
                 }),
                 createHomepageButton({ 
                     id: 'rateProfessorButton', 
                     text: 'Create A Schedule',
-                    onClick: () => window.location.href = `${window.origin}/schedule`
+                    onClick: () => window.location.href = `${window.origin}/node/schedule`
                 })
             )
         )

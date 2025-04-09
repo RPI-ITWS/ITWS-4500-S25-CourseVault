@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   async function fetchCourseData(courseID) {
     try {
-      const response = await fetch(`/class?course_id=${courseID}`, {
+      const response = await fetch(`${window.location.origin}/node/class?course_id=${courseID}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -139,7 +139,7 @@ async function addClass() {
     const identifier = localStorage.getItem('courseID') || 'CSCI-1100';
     console.log(identifier)
     try {
-        const response = await fetch('/addClass', {
+        const response = await fetch(`${window.location.origin}/node/addClass`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -170,18 +170,18 @@ function handleReviewButtonClick() {
   }
 
   function determineStatus() {
-    return fetch('/status')
+    return fetch(`${window.location.origin}/node/status`)
       .then(response => response.json())
       .then(data => {
         console.log(data.status);
         if (data.status === 'unknown') {
-          window.location.href = `${window.location.origin}/`;
+          window.location.href = `${window.location.origin}/node/`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${window.location.origin}/`;
+        window.location.href = `${window.location.origin}/node/`;
         return;
       });
 }
