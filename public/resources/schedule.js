@@ -219,7 +219,7 @@ function createScheduleGrid() {
 
     const headerRow = document.createElement('tr');
     const thm = document.createElement('th');
-    thm.textContent = 'Time';
+    thm.textContent = '';
     thm.style.backgroundColor = '#5a4a3f';
     thm.style.border = '1px solid #5a4a3f';
     headerRow.appendChild(thm);

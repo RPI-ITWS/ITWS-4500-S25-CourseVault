@@ -192,6 +192,15 @@ button[type="submit"]:hover {
         padding: 8px 12px;
         font-size: 0.9em;
     }
+
+    button[type="submit"]{
+        width: 100%;
+    }
+
+    #jsonInput{
+        height: fit-content;
+        margin-bottom: 4vh;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -244,6 +253,7 @@ button[type="submit"]:hover {
     
     #jsonInput {
         height: fit-content;
-        width: 130%;
+        margin-bottom: 2vh;
+        width: 100%;
     }
 }

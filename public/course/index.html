@@ -17,34 +17,35 @@
   <body>
     <div id="page">
       <div id="navbar"></div>
-      <div id="header"></div>
-      <div class="container">
-        <div class="box">
-          <h2>Course Info</h2>
-          <p><strong>Name:</strong> <span id="course-name">Loading...</span></p>
-          <p><strong>ID:</strong> <span id="course-id">Loading...</span></p>
-          <p><strong>Time:</strong> <span id="course-time">Loading...</span></p>
-          <p><strong>Location:</strong> <span id="location-id">Loading...</span></p>
-          <p><strong>Professor:</strong> <span id="course-professor">Loading...</span></p>
-          <div class="buttons">
-            <button onclick="handleReviewButtonClick()" >Add Review</button>
-            <button onclick="addClass()">Add to Schedule</button>
+      <div id="content">
+        <div class="container">
+          <div class="box">
+            <h2>Course Info</h2>
+            <p><strong>Name:</strong> <span id="course-name">Loading...</span></p>
+            <p><strong>ID:</strong> <span id="course-id">Loading...</span></p>
+            <p><strong>Time:</strong> <span id="course-time">Loading...</span></p>
+            <p><strong>Location:</strong> <span id="location-id">Loading...</span></p>
+            <p><strong>Professor:</strong> <span id="course-professor">Loading...</span></p>
+            <div class="buttons">
+              <button onclick="handleReviewButtonClick()" >Add Review</button>
+              <button onclick="addClass()">Add to Schedule</button>
+            </div>
           </div>
-        </div>
 
-        <div class="box">
-          <h2>Course History</h2>
-          <ul id="history-list">
-            <li>Loading history...</li>
-          </ul>
-        </div>
 
-        <div class="box">
-          <h2>Student Reviews <span id="review-score"></span> (<span id="review-count">0</span>)</h2>
-          <ul id="reviews-list">
-            <li>Loading reviews...</li>
-          </ul>
-        </div>
+          <div class="box">
+            <h2>Course History</h2>
+            <ul id="history-list">
+              <li>Loading history...</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h2>Student Reviews <span id="review-score"></span> (<span id="review-count">0</span>)</h2>
+            <ul id="reviews-list">
+              <li>Loading reviews...</li>
+            </ul>
+          </div>
       </div>
     </div>
   </body>
