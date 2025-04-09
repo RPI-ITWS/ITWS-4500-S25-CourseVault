@@ -72,7 +72,7 @@ loginSubmit.addEventListener("click", async function(event) {
             error.style.color = "green"
             error.style.display = "block"
             //redirect to /user
-            window.location.href = "/user"
+            window.location.href = `${url}/user`;
         } catch (err) {
             console.error('There was a problem with registration request:', err);
             // return { err: `problem with API call, ${err.status} status`}
