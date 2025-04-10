@@ -1,9 +1,3 @@
-let url = "";
-// if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-//   url = "http://localhost:3000";
-// }else{
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
-//}
 
 document.addEventListener('DOMContentLoaded', () => {
     // Must be a logged in user to access this page
@@ -15,9 +9,9 @@ function determineStatus() {
     .then(response => response.json())
     .then(data => {
       if (data.status === 'user') {
-        window.location.href = `${url}/user/`;
+        window.location.href = `/node/user/index.html`;
       } else if (data.status === 'admin') {
-        window.location.href = `${url}/admin/`;
+        window.location.href = `/node/admin/index.html`;
       }
       return;
     })
