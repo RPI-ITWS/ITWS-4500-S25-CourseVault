@@ -1,9 +1,7 @@
 'use strict';
 let photo_url = '';
 
-// url = "http://localhost:3000";
-// photo_url = "/resources/photos/menu.png";
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+  let url2 = "https://course-vault.eastus.cloudapp.azure.com/node";
   photo_url = "/node/resources/photos/menu.png";
 
 
@@ -32,7 +30,7 @@ function Navbar() {
 
     // New function to check login status without redirecting
     function checkLoginStatus() {
-        return fetch(`${url}/status`)
+        return fetch(`${url2}/status`)
             .then(response => response.json())
             .then(data => {
                 console.log("Status check:", data.status);
@@ -81,7 +79,7 @@ function Navbar() {
 
     // Keep the original determineStatus for navigation purposes
     function determineStatus() {
-        return fetch(`${url}/status`)
+        return fetch(`${url2}/status`)
             .then(response => response.json())
             .then(data => {
                 console.log("Status check:", data.status);
@@ -115,7 +113,7 @@ function Navbar() {
     };
 
     const handleLogout = () => {
-        fetch(`${url}/logout`, {
+        fetch(`${url2}/logout`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'}
           })
