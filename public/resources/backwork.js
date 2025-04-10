@@ -161,7 +161,7 @@ function initializeTable() {
                             <td>${doc.professor}</td>
                             <td>${doc.date_assigned}</td>
                             <td>
-                                <button onclick="window.location.href='/download/${doc.file_name}'" 
+                                <button onclick="window.location.href='/node/download/${doc.file_name}'" 
                                         style="padding: 5px 10px; cursor: pointer">
                                     Download
                                 </button>
@@ -178,7 +178,7 @@ function initializeTable() {
 }
 
 document.getElementById("addDocumentButton").addEventListener("click", function() {
-    window.location.href = `${url}/UploadWork/index.html`;
+    window.location.href = `/node/UploadWork/index.html`;
 });
 
 function determineStatus() {
@@ -186,13 +186,13 @@ function determineStatus() {
       .then(response => response.json())
       .then(data => {
         if (data.status === 'unknown') {
-          window.location.href = `${url}/`;
+          window.location.href = `/node/index.html`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${url}/`;
+        window.location.href = `/node/index.html`;
         return;
       });
 }

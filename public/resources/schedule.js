@@ -1,9 +1,6 @@
 let url = "";
-// if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-//   url = "http://localhost:3000";
-// }else{
   url = "https://course-vault.eastus.cloudapp.azure.com/node";
-//}
+
 
 let userCourses = null;
 let courses = null;
@@ -302,13 +299,13 @@ function determineStatus() {
       .then(response => response.json())
       .then(data => {
         if (data.status === 'unknown') {
-          window.location.href = `${url}/`;
+          window.location.href = `/node/index.html`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `${url}/`;
+        window.location.href = `/node/index.html`;
         return;
       });
 }
