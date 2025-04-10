@@ -23,7 +23,6 @@ function determineStatus() {
     })
     .catch(error => {
       console.error('Error checking user status:', error);
-      window.location.href = `${url}/`;
       return;
     });
 }
