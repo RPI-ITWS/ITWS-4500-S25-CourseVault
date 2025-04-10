@@ -6,19 +6,22 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
     background-color: #f2e6d5;
-    padding-left: 220px; 
+    padding-left: 220px;
     transition: padding-left 0.3s ease;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
 }
 
 #page {
     display: flex;
     flex-direction: row;
     background-color: #f2e6d5;
+    width: 100%;
+    justify-content: center; /* Center the page content */
 }
-
 
 .container {
     display: grid;
@@ -47,6 +50,7 @@ body {
 .box h2 {
     margin-bottom: 12px;
     color: #5a4a3f;
+    text-align: center; /* Center headings */
 }
 
 .box p {
@@ -61,6 +65,8 @@ ul {
 
 .buttons {
     margin-top: 15px;
+    display: flex;
+    justify-content: center; /* Center buttons */
 }
 
 .buttons button {
