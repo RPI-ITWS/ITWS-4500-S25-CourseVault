@@ -1,5 +1,5 @@
 let url = "";
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+url = "https://course-vault.eastus.cloudapp.azure.com/node";
 
 
 let userCourses = null;
