@@ -1,11 +1,11 @@
 'use strict';
 
 url = "";
-if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-  url = "http://localhost:3000";
-}else{
+//if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
+//  url = "http://localhost:3000";
+//}else{
   url = "https://course-vault.eastus.cloudapp.azure.com/node";
-}
+//}
 
 function createHelper() {
     return React.createElement(
