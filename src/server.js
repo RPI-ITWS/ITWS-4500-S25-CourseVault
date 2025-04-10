@@ -56,11 +56,6 @@ app.use(express.static('public'))
 //  Unauthenticated Routes
 // =======================================================
 
-app.get('/', (req, res) => {
-	console.log("root route")
-	res.sendFile('../public/index.html')
-})
-
 app.post("/login", loginRoute)
 
 app.post("/register", registerRoute)
@@ -101,16 +96,6 @@ app.use(cookieAuth)
 //  Authenticated Routes (everything below)
 // =======================================================
 
-app.get('/login', (req, res) => {
-	console.log("login route")
-	res.sendFile('../public/login/index.html')
-})
-
-app.get('/signup', (req, res) => {
-	console.log("register route")
-	res.sendFile('../public/signup/index.html')
-})
-
 app.get('/user', async (req, res) => {     
     try {         
         // Verify the JWT token first         
@@ -126,26 +111,6 @@ app.get('/user', async (req, res) => {
         res.redirect('/login');
     } 
 });
-
-app.get('/backwork', (req, res) => {
-	console.log("backwork route")
-	res.sendFile('../public/backwork/index.html')
-})
-
-app.get('/courses', (req, res) => {
-	console.log("courses route")
-	res.sendFile('../public/courses/index.html')
-})
-
-app.get('/resources', (req, res) => {
-	console.log("resources route")
-	res.sendFile('../public/resources/index.html')
-})
-
-app.get('/schedule', (req, res) => {
-	console.log("schedule route")
-	res.sendFile('../public/schedule/index.html')
-})
 
 app.get('/userData', async (req, res) => {
 	try {
