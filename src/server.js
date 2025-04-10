@@ -12,7 +12,6 @@ const { cookieAuth } = require("./middleware/cookieAuth");
 const localJsonData = require('./data/DummyDisplay.json');
 const pdfFolder = path.join(__dirname, '../assignments');
 const jwt = require("jsonwebtoken");
-const router = express.Router();
 
 require('dotenv').config();
 const uri = process.env.MONGODB;
@@ -51,22 +50,22 @@ const courseCollection = database.collection("Classes");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static('public'));
+app.use('/node', express.static(path.join(__dirname, 'public')));
 
 // =======================================================
 //  Unauthenticated Routes
 // =======================================================
 
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
 	console.log("root route")
 	res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
-router.post("/login", loginRoute)
+app.post("/login", loginRoute)
 
-router.post("/register", registerRoute)
+app.post("/register", registerRoute)
 
-router.get('/status', async (req, res) => {
+app.get('/status', async (req, res) => {
     try {
         const token = req.cookies.token;
         
@@ -98,57 +97,57 @@ router.get('/status', async (req, res) => {
 });
 
 // =======================================================
-router.use(cookieAuth)
+app.use(cookieAuth)
 //  Authenticated Routes (everything below)
 // =======================================================
 
-router.get('/login', (req, res) => {
+app.get('/login', (req, res) => {
 	console.log("login route")
 	res.sendFile(path.join(__dirname, '../public/login/index.html'))
 })
 
-router.get('/signup', (req, res) => {
+app.get('/signup', (req, res) => {
 	console.log("register route")
 	res.sendFile(path.join(__dirname, '../public/signup/index.html'))
 })
 
-router.get('/user', async (req, res) => {     
+app.get('/user', async (req, res) => {     
     try {         
         // Verify the JWT token first         
         const token = req.cookies.token;         
         if (!token) {             
-            return res.redirect('/node/login');         
+            return res.redirect('/login');         
         }          
 
         console.log("Routing to user page");
         res.sendFile(path.join(__dirname, '../public/user/index.html'));
     } catch (error) {
         console.error("Error in /user route:", error);
-        res.redirect('/node/login');
+        res.redirect('/login');
     } 
 });
 
-router.get('/backwork', (req, res) => {
+app.get('/backwork', (req, res) => {
 	console.log("backwork route")
 	res.sendFile(path.join(__dirname, '../public/backwork/index.html'))
 })
 
-router.get('/courses', (req, res) => {
+app.get('/courses', (req, res) => {
 	console.log("courses route")
 	res.sendFile(path.join(__dirname, '../public/courses/index.html'))
 })
 
-router.get('/resources', (req, res) => {
+app.get('/resources', (req, res) => {
 	console.log("resources route")
 	res.sendFile(path.join(__dirname, '../public/resources/index.html'))
 })
 
-router.get('/schedule', (req, res) => {
+app.get('/schedule', (req, res) => {
 	console.log("schedule route")
 	res.sendFile(path.join(__dirname, '../public/schedule/index.html'))
 })
 
-router.get('/userData', async (req, res) => {
+app.get('/userData', async (req, res) => {
 	try {
         const matchingUser = await usersCollection.findOne({ username: req.user.username });
 
@@ -163,7 +162,7 @@ router.get('/userData', async (req, res) => {
     }
 })
 
-router.delete("/logout", (req, res) => {
+app.delete("/logout", (req, res) => {
 	if (!req.user) {
 		res.status(401).send("No user present to logout.")
 	}
@@ -175,7 +174,7 @@ router.delete("/logout", (req, res) => {
 //  Add Review Functionality
 // =======================================================
 
-router.post("/addReview", async (req, res) => {
+app.post("/addReview", async (req, res) => {
     try {
         const { course, score, comment } = req.body;
 
@@ -260,7 +259,7 @@ router.post("/addReview", async (req, res) => {
 //  Profile Page Drop Course Functionality
 // =======================================================
 
-router.delete("/dropcourse", async (req, res) => {
+app.delete("/dropcourse", async (req, res) => {
     try {
         const { course_id } = req.body;
         const matchingUser = await usersCollection.findOne({ username: req.user.username });
@@ -286,7 +285,7 @@ router.delete("/dropcourse", async (req, res) => {
 //  Course Pages Backend Functionality for API requests
 // =======================================================
 
-router.get('/allcourses', async (req, res) => {
+app.get('/allcourses', async (req, res) => {
     try {
         const courses = await courseCollection.find().toArray();
 
@@ -308,7 +307,7 @@ router.get('/allcourses', async (req, res) => {
     }
   });
 
-  router.get('/courses/:season', async (req, res) => {
+  app.get('/courses/:season', async (req, res) => {
     try {
         const courses = await courseCollection.find().toArray();
         const { season } = req.params;
@@ -361,7 +360,7 @@ router.get('/allcourses', async (req, res) => {
 //  Dyanmic Course Specific Backend Functionality
 // =======================================================
 
-router.get('/class', async (req, res) => {
+app.get('/class', async (req, res) => {
     try {
         const { course_id } = req.query;
         const course = await courseCollection.findOne({ CourseID: course_id });
@@ -376,7 +375,7 @@ router.get('/class', async (req, res) => {
     }
 });
 
-router.post("/addClass", async (req, res) => {
+app.post("/addClass", async (req, res) => {
     try {
         const { course_id } = req.body;
         const matchingUser = await usersCollection.findOne({ username: req.user.username });
@@ -407,7 +406,7 @@ router.post("/addClass", async (req, res) => {
 //  Downloading Functionality for Backwork Page
 // =======================================================
 
-router.get('/AssignmentsStored', async (req, res) => {
+app.get('/AssignmentsStored', async (req, res) => {
     try {
         const courses = await courseCollection.find({}).toArray();
         const formattedData = {
@@ -425,7 +424,7 @@ router.get('/AssignmentsStored', async (req, res) => {
     }
 });
 
-router.get('/download/:filename', async (req, res) => {
+app.get('/download/:filename', async (req, res) => {
     const filename = req.params.filename;
 
     try {
@@ -460,13 +459,13 @@ router.get('/download/:filename', async (req, res) => {
 //  Upload Functionality for Uploading Backwork Page
 // =======================================================
 
-router.use(fileUpload({
+app.use(fileUpload({
     limits: { fileSize: 10485760 }, /* 10MB limit */
     abortOnLimit: true,
     responseOnLimit: 'File size limit has been reached (10MB)'
 }));
 
-router.post('/upload', async (req, res) => {
+app.post('/upload', async (req, res) => {
     try {
         if (!req.files || !req.files.pdfFile) {
             return res.status(400).json({
@@ -548,7 +547,7 @@ router.post('/upload', async (req, res) => {
 //  admin page w/ privilaged functionality 
 // =======================================================
 
-router.put("/addCourse", async (req, res) => {
+app.put("/addCourse", async (req, res) => {
     try {
         // Check user authentication and admin status
         const statusData = await usersCollection.findOne({ username: req.user.username });
@@ -664,7 +663,7 @@ function validateCourseObject(obj) {
     return null;
 }
 
-router.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
+app.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
     try {
         const { courseCode, fileName } = req.params;
         
@@ -739,7 +738,7 @@ router.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
     }
 });
 
-router.delete("/deleteReview", async (req, res) => {
+app.delete("/deleteReview", async (req, res) => {
   try {
     const { courseID, comment } = req.body;
 
@@ -808,8 +807,6 @@ if (!fs.existsSync(pdfFolder)) {
     console.error(`Error: Directory ${pdfFolder} does not exist`);
     process.exit(1);
 }
-
-app.use('/node', router);
 
 app.listen(port, () => {
     console.log('Listening on *:3000');
