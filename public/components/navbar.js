@@ -1,21 +1,20 @@
 'use strict';
 let photo_url = '';
-// url = "";
-// if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
-//   url = "http://localhost:3000";
-//   photo_url = "/resources/photos/menu.png";
-// }else{
+
+// url = "http://localhost:3000";
+// photo_url = "/resources/photos/menu.png";
   url = "https://course-vault.eastus.cloudapp.azure.com/node";
   photo_url = "/node/resources/photos/menu.png";
-//}
+
 
 function Navbar() {
     const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
-    const nonAuthPaths = ['', '/', '/login', '/login/', '/signup', '/signup/']
-    const [isLoggedIn, setIsLoggedIn] = React.useState(nonAuthPaths.includes(window.location.pathname) ? false : true);
+    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     const [hoveredElement, setHoveredElement] = React.useState(null);
 
     React.useEffect(() => {
+        checkLoginStatus();
+            
         const handleClickOutside = (e) => {
             const moreButton = document.getElementById('moreButton');
             const dropdownMenu = document.getElementById('dropdownMenu');
@@ -30,6 +29,22 @@ function Navbar() {
         document.addEventListener('click', handleClickOutside);
         return () => document.removeEventListener('click', handleClickOutside);
     }, []);
+
+    // New function to check login status without redirecting
+    function checkLoginStatus() {
+        return fetch(`${url}/status`)
+            .then(response => response.json())
+            .then(data => {
+                console.log("Status check:", data.status);
+                setIsLoggedIn(data.status === 'admin' || data.status === 'user');
+                return data.status;
+            })
+            .catch(error => {
+                console.error('Error checking user status:', error);
+                setIsLoggedIn(false);
+                return 'error';
+            });
+    }
 
     function NavButton({ id, text, onClick }) {
         return React.createElement('div',
@@ -64,6 +79,7 @@ function Navbar() {
         );
     }
 
+    // Keep the original determineStatus for navigation purposes
     function determineStatus() {
         return fetch(`${url}/status`)
             .then(response => response.json())
@@ -99,7 +115,6 @@ function Navbar() {
     };
 
     const handleLogout = () => {
-        // setIsLoggedIn(false);
         fetch(`${url}/logout`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'}
@@ -113,6 +128,7 @@ function Navbar() {
           .then(data => {
             // since response.ok is true, logout was successful, dont need to check data (can use for an alert or something to tell user tho)
             alert(data)
+            setIsLoggedIn(false);
             window.location.href = `${url}/`
           })
           .catch(error => {
