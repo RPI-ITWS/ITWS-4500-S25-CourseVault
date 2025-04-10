@@ -12,6 +12,7 @@ const { cookieAuth } = require("./middleware/cookieAuth");
 const localJsonData = require('./data/DummyDisplay.json');
 const pdfFolder = path.join(__dirname, '../assignments');
 const jwt = require("jsonwebtoken");
+const router = express.Router();
 
 require('dotenv').config();
 const uri = process.env.MONGODB;
@@ -47,25 +48,25 @@ const database = client.db("CourseVault");
 const usersCollection = database.collection("Users");
 const courseCollection = database.collection("Classes");
 
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
-app.use(cookieParser())
-app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+app.use(express.static('public'));
 
 // =======================================================
 //  Unauthenticated Routes
 // =======================================================
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
 	console.log("root route")
 	res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
-app.post("/login", loginRoute)
+router.post("/login", loginRoute)
 
-app.post("/register", registerRoute)
+router.post("/register", registerRoute)
 
-app.get('/status', async (req, res) => {
+router.get('/status', async (req, res) => {
     try {
         const token = req.cookies.token;
         
@@ -97,57 +98,57 @@ app.get('/status', async (req, res) => {
 });
 
 // =======================================================
-app.use(cookieAuth)
+router.use(cookieAuth)
 //  Authenticated Routes (everything below)
 // =======================================================
 
-app.get('/login', (req, res) => {
+router.get('/login', (req, res) => {
 	console.log("login route")
 	res.sendFile(path.join(__dirname, '../public/login/index.html'))
 })
 
-app.get('/signup', (req, res) => {
+router.get('/signup', (req, res) => {
 	console.log("register route")
 	res.sendFile(path.join(__dirname, '../public/signup/index.html'))
 })
 
-app.get('/user', async (req, res) => {     
+router.get('/user', async (req, res) => {     
     try {         
         // Verify the JWT token first         
         const token = req.cookies.token;         
         if (!token) {             
-            return res.redirect('/login');         
+            return res.redirect('/node/login');         
         }          
 
         console.log("Routing to user page");
         res.sendFile(path.join(__dirname, '../public/user/index.html'));
     } catch (error) {
         console.error("Error in /user route:", error);
-        res.redirect('/login');
+        res.redirect('/node/login');
     } 
 });
 
-app.get('/backwork', (req, res) => {
+router.get('/backwork', (req, res) => {
 	console.log("backwork route")
 	res.sendFile(path.join(__dirname, '../public/backwork/index.html'))
 })
 
-app.get('/courses', (req, res) => {
+router.get('/courses', (req, res) => {
 	console.log("courses route")
 	res.sendFile(path.join(__dirname, '../public/courses/index.html'))
 })
 
-app.get('/resources', (req, res) => {
+router.get('/resources', (req, res) => {
 	console.log("resources route")
 	res.sendFile(path.join(__dirname, '../public/resources/index.html'))
 })
 
-app.get('/schedule', (req, res) => {
+router.get('/schedule', (req, res) => {
 	console.log("schedule route")
 	res.sendFile(path.join(__dirname, '../public/schedule/index.html'))
 })
 
-app.get('/userData', async (req, res) => {
+router.get('/userData', async (req, res) => {
 	try {
         const matchingUser = await usersCollection.findOne({ username: req.user.username });
 
@@ -162,7 +163,7 @@ app.get('/userData', async (req, res) => {
     }
 })
 
-app.delete("/logout", (req, res) => {
+router.delete("/logout", (req, res) => {
 	if (!req.user) {
 		res.status(401).send("No user present to logout.")
 	}
@@ -174,7 +175,7 @@ app.delete("/logout", (req, res) => {
 //  Add Review Functionality
 // =======================================================
 
-app.post("/addReview", async (req, res) => {
+router.post("/addReview", async (req, res) => {
     try {
         const { course, score, comment } = req.body;
 
@@ -259,7 +260,7 @@ app.post("/addReview", async (req, res) => {
 //  Profile Page Drop Course Functionality
 // =======================================================
 
-app.delete("/dropcourse", async (req, res) => {
+router.delete("/dropcourse", async (req, res) => {
     try {
         const { course_id } = req.body;
         const matchingUser = await usersCollection.findOne({ username: req.user.username });
@@ -285,7 +286,7 @@ app.delete("/dropcourse", async (req, res) => {
 //  Course Pages Backend Functionality for API requests
 // =======================================================
 
-app.get('/allcourses', async (req, res) => {
+router.get('/allcourses', async (req, res) => {
     try {
         const courses = await courseCollection.find().toArray();
 
@@ -307,7 +308,7 @@ app.get('/allcourses', async (req, res) => {
     }
   });
 
-  app.get('/courses/:season', async (req, res) => {
+  router.get('/courses/:season', async (req, res) => {
     try {
         const courses = await courseCollection.find().toArray();
         const { season } = req.params;
@@ -360,7 +361,7 @@ app.get('/allcourses', async (req, res) => {
 //  Dyanmic Course Specific Backend Functionality
 // =======================================================
 
-app.get('/class', async (req, res) => {
+router.get('/class', async (req, res) => {
     try {
         const { course_id } = req.query;
         const course = await courseCollection.findOne({ CourseID: course_id });
@@ -375,7 +376,7 @@ app.get('/class', async (req, res) => {
     }
 });
 
-app.post("/addClass", async (req, res) => {
+router.post("/addClass", async (req, res) => {
     try {
         const { course_id } = req.body;
         const matchingUser = await usersCollection.findOne({ username: req.user.username });
@@ -406,7 +407,7 @@ app.post("/addClass", async (req, res) => {
 //  Downloading Functionality for Backwork Page
 // =======================================================
 
-app.get('/AssignmentsStored', async (req, res) => {
+router.get('/AssignmentsStored', async (req, res) => {
     try {
         const courses = await courseCollection.find({}).toArray();
         const formattedData = {
@@ -424,7 +425,7 @@ app.get('/AssignmentsStored', async (req, res) => {
     }
 });
 
-app.get('/download/:filename', async (req, res) => {
+router.get('/download/:filename', async (req, res) => {
     const filename = req.params.filename;
 
     try {
@@ -459,13 +460,13 @@ app.get('/download/:filename', async (req, res) => {
 //  Upload Functionality for Uploading Backwork Page
 // =======================================================
 
-app.use(fileUpload({
+router.use(fileUpload({
     limits: { fileSize: 10485760 }, /* 10MB limit */
     abortOnLimit: true,
     responseOnLimit: 'File size limit has been reached (10MB)'
 }));
 
-app.post('/upload', async (req, res) => {
+router.post('/upload', async (req, res) => {
     try {
         if (!req.files || !req.files.pdfFile) {
             return res.status(400).json({
@@ -547,7 +548,7 @@ app.post('/upload', async (req, res) => {
 //  admin page w/ privilaged functionality 
 // =======================================================
 
-app.put("/addCourse", async (req, res) => {
+router.put("/addCourse", async (req, res) => {
     try {
         // Check user authentication and admin status
         const statusData = await usersCollection.findOne({ username: req.user.username });
@@ -663,7 +664,7 @@ function validateCourseObject(obj) {
     return null;
 }
 
-app.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
+router.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
     try {
         const { courseCode, fileName } = req.params;
         
@@ -738,7 +739,7 @@ app.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
     }
 });
 
-app.delete("/deleteReview", async (req, res) => {
+router.delete("/deleteReview", async (req, res) => {
   try {
     const { courseID, comment } = req.body;
 
@@ -807,6 +808,8 @@ if (!fs.existsSync(pdfFolder)) {
     console.error(`Error: Directory ${pdfFolder} does not exist`);
     process.exit(1);
 }
+
+app.use('/node', router);
 
 app.listen(port, () => {
     console.log('Listening on *:3000');
