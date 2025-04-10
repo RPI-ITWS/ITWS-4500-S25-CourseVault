@@ -86,21 +86,21 @@ function Navbar() {
             .then(data => {
                 console.log("Status check:", data.status);
                 if (data.status === 'unknown') {
-                    window.location.href = `${url}/`;
+                    window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/`;
                 } else if (data.status === 'admin') {
-                    if (window.location.href === `${url}/admin/`){
+                    if (window.location.href === `https://course-vault.eastus.cloudapp.azure.com/node/admin/`){
                         return;
                     }else{
-                        window.location.href = `${url}/admin/`;
+                        window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/admin/`;
                     }
                 } else if (data.status === 'user') {
-                    window.location.href = `${url}/user/`;
+                    window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/user/`;
                 }
                 return;
             })
             .catch(error => {
                 console.error('Error checking user status:', error);
-                window.location.href = `${url}/`;
+                window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/`;
                 return 'error';
             });
     }
@@ -129,7 +129,7 @@ function Navbar() {
             // since response.ok is true, logout was successful, dont need to check data (can use for an alert or something to tell user tho)
             alert(data)
             setIsLoggedIn(false);
-            window.location.href = `${url}/`
+            window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/`
           })
           .catch(error => {
             console.error('There was a problem with the Logout fetch operation:', error)
@@ -166,13 +166,13 @@ function Navbar() {
                         key: 'profile',
                         id: 'profile',
                         text: 'Profile',
-                        onClick: () => window.location.href = `${url}/profile`
+                        onClick: () => window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/profile`
                     }),
                     React.createElement(DropdownItem, { 
                         key: 'settings',
                         id: 'settings',
                         text: 'Settings',
-                        onClick: () => window.location.href = `${url}`
+                        onClick: () => window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node`
                     }),
                     React.createElement(DropdownItem, { 
                         key: 'logout',
@@ -186,13 +186,13 @@ function Navbar() {
                         key: 'login',
                         id: 'login',
                         text: 'Login',
-                        onClick: () => window.location.href = `${url}/login`
+                        onClick: () => window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/login`
                     }),
                     React.createElement(DropdownItem, {
                         key: 'signup',
                         id: 'signup',
                         text: 'Signup',
-                        onClick: () => window.location.href = `${url}/signup`
+                        onClick: () => window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/signup`
                     }),
                 ]
             )
@@ -209,15 +209,15 @@ function Navbar() {
             id: 'backworkButton',
             text: isLoggedIn ? 'Backwork' : 'Login', 
             onClick: () => window.location.href = isLoggedIn ? 
-                `${url}/backwork` : 
-                `${url}/login`
+                `https://course-vault.eastus.cloudapp.azure.com/node/backwork` : 
+                `https://course-vault.eastus.cloudapp.azure.com/node/login`
         }),
         React.createElement(NavButton, { 
             id: 'profButton', 
             text: isLoggedIn ? 'Courses' : 'Sign Up',
             onClick: () => window.location.href = isLoggedIn ? 
-                `${url}/courses` : 
-                `${url}/signup`
+                `https://course-vault.eastus.cloudapp.azure.com/node/courses` : 
+                `https://course-vault.eastus.cloudapp.azure.com/node/signup`
         }),
         isLoggedIn
         ? [
@@ -225,7 +225,7 @@ function Navbar() {
                 key: 'classesButton',
                 id: 'classesButton', 
                 text: 'Schedule',
-                onClick: () => window.location.href = `${url}/schedule`
+                onClick: () => window.location.href = `https://course-vault.eastus.cloudapp.azure.com/node/schedule`
             }),
             React.createElement(MoreButton, { key: 'moreButton' })
         ]
