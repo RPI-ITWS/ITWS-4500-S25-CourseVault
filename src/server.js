@@ -47,10 +47,10 @@ const database = client.db("CourseVault");
 const usersCollection = database.collection("Users");
 const courseCollection = database.collection("Classes");
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cookieParser());
-app.use('/node', express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(cookieParser())
+app.use(express.static('public'))
 
 // =======================================================
 //  Unauthenticated Routes
