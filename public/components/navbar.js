@@ -113,7 +113,7 @@ function Navbar() {
           .then(data => {
             // since response.ok is true, logout was successful, dont need to check data (can use for an alert or something to tell user tho)
             alert(data)
-            window.location.href = `${window.origin}/`
+            window.location.href = `${url}/`
           })
           .catch(error => {
             console.error('There was a problem with the Logout fetch operation:', error)
