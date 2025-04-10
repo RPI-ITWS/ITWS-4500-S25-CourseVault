@@ -58,7 +58,7 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
 	console.log("root route")
-	res.sendFile(path.join(__dirname, '../public/index.html'))
+	res.sendFile('../public/index.html')
 })
 
 app.post("/login", loginRoute)
@@ -103,12 +103,12 @@ app.use(cookieAuth)
 
 app.get('/login', (req, res) => {
 	console.log("login route")
-	res.sendFile(path.join(__dirname, '../public/login/index.html'))
+	res.sendFile('../public/login/index.html')
 })
 
 app.get('/signup', (req, res) => {
 	console.log("register route")
-	res.sendFile(path.join(__dirname, '../public/signup/index.html'))
+	res.sendFile('../public/signup/index.html')
 })
 
 app.get('/user', async (req, res) => {     
@@ -120,7 +120,7 @@ app.get('/user', async (req, res) => {
         }          
 
         console.log("Routing to user page");
-        res.sendFile(path.join(__dirname, '../public/user/index.html'));
+        res.sendFile('../public/user/index.html');
     } catch (error) {
         console.error("Error in /user route:", error);
         res.redirect('/login');
@@ -129,22 +129,22 @@ app.get('/user', async (req, res) => {
 
 app.get('/backwork', (req, res) => {
 	console.log("backwork route")
-	res.sendFile(path.join(__dirname, '../public/backwork/index.html'))
+	res.sendFile('../public/backwork/index.html')
 })
 
 app.get('/courses', (req, res) => {
 	console.log("courses route")
-	res.sendFile(path.join(__dirname, '../public/courses/index.html'))
+	res.sendFile('../public/courses/index.html')
 })
 
 app.get('/resources', (req, res) => {
 	console.log("resources route")
-	res.sendFile(path.join(__dirname, '../public/resources/index.html'))
+	res.sendFile('../public/resources/index.html')
 })
 
 app.get('/schedule', (req, res) => {
 	console.log("schedule route")
-	res.sendFile(path.join(__dirname, '../public/schedule/index.html'))
+	res.sendFile('../public/schedule/index.html')
 })
 
 app.get('/userData', async (req, res) => {
