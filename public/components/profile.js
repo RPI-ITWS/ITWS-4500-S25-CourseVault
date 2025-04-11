@@ -6,7 +6,7 @@ let url = "";
 //if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
 //  url = "http://localhost:3000";
 //}else{
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+  url = /*"https://course-vault.eastus.cloudapp.azure.com/node"*/"http://localhost:3000";
 //}
 
 const UserProfile = () => {
@@ -46,14 +46,14 @@ const UserProfile = () => {
 
   const handleAddRating = () => {
     localStorage.setItem('reviewCourse', '');
-    window.location.href = `${window.origin}/node/rating`;
+    window.location.href = `${window.origin}/rating`;
   };
 
   const handleDropCourse = async (courseId) => {
     try {
       setDropStatus({ message: `Dropping course ${courseId}...`, type: 'info' });
       
-      const response = await fetch(`${window.origin}/node/dropcourse`, {
+      const response = await fetch(`${window.origin}/dropcourse`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`${window.origin}/node/userData`);
+        const response = await fetch(`${window.origin}/userData`);
         
         if (!response.ok) {
           throw new Error(`Error Status: ${response.status}`);

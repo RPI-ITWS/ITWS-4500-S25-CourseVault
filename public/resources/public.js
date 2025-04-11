@@ -1,3 +1,4 @@
+url = /*"https://course-vault.eastus.cloudapp.azure.com/node"*/"http://localhost:3000";
 
 document.addEventListener('DOMContentLoaded', () => {
     // Must be a logged in user to access this page
@@ -9,9 +10,9 @@ function determineStatus() {
     .then(response => response.json())
     .then(data => {
       if (data.status === 'user') {
-        window.location.href = `/node/user/index.html`;
+        window.location.href = `/user/index.html`;
       } else if (data.status === 'admin') {
-        window.location.href = `/node/admin/index.html`;
+        window.location.href = `/admin/index.html`;
       }
       return;
     })

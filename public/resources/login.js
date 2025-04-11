@@ -3,7 +3,7 @@ let url = "";
 // if (window.location.origin === "http://localhost:3000" || window.location.origin === "localhost:3000"){
 //   url = "http://localhost:3000";
 // }else{
-  url = "https://course-vault.eastus.cloudapp.azure.com/node";
+  url = /*"https://course-vault.eastus.cloudapp.azure.com/node"*/"http://localhost:3000";
 //}
 
 
@@ -72,7 +72,7 @@ loginSubmit.addEventListener("click", async function(event) {
             error.style.color = "green"
             error.style.display = "block"
             //redirect to /user
-            window.location.href = `/node/user/index.html`;
+            window.location.href = `/user/index.html`;
         } catch (err) {
             console.error('There was a problem with registration request:', err);
             // return { err: `problem with API call, ${err.status} status`}
@@ -92,15 +92,15 @@ function determineStatus() {
       .then(response => response.json())
       .then(data => {
         if (data.status === 'user') {
-          window.location.href = `/node/user/index.html`;
+          window.location.href = `/user/index.html`;
         } else if (data.status === 'admin') {
-          window.location.href = `/node/admin/index/html`;
+          window.location.href = `/admin/index/html`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `/node/index.html`;
+        window.location.href = `/index.html`;
         return;
       });
   }
