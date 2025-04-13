@@ -178,7 +178,7 @@ function Navbar() {
                         key: 'login',
                         id: 'login',
                         text: 'Login',
-                        onClick: () => window.location.href = `/login//index.html`
+                        onClick: () => window.location.href = `/login/index.html`
                     }),
                     React.createElement(DropdownItem, {
                         key: 'signup',
