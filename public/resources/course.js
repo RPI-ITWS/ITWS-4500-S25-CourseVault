@@ -141,7 +141,7 @@ function showAllHistory(semestersData) {
 
 async function addClass() {
     const identifier = localStorage.getItem('courseID') || 'CSCI-1100';
-    // console.log(identifier)
+
     try {
         const response = await fetch(`${url}/addClass`, {
             method: 'POST',

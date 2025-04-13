@@ -1,3 +1,4 @@
+url = "https://course-vault.eastus.cloudapp.azure.com/node";
 
 document.addEventListener('DOMContentLoaded', () => {
     // Must be a logged in user to access this page

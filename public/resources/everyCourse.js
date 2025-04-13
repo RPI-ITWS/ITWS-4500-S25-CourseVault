@@ -20,8 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         Object.entries(data.courses).forEach(([courseID, details]) => {
             const department = courseID.split("-")[0]; 
-            departments.add(department);    
-            // console.log( details.Professor)
+            departments.add(department);
 
             const courseBox = document.createElement("div");
             courseBox.classList.add("class-box");
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             courseBox.addEventListener("click", () => {
                 localStorage.setItem('courseID', courseID);
-                // console.log(`Course ID: ${localStorage.getItem('courseID')}`);
                 window.location.href = `/node/course/index.html`;
               });
 

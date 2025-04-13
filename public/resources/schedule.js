@@ -35,7 +35,6 @@ async function fillSchedule(course, courseId, color, foregroundColor, selectedSe
 
     for (let day in times) {
         const timeRange = times[day];
-        //console.log(timeRange);
 
         let timeRangesArray = [];
 

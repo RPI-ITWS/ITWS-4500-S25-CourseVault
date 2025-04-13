@@ -179,7 +179,7 @@ function determineStatus() {
     })
     .catch(error => {
       console.error('Error checking user status:', error);
-      window.location.href = `node/index.html`;
+      window.location.href = `/node/index.html`;
       return;
     });
 }

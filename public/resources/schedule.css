@@ -24,7 +24,6 @@ body {
 h1 {
     max-width: 100%;
     font-size: 25px;
-    margin: auto;
 }
 
 #content {
@@ -46,11 +45,9 @@ h1 {
     background-color: #f2e6d5;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 5%;
     padding-top: 1.5%;
     width: 100%;
-    max-width: 1400px;
 }
 
 #semesterDropdown {
@@ -73,7 +70,6 @@ h1 {
     border: 2px solid #5a4a3f;
     border-radius: 20px;
     width: 90%;
-    max-width: 800px;
     position: relative;
     overflow-x: auto;
     padding-left: 15px;
@@ -84,8 +80,6 @@ h1 {
 #scheduleTable th:first-child,
 #scheduleTable td:first-child {
     padding-left: 20px;
-    min-width: 130px;
-    width: 130px;
 }
 
 #scheduleTable td {
@@ -154,12 +148,23 @@ h1 {
     
     #scheduleTable th:first-child,
     #scheduleTable td:first-child {
-        min-width: 100px;
-        width: 100px;
+        font-size: 12px;
+    }
+
+    .course-block span {
+        font-size: 16px !important;
+    }
+
+    .course-block {
+        font-size: 13px;
+    }
+
+    .removeButton {
+        font-size: 13px;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     #navbar {
         width: 60px;
         min-width: 60px;
@@ -185,20 +190,35 @@ h1 {
     }
     
     #scheduleTable {
-        min-width: 600px;
         width: calc(100% - 30px);
     }
     
     #scheduleTable th:first-child,
     #scheduleTable td:first-child {
         padding-left: 25px;
-        min-width: 90px;
-        width: 90px;
+        font-size: 12px;
     }
     
     #scheduleTable td span {
         font-size: 18px;
         padding: 3px;
+    }
+
+    .course-block span {
+        font-size: 13px !important;
+    }
+
+    .course-block {
+        font-size: 10px;
+        border-width: 10px !important;
+    }
+
+    .course-block::-webkit-scrollbar {
+        width: 8px !important;
+    }
+
+    .removeButton {
+        font-size: 10px;
     }
 }
 
@@ -241,15 +261,18 @@ h1 {
     
     #scheduleTable {
         width: calc(100% - 40px);
-        min-width: 450px;
         overflow-x: scroll;
     }
     
     #scheduleTable th:first-child,
     #scheduleTable td:first-child {
         padding-left: 30px;
-        min-width: 90px;
-        width: 90px;
+        font-size: 8px;
+        padding-left: 2px !important;
+    }
+
+    #scheduleTable th {
+        font-size: 7px;
     }
     
     #scheduleTable td span {
@@ -260,6 +283,23 @@ h1 {
     th{
         font-size: 0.625em;
         font-weight: bold;
+    }
+
+    .course-block span {
+        font-size: 7px !important;
+    }
+
+    .course-block {
+        font-size: 5px;
+        border-width: 5px !important;
+    }
+
+    .course-block::-webkit-scrollbar {
+        width: 5px !important;
+    }
+
+    .removeButton {
+        font-size: 7px;
     }
 }
 
@@ -280,21 +320,14 @@ h1 {
         display: flex;
         flex-direction: row;
     }
-    
-    #scheduleTable {
-        width: calc(100% - 20px);
-        min-width: 280px;
-    }
-    
+
     #scheduleTable th:first-child,
     #scheduleTable td:first-child {
-        padding-left: 15px;
-        min-width: 90px;
-        width: 90px;
+        padding-left: 0 !important;
+        font-size: 5px;
     }
-    
-    #scheduleTable td span {
-        font-size: 14px;
-        padding: 1px;
+
+    #scheduleTable th {
+        font-size: 5px;
     }
 }

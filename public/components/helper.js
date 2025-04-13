@@ -34,7 +34,7 @@ function createHelper() {
                 createHomepageButton({ 
                     id: 'rateProfessorButton', 
                     text: 'Create A Schedule',
-                    onClick: () => window.location.href = `node/schedule/index.html`
+                    onClick: () => window.location.href = `/node/schedule/index.html`
                 })
             )
         )
