@@ -24,7 +24,7 @@ body {
 h1 {
     max-width: 100%;
     font-size: 25px;
-    margin: auto;
+    /*margin: auto;*/
 }
 
 #content {
@@ -46,11 +46,11 @@ h1 {
     background-color: #f2e6d5;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
     padding: 5%;
     padding-top: 1.5%;
     width: 100%;
-    max-width: 1400px;
+    /*max-width: 1400px;*/
 }
 
 #semesterDropdown {
@@ -156,9 +156,21 @@ h1 {
         min-width: 100px;
         width: 100px;
     }
+
+    .course-block span {
+        font-size: 16px !important;
+    }
+
+    .course-block {
+        font-size: 13px;
+    }
+
+    .removeButton {
+        font-size: 13px;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     #navbar {
         width: 60px;
         min-width: 60px;
@@ -198,6 +210,18 @@ h1 {
     #scheduleTable td span {
         font-size: 18px;
         padding: 3px;
+    }
+
+    .course-block span {
+        font-size: 13px !important;
+    }
+
+    .course-block {
+        font-size: 10px;
+    }
+
+    .removeButton {
+        font-size: 10px;
     }
 }
 
@@ -260,6 +284,18 @@ h1 {
         font-size: 0.625em;
         font-weight: bold;
     }
+
+    .course-block span {
+        font-size: 9px !important;
+    }
+
+    .course-block {
+        font-size: 7px;
+    }
+
+    .removeButton {
+        font-size: 7px;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -280,7 +316,7 @@ h1 {
         flex-direction: row;
     }
     
-    #scheduleTable {
+    /*#scheduleTable {
         width: calc(100% - 20px);
         min-width: 280px;
     }
@@ -296,4 +332,12 @@ h1 {
         font-size: 14px;
         padding: 1px;
     }
+
+    .course-block span {
+        font-size: 7px !important;
+    }
+
+    .course-block {
+        font-size: 4px;
+    }*/
 }

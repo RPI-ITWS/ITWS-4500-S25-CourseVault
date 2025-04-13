@@ -88,7 +88,7 @@ button:hover {
     vertical-align: middle; 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: /*768*/1024px) {
     #content {
         margin-left: 60px;
         width: calc(100% - 60px);
