@@ -167,12 +167,6 @@ function Navbar() {
                         onClick: () => window.location.href = `/profile/index.html`
                     }),
                     React.createElement(DropdownItem, { 
-                        key: 'settings',
-                        id: 'settings',
-                        text: 'Settings',
-                        onClick: () => window.location.href = `/index.html`
-                    }),
-                    React.createElement(DropdownItem, { 
                         key: 'logout',
                         id: 'logout',
                         text: 'Logout',
