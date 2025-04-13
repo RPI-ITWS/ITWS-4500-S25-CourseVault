@@ -162,7 +162,7 @@ body, html {
     }
 }
 
-@media screen and (max-width: /*768*/1024px) {
+@media screen and (max-width: 1024px) {
     #navbar {
         width: 60px;
         min-width: 60px;

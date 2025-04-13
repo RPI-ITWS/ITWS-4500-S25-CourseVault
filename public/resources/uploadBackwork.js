@@ -1,6 +1,6 @@
 let url = "";
 
-url = /*"https://course-vault.eastus.cloudapp.azure.com/node"*/"http://localhost:3000";
+url = "https://course-vault.eastus.cloudapp.azure.com/node";
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -90,13 +90,13 @@ function determineStatus() {
       .then(response => response.json())
       .then(data => {
         if (data.status === 'unknown') {
-          window.location.href = `/index.html`;
+          window.location.href = `/node/index.html`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `/index.html`;
+        window.location.href = `/node/index.html`;
         return;
       });
 }

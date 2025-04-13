@@ -212,7 +212,7 @@ h1 {
     }
 }
 
-@media screen and (max-width: /*768*/1024px) {
+@media screen and (max-width: 1024px) {
     #navbar {
         width: 60px;
         min-width: 60px;
@@ -262,7 +262,6 @@ h1 {
     
     .featureImage {
         margin-bottom: 30px;
-        /*margin-left: 30px;*/
         width: 100%; 
         max-width: 100%;
     }

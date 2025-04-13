@@ -1,5 +1,5 @@
 let url = "";
-url = /*"https://course-vault.eastus.cloudapp.azure.com/node"*/"http://localhost:3000";
+url = "https://course-vault.eastus.cloudapp.azure.com/node";
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -20,8 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         Object.entries(data.courses).forEach(([courseID, details]) => {
             const department = courseID.split("-")[0]; 
-            departments.add(department);    
-            // console.log( details.Professor)
+            departments.add(department);
 
             const courseBox = document.createElement("div");
             courseBox.classList.add("class-box");
@@ -40,8 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             courseBox.addEventListener("click", () => {
                 localStorage.setItem('courseID', courseID);
-                // console.log(`Course ID: ${localStorage.getItem('courseID')}`);
-                window.location.href = `/course/index.html`;
+                window.location.href = `/node/course/index.html`;
               });
 
             classContainer.appendChild(courseBox);
@@ -75,13 +73,13 @@ function determineStatus() {
       .then(response => response.json())
       .then(data => {
         if (data.status === 'unknown') {
-          window.location.href = `/index.html`;
+          window.location.href = `/node/index.html`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `/index.html`;
+        window.location.href = `/node/index.html`;
         return;
       });
 }

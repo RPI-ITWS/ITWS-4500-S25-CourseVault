@@ -1,5 +1,5 @@
 let url = "";
-url = /*"https://course-vault.eastus.cloudapp.azure.com/node"*/"http://localhost:3000";
+url = "https://course-vault.eastus.cloudapp.azure.com/node";
 
 
 let userCourses = null;
@@ -35,7 +35,6 @@ async function fillSchedule(course, courseId, color, foregroundColor, selectedSe
 
     for (let day in times) {
         const timeRange = times[day];
-        //console.log(timeRange);
 
         let timeRangesArray = [];
 
@@ -127,7 +126,7 @@ async function fillSchedule(course, courseId, color, foregroundColor, selectedSe
 }
 
 async function fetchSchedule() {
-    const response = await fetch(`${window.origin}/userData`);
+    const response = await fetch(`${window.origin}/node/userData`);
 
     if (!response.ok) {
         throw new Error(`Error Status: ${response.status}`);
@@ -191,7 +190,7 @@ async function refetchSchedule() {
 }
 
 async function dropCourse(course_id) {
-    const response = await fetch(`${window.origin}/dropcourse`, {
+    const response = await fetch(`${window.origin}/node/dropcourse`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -299,13 +298,13 @@ function determineStatus() {
       .then(response => response.json())
       .then(data => {
         if (data.status === 'unknown') {
-          window.location.href = `/index.html`;
+          window.location.href = `/node/index.html`;
         }
         return;
       })
       .catch(error => {
         console.error('Error checking user status:', error);
-        window.location.href = `/index.html`;
+        window.location.href = `/node/index.html`;
         return;
       });
 }

@@ -1,8 +1,8 @@
 'use strict';
 let photo_url = '';
 
-  let url2 = /*"https://course-vault.eastus.cloudapp.azure.com/node"*/"http://localhost:3000";
-  photo_url = /*"/node/resources/photos/menu.png"*/"./resources/photos/menu.png";
+  let url2 = "https://course-vault.eastus.cloudapp.azure.com/node";
+  photo_url = "/node/resources/photos/menu.png";
 
 
 function Navbar() {
@@ -84,21 +84,21 @@ function Navbar() {
             .then(data => {
                 console.log("Status check:", data.status);
                 if (data.status === 'unknown') {
-                    window.location.href = `/index.html`;
+                    window.location.href = `/node/index.html`;
                 } else if (data.status === 'admin') {
-                    if (window.location.href === `/admin/index.html`){
+                    if (window.location.href === `/node/admin/index.html`){
                         return;
                     }else{
-                        window.location.href = `/admin/index.html`;
+                        window.location.href = `/node/admin/index.html`;
                     }
                 } else if (data.status === 'user') {
-                    window.location.href = `/user/index.html`;
+                    window.location.href = `/node/user/index.html`;
                 }
                 return;
             })
             .catch(error => {
                 console.error('Error checking user status:', error);
-                window.location.href = `/index.html`;
+                window.location.href = `/node/index.html`;
                 return 'error';
             });
     }
@@ -127,7 +127,7 @@ function Navbar() {
             // since response.ok is true, logout was successful, dont need to check data (can use for an alert or something to tell user tho)
             alert(data)
             setIsLoggedIn(false);
-            window.location.href = `/index.html`
+            window.location.href = `/node/index.html`
           })
           .catch(error => {
             console.error('There was a problem with the Logout fetch operation:', error)
@@ -164,7 +164,7 @@ function Navbar() {
                         key: 'profile',
                         id: 'profile',
                         text: 'Profile',
-                        onClick: () => window.location.href = `/profile/index.html`
+                        onClick: () => window.location.href = `/node/profile/index.html`
                     }),
                     React.createElement(DropdownItem, { 
                         key: 'logout',
@@ -178,13 +178,13 @@ function Navbar() {
                         key: 'login',
                         id: 'login',
                         text: 'Login',
-                        onClick: () => window.location.href = `/login/index.html`
+                        onClick: () => window.location.href = `/node/login/index.html`
                     }),
                     React.createElement(DropdownItem, {
                         key: 'signup',
                         id: 'signup',
                         text: 'Signup',
-                        onClick: () => window.location.href = `/signup/index.html`
+                        onClick: () => window.location.href = `/node/signup/index.html`
                     }),
                 ]
             )
@@ -201,15 +201,15 @@ function Navbar() {
             id: 'backworkButton',
             text: isLoggedIn ? 'Backwork' : 'Login', 
             onClick: () => window.location.href = isLoggedIn ? 
-                `/backwork/index.html` : 
-                `/login/index.html`
+                `/node/backwork/index.html` : 
+                `/node/login/index.html`
         }),
         React.createElement(NavButton, { 
             id: 'profButton', 
             text: isLoggedIn ? 'Courses' : 'Sign Up',
             onClick: () => window.location.href = isLoggedIn ? 
-                `/courses/index.html` : 
-                `/signup/index.html`
+                `/node/courses/index.html` : 
+                `/node/signup/index.html`
         }),
         isLoggedIn
         ? [
@@ -217,7 +217,7 @@ function Navbar() {
                 key: 'classesButton',
                 id: 'classesButton', 
                 text: 'Schedule',
-                onClick: () => window.location.href = `/schedule/index.html`
+                onClick: () => window.location.href = `/node/schedule/index.html`
             }),
             React.createElement(MoreButton, { key: 'moreButton' })
         ]

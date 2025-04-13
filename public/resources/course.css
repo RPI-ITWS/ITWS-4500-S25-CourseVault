@@ -115,7 +115,7 @@ ul {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-@media screen and (max-width: /*768*/1024px) {
+@media screen and (max-width: 1024px) {
     body {
         padding-left: 80px;
     }

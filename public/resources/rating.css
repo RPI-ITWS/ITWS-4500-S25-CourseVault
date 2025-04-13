@@ -148,7 +148,7 @@ button[type="submit"]:hover{
     width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     #content {
         margin-left: 60px;
         width: calc(100% - 60px);
