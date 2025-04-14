@@ -1,6 +1,6 @@
 # ITWS-4500-S25-Team2
 
-## Course Valut
+## Course Vault
 
 ### Main Features:
 1. Secure Login / Sign-up
@@ -46,4 +46,8 @@ The focus of this site is to offer a one stop shop for anything an RPI student m
  - ##### MongoDB
  - ##### Path
  - ##### PDF-Lib
+
+### Running the server:
+
+node --env-file=/home/(username)/.env src/server.js
 
