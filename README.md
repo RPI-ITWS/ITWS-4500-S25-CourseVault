@@ -49,5 +49,5 @@ The focus of this site is to offer a one stop shop for anything an RPI student m
 
 ### Running the server:
 
-node --env-file=/home/(username)/.env src/server.js
+node src/server.js
 
