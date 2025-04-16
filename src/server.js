@@ -13,7 +13,7 @@ const localJsonData = require('./data/DummyDisplay.json');
 const pdfFolder = path.join(__dirname, '../assignments');
 const jwt = require("jsonwebtoken");
 
-require('dotenv').config();
+require('dotenv').config({path:'./../../.env'});
 const uri = process.env.MONGODB;
 
 const app = express();
