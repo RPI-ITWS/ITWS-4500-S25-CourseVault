@@ -46,7 +46,7 @@ const UserProfile = () => {
 
   const handleAddRating = () => {
     localStorage.setItem('reviewCourse', '');
-    window.location.href = `${window.origin}/node/rating`;
+    window.location.href = `${window.origin}/node/rating/index.html`;
   };
 
   const handleDropCourse = async (courseId) => {
