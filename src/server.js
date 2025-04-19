@@ -704,65 +704,62 @@ app.delete('/remove-file/:courseCode/:fileName', async (req, res) => {
 });
 
 app.delete("/deleteReview", async (req, res) => {
-  try {
-    const { courseID, comment } = req.body;
-
-    const statusData = await usersCollection.findOne({ username: req.user.username });
-    console.log(req.user.username);
-    console.log(statusData);
-    if (!statusData) {
+    try {
+      const { courseID, comment } = req.body;
+      
+      const statusData = await usersCollection.findOne({ username: req.user.username });
+      console.log(req.user.username);
+      console.log(statusData);
+      
+      if (!statusData) {
         return res.status(403).json({
-            status: "fail",
-            message: "Unauthorized: Cannot Identify User"
+          status: "fail",
+          message: "Unauthorized: Cannot Identify User"
         });
-    }
-
-    if (!statusData.status === "admin") {
-        return res.status(403).json({
-            status: "fail",
-            message: "Unauthorized: Admin access required"
-        });
-    }
-    
-    const matchedCourse = await courseCollection.findOne({ 
-      CourseID: courseID.trim() 
-    });
-    
-    if (!matchedCourse) {
-      return res.status(404).send({
-        message: `Course ${courseID} not found`,
-        providedCourseId: courseID
-      });
-    }
-    
-    const reviewToDelete = userReviews.find(review => review.course === courseID);
-    
-    if (!reviewToDelete) {
-      return res.status(404).send({ message: 'Review not found for this course' });
-    }
-    
-    if (reviewToDelete.comment !== comment) {
-      return res.status(403).send({ message: 'Comment does not match the existing review' });
-    }
-    await courseCollection.updateOne(
-      { CourseID: courseID },
-      {
-        $pull: {
-          'thoughts.reviews': comment
-        }
       }
-    );
-    
-    res.status(200).send({
-      message: 'Review deleted successfully',
-      deletedReview: reviewToDelete
-    });
-    
-  } catch (error) {
-    console.error(error);
-    res.status(500).send({ message: 'Internal Server Error' });
-  }
-});
+      if (statusData.status !== "admin") {
+        return res.status(403).json({
+          status: "fail",
+          message: "Unauthorized: Admin access required"
+        });
+      }
+      
+      const matchedCourse = await courseCollection.findOne({
+        CourseID: courseID.trim()
+      });
+      
+      if (!matchedCourse) {
+        return res.status(404).send({
+          message: `Course ${courseID} not found`,
+          providedCourseId: courseID
+        });
+      }
+      const courseReviews = matchedCourse.thoughts?.reviews || [];
+      const reviewExists = courseReviews.includes(comment);
+      
+      if (!reviewExists) {
+        return res.status(404).send({ message: 'Review not found for this course' });
+      }
+      
+      await courseCollection.updateOne(
+        { CourseID: courseID },
+        {
+          $pull: {
+            'thoughts.reviews': comment
+          }
+        }
+      );
+      
+      res.status(200).send({
+        message: 'Review deleted successfully',
+        deletedComment: comment
+      });
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ message: 'Internal Server Error' });
+    }
+  });
 
 // =======================================================
 //  Rest of framework functionality 
